@@ -1,4 +1,4 @@
-SMODS.Joker{ --The Doctor
+SMODS.Joker{
     key = "normalguy",
     loc_txt = {
         ['name'] = 'Normal Guy',
@@ -11,7 +11,7 @@ SMODS.Joker{ --The Doctor
                 '{C:purple}Consumable Slots{} to {C:purple}#4#{}'
             },
             [2] = {
-                'Sells overflowing',
+                'Destroys overflowing',
                 'jokers/consumables',
                 'from right to left',
                 "(excluding Normal Guy)."
@@ -24,7 +24,7 @@ SMODS.Joker{ --The Doctor
 
     pos = {
         x = 5,
-        y = 1
+        y = 0
     },
 
     display_size = {
@@ -68,8 +68,10 @@ SMODS.Joker{ --The Doctor
             }
         }
     end,
-    
+
     add_to_deck = function(self, card, from_debuff)
+        --if (not self:is_solo(G.jokers.cards)) then return end
+
         card.ability.extra.added_hands = card.ability.extra.hands - G.GAME.round_resets.hands
         card.ability.extra.added_discards = card.ability.extra.discards - G.GAME.current_round.discards_left
         card.ability.extra.added_joker_slots = card.ability.extra.joker_slots - G.jokers.config.card_limit
@@ -81,19 +83,28 @@ SMODS.Joker{ --The Doctor
         G.jokers.config.card_limit = card.ability.extra.joker_slots
 
         if (#G.jokers.cards > card.ability.extra.joker_slots) then
-            for i = 4, (#G.jokers.cards - 1) do
-                G.jokers.cards[i].getting_sliced = true
-                G.GAME.joker_buffer = G.GAME.joker_buffer - 1
-                
-                G.E_MANAGER:add_event(Event({func = function()
-                    G.GAME.joker_buffer = 0
+            local overflowing_jokers = #G.jokers.cards - card.ability.extra.joker_slots + 1
 
-                    G.jokers.cards[i]:start_dissolve({HEX("57ecab")}, nil, 1.6)
-                    play_sound('slice1', 0.96+math.random()*0.08)
+            for i = #G.jokers.cards, 1, -1 do
+                if overflowing_jokers <= 0 then
+                    break
+                end
+
+                if G.jokers.cards[i] ~= self then
+                    overflowing_jokers = overflowing_jokers - 1
                     
-                    return true
-                    end
-                }))
+                    G.jokers.cards[i].getting_sliced = true
+                    G.GAME.joker_buffer = G.GAME.joker_buffer - 1
+
+                    G.E_MANAGER:add_event(Event({ func = function()
+                        G.GAME.joker_buffer = 0
+
+                        G.jokers.cards[i]:start_dissolve({HEX("57ecab")}, nil, 1.6)
+                        play_sound('slice1', 0.96 + math.random() * 0.08)
+
+                        return true
+                    end }))
+                end
             end
         end
 
@@ -115,6 +126,8 @@ SMODS.Joker{ --The Doctor
     end,
 
     remove_from_deck = function(self, card, from_debuff)
+        --if (not self:is_solo(self, G.jokers.cards)) then return end
+        
         ease_hands_played(-card.ability.extra.added_hands)
         ease_discard(-card.ability.extra.added_discards)
         G.jokers.config.card_limit = G.jokers.config.card_limit - card.ability.extra.added_joker_slots
