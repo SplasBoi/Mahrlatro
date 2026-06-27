@@ -24,7 +24,7 @@ SMODS.Joker{ --The Doctor
 
     pos = {
         x = 5,
-        y = 0
+        y = 1
     },
 
     display_size = {
