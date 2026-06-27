@@ -26,10 +26,5 @@ SMODS.Seal {
                 mult = 10
             }
         end
-        if context.main_scoring and context.cardarea == G.play then
-            return {
-                mult = 10
-            }
-        end
     end
 }
