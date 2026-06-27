@@ -9,7 +9,8 @@ SMODS.Joker{ --The Hahrt
     loc_txt = {
         ['name'] = 'The Hahrt',
         ['text'] = {
-            [1] = 'Played cards with {C:hearts}Heart{} suit give {C:mult}+3{} Mult when scored'
+            [1] = 'Played cards with {C:hearts}Heart{} suit ',
+            [2] = 'give {C:mult}+3{} Mult when scored'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'

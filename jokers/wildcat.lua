@@ -9,7 +9,9 @@ SMODS.Joker{ --Wild Cat
     loc_txt = {
         ['name'] = 'Wild Cat',
         ['text'] = {
-            [1] = 'Gives {X:red,C:white}X0.2{} Mult for every {C:attention}Wild card{} currently in {C:gold}Full Hand{}.'
+            [1] = 'Gives {X:red,C:white}X0.2{} Mult for every {C:attention}Wild card{}',
+            [2] = 'currently in {C:gold}Full Hand{}.',
+            [3] = '{C:inactive}(Currently{} {X:red,C:white}X#1#{} {C:inactive}Mult){}'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'

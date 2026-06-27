@@ -9,7 +9,8 @@ SMODS.Joker{ --Epic Weed
     loc_txt = {
         ['name'] = 'Epic Weed',
         ['text'] = {
-            [1] = 'Played cards with {C:uncommon}Club{} suit give {C:mult}+3{} Mult when scored'
+            [1] = 'Played cards with {C:uncommon}Club{} suit ',
+            [2] = 'give {C:mult}+3{} Mult when scored'
         },
         ['unlock'] = {
             [1] = ''

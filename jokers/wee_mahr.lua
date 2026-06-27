@@ -1,10 +1,9 @@
 
 SMODS.Joker{ --Wee Mahr
-    key = "wee",
+    key = "wee_mahr",
     config = {
         extra = {
-            chips = 0,
-            chips = 'Hello'
+            chips = 0
         }
     },
     loc_txt = {

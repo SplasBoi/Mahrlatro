@@ -9,8 +9,8 @@ SMODS.Joker{ --Mahrfia Member
     loc_txt = {
         ['name'] = 'Mahrfia Member',
         ['text'] = {
-            [1] = 'Destroys every played {C:red}Heart{} card',
-            [2] = 'for {C:gold}5 Dollahrs{}'
+            [1] = 'Destroys every played {C:red}Heart{}',
+            [2] = 'card for {C:gold}5 Dollahrs{}'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
