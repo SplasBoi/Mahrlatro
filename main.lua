@@ -53,17 +53,13 @@ local function load_folder(path)
         end
     end
 end
+
 -- load the jokers
-if true then
-    assert(SMODS.load_file("jokers/themahr.lua"))()
-    assert(SMODS.load_file("jokers/mahrfiamember.lua"))()
-    assert(SMODS.load_file("jokers/nutellasweep.lua"))()
-    assert(SMODS.load_file("jokers/wildcat.lua"))()
-    assert(SMODS.load_file("jokers/lehospital.lua"))()
-    assert(SMODS.load_file("jokers/thedoctor.lua"))()
-    assert(SMODS.load_file("jokers/normalguy.lua"))()
-    assert(SMODS.load_file("jokers/wee.lua"))()
+local jokers_src = SMODS.NFS.getDirectoryItems(SMODS.current_mod.path .. "jokers")
+for _, file in ipairs(jokers_src) do
+    assert(SMODS.load_file("jokers/" .. file))()
 end
+
 -- load the consumables
 if true then
     assert(SMODS.load_file("consumables/mahrmentioned.lua"))()
