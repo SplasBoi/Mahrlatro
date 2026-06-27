@@ -61,13 +61,10 @@ for _, file in ipairs(jokers_src) do
 end
 
 -- load the consumables
-if true then
-    assert(SMODS.load_file("consumables/mahrmentioned.lua"))()
-end
+assert(SMODS.load_file("consumables/mahrmentioned.lua"))()
+
 -- load the seals
-if true then
-    assert(SMODS.load_file("seals/mahrseal.lua"))()
-end
+assert(SMODS.load_file("seals/mahrseal.lua"))()
 
 function SMODS.current_mod.reset_game_globals(run_start)
     local jokerPool = {}
