@@ -121,16 +121,6 @@ return {
             }
         },
 
-        Other = {
-            mahrlatr_mahrseal = {
-                name = 'Mahr Seal',
-                label = 'Mahr Seal',
-                text = {
-                    'Gives {C:red}10 mult{} for every Mahr Jokahr'
-                }
-            }
-        },
-
         Tarot = {
             c_mahrlatr_mahrmentioned = {
                 name = 'Mahr Mentioned',
@@ -138,6 +128,16 @@ return {
                     'Applies {C:tarot}TheMahr{} seal to selected card.'
                 }
             }
-        }
+        },
+
+        Other = {
+            mahrlatr_mahrseal_seal = {
+                name = 'Mahr Seal',
+                label = 'Mahr Seal',
+                text = {
+                    'Gives {C:red}#1# mult{} for every Mahr Jokahr'
+                }
+            }
+        },
     }
 }
