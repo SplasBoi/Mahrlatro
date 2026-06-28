@@ -1,10 +1,17 @@
 SMODS.Joker{ --Supahr Nutellio
     key = "supahrnutellio",
+
+    config = {
+        extra = {
+            chips = 67
+        }
+    },
     
     pos = {
         x = 5,
         y = 1
     },
+
     display_size = {
         w = 71 * 1, 
         h = 95 * 1
@@ -20,12 +27,6 @@ SMODS.Joker{ --Supahr Nutellio
 
     cost = 4,
     rarity = 1,
-
-    config = {
-        extra = {
-            chips = 67
-        }
-    },
     
     loc_vars = function(self, info_queue, card)
         return {
@@ -37,10 +38,27 @@ SMODS.Joker{ --Supahr Nutellio
     
     calculate = function(self, card, context)
         if context.joker_main then
-            return {
-                chips = card.ability.extra.chips,
-                message = 'EZ.'
-            }
+            local star_count = 0
+
+            for _, joker in ipairs(G.jokers.cards) do
+                if joker.config.center.key == 'j_mahrlatr_thestahr' then
+                    star_count = star_count + 1
+
+                    card_eval_status_text(joker, 'extra', nil, nil, nil, {
+                            message = '+'.. star_count,
+                            colour = G.C.CHIPS
+                    })
+                end
+            end
+
+            if star_count > 0 then
+                local total_chips = star_count * card.ability.extra.chips
+                
+                return {
+                    chips = total_chips,
+                    "EZ!"
+                }
+            end
         end
     end
 }

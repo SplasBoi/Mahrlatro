@@ -124,10 +124,10 @@ return {
                 name = 'Supahr Nutellio',
                 text = {
                     {
-                        '{C:blue}+67{} Chips'
+                        '{C:blue}+#1#{} Chips'
                     },
                     {
-                        'Adds +{C:blue}67{} Chips for each',
+                        'Adds +{C:blue}#1#{} Chips for each',
                         '{C:attention}Stahr{} jokahr held.'
                     }
                 }
