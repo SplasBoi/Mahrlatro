@@ -15,11 +15,12 @@ return {
                 }
             },
 
-            j_mahrlatr_wee_mahr = {
+            j_mahrlatr_weemahr = {
                 name = 'Wee Mahr',
                 text = {
-                    { 'This Joker gains {C:blue}+8{} Chips when each played {C:attention}2{} is scored' },
-                    { '{C:inactive}(Currently{} {C:blue}+#1#{} {C:inactive}Chips){}' }
+                    'This Joker gains {C:blue}+8{} Chips',
+                    'when each played {C:attention}2{} is scored',
+                    '{C:inactive}(Currently{} {C:blue}+#1#{} {C:inactive}Chips){}'
                 }
             },
 
