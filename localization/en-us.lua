@@ -137,7 +137,7 @@ return {
                 name = 'Meat',
                 text = {
                     {
-                        '{C:red}+7{} Mult if hand contains',
+                        '{C:red}+#1#{} Mult if hand contains',
                         'scoring {C:red,E:2}red{} suit cards.'
                     }
                 }
@@ -147,7 +147,7 @@ return {
                 name = 'Mahr{}ffin',
                 text = {
                     {
-                        'Gives {C:money}$1{} for each',
+                        'Gives {C:money}$#1#{} for each',
                         'played {C:blue}hand.'
                     }
                 }

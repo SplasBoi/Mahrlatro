@@ -1,10 +1,17 @@
 SMODS.Joker { --Mahrffin
     key = "mahrffin",
+
+    config = {
+        extra = {
+            dollars = 1
+        }
+    }
     
     pos = {
         x = 0,
         y = 2
     },
+
     display_size = {
         w = 71 * 1, 
         h = 95 * 1
@@ -20,12 +27,6 @@ SMODS.Joker { --Mahrffin
 
     cost = 4,
     rarity = 1,
-
-    config = {
-        extra = {
-            dollars = 1
-        }
-    },
     
     loc_vars = function(self, info_queue, card)
         return {
