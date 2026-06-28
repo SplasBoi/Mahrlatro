@@ -45,7 +45,7 @@ to_big = to_big or function(a) return a end
 lenient_bignum = lenient_bignum or function(a) return a end
 -- this function is used to load everything within a folder.-- Jokerforge doesnt use it because it doesnt make loading order easy
 local function load_folder(path)
-    local files = NFS.getDirectoryItemsInfo(mod_path .. "/" .. path)
+    local files = NFS.getDirectoryItemsInfo(SMODS.current_mod.path .. "/" .. path)
     for i = 1, #files do
         local file_name = files[i].name
         if file_name:sub(-4) == ".lua" then
@@ -54,17 +54,14 @@ local function load_folder(path)
     end
 end
 
--- load the jokers
-local jokers_src = SMODS.NFS.getDirectoryItems(SMODS.current_mod.path .. "jokers")
-for _, file in ipairs(jokers_src) do
-    assert(SMODS.load_file("jokers/" .. file))()
-end
+-- load jokers
+load_folder("jokers/")
 
--- load the consumables
-assert(SMODS.load_file("consumables/mahrmentioned.lua"))()
+-- load consumables
+load_folder("consumables/")
 
--- load the seals
-assert(SMODS.load_file("seals/mahrseal.lua"))()
+-- load seals
+load_folder("seals/")
 
 function SMODS.current_mod.reset_game_globals(run_start)
     local jokerPool = {}
