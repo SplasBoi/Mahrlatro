@@ -1,26 +1,5 @@
-SMODS.Joker{
+SMODS.Joker {
     key = "normalguy",
-    loc_txt = {
-        ['name'] = 'Normal Guy',
-        ['text'] = {
-            [1] = {
-                'Sets:',
-                '{C:blue}Hands{} to {C:blue}#1#{}',
-                '{C:red}Discards{} to {C:red}#2#{}',
-                '{V:1}Joker Slots{} to {V:1}#3#{}',
-                '{C:purple}Consumable Slots{} to {C:purple}#4#{}'
-            },
-            [2] = {
-                'Destroys overflowing',
-                'jokers/consumables',
-                'from right to left',
-                "(excluding Normal Guy)."
-            }
-        },
-        ['unlock'] = {
-            [1] = 'Unlocked by default.'
-        }
-    },
 
     pos = {
         x = 5,
@@ -70,8 +49,6 @@ SMODS.Joker{
     end,
 
     add_to_deck = function(self, card, from_debuff)
-        --if (not self:is_solo(G.jokers.cards)) then return end
-
         card.ability.extra.added_hands = card.ability.extra.hands - G.GAME.round_resets.hands
         card.ability.extra.added_discards = card.ability.extra.discards - G.GAME.current_round.discards_left
         card.ability.extra.added_joker_slots = card.ability.extra.joker_slots - G.jokers.config.card_limit

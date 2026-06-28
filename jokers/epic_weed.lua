@@ -1,29 +1,23 @@
 
-SMODS.Joker{ --Epic Weed
-    key = "epic_weed",
+SMODS.Joker { --Epic Weed
+    key = "epicweed",
+
     config = {
         extra = {
             mult0 = 3
         }
     },
-    loc_txt = {
-        ['name'] = 'Epic Weed',
-        ['text'] = {
-            [1] = 'Played cards with {C:uncommon}Club{} suit ',
-            [2] = 'give {C:mult}+3{} Mult when scored'
-        },
-        ['unlock'] = {
-            [1] = ''
-        }
-    },
+
     pos = {
         x = 4,
         y = 1
     },
+
     display_size = {
         w = 71 * 1, 
         h = 95 * 1
     },
+    
     cost = 5,
     rarity = 1,
     blueprint_compat = true,

@@ -2,19 +2,19 @@
 SMODS.Consumable {
     key = 'mahrmentioned',
     set = 'Tarot',
-    pos = { x = 0, y = 0 },
-    loc_txt = {
-        name = 'Mahr Mentioned',
-        text = {
-            [1] = 'Applies {C:tarot}TheMahr{} seal to selected card.'
-        }
+
+    pos = {
+        x = 0,
+        y = 0
     },
+
     cost = 3,
     unlocked = true,
     discovered = true,
     hidden = false,
     can_repeat_soul = false,
     atlas = 'CustomConsumables',
+    
     use = function(self, card, area, copier)
         local used_card = copier or card
         if to_big(#G.hand.highlighted) == to_big(1) then

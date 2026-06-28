@@ -1,29 +1,24 @@
 
-SMODS.Joker{ --The Mahr!?
+SMODS.Joker { --The Mahr!?
     key = "themahr",
+
     config = {
         extra = {
-            mult0 = 5,
-            dollars0 = 1
+            mult = 5,
+            dollars = 1
         }
     },
-    loc_txt = {
-        ['name'] = 'The Mahr!?',
-        ['text'] = {
-            [1] = '{C:money}$1{} & {C:red}5 Mult{} for every hand played'
-        },
-        ['unlock'] = {
-            [1] = 'Unlocked by default.'
-        }
-    },
+
     pos = {
         x = 0,
         y = 0
     },
+
     display_size = {
         w = 71 * 1, 
         h = 95 * 1
     },
+
     cost = 4,
     rarity = 1,
     blueprint_compat = true,
@@ -33,23 +28,38 @@ SMODS.Joker{ --The Mahr!?
     discovered = true,
     atlas = 'CustomJokers',
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
+
+    loc_vars = function(self, info_queue, card)
+        return {
+            vars = {
+                card.ability.extra.dollars,
+                card.ability.extra.mult
+            }
+        }
+    end,
     
     calculate = function(self, card, context)
-        if context.cardarea == G.jokers and context.joker_main  then
+        if context.cardarea == G.jokers and context.joker_main then
+            local dollars = card.ability.extra.dollars
+            local mult = card.ability.extra.mult
+
             return {
-                mult = 5,
+                mult = mult,
                 extra = {
-                    
                     func = function()
-                        
-                        local current_dollars = G.GAME.dollars
-                        local target_dollars = G.GAME.dollars + 1
-                        local dollar_value = target_dollars - current_dollars
-                        ease_dollars(dollar_value)
-                        card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "+"..tostring(1), colour = G.C.MONEY})
-                        return true
+                        ease_dollars(dollars)
+                        card_eval_status_text(
+                            context.blueprint_card or card,
+                            'extra',
+                            nil,
+                            nil,
+                            nil,
+                            {
+                                message = "+".. dollars,
+                                colour = G.C.MONEY
+                            }
+                        )
                     end,
-                    colour = G.C.MONEY
                 }
             }
         end

@@ -1,29 +1,23 @@
 
-SMODS.Joker{ --Wee Mahr
-    key = "wee_mahr",
+SMODS.Joker { --Wee Mahr
+    key = "weemahr",
+
     config = {
         extra = {
             chips = 0
         }
     },
-    loc_txt = {
-        ['name'] = 'Wee Mahr',
-        ['text'] = {
-            [1] = 'This Joker gains {C:blue}+8{} Chips when each played {C:attention}2{} is scored',
-            [2] = '{C:inactive}(Currently{} {C:blue}+#1#{} {C:inactive}Chips){}'
-        },
-        ['unlock'] = {
-            [1] = ''
-        }
-    },
+
     pos = {
         x = 6,
         y = 0
     },
+
     display_size = {
         w = 71 * 0.7, 
         h = 95 * 0.7
     },
+
     cost = 8,
     rarity = 3,
     blueprint_compat = true,
@@ -34,16 +28,20 @@ SMODS.Joker{ --Wee Mahr
     atlas = 'CustomJokers',
     
     loc_vars = function(self, info_queue, card)
-        
-        return {vars = {card.ability.extra.chips}}
+        return {
+            vars = {
+                card.ability.extra.chips
+            }
+        }
     end,
     
     calculate = function(self, card, context)
-        if context.individual and context.cardarea == G.play  and not context.blueprint then
+        if context.individual and context.cardarea == G.play and not context.blueprint then
             if context.other_card:get_id() == 2 then
-                card.ability.extra.chips = (card.ability.extra.chips) + 8
+                card.ability.extra.chips = card.ability.extra.chips + 8
             end
         end
+        
         if context.cardarea == G.jokers and context.joker_main  then
             return {
                 chips = card.ability.extra.chips

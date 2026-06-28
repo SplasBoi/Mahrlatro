@@ -1,23 +1,5 @@
-SMODS.Joker{ --The Doctor
+SMODS.Joker { --The Doctor
     key = "thedoctor",
-    loc_txt = {
-        ['name'] = 'The Doctor',
-        ['text'] = {
-            [1] = {
-                'Gains {X:mult,C:white}X#1#{} Mult',
-                'for each {C:money}$#2#{} spent.',
-                'XMult is halved at',
-                'the end of the round.'
-            },
-            [2] = {
-                'Currently {X:mult,C:white}X#3#',
-                '{C:inactive}To next upgrade:{} {C:money}$#4#{}/{C:money}$20{}'
-            }
-        },
-        ['unlock'] = {
-            [1] = 'Unlocked by default.'
-        }
-    },
 
     pos = {
         x = 5,

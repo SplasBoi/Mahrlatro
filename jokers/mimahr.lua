@@ -1,28 +1,23 @@
 
-SMODS.Joker{ --Mimahr
+SMODS.Joker { --Mimahr
     key = "mimahr",
+
     config = {
         extra = {
             repetitions = 1
         }
     },
-    loc_txt = {
-        ['name'] = 'Mimahr',
-        ['text'] = {
-            [1] = 'Retrigger all card {C:orange}held in hand{} abilities'
-        },
-        ['unlock'] = {
-            [1] = 'Unlocked by default.'
-        }
-    },
+
     pos = {
         x = 2,
         y = 1
     },
+
     display_size = {
         w = 71 * 1, 
         h = 95 * 1
     },
+
     cost = 5,
     rarity = 2,
     blueprint_compat = true,
@@ -33,7 +28,9 @@ SMODS.Joker{ --Mimahr
     atlas = 'CustomJokers',
     
     calculate = function(self, card, context)
-        if context.repetition and not context.cardarea == G.hand and context.end_of_round and (next(context.card_effects[1]) or context.card_effects > 1)  then
+        if context.repetition and not context.cardarea == G.hand
+            and context.end_of_round
+            and (next(context.card_effects[1]) or context.card_effects > 1) then
             return {
                 repetitions = 1,
                 message = 'again!'

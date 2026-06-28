@@ -1,30 +1,23 @@
 
 SMODS.Joker{ --Nutella Sweep
     key = "nutellasweep",
+
     config = {
         extra = {
-            uniqueplanetcardsused = 1
+            mult_bonus = 0.25
         }
     },
-    loc_txt = {
-        ['name'] = 'Nutella Sweep',
-        ['text'] = {
-            [1] = 'Gives {X:red,C:white}X0.25{} Mult per ',
-            [2] = 'unique {C:planet}Planet{} card used this run.',
-            [3] = '{C:inactive}(Currently{} {X:red,C:white}X#1#{} {C:inactive}Mult){}'
-        },
-        ['unlock'] = {
-            [1] = 'Unlocked by default.'
-        }
-    },
+
     pos = {
         x = 2,
         y = 0
     },
+
     display_size = {
         w = 71 * 1, 
         h = 95 * 1
     },
+
     cost = 6,
     rarity = 3,
     blueprint_compat = true,
@@ -35,15 +28,40 @@ SMODS.Joker{ --Nutella Sweep
     atlas = 'CustomJokers',
     
     loc_vars = function(self, info_queue, card)
-        
-    return {vars = {card.ability.extra.uniqueplanetcardsused + (((function() local count = 0; for k, v in pairs(G.GAME.consumeable_usage) do if v.set == 'Planet' then count = count + 1 end end; return count end)() or 0)) * 0.25}}
+        return {
+            vars = {
+                get_mult(card)
+            }
+        }
     end,
     
     calculate = function(self, card, context)
         if context.cardarea == G.jokers and context.joker_main  then
             return {
-            Xmult = card.ability.extra.uniqueplanetcardsused + ((function() local count = 0; for k, v in pairs(G.GAME.consumeable_usage) do if v.set == 'Planet' then count = count + 1 end end; return count end)()) * 0.25
+                Xmult = get_mult(card)
             }
         end
     end
 }
+
+function get_mult(card)
+    local consumable_count = get_consumables_used()
+
+    if consumable_count == 0 then
+        return 1
+    end
+
+    return 1 + (consumable_count * card.ability.extra.mult_bonus)
+end
+
+function get_consumables_used()
+    local count = 0
+    local consumables = G.GAME.consumeable_usage or {}
+
+    for k, v in pairs(consumables) do
+        if v.set == 'Planet' then
+            count = count + 1
+        end
+    end
+    return count
+end

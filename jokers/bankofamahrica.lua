@@ -1,20 +1,12 @@
 
-SMODS.Joker{ --Bank Of Amahrica
+SMODS.Joker { --Bank Of Amahrica
     key = "bankofamahrica",
     config = {
         extra = {
-            debt_amount = '20'
+            debt_amount = 20
         }
     },
-    loc_txt = {
-        ['name'] = 'Bank Of Amahrica',
-        ['text'] = {
-            [1] = 'Go up to {C:red}-$20{} in debt'
-        },
-        ['unlock'] = {
-            [1] = 'Unlocked by default.'
-        }
-    },
+
     pos = {
         x = 1,
         y = 1
@@ -31,15 +23,27 @@ SMODS.Joker{ --Bank Of Amahrica
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
+
+    loc_vars = function(self, info_queue, card)
+        return {
+            vars = {
+                get_debt_amount(card)
+            }
+        }
+    end,
     
     calculate = function(self, card, context)
     end,
     
     add_to_deck = function(self, card, from_debuff)
-        G.GAME.bankrupt_at = G.GAME.bankrupt_at - 20
+        G.GAME.bankrupt_at = G.GAME.bankrupt_at - get_debt_amount(card)
     end,
     
     remove_from_deck = function(self, card, from_debuff)
-        G.GAME.bankrupt_at = G.GAME.bankrupt_at + 20
+        G.GAME.bankrupt_at = G.GAME.bankrupt_at + get_debt_amount(card)
     end
 }
+
+function get_debt_amount(card)
+    return math.abs(card.ability.extra.debt_amount)
+end
