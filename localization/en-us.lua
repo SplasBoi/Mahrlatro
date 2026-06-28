@@ -151,6 +151,14 @@ return {
                         'played {C:blue}hand.'
                     }
                 }
+            },
+
+            j_mahrlatr_fish = {
+                name = 'Fish',
+                text = {
+                    '{C:blue}+#1#{} Chips if hand',
+                    'contains black suit cards.'
+                }
             }
         },
 
