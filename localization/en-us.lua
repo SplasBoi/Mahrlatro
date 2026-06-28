@@ -131,6 +131,16 @@ return {
                         '{C:attention}Stahr{} jokahr held.'
                     }
                 }
+            },
+
+            j_mahrlatr_meat = {
+                name = 'Meat',
+                text = {
+                    {
+                        '{C:red}+7{} Mult if hand contains',
+                        'scoring {C:red,E:2}red{} suit cards.'
+                    }
+                }
             }
         },
 
