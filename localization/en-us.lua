@@ -118,6 +118,19 @@ return {
                 text = {
                     'Retrigger all card {C:orange}held in hand{} abilities'
                 }
+            },
+
+            j_mahrlatr_supahrnutellio = {
+                name = 'Supahr Nutellio',
+                text = {
+                    {
+                        '{C:blue}+67{} Chips'
+                    },
+                    {
+                        'Adds +{C:blue}67{} Chips for each',
+                        '{C:attention}Stahr{} jokahr held.'
+                    }
+                }
             }
         },
 
