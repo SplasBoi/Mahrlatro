@@ -18,7 +18,7 @@ return {
             j_mahrlatr_weemahr = {
                 name = 'Wee Mahr',
                 text = {
-                    'This Joker gains {C:blue}+8{} Chips',
+                    'This Jokahr gains {C:blue}+8{} Chips',
                     'when each played {C:attention}2{} is scored',
                     '{C:inactive}(Currently{} {C:blue}+#1#{} {C:inactive}Chips){}'
                 }
@@ -141,6 +141,16 @@ return {
                         'scoring {C:red,E:2}red{} suit cards.'
                     }
                 }
+            },
+
+            j_mahrlatr_mahrffin = {
+                name = 'Mahr{}ffin',
+                text = {
+                    {
+                        'Gives {C:money}$1{} for each',
+                        'played {C:blue}hand.'
+                    }
+                }
             }
         },
 
@@ -148,7 +158,7 @@ return {
             c_mahrlatr_mahrmentioned = {
                 name = 'Mahr Mentioned',
                 text = {
-                    'Applies {C:tarot}TheMahr{} seal to selected card.'
+                    'Applies {C:tarot,E:1}TheMahr{} seal to selected card.'
                 }
             }
         },
@@ -158,7 +168,7 @@ return {
                 name = 'Mahr Seal',
                 label = 'Mahr Seal',
                 text = {
-                    'Gives {C:red}#1# mult{} for every Mahr Jokahr'
+                    'Gives {C:red}#1# mult{} for every {E:1}Mahr{} Jokahr'
                 }
             }
         },
