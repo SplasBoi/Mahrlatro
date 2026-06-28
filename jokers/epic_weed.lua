@@ -4,7 +4,7 @@ SMODS.Joker { --Epic Weed
 
     config = {
         extra = {
-            mult0 = 3
+            mult = 3
         }
     },
 
@@ -31,7 +31,7 @@ SMODS.Joker { --Epic Weed
         if context.individual and context.cardarea == G.play  then
             if context.other_card:is_suit("Clubs") then
                 return {
-                    mult = 3
+                    mult = card.ability.extra.mult
                 }
             end
         end
