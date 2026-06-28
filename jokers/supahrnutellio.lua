@@ -8,8 +8,8 @@ SMODS.Joker{ --Supahr Nutellio
     },
     
     pos = {
-        x = 5,
-        y = 1
+        x = 4,
+        y = 2
     },
 
     display_size = {

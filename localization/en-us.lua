@@ -116,7 +116,7 @@ return {
             j_mahrlatr_mimahr = {
                 name = 'Mimahr',
                 text = {
-                    'Retrigger all card {C:orange}held in hand{} abilities'
+                    'Retrigger all cards with a {C:tarot}the mahr{} seal'
                 }
             },
 

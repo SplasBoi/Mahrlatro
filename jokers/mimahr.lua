@@ -28,13 +28,13 @@ SMODS.Joker { --Mimahr
     atlas = 'CustomJokers',
     
     calculate = function(self, card, context)
-        if context.repetition and not context.cardarea == G.hand
-            and context.end_of_round
-            and (next(context.card_effects[1]) or context.card_effects > 1) then
-            return {
-                repetitions = 1,
-                message = 'again!'
-            }
+        if context.repetition and context.cardarea == G.play  then
+            if context.other_card.seal == "mahrlatr_mahrseal" then
+                return {
+                    repetitions = card.ability.extra.repetitions,
+                    message = localize('k_again_ex')
+                }
+            end
         end
     end
 }
