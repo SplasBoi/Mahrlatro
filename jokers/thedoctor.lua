@@ -27,7 +27,8 @@ SMODS.Joker { --The Doctor
             x_mult_gained = 1.0,
             upgrade_threshold = 20,
             current_x_mult = 1.0,
-            to_next = 0
+            total_spent = 0,
+            upgrades_applied = 0
         }
     },
     
@@ -37,57 +38,50 @@ SMODS.Joker { --The Doctor
                 card.ability.extra.x_mult_gained,
                 card.ability.extra.upgrade_threshold,
                 card.ability.extra.current_x_mult,
-                card.ability.extra.to_next,
+                card.ability.extra.total_spent % card.ability.extra.upgrade_threshold,
             }
         }
     end,
     
     calculate = function(self, card, context)
-        -- If joker/booster pack is bought, adds its cost to the count.
+        -- If joker/booster pack is bought.
         if context.buying_card or context.open_booster then
-            card.ability.extra.to_next = card.ability.extra.to_next + context.card.cost
+            -- Ignore money spent on itself.
+            if context.card and context.card ~= card then
+                card.ability.extra.total_spent = card.ability.extra.total_spent + context.card.cost
+            end
         end
 
-        -- If shop is rerolled, adds cost to the count.
+        -- If shop is rerolled, add cost to the count.
         if context.reroll_shop then
-           card.ability.extra.to_next = card.ability.extra.to_next + G.GAME.current_round.reroll_cost - 1
+           card.ability.extra.total_spent = card.ability.extra.total_spent + (G.GAME.current_round.reroll_cost - 1)
         end
 
-        -- If spent count exceeds 20, adds to the XMult and then resets the count.
-        if (card.ability.extra.to_next >= card.ability.extra.upgrade_threshold) then
-            local times_over = math.floor(card.ability.extra.to_next / card.ability.extra.upgrade_threshold)
-            
-            card.ability.extra.to_next = card.ability.extra.to_next - (card.ability.extra.upgrade_threshold * times_over)
-            
-            if (times_over > 0) then
-                for i = 1, times_over do
-                    SMODS.scale_card(card, {
-                        ref_table = card.ability.extra,
-                        ref_value = 'current_x_mult',
-                        scalar_value = 'x_mult_gained',
-                        message_colour = G.C.ATTENTION
-                    })
-                end
-            end
+        -- Get target upgrade level
+        local upgrades = math.floor(card.ability.extra.total_spent / card.ability.extra.upgrade_threshold)
+
+        -- Upgrade the card to the target upgrade level
+        while card.ability.extra.upgrades_applied < upgrades do
+            card.ability.extra.upgrades_applied = card.ability.extra.upgrades_applied + 1
+
+            SMODS.scale_card(card, {
+                ref_table = card.ability.extra,
+                ref_value = 'current_x_mult',
+                scalar_value = 'x_mult_gained',
+                message_colour = G.C.ATTENTION
+            })
         end
 
-        if context.end_of_round and not context.repetition and not context.individual then
+        if context.end_of_round and not context.repetition and not context.individual and card.ability.extra.upgrades_applied > 0 then
             local current = card.ability.extra.current_x_mult
-            
-            if (current / 2 < 1) then
-                card.ability.extra.current_x_mult = 1
+            local new = math.max(1, current / 2)
 
-                return {
-                    message = 'Back where it began!'
-                }
+            card.ability.extra.current_x_mult = new
             
-            else
-                card.ability.extra.current_x_mult = current / 2
-
-                return {
-                    message = 'Halved!'
-                }
-            end
+            return {
+                -- This should use localized text but i cannot figure out how the localize function gets the value
+                message = (new == 1) and "Back where it began!" or "Halved!"
+            }
         end
 
         if context.joker_main then
