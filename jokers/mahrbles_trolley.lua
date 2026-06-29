@@ -1,0 +1,76 @@
+
+SMODS.Joker { --Mahrbles Trolley
+    key = "mahrbles_trolley",
+
+    config = {
+        extra = {
+            mult = 7,
+            chips = 75,
+            dollars = 1
+        }
+    },
+
+    pos = {
+        x = 3,
+        y = 2
+    },
+
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
+    },
+
+    cost = 4,
+    rarity = 1,
+    blueprint_compat = true,
+    eternal_compat = true,
+    perishable_compat = true,
+    unlocked = true,
+    discovered = true,
+    atlas = 'CustomJokers',
+    pools = { ["mahrlatr_mahrlatr_jokers"] = true },
+
+    in_pool = function(self, args)
+        return (
+            not args 
+            or args.source ~= 'sho' and args.source ~= 'buf' and args.source ~= 'jud' and args.source ~= 'rif' 
+            or args.source == 'rta' or args.source == 'sou' or args.source == 'uta' or args.source == 'wra'
+        )
+        and true
+    end,
+    
+    loc_vars = function(self, info_queue, card)
+        return {
+            vars = {
+                card.ability.extra.mult,
+                card.ability.extra.chips,
+                card.ability.extra.dollars
+            }
+        }
+    end,
+
+    calculate = function(self, card, context)
+        if context.cardarea == G.jokers and context.joker_main  then
+            return {
+                mult = card.ability.extra.mult,
+                extra = {
+                    chips = card.ability.extra.chips,
+                    colour = G.C.CHIPS,
+                    extra = {
+                        
+                        func = function()
+                            
+                            local current_dollars = G.GAME.dollars
+                            local target_dollars = G.GAME.dollars + card.ability.extra.dollars
+                            local dollar_value = target_dollars - current_dollars
+                            ease_dollars(dollar_value)
+                            card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "+"..tostring(1), colour = G.C.MONEY})
+                            return true
+                        end,
+                        colour = G.C.MONEY
+                    }
+                }
+            }
+        end
+    end
+}

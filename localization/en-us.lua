@@ -136,6 +136,11 @@ return {
                     {
                         '{C:red}+#1#{} Mult if hand contains',
                         'scoring {C:red,E:2}red{} suit cards.'
+                    },
+                    {
+                        '{C:inactive}Merges into Mahrbles Trolley{}',
+                        '{C:inactive}if you own Mahrffin and Fish{}',
+                        '{C:inactive}at the start of a round{}'
                     }
                 }
             },
@@ -146,6 +151,11 @@ return {
                     {
                         'Gives {C:money}$#1#{} for each',
                         'played {C:blue}hand.'
+                    },
+                    {
+                        '{C:inactive}Merges into Mahrbles Trolley{}',
+                        '{C:inactive}if you own Meat and Fish{}',
+                        '{C:inactive}at the start of a round{}'
                     }
                 }
             },
@@ -153,8 +163,24 @@ return {
             j_mahrlatr_fish = {
                 name = 'Fish',
                 text = {
-                    '{C:blue}+#1#{} Chips if hand contains',
-                    'scoring {C:black,E:2}black{} suit cards.'
+                    {
+                        '{C:blue}+#1#{} Chips if hand contains',
+                        'scoring {C:black,E:2}black{} suit cards.'
+                    },
+                    {
+                        '{C:inactive}Merges into Mahrbles Trolley{}',
+                        '{C:inactive}if you own Meat and Marffin{}',
+                        '{C:inactive}at the start of a round{}'
+                    }
+                }
+            },
+
+            j_mahrlatr_mahrbles_trolley = {
+                name = 'Mahrbles Trolley',
+                text = {
+                    '{C:red}+#1#{} Mult, {C:blue}+#2#{} Chips',
+                    'and {C:money}$#3#{} for each',
+                    'played {C:blue}hand.'
                 }
             }
         },
