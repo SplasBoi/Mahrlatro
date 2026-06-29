@@ -27,8 +27,8 @@ return {
             j_mahrlatr_wildcat = {
                 name = 'Wild Cat',
                 text = {
-                    'Gives {X:red,C:white}X0.2{} Mult for',
-                    'every {C:attention}Wild card{} currently in {C:gold}Full Hand{}.',
+                    'Gives {X:red,C:white}X0.2{} Mult for every',
+                    '{C:attention}Wild card{} currently in {C:gold}Full Hand{}.',
                     '{C:inactive}(Currently{} {X:red,C:white}X#1#{} {C:inactive}Mult){}'
                 }
             },
@@ -123,13 +123,8 @@ return {
             j_mahrlatr_supahrnutellio = {
                 name = 'Supahr Nutellio',
                 text = {
-                    {
-                        '{C:blue}+#1#{} Chips'
-                    },
-                    {
-                        'Adds +{C:blue}#1#{} Chips for each',
-                        '{C:attention}Stahr{} jokahr held.'
-                    }
+                    'Adds {C:blue}+#1#{} Chips for each',
+                    '{C:attention}Stahr{} jokahr held.'
                 }
             },
 
