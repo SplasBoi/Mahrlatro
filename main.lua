@@ -63,6 +63,8 @@ load_folder("consumables/")
 -- load seals
 load_folder("seals/")
 
+load_folder("common/")
+
 function SMODS.current_mod.reset_game_globals(run_start)
     local jokerPool = {}
     for k, v in pairs(G.P_CENTERS) do

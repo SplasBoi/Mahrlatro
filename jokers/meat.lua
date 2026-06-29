@@ -35,20 +35,9 @@ SMODS.Joker { --Meat
             }
         }
     end,
-    
+
     calculate = function(self, card, context)
-        local has_red_suit = false
-
-        if context.final_scoring_step then
-            for i = 1, #context.scoring_hand do
-                if context.scoring_hand[i]:is_suit('Hearts') or context.scoring_hand[i]:is_suit('Diamonds') then
-                    has_red_suit = true
-                    break
-                end
-            end
-        end
-
-        if has_red_suit then
+        if HELPERS.has_suit_in_hand(context, {'Hearts', 'Diamonds'}) then
             return {
                 mult = card.ability.extra.mult
             }
