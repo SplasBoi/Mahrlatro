@@ -121,3 +121,31 @@ SMODS.Sound({
     path = "music_mahrlatro_1.ogg",
     replace = "music1"
 })
+
+SMODS.Sound({
+    key = "music2",
+    pitch = 1.0,
+    path = "music_mahrlatro_2.ogg",
+    replace = "music2"
+})
+
+SMODS.Sound({
+    key = "music3",
+    pitch = 1.0,
+    path = "music_mahrlatro_3.ogg",
+    replace = "music3"
+})
+
+SMODS.Sound({
+    key = "music4",
+    pitch = 1.0,
+    path = "music_mahrlatro_4.ogg",
+    replace = "music4"
+})
+
+SMODS.Sound({
+    key = "music5",
+    pitch = 1.0,
+    path = "music_mahrlatro_5.ogg",
+    replace = "music5"
+})
