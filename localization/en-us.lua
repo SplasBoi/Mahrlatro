@@ -167,7 +167,7 @@ return {
         },
 
         Other = {
-            mahrlatr_mahrseal_seal = {
+            mahrlatr_mahr_seal = {
                 name = 'Mahr Seal',
                 label = 'Mahr Seal',
                 text = {

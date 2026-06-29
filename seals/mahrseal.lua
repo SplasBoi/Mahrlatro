@@ -1,5 +1,5 @@
 SMODS.Seal {
-    key = 'mahrseal',
+    key = 'mahr',
 
     pos = {
         x = 0,
