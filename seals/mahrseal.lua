@@ -12,7 +12,7 @@ SMODS.Seal {
         }
     },
 
-    badge_colour = HEX('000000'),
+    badge_colour = HEX('8B27F5'),
 
     atlas = 'CustomSeals',
     unlocked = true,

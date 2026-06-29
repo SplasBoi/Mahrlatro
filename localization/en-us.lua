@@ -175,5 +175,11 @@ return {
                 }
             }
         },
+    },
+
+    misc = {
+        labels = {
+            mahrlatr_mahr_seal = "Mahr Seal"
+        }
     }
 }
