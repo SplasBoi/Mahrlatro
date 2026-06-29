@@ -175,6 +175,16 @@ return {
                 }
             },
 
+           j_mahrlatr_splas = {
+                name = 'Splas',
+                text = {
+                    {
+                        'Every {C:attention}played card{} counts in scoring'
+                    }
+                }
+
+            },
+
             j_mahrlatr_mahrbles_trolley = {
                 name = 'Mahrbles Trolley',
                 text = {
