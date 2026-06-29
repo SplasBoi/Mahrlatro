@@ -3,8 +3,7 @@ SMODS.Joker{ --Supahr Nutellio
 
     config = {
         extra = {
-            chips = 67,
-            current_chips = 67
+            chips = 67
         }
     },
     
@@ -33,38 +32,38 @@ SMODS.Joker{ --Supahr Nutellio
         return {
             vars = {
                 card.ability.extra.chips,
-                card.ability.extra.current_chips
+                math.max(get_stahr_count() * card.ability.extra.chips, card.ability.extra.chips)
             }
         }
     end,
     
     calculate = function(self, card, context)
-        if context.card_added or context.selling_card or context.joker_type_destroyed then
-            local stahrs_found = 0
-
-            for _, joker in ipairs(G.jokers.cards) do
-                if joker.config.center.key == 'j_mahrlatr_thestahr' then
-                    stahrs_found = stahrs_found + 1
-                end
-            end
-
-            if context.card_added and context.card.config.center.key == 'j_mahrlatr_thestahr' then
-                stahrs_found = stahrs_found + 1
-            end
-            if (context.selling_card or context.joker_type_destroyed) and context.card.config.center.key == 'j_mahrlatr_thestahr' then
-                stahrs_found = stahrs_found - 1
-            end
-
-            local total_chips = card.ability.extra.chips + (stahrs_found * card.ability.extra.chips)
-            card.ability.extra.current_chips = total_chips
-        end
-
         if context.joker_main then
-            return {
-                chips = card.ability.extra.current_chips,
-                message = 'EZ!'
-            }
+            local stahr_count = get_stahr_count()
+
+            if stahr_count > 0 then
+                local total_chips = stahr_count * card.ability.extra.chips
+                return {
+                    chips = total_chips,
+                    message = 'EZ!'
+                }
             
+            else
+                return {
+                    chips = card.ability.extra.chips
+                }
+            end
         end
     end
 }
+
+function get_stahr_count()
+    local count = 0
+    for _, joker in ipairs(G.jokers.cards) do
+        if joker.config.center.key == 'j_mahrlatr_thestahr' then
+            count = count + 1
+        end
+    end
+    return count
+end
+        
