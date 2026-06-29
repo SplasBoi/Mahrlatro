@@ -45,7 +45,8 @@ SMODS.Joker{ --Supahr Nutellio
                 local total_chips = stahr_count * card.ability.extra.chips
                 return {
                     chips = total_chips,
-                    message = 'EZ!'
+                    message = 'EZ!',
+                    sound = 'mahrlatr_nutella_easy'
                 }
             
             else

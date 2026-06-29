@@ -108,3 +108,8 @@ SMODS.current_mod.optional_features = function()
         cardareas = {} 
     }
 end
+
+SMODS.Sound {
+    key = "nutella_easy",
+    path = "nutella_easy.ogg"
+}
