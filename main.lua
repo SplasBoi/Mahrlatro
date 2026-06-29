@@ -113,3 +113,11 @@ SMODS.Sound {
     key = "nutella_easy",
     path = "nutella_easy.ogg"
 }
+
+
+SMODS.Sound({
+    key = "music1",
+    pitch = 1.0,
+    path = "music_mahrlatro_1.ogg",
+    replace = "music1"
+})
