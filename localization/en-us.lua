@@ -123,8 +123,10 @@ return {
             j_mahrlatr_supahrnutellio = {
                 name = 'Supahr Nutellio',
                 text = {
-                    'Adds {C:blue}+#1#{} Chips for each',
-                    '{C:attention}Stahr{} jokahr held.'
+                    '+{C:blue}#1#{} Chips',
+                    'Adds more {C:blue}+#1#{} Chips',
+                    '{C:attention}Stahr{} jokahr held.',
+                    '{C:inactive}Currently:{} {C:blue}#2#{} {C:inactive}Chips{}'
                 }
             },
 

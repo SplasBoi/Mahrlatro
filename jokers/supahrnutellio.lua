@@ -3,7 +3,8 @@ SMODS.Joker{ --Supahr Nutellio
 
     config = {
         extra = {
-            chips = 67
+            chips = 67,
+            current_chips = 67
         }
     },
     
@@ -31,34 +32,39 @@ SMODS.Joker{ --Supahr Nutellio
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.chips
+                card.ability.extra.chips,
+                card.ability.extra.current_chips
             }
         }
     end,
     
     calculate = function(self, card, context)
-        if context.joker_main then
-            local star_count = 0
+        if context.card_added or context.selling_card or context.joker_type_destroyed then
+            local stahrs_found = 0
 
             for _, joker in ipairs(G.jokers.cards) do
                 if joker.config.center.key == 'j_mahrlatr_thestahr' then
-                    star_count = star_count + 1
-
-                    card_eval_status_text(joker, 'extra', nil, nil, nil, {
-                            message = '+'.. star_count,
-                            colour = G.C.CHIPS
-                    })
+                    stahrs_found = stahrs_found + 1
                 end
             end
 
-            if star_count > 0 then
-                local total_chips = star_count * card.ability.extra.chips
-                
-                return {
-                    chips = total_chips,
-                    "EZ!"
-                }
+            if context.card_added and context.card.config.center.key == 'j_mahrlatr_thestahr' then
+                stahrs_found = stahrs_found + 1
             end
+            if (context.selling_card or context.joker_type_destroyed) and context.card.config.center.key == 'j_mahrlatr_thestahr' then
+                stahrs_found = stahrs_found - 1
+            end
+
+            local total_chips = card.ability.extra.chips + (stahrs_found * card.ability.extra.chips)
+            card.ability.extra.current_chips = total_chips
+        end
+
+        if context.joker_main then
+            return {
+                chips = card.ability.extra.current_chips,
+                message = 'EZ!'
+            }
+            
         end
     end
 }
