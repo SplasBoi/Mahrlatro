@@ -12,3 +12,11 @@ function HELPERS.has_suit_in_hand(context, suits)
     end
     return false
 end
+
+function HELPERS.is_red_card(card)
+    return card:is_suit('Hearts') or card:is_suit('Diamonds')
+end
+
+function HELPERS.is_black_card(card)
+    return card:is_suit('Spades') or card:is_suit('Clubs')
+end
