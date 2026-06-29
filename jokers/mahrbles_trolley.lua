@@ -57,14 +57,14 @@ SMODS.Joker { --Mahrbles Trolley
                     chips = card.ability.extra.chips,
                     colour = G.C.CHIPS,
                     extra = {
-                        
                         func = function()
-                            
-                            local current_dollars = G.GAME.dollars
-                            local target_dollars = G.GAME.dollars + card.ability.extra.dollars
-                            local dollar_value = target_dollars - current_dollars
-                            ease_dollars(dollar_value)
-                            card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "+"..tostring(1), colour = G.C.MONEY})
+                            ease_dollars(card.ability.extra.dollars)
+                            card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil,
+                                {
+                                    message = "+".. card.ability.extra.dollars,
+                                    colour = G.C.MONEY
+                                }
+                            )
                             return true
                         end,
                         colour = G.C.MONEY
