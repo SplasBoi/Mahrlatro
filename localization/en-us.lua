@@ -123,9 +123,8 @@ return {
             j_mahrlatr_supahrnutellio = {
                 name = 'Supahr Nutellio',
                 text = {
-                    '+{C:blue}#1#{} Chips',
-                    'Adds more {C:blue}+#1#{} Chips',
-                    '{C:attention}Stahr{} jokahr held.',
+                    'Gives {C:blue}#1# chips{} for each played',
+                    'hand and for each stahr joker.',
                     '{C:inactive}Currently:{} {C:blue}#2#{} {C:inactive}Chips{}'
                 }
             },

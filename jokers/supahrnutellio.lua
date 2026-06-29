@@ -32,7 +32,7 @@ SMODS.Joker{ --Supahr Nutellio
         return {
             vars = {
                 card.ability.extra.chips,
-                math.max(get_stahr_count() * card.ability.extra.chips, card.ability.extra.chips)
+                card.ability.extra.chips + (get_stahr_count() * card.ability.extra.chips)
             }
         }
     end,
@@ -42,7 +42,8 @@ SMODS.Joker{ --Supahr Nutellio
             local stahr_count = get_stahr_count()
 
             if stahr_count > 0 then
-                local total_chips = stahr_count * card.ability.extra.chips
+                local base_chips = card.ability.extra.chips
+                local total_chips = base_chips + (stahr_count * base_chips)
                 return {
                     chips = total_chips,
                     message = 'EZ!',
@@ -59,6 +60,10 @@ SMODS.Joker{ --Supahr Nutellio
 }
 
 function get_stahr_count()
+    if not G.jokers then
+        return 0
+    end
+
     local count = 0
     for _, joker in ipairs(G.jokers.cards) do
         if joker.config.center.key == 'j_mahrlatr_thestahr' then
