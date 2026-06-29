@@ -33,19 +33,21 @@ SMODS.Joker {
     end,
 
     calculate = function(self, card, context)
-        if context.joker_main and hand_is_black(context) then
+        local has_black_suit = false
+
+        if context.final_scoring_step then
+            for i = 1, #context.scoring_hand do
+                if context.scoring_hand[i]:is_suit('Spades') or context.scoring_hand[i]:is_suit('Clubs') then
+                    has_black_suit = true
+                    break
+                end
+            end
+        end
+
+        if has_black_suit then
             return {
                 chips = card.ability.extra.chips
             }
         end
     end
 }
-
-function hand_is_black(context)
-    for _, c in ipairs(context.scoring_hand) do
-        if not (c:is_suit("Spades") or c:is_suit("Clubs")) then
-            return false
-        end
-    end
-    return true
-end

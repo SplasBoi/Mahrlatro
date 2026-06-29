@@ -5,7 +5,7 @@ SMODS.Joker { --Mahrffin
         extra = {
             dollars = 1
         }
-    }
+    },
     
     pos = {
         x = 0,

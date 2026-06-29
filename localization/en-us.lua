@@ -156,8 +156,8 @@ return {
             j_mahrlatr_fish = {
                 name = 'Fish',
                 text = {
-                    '{C:blue}+#1#{} Chips if hand',
-                    'contains black suit cards.'
+                    '{C:blue}+#1#{} Chips if hand contains',
+                    'scoring {C:black,E:2}black{} suit cards.'
                 }
             }
         },
