@@ -50,6 +50,14 @@ return {
                 }
             },
 
+            j_mahrlatr_diamahrnds = {
+                name = 'Diamahrnds Are Forever',
+                text = {
+                    'Played cards with {C:hearts}Diamond{} suit',
+                    'give {C:mult}+3{} Mult when scored'
+                }
+            },
+
             j_mahrlatr_nutellasweep = {
                 name = 'Nutella Sweep',
                 text = {
