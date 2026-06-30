@@ -1,6 +1,6 @@
 
 SMODS.Joker { --The Hahrt
-    key = "thehahrt",
+    key = "the_hahrt",
 
     config = {
         extra = {

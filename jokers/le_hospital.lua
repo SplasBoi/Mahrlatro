@@ -1,6 +1,6 @@
 
 SMODS.Joker { --Le Hospital
-    key = "lehospital",
+    key = "le_hospital",
 
     config = {
         extra = {

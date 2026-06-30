@@ -1,5 +1,5 @@
 SMODS.Joker { --Scary Crimson
-    key = "scarycrimson",
+    key = "scary_crimson",
 
     pos = {
         x = 0,
@@ -53,7 +53,7 @@ SMODS.Joker { --Scary Crimson
             end
 
             return {
-                message = localize('crimson_spreads')
+                message = localize('scary_crimson_spreads')
             }
         end
 

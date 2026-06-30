@@ -1,6 +1,6 @@
 
 SMODS.Consumable {
-    key = 'mahrmentioned',
+    key = 'mahr_mentioned',
     set = 'Tarot',
 
     pos = {

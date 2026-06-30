@@ -1,6 +1,6 @@
 
 SMODS.Joker{ --Kahrl Mahrx
-    key = "kahrlmahrx",
+    key = "kahrl_mahrx",
     config = {
         extra = {
         }

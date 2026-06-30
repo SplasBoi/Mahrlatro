@@ -1,5 +1,5 @@
 SMODS.Joker {
-    key = "normalguy",
+    key = "normal_guy",
 
     pos = {
         x = 5,

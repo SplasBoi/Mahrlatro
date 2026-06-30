@@ -1,5 +1,5 @@
 SMODS.Joker { --The Doctor
-    key = "thedoctor",
+    key = "the_doctor",
 
     pos = {
         x = 5,
@@ -63,8 +63,7 @@ SMODS.Joker { --The Doctor
             card.ability.extra.current_x_mult = new
             
             return {
-                -- This should use localized text but i cannot figure out how the localize function gets the value
-                message = (new == 1) and localize('doctor_back_to_1x') or localize('doctor_halved')
+                message = (new == 1) and localize('the_doctor_back_to_1x') or localize('the_doctor_halved')
             }
         end
 

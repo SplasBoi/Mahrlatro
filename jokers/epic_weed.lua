@@ -1,6 +1,6 @@
 
 SMODS.Joker { --Epic Weed
-    key = "epicweed",
+    key = "epic_weed",
 
     config = {
         extra = {

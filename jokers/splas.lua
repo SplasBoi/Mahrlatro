@@ -1,5 +1,5 @@
 
-SMODS.Joker{ --Splas
+SMODS.Joker { --Splas
     key = "splas",
     config = {
         extra = {

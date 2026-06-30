@@ -1,6 +1,6 @@
 
 SMODS.Joker { --Wee Mahr
-    key = "weemahr",
+    key = "wee_mahr",
 
     config = {
         extra = {

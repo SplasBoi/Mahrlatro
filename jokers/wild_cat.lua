@@ -1,6 +1,6 @@
 
 SMODS.Joker { --Wild Cat
-    key = "wildcat",
+    key = "wild_cat",
 
     config = {
         extra = {

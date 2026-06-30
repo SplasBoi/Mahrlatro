@@ -1,6 +1,6 @@
 
 SMODS.Joker { --Bank Of Amahrica
-    key = "bankofamahrica",
+    key = "bank_of_amahrica",
     config = {
         extra = {
             debt_amount = 20

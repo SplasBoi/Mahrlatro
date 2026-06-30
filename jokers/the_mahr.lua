@@ -1,6 +1,6 @@
 
 SMODS.Joker { --The Mahr!?
-    key = "themahr",
+    key = "the_mahr",
 
     config = {
         extra = {

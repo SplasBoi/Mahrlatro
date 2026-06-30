@@ -1,6 +1,6 @@
 
 SMODS.Joker { --Mahrfia Member
-    key = "mahrfiamember",
+    key = "mahrfia_member",
 
     config = {
         extra = {
@@ -62,7 +62,7 @@ SMODS.Joker { --Mahrfia Member
                         )
                     end,
                     extra = {
-                        message = localize('mahrfiamember_card_destroyed'),
+                        message = localize('mahrfia_member_card_destroyed'),
                         colour = G.C.RED
                     }
                 }

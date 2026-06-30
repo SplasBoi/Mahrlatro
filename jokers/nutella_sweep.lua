@@ -1,6 +1,6 @@
 
 SMODS.Joker{ --Nutella Sweep
-    key = "nutellasweep",
+    key = "nutella_sweep",
 
     config = {
         extra = {

@@ -1,6 +1,6 @@
 
 SMODS.Joker { --The Stahr
-    key = "thestahr",
+    key = "the_stahr",
 
     config = {
         extra = {

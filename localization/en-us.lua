@@ -1,21 +1,21 @@
 return {
     descriptions = {
         Joker = {
-            j_mahrlatr_themahr = {
+            j_mahrlatr_the_mahr = {
                 name = 'The Mahr!?',
                 text = {
                     '{C:money}#1##2#{} & {C:red}#2# Mult{} for every hand played'
                 }
             },
 
-            j_mahrlatr_thestahr = {
+            j_mahrlatr_the_stahr = {
                 name = 'The Stahr',
                 text = {
                     'Each scored 6 or 7 gives {C:money}#1##2#{}'
                 }
             },
 
-            j_mahrlatr_weemahr = {
+            j_mahrlatr_wee_mahr = {
                 name = 'Wee Mahr',
                 text = {
                     'This Jokahr gains {C:blue}+8{} Chips',
@@ -24,7 +24,7 @@ return {
                 }
             },
 
-            j_mahrlatr_wildcat = {
+            j_mahrlatr_wild_cat = {
                 name = 'Wild Cat',
                 text = {
                     'Gives {X:red,C:white}X0.2{} Mult for every',
@@ -33,7 +33,7 @@ return {
                 }
             },
 
-            j_mahrlatr_thedoctor = {
+            j_mahrlatr_the_doctor = {
                 name = 'The Doctor',
                 text = {
                     'Gains {X:mult,C:white}X#1#{} Mult for each {C:money}#2##3#{} spent',
@@ -42,7 +42,7 @@ return {
                 }
             },
 
-            j_mahrlatr_thehahrt = {
+            j_mahrlatr_the_hahrt = {
                 name = 'The Hahrt',
                 text = {
                     'Played cards with {C:hearts}Heart{} suit',
@@ -65,8 +65,8 @@ return {
                     'give {C:mult}+3{} Mult when scored'
                 }
             },
-            
-            j_mahrlatr_nutellasweep = {
+
+            j_mahrlatr_nutella_sweep = {
                 name = 'Nutella Sweep',
                 text = {
                     'Gives {X:red,C:white}X0.25{} Mult per',
@@ -75,7 +75,7 @@ return {
                 }
             },
 
-            j_mahrlatr_epicweed = {
+            j_mahrlatr_epic_weed = {
                 name = 'Epic Weed',
                 text = {
                     'Played cards with {C:uncommon}Club{} suit ',
@@ -83,7 +83,7 @@ return {
                 }
             },
 
-            j_mahrlatr_normalguy = {
+            j_mahrlatr_normal_guy = {
                 name = 'Normal Guy',
                 text = {
                     {
@@ -102,21 +102,21 @@ return {
                 }
             },
 
-            j_mahrlatr_bankofamahrica = {
+            j_mahrlatr_bank_of_amahrica = {
                 name = 'Bank Of Amahrica',
                 text = {
                     'Go up to {C:red}-#1##2#{} in debt'
                 }
             },
 
-            j_mahrlatr_lehospital = {
+            j_mahrlatr_le_hospital = {
                 name = 'Le Hospital',
                 text = {
                     'Prevents death at a cost...'
                 }
             },
 
-            j_mahrlatr_mahrfiamember = {
+            j_mahrlatr_mahrfia_member = {
                 name = 'Mahrfia Member',
                 text = {
                     'Destroys every played {C:red}Heart{}',
@@ -131,7 +131,7 @@ return {
                 }
             },
 
-            j_mahrlatr_supahrnutellio = {
+            j_mahrlatr_supahr_nutellio = {
                 name = 'Supahr Nutellio',
                 text = {
                     'Gives {C:blue}#1# chips{} for each played',
@@ -204,14 +204,14 @@ return {
                 }
             },
 
-            j_mahrlatr_kahrlmahrx = {
+            j_mahrlatr_kahrl_mahrx = {
                 name = 'Kahrl Mahrx',
                 text = {
                     'Equalizes {C:blue}Chips{} and {C:red}Mult{}'
                 }
             },
 
-            j_mahrlatr_scarycrimson = {
+            j_mahrlatr_scary_crimson = {
                 name = '{C:red}Scary Crimson{}',
                 text = {
                     'Gains {X:mult,C:white}X#2#{} for each',
@@ -233,7 +233,7 @@ return {
         },
 
         Tarot = {
-            c_mahrlatr_mahrmentioned = {
+            c_mahrlatr_mahr_mentioned = {
                 name = 'Mahr Mentioned',
                 text = {
                     'Applies {C:tarot,E:1}TheMahr{} seal to selected card'
@@ -254,14 +254,18 @@ return {
 
     misc = {
         dictionary = {
-            doctor_halved = 'Halved!',
-            doctor_back_to_1x = 'Back where it began!',
-            nutellio_easy = 'EZ!',
-            crimson_spreads = 'The Crimson spreads...',
-            mahrfiamember_card_destroyed = 'Pleasure Doing Business',
-            lehospital_medical_debt = 'Medical Debt',
-            lehospital_saved = 'Le Hospital Saved You..',
-            lehospital_destroyed = 'Destroyed!'
+            the_doctor_halved = 'Halved!',
+            the_doctor_back_to_1x = 'Back where it began!',
+
+            supahr_nutellio_easy = 'EZ!',
+
+            scary_crimson_spreads = 'The Crimson spreads...',
+
+            mahrfia_member_card_destroyed = 'Pleasure Doing Business',
+
+            le_hospital_medical_debt = 'Medical Debt',
+            le_hospital_saved = 'Le Hospital Saved You..',
+            le_hospital_destroyed = 'Destroyed!'
         }
     }
 }

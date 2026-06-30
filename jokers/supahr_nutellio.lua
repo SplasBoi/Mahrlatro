@@ -1,5 +1,5 @@
 SMODS.Joker{ --Supahr Nutellio
-    key = "supahrnutellio",
+    key = "supahr_nutellio",
 
     config = {
         extra = {
@@ -46,7 +46,7 @@ SMODS.Joker{ --Supahr Nutellio
                 local total_chips = base_chips + (stahr_count * base_chips)
                 return {
                     chips = total_chips,
-                    message = localize('nutellio_easy'),
+                    message = localize('supahr_nutellio_easy'),
                     sound = 'mahrlatr_nutella_easy'
                 }
             
@@ -66,7 +66,7 @@ function get_stahr_count()
 
     local count = 0
     for _, joker in ipairs(G.jokers.cards) do
-        if joker.config.center.key == 'j_mahrlatr_thestahr' then
+        if joker.config.center.key == 'j_mahrlatr_the_stahr' then
             count = count + 1
         end
     end
