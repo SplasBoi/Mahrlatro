@@ -24,11 +24,10 @@ SMODS.Joker { --The Doctor
 
     config = {
         extra = {
-            x_mult_gained = 1.0,
-            upgrade_threshold = 20,
+            x_mult_gained = 0.1,
             current_x_mult = 1.0,
-            total_spent = 0,
-            upgrades_applied = 0
+            upgrade_threshold = 1,
+            money_spent = 0
         }
     },
     
@@ -37,8 +36,7 @@ SMODS.Joker { --The Doctor
             vars = {
                 card.ability.extra.x_mult_gained,
                 card.ability.extra.upgrade_threshold,
-                card.ability.extra.current_x_mult,
-                card.ability.extra.total_spent % card.ability.extra.upgrade_threshold,
+                card.ability.extra.current_x_mult
             }
         }
     end,
@@ -48,31 +46,20 @@ SMODS.Joker { --The Doctor
         if context.buying_card or context.open_booster then
             -- Ignore money spent on itself.
             if context.card and context.card ~= card then
-                card.ability.extra.total_spent = card.ability.extra.total_spent + context.card.cost
+                register_money_spent(card, context.card.cost)
+                --card.ability.extra.total_spent = card.ability.extra.total_spent + context.card.cost
             end
         end
 
         -- If shop is rerolled, add cost to the count.
         if context.reroll_shop then
-           card.ability.extra.total_spent = card.ability.extra.total_spent + (G.GAME.current_round.reroll_cost - 1)
+            register_money_spent(card, G.GAME.current_round.reroll_cost - 1)
+            --card.ability.extra.total_spent = card.ability.extra.total_spent + (G.GAME.current_round.reroll_cost - 1)
         end
 
-        -- Get target upgrade level
-        local upgrades = math.floor(card.ability.extra.total_spent / card.ability.extra.upgrade_threshold)
+        if context.ante_end and context.ante_change and not context.repetition and not context.individual and not context.blueprint then
+            print(inspect(context))
 
-        -- Upgrade the card to the target upgrade level
-        while card.ability.extra.upgrades_applied < upgrades do
-            card.ability.extra.upgrades_applied = card.ability.extra.upgrades_applied + 1
-
-            SMODS.scale_card(card, {
-                ref_table = card.ability.extra,
-                ref_value = 'current_x_mult',
-                scalar_value = 'x_mult_gained',
-                message_colour = G.C.ATTENTION
-            })
-        end
-
-        if context.end_of_round and not context.repetition and not context.individual and card.ability.extra.upgrades_applied > 0 then
             local current = card.ability.extra.current_x_mult
             local new = math.max(1, current / 2)
 
@@ -91,3 +78,15 @@ SMODS.Joker { --The Doctor
         end
     end
 }
+
+function register_money_spent(card, amount)
+    local e = card.ability.extra
+
+    e.money_spent = e.money_spent + amount
+    e.current_x_mult = 1 + (e.money_spent * e.x_mult_gained)
+
+    card_eval_status_text(card, 'extra', nil, nil, nil, {
+        message = 'Upgrade!',
+        colour = G.C.ATTENTION
+    })
+end

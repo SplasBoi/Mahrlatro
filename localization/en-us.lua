@@ -36,14 +36,9 @@ return {
             j_mahrlatr_thedoctor = {
                 name = 'The Doctor',
                 text = {
-                    {
-                        'Gains {X:mult,C:white}X#1#{} Mult for each {C:money}$#2#{} spent.',
-                        'XMult is halved at the end of the round.',
-                    },
-                    {
-                        'Currently {X:mult,C:white}X#3#',
-                        '{C:inactive}To next upgrade:{} {C:money}$#4#{}/{C:money}$20{}'
-                    }
+                    'Gains {X:mult,C:white}X#1#{} Mult for each {C:money}$#2#{} spent.',
+                    'Halves for every ante.',
+                    '{C:inactive}(Currently{} {X:mult,C:white}X#3#{} {C:inactive}Mult){}'
                 }
             },
 
