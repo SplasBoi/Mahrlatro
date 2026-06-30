@@ -31,6 +31,7 @@ SMODS.Joker { --Mahrffin
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
+                localize('$'),
                 card.ability.extra.dollars
             }
         }
@@ -48,7 +49,7 @@ SMODS.Joker { --Mahrffin
                         nil,
                         nil,
                         {
-                            message = "+$".. card.ability.extra.dollars,
+                            message = "+".. localize('$').. card.ability.extra.dollars,
                             colour = G.C.MONEY
                         }
                     )

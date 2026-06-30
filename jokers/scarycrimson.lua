@@ -53,7 +53,7 @@ SMODS.Joker { --Scary Crimson
             end
 
             return {
-                message = "The Crimson spreads..."
+                message = localize('crimson_spreads')
             }
         end
 

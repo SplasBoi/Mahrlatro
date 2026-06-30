@@ -31,6 +31,7 @@ SMODS.Joker { --Mahrfia Member
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
+                localize('$'),
                 card.ability.extra.dollars
             }
         }
@@ -61,7 +62,7 @@ SMODS.Joker { --Mahrfia Member
                         )
                     end,
                     extra = {
-                        message = "Pleasure Doing Business",
+                        message = localize('mahrfiamember_card_destroyed'),
                         colour = G.C.RED
                     }
                 }

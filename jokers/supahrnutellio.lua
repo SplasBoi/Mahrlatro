@@ -46,7 +46,7 @@ SMODS.Joker{ --Supahr Nutellio
                 local total_chips = base_chips + (stahr_count * base_chips)
                 return {
                     chips = total_chips,
-                    message = 'EZ!',
+                    message = localize('nutellio_easy'),
                     sound = 'mahrlatr_nutella_easy'
                 }
             

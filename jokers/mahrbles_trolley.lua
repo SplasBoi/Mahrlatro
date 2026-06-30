@@ -44,6 +44,7 @@ SMODS.Joker { --Mahrbles Trolley
             vars = {
                 card.ability.extra.mult,
                 card.ability.extra.chips,
+                localize('$'),
                 card.ability.extra.dollars
             }
         }

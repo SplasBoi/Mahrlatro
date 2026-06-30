@@ -32,6 +32,7 @@ SMODS.Joker { --The Mahr!?
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
+                localize('$'),
                 card.ability.extra.dollars,
                 card.ability.extra.mult
             }

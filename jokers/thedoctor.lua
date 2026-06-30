@@ -35,6 +35,7 @@ SMODS.Joker { --The Doctor
         return {
             vars = {
                 card.ability.extra.x_mult_gained,
+                localize('$'),
                 card.ability.extra.upgrade_threshold,
                 card.ability.extra.current_x_mult
             }
@@ -47,19 +48,15 @@ SMODS.Joker { --The Doctor
             -- Ignore money spent on itself.
             if context.card and context.card ~= card then
                 register_money_spent(card, context.card.cost)
-                --card.ability.extra.total_spent = card.ability.extra.total_spent + context.card.cost
             end
         end
 
         -- If shop is rerolled, add cost to the count.
         if context.reroll_shop then
             register_money_spent(card, G.GAME.current_round.reroll_cost - 1)
-            --card.ability.extra.total_spent = card.ability.extra.total_spent + (G.GAME.current_round.reroll_cost - 1)
         end
 
         if context.ante_end and context.ante_change and not context.repetition and not context.individual and not context.blueprint then
-            print(inspect(context))
-
             local current = card.ability.extra.current_x_mult
             local new = math.max(1, current / 2)
 
@@ -67,7 +64,7 @@ SMODS.Joker { --The Doctor
             
             return {
                 -- This should use localized text but i cannot figure out how the localize function gets the value
-                message = (new == 1) and "Back where it began!" or "Halved!"
+                message = (new == 1) and localize('doctor_back_to_1x') or localize('doctor_halved')
             }
         end
 
@@ -86,7 +83,7 @@ function register_money_spent(card, amount)
     e.current_x_mult = 1 + (e.money_spent * e.x_mult_gained)
 
     card_eval_status_text(card, 'extra', nil, nil, nil, {
-        message = 'Upgrade!',
+        message = localize('k_upgrade_ex'),
         colour = G.C.ATTENTION
     })
 end

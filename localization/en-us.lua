@@ -4,14 +4,14 @@ return {
             j_mahrlatr_themahr = {
                 name = 'The Mahr!?',
                 text = {
-                    '{C:money}$#1#{} & {C:red}#2# Mult{} for every hand played'
+                    '{C:money}#1##2#{} & {C:red}#2# Mult{} for every hand played'
                 }
             },
 
             j_mahrlatr_thestahr = {
                 name = 'The Stahr',
                 text = {
-                    'Each scored 6 or 7 gives {C:money}$#1#{}'
+                    'Each scored 6 or 7 gives {C:money}#1##2#{}'
                 }
             },
 
@@ -28,7 +28,7 @@ return {
                 name = 'Wild Cat',
                 text = {
                     'Gives {X:red,C:white}X0.2{} Mult for every',
-                    '{C:attention}Wild card{} currently in {C:gold}Full Hand{}.',
+                    '{C:attention}Wild card{} currently in {C:gold}Full Hand{}',
                     '{C:inactive}(Currently{} {X:red,C:white}X#1#{} {C:inactive}Mult){}'
                 }
             },
@@ -36,8 +36,8 @@ return {
             j_mahrlatr_thedoctor = {
                 name = 'The Doctor',
                 text = {
-                    'Gains {X:mult,C:white}X#1#{} Mult for each {C:money}$#2#{} spent.',
-                    'Halves for every ante.',
+                    'Gains {X:mult,C:white}X#1#{} Mult for each {C:money}#2##3#{} spent',
+                    'Halves for every ante',
                     '{C:inactive}(Currently{} {X:mult,C:white}X#3#{} {C:inactive}Mult){}'
                 }
             },
@@ -61,8 +61,8 @@ return {
             j_mahrlatr_nutellasweep = {
                 name = 'Nutella Sweep',
                 text = {
-                    'Gives {X:red,C:white}X0.25{} Mult per ',
-                    'unique {C:planet}Planet{} card used this run.',
+                    'Gives {X:red,C:white}X0.25{} Mult per',
+                    'unique {C:planet}Planet{} card used this run',
                     '{C:inactive}(Currently{} {X:red,C:white}X#1#{} {C:inactive}Mult){}'
                 }
             },
@@ -89,7 +89,7 @@ return {
                         'Destroys overflowing',
                         'jokers/consumables',
                         'from right to left',
-                        "(excluding Normal Guy)."
+                        "(excluding Normal Guy)"
                     }
                 }
             },
@@ -97,7 +97,7 @@ return {
             j_mahrlatr_bankofamahrica = {
                 name = 'Bank Of Amahrica',
                 text = {
-                    'Go up to {C:red}-$#1#{} in debt'
+                    'Go up to {C:red}-#1##2#{} in debt'
                 }
             },
 
@@ -112,7 +112,7 @@ return {
                 name = 'Mahrfia Member',
                 text = {
                     'Destroys every played {C:red}Heart{}',
-                    'card for {C:gold}#1# Dollahrs{}'
+                    'card for {C:gold}#1##2#{}'
                 }
             },
 
@@ -127,7 +127,7 @@ return {
                 name = 'Supahr Nutellio',
                 text = {
                     'Gives {C:blue}#1# chips{} for each played',
-                    'hand and for each stahr joker.',
+                    'hand and for each stahr joker',
                     '{C:inactive}Currently:{} {C:blue}#2#{} {C:inactive}Chips{}'
                 }
             },
@@ -151,8 +151,8 @@ return {
                 name = 'Mahr{}ffin',
                 text = {
                     {
-                        'Gives {C:money}$#1#{} for each',
-                        'played {C:blue}hand.'
+                        'Gives {C:money}#1##2#{} for each',
+                        'played {C:blue}hand'
                     },
                     {
                         '{C:inactive}Merges into Mahrbles Trolley{}',
@@ -167,7 +167,7 @@ return {
                 text = {
                     {
                         '{C:blue}+#1#{} Chips if hand contains',
-                        'scoring {C:black,E:2}black{} suit cards.'
+                        'scoring {C:black,E:2}black{} suit cards'
                     },
                     {
                         '{C:inactive}Merges into Mahrbles Trolley{}',
@@ -191,15 +191,15 @@ return {
                 name = 'Mahrbles Trolley',
                 text = {
                     '{C:red}+#1#{} Mult, {C:blue}+#2#{} Chips',
-                    'and {C:money}$#3#{} for each',
-                    'played {C:blue}hand.'
+                    'and {C:money}#3##4#{} for each',
+                    'played {C:blue}hand'
                 }
             },
 
             j_mahrlatr_kahrlmahrx = {
                 name = 'Kahrl Mahrx',
                 text = {
-                    'Equalizes {C:blue}chips{} and {C:red}mult{}.'
+                    'Equalizes {C:blue}Chips{} and {C:red}Mult{}'
                 }
             },
 
@@ -207,9 +207,9 @@ return {
                 name = '{C:red}Scary Crimson{}',
                 text = {
                     'Gains {X:mult,C:white}X#2#{} for each',
-                    '{E:1}black suit card{} in the deck.',
+                    '{E:1}black suit card{} in the deck',
                     'Converts {C:attention}all scored cards{}',
-                    'into a random {C:red,E:1}red suit card{}.',
+                    'into a random {C:red,E:1}red suit card{}',
                     '{C:inactive}Currently:{} {X:mult,C:white}X#1#{}'
                 }
             }
@@ -219,7 +219,7 @@ return {
             c_mahrlatr_mahrmentioned = {
                 name = 'Mahr Mentioned',
                 text = {
-                    'Applies {C:tarot,E:1}TheMahr{} seal to selected card.'
+                    'Applies {C:tarot,E:1}TheMahr{} seal to selected card'
                 }
             }
         },
@@ -236,8 +236,15 @@ return {
     },
 
     misc = {
-        labels = {
-            mahrlatr_mahr_seal = "Mahr Seal"
+        dictionary = {
+            doctor_halved = 'Halved!',
+            doctor_back_to_1x = 'Back where it began!',
+            nutellio_easy = 'EZ!',
+            crimson_spreads = 'The Crimson spreads...',
+            mahrfiamember_card_destroyed = 'Pleasure Doing Business',
+            lehospital_medical_debt = 'Medical Debt',
+            lehospital_saved = 'Le Hospital Saved You..',
+            lehospital_destroyed = 'Destroyed!'
         }
     }
 }

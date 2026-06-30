@@ -27,6 +27,7 @@ SMODS.Joker { --Bank Of Amahrica
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
+                localize('$'),
                 get_debt_amount(card)
             }
         }
