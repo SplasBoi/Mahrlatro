@@ -40,7 +40,7 @@ SMODS.Joker { --Le Hospital
                         nil,
                         nil,
                         {
-                            message = localize('lehospital_medical_debt'),
+                            message = localize('le_hospital_medical_debt'),
                             colour = G.C.MONEY
                         }
                     )
@@ -48,7 +48,7 @@ SMODS.Joker { --Le Hospital
                 end,
                 extra = {
                     saved = true,
-                    message = localize('lehospital_saved'),
+                    message = localize('le_hospital_saved'),
                     colour = G.C.RED,
                     extra = {
                         func = function()
@@ -66,7 +66,7 @@ SMODS.Joker { --Le Hospital
                                     context.blueprint_card or card,
                                     'extra', nil, nil, nil,
                                     {
-                                        message = localize('lehospital_destroyed'),
+                                        message = localize('le_hospital_destroyed'),
                                         colour = G.C.RED
                                     }
                                 )
