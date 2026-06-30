@@ -188,6 +188,13 @@ return {
                 }
             },
 
+            j_mahrlatr_kahrlmahrx = {
+                name = 'Kahrl Mahrx',
+                text = {
+                    'Equalizes {C:blue}chips{} and {C:red}mult{}.'
+                }
+            },
+
             j_mahrlatr_scarycrimson = {
                 name = '{C:red}Scary Crimson{}',
                 text = {

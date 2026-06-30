@@ -2,8 +2,8 @@ SMODS.Joker { --Scary Crimson
     key = "scarycrimson",
 
     pos = {
-        x = 3,
-        y = 1
+        x = 0,
+        y = 3
     },
 
     display_size = {
