@@ -220,6 +220,15 @@ return {
                     'into a random {C:red,E:1}red suit card{}',
                     '{C:inactive}Currently:{} {X:mult,C:white}X#1#{}'
                 }
+            },
+
+            j_mahrlatr_land_der_berge = {
+                name = '{V:1}Land{} {C:white}der{} {V:1}Berge{}',
+                text = {
+                    '{C:red}+1{} Mult for each card above 52',
+                    'in your {C:attention}full deck{}.',
+                    '{C:inactive}Currently: {}{C:red}+#1#{}'
+                }
             }
         },
 
