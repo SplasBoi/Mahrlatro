@@ -244,7 +244,6 @@ return {
         Other = {
             mahrlatr_mahr_seal = {
                 name = 'Mahr Seal',
-                label = 'Mahr Seal',
                 text = {
                     'Gives {C:red}#1# mult{} for every {E:1}Mahr{} Jokahr'
                 }
@@ -253,6 +252,10 @@ return {
     },
 
     misc = {
+        labels = {
+            mahrlatr_mahr_seal = 'Mahr Seal'
+        },
+
         dictionary = {
             the_doctor_halved = 'Halved!',
             the_doctor_back_to_1x = 'Back where it began!',
