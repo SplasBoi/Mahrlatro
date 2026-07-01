@@ -21,7 +21,7 @@ SMODS.Joker { --Mahrbles Trolley
     },
 
     cost = 4,
-    rarity = 1,
+    rarity = 'mahrlatr_krejsi_rarity',
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
@@ -30,10 +30,6 @@ SMODS.Joker { --Mahrbles Trolley
     atlas = 'CustomJokers',
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
 
-    in_pool = function(self, args)
-        return false
-    end,
-    
     loc_vars = function(self, info_queue, card)
         return {
             vars = {

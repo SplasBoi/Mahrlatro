@@ -60,6 +60,9 @@ load_folder("jokers/")
 -- load consumables
 load_folder("consumables/")
 
+-- loads custom rarities
+load_folder("rarities/")
+
 -- load seals
 load_folder("seals/")
 
