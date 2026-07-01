@@ -14,6 +14,6 @@ SMODS.Rarity {
         return weight
     end,
 
-    badge_color = HEX('9900FF'),
-    text_color = G.C.WHITE
+    badge_colour = HEX('9900FF'),
+    text_colour = G.C.WHITE
 }
