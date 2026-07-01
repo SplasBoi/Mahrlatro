@@ -31,12 +31,7 @@ SMODS.Joker { --Mahrbles Trolley
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
 
     in_pool = function(self, args)
-        return (
-            not args 
-            or args.source ~= 'sho' and args.source ~= 'buf' and args.source ~= 'jud' and args.source ~= 'rif' 
-            or args.source == 'rta' or args.source == 'sou' or args.source == 'uta' or args.source == 'wra'
-        )
-        and true
+        return false
     end,
     
     loc_vars = function(self, info_queue, card)
