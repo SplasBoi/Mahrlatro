@@ -229,6 +229,15 @@ return {
                     'in your {C:attention}full deck{}.',
                     '{C:inactive}Currently: {}{C:red}+#1#{}'
                 }
+            },
+
+            j_mahrlatr_gusteaus_stahr_bag = {
+                name = 'Gusteau\'s Stahr Bag',
+                text = {
+                    'Drops {C:attention}3 Stahr Jokahrs{}',
+                    'when sold or destroyed.',
+                    '{C:inactive}(must have room)'
+                }
             }
         },
 
