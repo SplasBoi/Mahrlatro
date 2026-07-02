@@ -1,10 +1,9 @@
 SMODS.Joker {
     key = "gusteaus_stahr_bag",
     
-    -- Fix later when we actually have the art added.
     pos = {
-        x = 10,
-        y = 10
+        x = 5,
+        y = 3
     },
 
     display_size = {
