@@ -306,7 +306,18 @@ return {
                 text = {
                     '{C:green,E:2}1 in #1# chance{} of creating a',
                     '{C:tarot}Tarot{} card when a',
-                    '{V:1,E:1}black card{} is scored.'
+                    '{V:1,E:1}black card{} is scored.',
+                    '{C:inactive}(must have room){}'
+                }
+            },
+
+            j_mahrlatr_mahrio = {
+                name = 'Mahrio',
+                text = {
+                    '{C:green,E:2}1 in 3{} chance of dropping',
+                    'a {C:attention}Stahr Jokahr{} at the',
+                    'end of the round.',
+                    '{C:inactive}(must have room){}'
                 }
             }
         },
