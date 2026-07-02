@@ -42,6 +42,13 @@ return {
                 }
             },
 
+            j_mahrlatr_bossa_nova = {
+                name = 'Bossa Nova',
+                text = {
+                    'Rerolls current {C:attention}Boss Blind{}'
+                }
+            },
+
             j_mahrlatr_the_hahrt = {
                 name = 'The Hahrt',
                 text = {
@@ -226,6 +233,15 @@ return {
                 name = '{V:1}Land{} {C:white}der{} {V:1}Berge{}',
                 text = {
                     '{C:red}+1{} Mult for each card above 52',
+                    'in your {C:attention}full deck{}.',
+                    '{C:inactive}Currently: {}{C:red}+#1#{}'
+                }
+            },
+
+            j_mahrlatr_sea_level = {
+                name = 'Below Sea Level',
+                text = {
+                    '{C:red}+1{} Mult for each card below 52',
                     'in your {C:attention}full deck{}.',
                     '{C:inactive}Currently: {}{C:red}+#1#{}'
                 }
