@@ -37,7 +37,7 @@ SMODS.Joker { --Meat
     end,
 
     calculate = function(self, card, context)
-        if HELPERS.has_suit_in_hand(context, {'Hearts', 'Diamonds'}) then
+        if SuitHelpers.has_suit_in_hand(context, {'Hearts', 'Diamonds'}) then
             return {
                 mult = card.ability.extra.mult
             }

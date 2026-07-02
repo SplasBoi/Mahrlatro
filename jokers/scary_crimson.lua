@@ -68,7 +68,7 @@ SMODS.Joker { --Scary Crimson
         local black_cards_in_deck = 0
 
         for k, v in pairs(G.playing_cards) do
-            if HELPERS.is_black_card(v) or SMODS.has_enhancement(v, 'm_wild') then
+            if SuitHelpers.is_black_card(v) or SMODS.has_enhancement(v, 'm_wild') then
                 black_cards_in_deck = black_cards_in_deck + 1
             end
         end

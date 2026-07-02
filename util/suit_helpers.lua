@@ -1,6 +1,6 @@
-HELPERS = HELPERS or {}
+SuitHelpers = {}
 
-function HELPERS.has_suit_in_hand(context, suits)
+function SuitHelpers.has_suit_in_hand(context, suits)
     if context.final_scoring_step then
         for i = 1, #context.scoring_hand do
             for _, suit in ipairs(suits) do
@@ -13,10 +13,10 @@ function HELPERS.has_suit_in_hand(context, suits)
     return false
 end
 
-function HELPERS.is_red_card(card)
+function SuitHelpers.is_red_card(card)
     return card:is_suit('Hearts') or card:is_suit('Diamonds')
 end
 
-function HELPERS.is_black_card(card)
+function SuitHelpers.is_black_card(card)
     return card:is_suit('Spades') or card:is_suit('Clubs')
 end
