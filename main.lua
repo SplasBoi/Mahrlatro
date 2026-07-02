@@ -68,15 +68,9 @@ load_folder("seals/")
 
 load_folder("common/")
 
-function SMODS.current_mod.reset_game_globals(run_start)
-    for k, v in pairs(G.P_CENTERS) do
-        if v.set == 'Joker' then
-            if (not v.mod) then
-                G.GAME.banned_keys[k] = true
-            end
-        end
-    end
-end
+load_folder('ui/')
+
+load_folder('util/')
 
 SMODS.ObjectType({
     key = "mahrlatr_food",

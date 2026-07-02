@@ -277,7 +277,9 @@ return {
 
             le_hospital_medical_debt = 'Medical Debt',
             le_hospital_saved = 'Le Hospital Saved You..',
-            le_hospital_destroyed = 'Destroyed!'
+            le_hospital_destroyed = 'Destroyed!',
+
+            config_mahrlatr_cards_only = 'Mahrlatro cards only'
         }
     }
 }
