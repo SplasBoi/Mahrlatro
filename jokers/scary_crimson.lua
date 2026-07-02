@@ -43,7 +43,7 @@ SMODS.Joker { --Scary Crimson
 
         if context.after then
             for _, v in ipairs(context.scoring_hand) do
-                if (HELPERS.is_black_card(v)) then
+                if (SuitHelpers.is_black_card(v)) then
                     local red_suits = {"Hearts", "Diamonds"}
                     local random_red_suit = red_suits[math.random(1,2)]
 
