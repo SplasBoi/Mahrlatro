@@ -39,12 +39,12 @@ SMODS.Joker {
     end,
 
     calculate = function(self, card, context)
-        if #G.consumeables.cards >= G.consumeables.config.card_limit then
-            return
-        end
-
         if context.individual and context.cardarea == G.play and SuitHelpers.is_black_card(context.other_card) then
-            if RNG.roll_chance(card.ability.extra.chance) then
+            if SMODS.pseudorandom_probability(card, 'j_mahrlatr_black_metahrl', 1, card.ability.extra.chance) then
+                if #G.consumeables.cards >= G.consumeables.config.card_limit then
+                    return
+                end
+                
                 G.E_MANAGER:add_event(Event({
                     func = (function()
                         SMODS.add_card { set = 'Tarot' }
