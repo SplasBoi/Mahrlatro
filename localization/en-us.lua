@@ -52,6 +52,24 @@ return {
                 },
             },
 
+            j_mahrlatr_feijoada = {
+                name = "Feijoada",
+                text = {
+                    "{C:attention}+#1#{} hand size,",
+                    "reduces by",
+                    "{C:red}#2#{} every round",
+                },
+            },
+
+            j_mahrlatr_laugen_geback = {
+                name = "Laugengbäck",
+                text = {
+                    "{X:mult,C:white} X#1# {} Mult,",
+                    "loses {X:mult,C:white} X#2# {} Mult",
+                    "per {C:attention}card{} discarded",
+                },
+            },
+
             j_mahrlatr_bossa_nova = {
                 name = 'Bossa Nova',
                 text = {
