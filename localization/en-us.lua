@@ -42,6 +42,16 @@ return {
                 }
             },
 
+            j_mahrlatr_draculahr = {
+                name = "Draculahr",
+                text = {
+                    "This Joker gains {X:mult,C:white} X#1# {} Mult",
+                    "per scoring {C:attention}Enhanced card{} played,",
+                    "removes card {C:attention}Enhancement",
+                    "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
+                },
+            },
+
             j_mahrlatr_bossa_nova = {
                 name = 'Bossa Nova',
                 text = {
