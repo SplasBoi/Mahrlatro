@@ -4,9 +4,9 @@ SMODS.Joker { --Mahrbles Trolley
 
     config = {
         extra = {
-            mult = 7,
-            chips = 75,
-            dollars = 1
+            mult = 10,
+            chips = 100,
+            dollars = 2
         }
     },
 
