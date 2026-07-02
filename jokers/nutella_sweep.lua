@@ -1,4 +1,7 @@
 
+local get_mult
+local get_consumables_used
+
 SMODS.Joker{ --Nutella Sweep
     key = "nutella_sweep",
 
@@ -44,7 +47,7 @@ SMODS.Joker{ --Nutella Sweep
     end
 }
 
-function get_mult(card)
+get_mult = function(card)
     local consumable_count = get_consumables_used()
 
     if consumable_count == 0 then
@@ -54,7 +57,7 @@ function get_mult(card)
     return 1 + (consumable_count * card.ability.extra.mult_bonus)
 end
 
-function get_consumables_used()
+get_consumables_used = function()
     local count = 0
     local consumables = G.GAME.consumeable_usage or {}
 

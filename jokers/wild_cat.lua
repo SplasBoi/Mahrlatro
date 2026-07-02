@@ -1,4 +1,6 @@
 
+local get_wildcard_bonus
+
 SMODS.Joker { --Wild Cat
     key = "wild_cat",
 
@@ -45,14 +47,14 @@ SMODS.Joker { --Wild Cat
     end
 }
 
-function get_wildcard_bonus(card)
-        local count = 1
-        local cards = G.hand and G.hand.cards or {}
+get_wildcard_bonus = function(card)
+    local count = 1
+    local cards = G.hand and G.hand.cards or {}
 
-        for _, c in ipairs(cards) do
-            if SMODS.has_enhancement(c, 'm_wild') then
-                count = count + card.ability.extra.mult_bonus
-            end
+    for _, c in ipairs(cards) do
+        if SMODS.has_enhancement(c, 'm_wild') then
+            count = count + card.ability.extra.mult_bonus
         end
-        return count
     end
+    return count
+end

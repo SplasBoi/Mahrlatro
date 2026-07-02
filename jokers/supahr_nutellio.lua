@@ -1,3 +1,5 @@
+local get_stahr_count
+
 SMODS.Joker{ --Supahr Nutellio
     key = "supahr_nutellio",
 
@@ -59,7 +61,7 @@ SMODS.Joker{ --Supahr Nutellio
     end
 }
 
-function get_stahr_count()
+get_stahr_count = function()
     if not G.jokers then
         return 0
     end

@@ -1,3 +1,5 @@
+local register_money_spent
+
 SMODS.Joker { --The Doctor
     key = "the_doctor",
 
@@ -75,7 +77,7 @@ SMODS.Joker { --The Doctor
     end
 }
 
-function register_money_spent(card, amount)
+register_money_spent = function(card, amount)
     local e = card.ability.extra
 
     e.money_spent = e.money_spent + amount

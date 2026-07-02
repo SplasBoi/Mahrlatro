@@ -1,4 +1,6 @@
 
+local get_debt_amount
+
 SMODS.Joker { --Bank Of Amahrica
     key = "bank_of_amahrica",
     config = {
@@ -45,6 +47,6 @@ SMODS.Joker { --Bank Of Amahrica
     end
 }
 
-function get_debt_amount(card)
+get_debt_amount = function(card)
     return math.abs(card.ability.extra.debt_amount)
 end
