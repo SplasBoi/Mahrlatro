@@ -45,7 +45,8 @@ return {
             j_mahrlatr_bossa_nova = {
                 name = 'Bossa Nova',
                 text = {
-                    'Rerolls current {C:attention}Boss Blind{}'
+                    'Rerolls current {C:attention}Boss Blind{}',
+                    'when sold.'
                 }
             },
 
@@ -257,7 +258,9 @@ return {
             j_mahrlatr_evil_chicken = {
                 name = 'Evil Chicken',
                 text = {
-                    'Lays 1 {C:attention}Påhrsk Ägg{} at the start of a round'
+                    'Lays 1 {C:attention}Påhrsk Ägg{} at',
+                    'the start of a round.',
+                    '{C:inactive}(must have room){}'
                 }
             },
 
@@ -266,7 +269,7 @@ return {
                 text = {
                     'Drops {C:attention}3 Stahr Jokahrs{}',
                     'when sold or destroyed.',
-                    '{C:inactive}(must have room)'
+                    '{C:inactive}(must have room){}'
                 }
             }
         },
