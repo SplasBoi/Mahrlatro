@@ -33,7 +33,7 @@ SMODS.Joker {
     end,
 
     calculate = function(self, card, context)
-        if HELPERS.has_suit_in_hand(context, {'Spades', 'Clubs'}) then
+        if SuitHelpers.has_suit_in_hand(context, {'Spades', 'Clubs'}) then
             return {
                 chips = card.ability.extra.chips
             }
