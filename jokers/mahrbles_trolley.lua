@@ -41,6 +41,10 @@ SMODS.Joker { --Mahrbles Trolley
         }
     end,
 
+    add_to_deck = function(self, card, from_debuff)
+        unlock_achievement('ach_mahrlatr_obtain_trolley')
+    end,
+
     calculate = function(self, card, context)
         if context.cardarea == G.jokers and context.joker_main  then
             return {

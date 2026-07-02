@@ -54,23 +54,15 @@ local function load_folder(path)
     end
 end
 
--- load jokers
 load_folder("jokers/")
-
--- load consumables
 load_folder("consumables/")
-
--- loads custom rarities
 load_folder("rarities/")
-
--- load seals
 load_folder("seals/")
-
 load_folder("common/")
-
 load_folder('ui/')
-
 load_folder('util/')
+load_folder('achievements/')
+
 
 SMODS.ObjectType({
     key = "mahrlatr_food",

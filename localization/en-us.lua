@@ -280,6 +280,14 @@ return {
             le_hospital_destroyed = 'Destroyed!',
 
             config_mahrlatr_cards_only = 'Mahrlatro cards only'
+        },
+
+        achievement_names = {
+            ach_mahrlatr_obtain_trolley = 'obtain_trolley_name'
+        },
+
+        achievement_descriptions = {
+            ach_mahrlatr_obtain_trolley = 'obtain_trolley_description'
         }
     }
 }
