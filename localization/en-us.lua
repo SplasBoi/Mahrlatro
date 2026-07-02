@@ -271,6 +271,15 @@ return {
                     'when sold or destroyed.',
                     '{C:inactive}(must have room){}'
                 }
+            },
+
+            j_mahrlatr_black_metahrl = {
+                name = '{V:1}Black Metahrl{}',
+                text = {
+                    '{C:green,E:2}1 in #1# chance{} of creating a',
+                    '{C:tarot}Tarot{} card when a',
+                    '{V:1,E:1}black card{} is scored.'
+                }
             }
         },
 
