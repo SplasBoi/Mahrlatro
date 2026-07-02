@@ -46,7 +46,9 @@ SMODS.Joker {
 
         for i = 1, stahrs_to_be_created do
             G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.01, func = function()
-                play_sound('timpani')
+                for i = 1, 3 do
+                    play_sound('mahrlatr_star')
+                end
                 
                 SMODS.add_card({key = 'j_mahrlatr_the_stahr'})
                 

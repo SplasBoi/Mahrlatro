@@ -41,7 +41,7 @@ SMODS.Joker {
 
         if (free_joker_slots >= 1) and context.first_hand_drawn then
             G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.01, func = function()
-                play_sound('timpani')
+                play_sound('mahrlatr_ratatouille_honk')
                 
                 SMODS.add_card({key = 'j_mahrlatr_agg'})
                 
