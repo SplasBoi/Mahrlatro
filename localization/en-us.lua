@@ -231,6 +231,20 @@ return {
                 }
             },
 
+            j_mahrlatr_agg = {
+                name = 'Påhrsk Ägg',
+                text = {
+                    'Gains {C:money}#1##2#{} of {C:attention}sell value{} at end of round'
+                }
+            },
+
+            j_mahrlatr_evil_chicken = {
+                name = 'Evil Chicken',
+                text = {
+                    'Lays 1 {C:attention}Påhrsk Ägg{} at the start of a round'
+                }
+            },
+
             j_mahrlatr_gusteaus_stahr_bag = {
                 name = 'Gusteau\'s Stahr Bag',
                 text = {
