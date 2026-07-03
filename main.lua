@@ -165,3 +165,103 @@ SMODS.Sound({
     path = "music/mahrlatro_5.ogg",
     replace = "music5"
 })
+
+--custom card art
+
+local ranks = {'2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', "King", "Ace"}
+
+local hearts_atlas = SMODS.Atlas {
+    key = 'hearts',
+    path = "mahr_card_hearts.png",
+    atlas_table = 'ASSET_ATLAS',
+    px = 71,
+    py = 95,
+    disable_mipmap = true,
+}
+local clubs_atlas = SMODS.Atlas {
+    key = 'clubs',
+    path = "mahr_card_clubs.png",
+    atlas_table = 'ASSET_ATLAS',
+    px = 71,
+    py = 95,
+    disable_mipmap = true,
+}
+local diamonds_atlas = SMODS.Atlas {
+    key = 'diamonds',
+    path = "mahr_card_diamonds.png",
+    atlas_table = 'ASSET_ATLAS',
+    px = 71,
+    py = 95,
+    disable_mipmap = true,
+}
+local spades_atlas = SMODS.Atlas {
+    key = 'spades',
+    path = "mahr_card_spades.png",
+    atlas_table = 'ASSET_ATLAS',
+    px = 71,
+    py = 95,
+    disable_mipmap = true,
+}
+
+
+-- Deck Skins
+SMODS.DeckSkin {
+    key = "skibidi_mahr_cards_hearts",
+    suit = "Hearts",
+    loc_txt = "Skibidi Mahr Card",
+    palettes = {
+        {
+            key = 'hc',
+            ranks = ranks,
+            display_ranks = {"King", "Queen", "Jack"},
+            atlas = hearts_atlas.key,
+            pos_style = 'suit',
+            hc_default = true,
+        },
+    },
+}
+SMODS.DeckSkin {
+    key = "skibidi_mahr_cards_diamonds",
+    suit = "Diamonds",
+    loc_txt = "Skibidi Mahr Card",
+    palettes = {
+        {
+            key = 'hc',
+            ranks = ranks,
+            display_ranks = {"King", "Queen", "Jack"},
+            atlas = diamonds_atlas.key,
+            pos_style = 'suit',
+            hc_default = true,
+        },
+    },
+}
+SMODS.DeckSkin {
+    key = "skibidi_mahr_cards_clubs",
+    suit = "Clubs",
+    loc_txt = "Skibidi Mahr Card",
+    palettes = {
+        {
+            key = 'hc',
+            ranks = ranks,
+            display_ranks = {"King", "Queen", "Jack"},
+            atlas = clubs_atlas.key,
+            pos_style = 'suit',
+            hc_default = true,
+        },
+    },
+}
+SMODS.DeckSkin {
+    key = "skibidi_mahr_cards_spades",
+    suit = "Spades",
+    loc_txt = "Skibidi Mahr Card",
+    palettes = {
+        {
+            key = 'hc',
+            ranks = ranks,
+            display_ranks = {"King", "Queen", "Jack"},
+            atlas = spades_atlas.key,
+            pos_style = 'suit',
+            hc_default = true,
+        },
+    },
+}
