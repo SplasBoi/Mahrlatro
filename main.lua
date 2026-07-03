@@ -15,6 +15,16 @@ SMODS.Atlas({
     atlas_table = "ASSET_ATLAS"
 })
 
+SMODS.Atlas{
+    key = "shop_sign",
+    path = "Mahrket.png",
+    px=113,
+    py=57,
+    atlas_table = 'ANIMATION_ATLAS',
+    raw_key = true,
+	frames = 4,
+    prefix_config = {key = false}
+}
 
 SMODS.Atlas({
     key = "CustomJokers", 
