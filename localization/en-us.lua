@@ -32,6 +32,14 @@ return {
                     '{C:inactive}(Currently{} {X:red,C:white}X#1#{} {C:inactive}Mult){}'
                 }
             },
+            
+            j_mahrlatr_mahr_jimbo = {
+                name = "Mahrjimbo",
+                text = {
+                    "Gives {C:red,s:1.1}+#1#{} Mult if hand",
+                    "contains {C:attention}High Card{}"
+                },
+            },
 
             j_mahrlatr_the_doctor = {
                 name = 'The Doctor',

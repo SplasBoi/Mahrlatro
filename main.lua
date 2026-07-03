@@ -115,6 +115,12 @@ SMODS.Sound {
     pitch = 1.0
 }
 
+SMODS.Sound {
+    key = "mahrio_win",
+    path = "sfx/mahrio_win.ogg",
+    pitch = 1.0
+}
+
 SMODS.Sound({
     key = "music1",
     pitch = 1.0,

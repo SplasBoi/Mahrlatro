@@ -1,10 +1,9 @@
 SMODS.Joker {
     key = "mahrio",
     
-    -- Fix when we have the art.
     pos = {
-        x = 10,
-        y = 10
+        x = 6,
+        y = 4
     },
 
     display_size = {
@@ -43,6 +42,7 @@ SMODS.Joker {
 
             if SMODS.pseudorandom_probability(card, 'j_mahrlatr_mahrio', 1, card.ability.extra.chance) then
                 G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.01, func = function()
+                    play_sound('mahrlatr_mahrio_win',1.0,0.6)
                     SMODS.add_card({key = 'j_mahrlatr_the_stahr'})
                 
                     return true
