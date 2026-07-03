@@ -47,8 +47,7 @@ SMODS.Joker { --Le Hospital
                     return true
                 end,
                 extra = {
-                    saved = true,
-                    message = localize('le_hospital_saved'),
+                    saved = localize('le_hospital_saved'),
                     colour = G.C.RED,
                     extra = {
                         func = function()
