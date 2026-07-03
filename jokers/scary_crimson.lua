@@ -32,6 +32,8 @@ SMODS.Joker { --Scary Crimson
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
+                colours = { HEX('000000') },
+
                 card.ability.extra.x_mult,
                 card.ability.extra.scaling
             }

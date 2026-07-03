@@ -259,7 +259,7 @@ return {
                 name = '{C:red}Scary Crimson{}',
                 text = {
                     'Gains {X:mult,C:white}X#2#{} for each',
-                    '{E:1}black suit card{} in the deck',
+                    '{V:1,E:1}black suit card{} in the deck',
                     'Converts {C:attention}all scored cards{}',
                     'into a random {C:red,E:1}red suit card{}',
                     '{C:inactive}Currently:{} {X:mult,C:white}X#1#{}'

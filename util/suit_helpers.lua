@@ -14,9 +14,9 @@ function SuitHelpers.has_suit_in_hand(context, suits)
 end
 
 function SuitHelpers.is_red_card(card)
-    return card:is_suit('Hearts') or card:is_suit('Diamonds')
+    return card:is_suit('Hearts', true) or card:is_suit('Diamonds', true)
 end
 
 function SuitHelpers.is_black_card(card)
-    return card:is_suit('Spades') or card:is_suit('Clubs')
+    return card:is_suit('Spades', true) or card:is_suit('Clubs', true)
 end
