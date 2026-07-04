@@ -24,13 +24,21 @@ SMODS.Joker {
 
     config = {
         extra = {
-            chance = 3
+            numerator = 1,
+            denominator = 3
         }
     },
 
     loc_vars = function(self, info_queue, card)
+        local num, denom = SMODS.get_probability_vars(card, card.ability.extra.numerator, card.ability.extra.denominator)
+
         return {
-            card.ability.extra.chance
+            vars = {
+                colours = { HEX('000000') },
+
+                num,
+                denom
+            }
         }
     end,
 
@@ -40,7 +48,7 @@ SMODS.Joker {
 
             if (free_joker_slots < 1) then return end
 
-            if SMODS.pseudorandom_probability(card, 'j_mahrlatr_mahrio', 1, card.ability.extra.chance) then
+            if SMODS.pseudorandom_probability(card, 'j_mahrlatr_mahrio', card.ability.extra.numerator, card.ability.extra.denominator) then
                 G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.01, func = function()
                     play_sound('mahrlatr_mahrio_win',1.0,0.6)
                     SMODS.add_card({key = 'j_mahrlatr_the_stahr'})

@@ -328,7 +328,7 @@ return {
             j_mahrlatr_black_metahrl = {
                 name = '{V:1}Black Metahrl{}',
                 text = {
-                    '{C:green,E:2}1 in #1# chance{} of creating a',
+                    '{C:green,E:2}#1# in #2# chance{} of creating a',
                     '{C:tarot}Tarot{} card when a',
                     '{V:1,E:1}black card{} is scored.',
                     '{C:inactive}(must have room){}'
@@ -338,7 +338,7 @@ return {
             j_mahrlatr_mahrio = {
                 name = 'Mahrio',
                 text = {
-                    '{C:green,E:2}1 in 3{} chance of dropping',
+                    '{C:green,E:2}#1# in #2#{} chance of dropping',
                     'a {C:attention}Stahr Jokahr{} at the',
                     'end of the round.',
                     '{C:inactive}(must have room){}'
