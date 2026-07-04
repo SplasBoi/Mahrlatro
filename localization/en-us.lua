@@ -351,6 +351,15 @@ return {
                     '{C:money}+$10{} if hand',
                     '{C:attention}one-shots{} the blind.'
                 }
+            },
+
+            j_mahrlatr_blindfolded = {
+                name = 'Blindfolded',
+                text = {
+                    'Every card is',
+                    'drawn {C:attention}face down{}.',
+                    'Gives {X:mult,C:white}X#1#{} Mult'
+                }
             }
         },
 
