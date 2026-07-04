@@ -8,7 +8,7 @@ SMODS.Joker {
 
     rarity = 2,
     cost = 6,
-    pos = { x = 2, y = 15 },
+    pos = { x = 2, y = 5 },
 
     config = { extra = { Xmult_loss = 0.01, Xmult = 2 } },
 

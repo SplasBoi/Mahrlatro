@@ -24,6 +24,14 @@ return {
                 }
             },
 
+            j_mahrlatr_golden_mahr = {
+                name = 'Golden Mahr',
+                text = {
+                    "Played {C:attention}Gold{} cards",
+                    "earn {C:money}$#1#{} when scored"
+                }
+            },
+
             j_mahrlatr_wild_cat = {
                 name = 'Wild Cat',
                 text = {
@@ -66,6 +74,14 @@ return {
                     "{C:attention}+#1#{} hand size,",
                     "reduces by",
                     "{C:red}#2#{} every round",
+                },
+            },
+
+            j_mahrlatr_scariest_story = {
+                name = "Scariest Story",
+                text = {
+                    "Sets hands to {C:attention}#2#{},",
+                    "{C:red}+#1#{} discards"
                 },
             },
 

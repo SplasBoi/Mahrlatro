@@ -26,7 +26,7 @@ SMODS.Joker{ --Kahrl Mahrx
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
     
     calculate = function(self, card, context)
-        if context.cardarea == G.jokers and context.joker_main  then
+        if context.final_scoring_step  then
             return {
                 balance = true
             }
