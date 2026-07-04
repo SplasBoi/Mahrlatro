@@ -20,7 +20,7 @@ SMODS.Joker { --Scary Crimson
     pools = { ["mahr_mahr_jokers"] = true },
 
     cost = 4,
-    rarity = 1,
+    rarity = 2,
 
     config = {
         extra = {

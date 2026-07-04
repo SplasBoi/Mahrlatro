@@ -327,6 +327,14 @@ return {
                     'end of the round.',
                     '{C:inactive}(must have room){}'
                 }
+            },
+
+            j_mahrlatr_nutellas_cahr = {
+                name = 'Nutella\'s Cahr',
+                text = {
+                    '{C:money}+$10{} if hand',
+                    '{C:attention}one-shots{} the blind.'
+                }
             }
         },
 
