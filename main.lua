@@ -208,7 +208,7 @@ local spades_atlas = SMODS.Atlas {
 SMODS.DeckSkin {
     key = "skibidi_mahr_cards_hearts",
     suit = "Hearts",
-    loc_txt = "Skibidi Mahr Card",
+    loc_txt = "Skibidi Mahr Cards",
     palettes = {
         {
             key = 'hc',
@@ -223,7 +223,7 @@ SMODS.DeckSkin {
 SMODS.DeckSkin {
     key = "skibidi_mahr_cards_diamonds",
     suit = "Diamonds",
-    loc_txt = "Skibidi Mahr Card",
+    loc_txt = "Skibidi Mahr Cards",
     palettes = {
         {
             key = 'hc',
@@ -238,7 +238,7 @@ SMODS.DeckSkin {
 SMODS.DeckSkin {
     key = "skibidi_mahr_cards_clubs",
     suit = "Clubs",
-    loc_txt = "Skibidi Mahr Card",
+    loc_txt = "Skibidi Mahr Cards",
     palettes = {
         {
             key = 'hc',
@@ -253,7 +253,7 @@ SMODS.DeckSkin {
 SMODS.DeckSkin {
     key = "skibidi_mahr_cards_spades",
     suit = "Spades",
-    loc_txt = "Skibidi Mahr Card",
+    loc_txt = "Skibidi Mahr Cards",
     palettes = {
         {
             key = 'hc',
