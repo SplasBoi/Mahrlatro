@@ -1,10 +1,9 @@
 SMODS.Joker {
     key = 'blindfolded',
 
-    -- Fixe when we have the art
     pos = {
-        x = -1,
-        y = -1
+        x = 1,
+        y = 6
     },
 
     display_size = {

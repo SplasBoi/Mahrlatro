@@ -49,7 +49,7 @@ SMODS.Joker {
             if (free_joker_slots < 1) then return end
 
             if SMODS.pseudorandom_probability(card, 'j_mahrlatr_mahrio', card.ability.extra.numerator, card.ability.extra.denominator) then
-                G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.01, func = function()
+                G.E_MANAGER:add_event(Event({trigger = 'immediate', func = function()
                     play_sound('mahrlatr_mahrio_win',1.0,0.6)
                     SMODS.add_card({key = 'j_mahrlatr_the_stahr'})
                 
