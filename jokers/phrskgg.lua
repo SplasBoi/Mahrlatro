@@ -42,7 +42,7 @@ SMODS.Joker{ --Påhrsk Ägg
                     card:set_cost()
                     return true
                 end,
-                message = "Value Increased!!"
+                message = localize('phrskgg_value_increased')
             }
         end
     end

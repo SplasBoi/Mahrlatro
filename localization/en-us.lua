@@ -368,7 +368,9 @@ return {
             le_hospital_saved = 'Le Hospital Saved You..',
             le_hospital_destroyed = 'Destroyed!',
 
-            config_mahrlatr_cards_only = 'Mahrlatro cards only'
+            config_mahrlatr_cards_only = 'Mahrlatro cards only',
+
+            phrskgg_value_increased = 'Value Increased!!'
         },
 
         achievement_names = {
