@@ -1,4 +1,5 @@
-local register_money_spent
+local register_money_spent = nil
+local rounded_decimals = 1
 
 SMODS.Joker { --The Doctor
     key = "the_doctor",
@@ -22,7 +23,7 @@ SMODS.Joker { --The Doctor
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
 
     cost = 6,
-    rarity = 2,
+    rarity = 3,
 
     config = {
         extra = {
@@ -58,15 +59,17 @@ SMODS.Joker { --The Doctor
             register_money_spent(card, G.GAME.current_round.reroll_cost - 1)
         end
 
-        if context.ante_end and context.ante_change and not context.repetition and not context.individual and not context.blueprint then
-            local current = card.ability.extra.current_x_mult
-            local new = math.max(1, current / 2)
+        if context.end_of_round and not context.repetition and not context.individual and not context.blueprint then
+            local prev_mult = card.ability.extra.current_x_mult
+            local new_mult = math.max( 1, MahrMath.round(prev_mult / 2, rounded_decimals) )
 
-            card.ability.extra.current_x_mult = new
-            
-            return {
-                message = (new == 1) and localize('the_doctor_back_to_1x') or localize('the_doctor_halved')
-            }
+            if prev_mult > new_mult then
+                card.ability.extra.current_x_mult = new_mult
+                
+                return {
+                    message = (new_mult == 1) and localize('the_doctor_back_to_1x') or localize('the_doctor_halved')
+                }
+            end
         end
 
         if context.joker_main then
@@ -81,7 +84,7 @@ register_money_spent = function(card, amount)
     local e = card.ability.extra
 
     e.money_spent = e.money_spent + amount
-    e.current_x_mult = 1 + (e.money_spent * e.x_mult_gained)
+    e.current_x_mult = MahrMath.round(e.current_x_mult + (amount * e.x_mult_gained), rounded_decimals)
 
     card_eval_status_text(card, 'extra', nil, nil, nil, {
         message = localize('k_upgrade_ex'),
