@@ -41,6 +41,14 @@ return {
                     "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)"
                 }
             },
+
+            j_mahrlatr_vaalserberg = {
+                name = "Vaalserberg",
+                text = {
+                    "{C:chips}+#1#{} Chips,",
+                    "{C:attention}-#2#{} hand size",
+                }
+            },
             
             j_mahrlatr_mahr_jimbo = {
                 name = "Mahrjimbo",
