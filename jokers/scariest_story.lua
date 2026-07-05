@@ -42,6 +42,7 @@ SMODS.Joker{ --New Joker
                 extra = {
                     
                     func = function()
+                        play_sound('mahrlatr_try_not_to_get_scared')
                         G.GAME.current_round.hands_left = card.ability.extra.hands
                         return true
                     end,

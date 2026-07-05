@@ -35,9 +35,10 @@ return {
             j_mahrlatr_wild_cat = {
                 name = 'Wild Cat',
                 text = {
-                    'Gives {X:red,C:white}X0.2{} Mult for every',
-                    '{C:attention}Wild card{} currently in {C:gold}Full Hand{}',
-                    '{C:inactive}(Currently{} {X:red,C:white}X#1#{} {C:inactive}Mult){}'
+                    "Gives {X:mult,C:white} X#1# {} Mult",
+                    "for each {C:attention}Wild Card",
+                    "in your {C:attention}full deck",
+                    "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)"
                 }
             },
             

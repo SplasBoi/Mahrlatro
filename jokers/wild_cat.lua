@@ -6,7 +6,7 @@ SMODS.Joker { --Wild Cat
 
     config = {
         extra = {
-            mult_bonus = 0.2
+            xmult = 0.2
         }
     },
 
@@ -31,30 +31,33 @@ SMODS.Joker { --Wild Cat
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
     
     loc_vars = function(self, info_queue, card)
-        return {
-            vars = {
-                get_wildcard_bonus(card)
-            }
-        }
+        info_queue[#info_queue + 1] = G.P_CENTERS.m_wild
+
+        local wild_tally = 0
+        if G.playing_cards then
+            for _, playing_card in ipairs(G.playing_cards) do
+                if SMODS.has_enhancement(playing_card, 'm_wild') then wild_tally = wild_tally + 1 end
+            end
+        end
+        return { vars = { card.ability.extra.xmult, 1 + card.ability.extra.xmult * wild_tally } }
     end,
-    
     calculate = function(self, card, context)
-        if context.cardarea == G.jokers and context.joker_main then
+        if context.joker_main then
+            local wild_tally = 0
+            for _, playing_card in ipairs(G.playing_cards) do
+                if SMODS.has_enhancement(playing_card, 'm_wild') then wild_tally = wild_tally + 1 end
+            end
             return {
-                Xmult = get_wildcard_bonus(card)
+                Xmult = 1 + card.ability.extra.xmult * wild_tally,
             }
         end
+    end,
+    in_pool = function(self, args)
+        for _, playing_card in ipairs(G.playing_cards or {}) do
+            if SMODS.has_enhancement(playing_card, 'm_wild') then
+                return true
+            end
+        end
+        return false
     end
 }
-
-get_wildcard_bonus = function(card)
-    local count = 1
-    local cards = G.hand and G.hand.cards or {}
-
-    for _, c in ipairs(cards) do
-        if SMODS.has_enhancement(c, 'm_wild') then
-            count = count + card.ability.extra.mult_bonus
-        end
-    end
-    return count
-end
