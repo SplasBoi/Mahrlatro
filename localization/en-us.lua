@@ -369,6 +369,14 @@ return {
                     'drawn {C:attention}face down{}.',
                     'Gives {X:mult,C:white}X#1#{} Mult'
                 }
+            },
+
+            j_mahrlatr_skibidi_mahr_disease = {
+                name = 'Skibidi Mahr Disease',
+                text = {
+                    '{C:attention,E:1,s:1.4}Resets{} the number',
+                    'of {C:blue}hands{} and {C:red}discards{}.'
+                }
             }
         },
 
