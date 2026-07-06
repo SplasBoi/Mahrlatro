@@ -313,11 +313,11 @@ return {
             j_mahrlatr_scary_crimson = {
                 name = '{C:red}Scary Crimson{}',
                 text = {
-                    'Gains {X:mult,C:white}X#2#{} for each',
+                    'Gains {X:mult,C:white}X#1#{} for each',
                     '{V:1,E:1}black suit card{} in the deck',
                     'Converts {C:attention}all scored cards{}',
                     'into a random {C:red,E:1}red suit card{}',
-                    '{C:inactive}Currently:{} {X:mult,C:white}X#1#{}'
+                    '{C:inactive}Currently:{} {X:mult,C:white}X#2#{}'
                 }
             },
 
@@ -325,7 +325,7 @@ return {
                 name = '{V:1}Land{} {C:white}der{} {V:1}Berge{}',
                 text = {
                     '{C:red}+#1#{} Mult for each card',
-                    'above #2# in your {C:attention}full deck{}',
+                    'above {C:attention}#2#{} in your {C:attention}full deck{}',
                     '{C:inactive}Currently: {}{C:red}+#3#{}'
                 }
             },
@@ -333,9 +333,9 @@ return {
             j_mahrlatr_sea_level = {
                 name = 'Below Sea Level',
                 text = {
-                    '{C:red}+1{} Mult for each card below 52',
-                    'in your {C:attention}full deck{}',
-                    '{C:inactive}Currently: {}{C:red}+#1#{}'
+                    '{C:red}+#1#{} Mult for each card',
+                    'below {C:attention}#2#{} in your {C:attention}full deck{}',
+                    '{C:inactive}Currently: {}{C:red}+#3#{}'
                 }
             },
 

@@ -1,3 +1,5 @@
+local get_mult = nil
+
 SMODS.Joker { -- Below Sea Level
     key = "sea_level",
 
@@ -24,7 +26,7 @@ SMODS.Joker { -- Below Sea Level
 
     config = {
         extra = {
-            mult = 0
+            scaling = 0
         }
     },
 
@@ -32,25 +34,31 @@ SMODS.Joker { -- Below Sea Level
         return {
             vars = {
                 colours = { HEX('C8102E') },
-
-                card.ability.extra.mult
+                
+                card.ability.extra.scaling,
+                G.GAME.starting_deck_size,
+                get_mult(G.GAME.starting_deck_size),
             }
         }
     end,
 
     calculate = function(self, card, context)
-       local cards_under_starting_size = -#G.playing_cards + G.GAME.starting_deck_size --this calc is so bad, the head is not mathing today sorry LMAO
-
-        if cards_under_starting_size > 0 then
-            card.ability.extra.mult = cards_under_starting_size
-        else
-            card.ability.extra.mult = 0
-        end
-
         if context.joker_main then
             return {
-                mult = card.ability.extra.mult * 4
+                mult = get_mult(G.GAME.starting_deck_size)
             }
         end
     end
 }
+
+get_mult = function(starting_number)
+    if (not G.playing_cards) then return 0 end
+
+    local deck_size = #G.playing_cards
+
+    if deck_size <= starting_number then
+        return starting_number - deck_size
+    else
+        return 0
+    end
+end

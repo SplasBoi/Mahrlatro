@@ -26,21 +26,18 @@ SMODS.Joker { -- Land der Berge
 
     config = {
         extra = {
-            amount = 1,
-            count_above = 52
+            scaling = 1
         }
     },
 
     loc_vars = function(self, info_queue, card)
-        local conf = card.ability.extra
-
         return {
             vars = {
                 colours = { HEX('C8102E') },
                 
-                conf.amount,
-                conf.count_above,
-                get_mult(conf.count_above)
+                card.ability.extra.scaling,
+                G.GAME.starting_deck_size,
+                get_mult(G.GAME.starting_deck_size),
             }
         }
     end,
@@ -48,17 +45,19 @@ SMODS.Joker { -- Land der Berge
     calculate = function(self, card, context)
         if context.joker_main then
             return {
-                mult = get_mult(card.ability.extra.count_above)
+                mult = get_mult(G.GAME.starting_deck_size)
             }
         end
     end
 }
 
-get_mult = function(min_cards)
-    local deck_size = (G.playing_cards and #G.playing_cards) or 0
+get_mult = function(starting_number)
+    if (not G.playing_cards) then return 0 end
 
-    if deck_size >= min_cards then
-        return deck_size - min_cards
+    local deck_size = #G.playing_cards
+
+    if deck_size >= starting_number then
+        return deck_size - starting_number
     else
         return 0
     end

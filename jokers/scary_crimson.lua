@@ -1,3 +1,6 @@
+local get_x_mult = nil
+local count_black_cards = nil
+
 SMODS.Joker { --Scary Crimson
     key = "scary_crimson",
 
@@ -33,16 +36,14 @@ SMODS.Joker { --Scary Crimson
         return {
             vars = {
                 colours = { HEX('000000') },
-
-                card.ability.extra.x_mult,
-                card.ability.extra.scaling
+                
+                card.ability.extra.scaling,
+                get_x_mult(count_black_cards())
             }
         }
     end,
 
     calculate = function(self, card, context)
-        card.ability.extra.x_mult = self:count_black_cards() / 10
-
         if context.after then
             for _, v in ipairs(context.scoring_hand) do
                 if (SuitHelpers.is_black_card(v)) then
@@ -61,20 +62,26 @@ SMODS.Joker { --Scary Crimson
 
         if context.joker_main then
             return {
-                x_mult = card.ability.extra.x_mult
+                x_mult = get_x_mult(count_black_cards())
             }
         end
-    end,
-
-    count_black_cards = function()
-        local black_cards_in_deck = 0
-
-        for k, v in pairs(G.playing_cards) do
-            if SuitHelpers.is_black_card(v) or SMODS.has_enhancement(v, 'm_wild') then
-                black_cards_in_deck = black_cards_in_deck + 1
-            end
-        end
-
-        return black_cards_in_deck
     end
 }
+
+get_x_mult = function(black_cards)
+    return black_cards / 10
+end
+
+count_black_cards = function()
+    if (not G.playing_cards) then return 0 end
+
+    local black_cards_in_deck = 0
+
+    for _, v in pairs(G.playing_cards) do
+        if SuitHelpers.is_black_card(v) or SMODS.has_enhancement(v, 'm_wild') then
+            black_cards_in_deck = black_cards_in_deck + 1
+        end
+    end
+
+    return black_cards_in_deck
+end
