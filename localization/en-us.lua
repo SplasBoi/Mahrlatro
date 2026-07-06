@@ -377,6 +377,14 @@ return {
                     '{C:attention,E:1,s:1.4}Resets{} the number',
                     'of {C:blue}hands{} and {C:red}discards{}.'
                 }
+            },
+
+            j_mahrlatr_all_main_categories = {
+                name = 'All Main Categories',
+                text = {
+                    '{X:mult,C:white}X#1#{} Mult if hand',
+                    '{C:attention}has not{} been played this round.'
+                }
             }
         },
 
