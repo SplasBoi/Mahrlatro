@@ -1,3 +1,5 @@
+local get_mult = nil
+
 SMODS.Joker { -- Land der Berge
     key = "land_der_berge",
 
@@ -24,33 +26,40 @@ SMODS.Joker { -- Land der Berge
 
     config = {
         extra = {
-            mult = 0
+            amount = 1,
+            count_above = 52
         }
     },
 
     loc_vars = function(self, info_queue, card)
+        local conf = card.ability.extra
+
         return {
             vars = {
                 colours = { HEX('C8102E') },
-
-                card.ability.extra.mult
+                
+                conf.amount,
+                conf.count_above,
+                get_mult(conf.count_above)
             }
         }
     end,
 
     calculate = function(self, card, context)
-       local cards_over_starting_size = #G.playing_cards - G.GAME.starting_deck_size
-
-        if cards_over_starting_size > 0 then
-            card.ability.extra.mult = cards_over_starting_size
-        else
-            card.ability.extra.mult = 0
-        end
-
         if context.joker_main then
             return {
-                mult = card.ability.extra.mult
+                mult = get_mult(card.ability.extra.count_above)
             }
         end
     end
 }
+
+get_mult = function(min_cards)
+    local deck_size = (G.playing_cards and #G.playing_cards) or 0
+
+    if deck_size >= min_cards then
+        return deck_size - min_cards
+    else
+        return 0
+    end
+end

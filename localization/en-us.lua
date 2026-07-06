@@ -107,7 +107,7 @@ return {
                 name = 'Bossa Nova',
                 text = {
                     'Rerolls current {C:attention}Boss Blind{}',
-                    'when sold.'
+                    'when sold'
                 }
             },
 
@@ -214,7 +214,7 @@ return {
                 text = {
                     {
                         '{C:red}+#1#{} Mult if hand contains',
-                        'scoring {C:red,E:2}red{} suit cards.'
+                        'scoring {C:red,E:2}red{} suit cards'
                     },
                     {
                         '{C:inactive}Merges into Mahrbles Trolley{}',
@@ -294,9 +294,9 @@ return {
             j_mahrlatr_land_der_berge = {
                 name = '{V:1}Land{} {C:white}der{} {V:1}Berge{}',
                 text = {
-                    '{C:red}+1{} Mult for each card above 52',
-                    'in your {C:attention}full deck{}.',
-                    '{C:inactive}Currently: {}{C:red}+#1#{}'
+                    '{C:red}+#1#{} Mult for each card',
+                    'above #2# in your {C:attention}full deck{}',
+                    '{C:inactive}Currently: {}{C:red}+#3#{}'
                 }
             },
 
@@ -304,7 +304,7 @@ return {
                 name = 'Below Sea Level',
                 text = {
                     '{C:red}+1{} Mult for each card below 52',
-                    'in your {C:attention}full deck{}.',
+                    'in your {C:attention}full deck{}',
                     '{C:inactive}Currently: {}{C:red}+#1#{}'
                 }
             },
@@ -320,7 +320,7 @@ return {
                 name = 'Evil Chicken',
                 text = {
                     'Lays 1 {C:attention}Påhrsk Ägg{} at',
-                    'the start of a round.',
+                    'the start of a round',
                     '{C:inactive}(must have room){}'
                 }
             },
@@ -329,7 +329,7 @@ return {
                 name = 'Gusteau\'s Stahr Bag',
                 text = {
                     'Drops {C:attention}3 Stahr Jokahrs{}',
-                    'when sold or destroyed.',
+                    'when sold or destroyed',
                     '{C:inactive}(must have room){}'
                 }
             },
@@ -339,7 +339,7 @@ return {
                 text = {
                     '{C:green,E:2}#1# in #2# chance{} of creating a',
                     '{C:tarot}Tarot{} card when a',
-                    '{V:1,E:1}black card{} is scored.',
+                    '{V:1,E:1}black card{} is scored',
                     '{C:inactive}(must have room){}'
                 }
             },
@@ -349,7 +349,7 @@ return {
                 text = {
                     '{C:green,E:2}#1# in #2#{} chance of dropping',
                     'a {C:attention}Stahr Jokahr{} at the',
-                    'end of the round.',
+                    'end of the round',
                     '{C:inactive}(must have room){}'
                 }
             },
@@ -358,7 +358,7 @@ return {
                 name = 'Nutella\'s Cahr',
                 text = {
                     '{C:money}+$10{} if hand',
-                    '{C:attention}one-shots{} the blind.'
+                    '{C:attention}one-shots{} the blind'
                 }
             },
 
@@ -366,7 +366,7 @@ return {
                 name = 'Blindfolded',
                 text = {
                     'Every card is',
-                    'drawn {C:attention}face down{}.',
+                    'drawn {C:attention}face down{}',
                     'Gives {X:mult,C:white}X#1#{} Mult'
                 }
             },
