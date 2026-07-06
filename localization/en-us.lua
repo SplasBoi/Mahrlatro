@@ -374,6 +374,25 @@ return {
                 }
             },
 
+            j_mahrlatr_coca_colahr = {
+                name = "Coca Colahr",
+                text = {
+                    "Sell this card to",
+                    "create a free",
+                    "{C:attention}#1#",
+                },
+            },
+
+            j_mahrlatr_where_mahr = {
+                name = "Wait where did he go??",
+                text = {
+                    "{X:red,C:white} X1 {} Mult for each",
+                    "empty {C:attention}Jokahr{} slot",
+                    "{s:0.8}Wait where did he go?? included",
+                    "{C:inactive}(Currently {X:red,C:white} X#1# {C:inactive})",
+                },
+            },
+
             j_mahrlatr_mahrio = {
                 name = 'Mahrio',
                 text = {
@@ -431,7 +450,7 @@ return {
             mahrlatr_mahr_seal = {
                 name = 'Mahr Seal',
                 text = {
-                    'Gives {C:red}#1# mult{} for every {E:1}Mahr{} Jokahr'
+                    'Gives {C:red}#1# mult{}'
                 }
             }
         },
