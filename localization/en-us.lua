@@ -32,6 +32,36 @@ return {
                 }
             },
 
+            j_mahrlatr_pot_lobster = {
+                name = "Pot Lobster",
+                text = {
+                    "When {C:attention}Blind{} is selected,",
+                    "destroy Jokahr to the right",
+                    "and permanently add {C:attention}double",
+                    "its sell value to this {C:red}Mult",
+                    "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
+                }
+            },
+
+            j_mahrlatr_rat_bingo = {
+                name = "Rat Bingo",
+                text = {
+                    "Earn {C:money}$#1#{} if {C:attention}poker hand{}",
+                    "is a {C:attention}#2#{},",
+                    "poker hand changes",
+                    "at end of round",
+                },
+            },
+
+            j_mahrlatr_nedahrland = {
+                name = "Nedahrland",
+                text = {
+                    "Played cards with",
+                    "{C:diamonds}Orange{} suit earn",
+                    "{C:money}$#1#{} when scored",
+                }
+            },
+
             j_mahrlatr_wild_cat = {
                 name = 'Wild Cat',
                 text = {
