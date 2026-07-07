@@ -26,7 +26,7 @@ SMODS.Joker { -- Below Sea Level
 
     config = {
         extra = {
-            scaling = 0
+            scaling = 1
         }
     },
 
