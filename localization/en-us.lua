@@ -43,6 +43,26 @@ return {
                 }
             },
 
+            j_mahrlatr_squahr = {
+                name = "Squahr Jokahr",
+                text = {
+                    "This Jokahr gains {C:chips}+#2#{} Chips",
+                    "if played hand has",
+                    "exactly {C:attention}4{} cards",
+                    "{C:inactive}(Currently {C:chips}#1#{C:inactive} Chips)",
+                },
+            },
+
+            j_mahrlatr_p_route = {
+                name = "P Route",
+                text = {
+                    "This Jokahr gains {C:chips}+#2#{} Chips",
+                    "if played hand has",
+                    "exactly {C:attention}5{} cards",
+                    "{C:inactive}(Currently {C:chips}#1#{C:inactive} Chips)",
+                },
+            },
+            
             j_mahrlatr_rat_bingo = {
                 name = "Rat Bingo",
                 text = {

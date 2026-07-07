@@ -1,10 +1,9 @@
 SMODS.Joker {
     key = "the_choir",
 
-    -- Fix when we have the art
     pos = {
-        x = -1,
-        y = -1
+        x = 5,
+        y = 7
     },
 
     display_size = {
