@@ -284,7 +284,7 @@ return {
                 }
             },
 
-           j_mahrlatr_splas = {
+            j_mahrlatr_splas = {
                 name = 'Splas',
                 text = {
                     {
