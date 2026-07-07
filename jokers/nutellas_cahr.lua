@@ -24,7 +24,7 @@ SMODS.Joker {
 
     config = {
         extra = {
-            dollars = 10
+            dollars = 5
         }
     },
 
