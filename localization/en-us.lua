@@ -434,6 +434,16 @@ return {
                     '{X:mult,C:white}X#1#{} Mult if hand',
                     '{C:attention}has not{} been played this round.'
                 }
+            },
+
+            j_mahrlatr_the_choir = {
+                name = 'The Choir',
+                text = {
+                    '{X:mult,C:white}X#1#{} Mult if hand',
+                    'contains {C:attention}#2# and any{}',
+                    '{C:attention}other poker hand{}.',
+                    '{C:inactive}(except High Card){}'
+                }
             }
         },
 
