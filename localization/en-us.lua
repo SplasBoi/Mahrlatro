@@ -32,6 +32,15 @@ return {
                 }
             },
 
+            j_mahrlatr_mahrtosis = {
+                name = "Mahrtosis",
+                text = {
+                    "If {C:attention}first hand{} of round",
+                    "has only {C:attention}#1#{} card, add a",
+                    "permanent copy to deck."
+                },
+            },
+
             j_mahrlatr_pot_lobster = {
                 name = "Pot Lobster",
                 text = {
