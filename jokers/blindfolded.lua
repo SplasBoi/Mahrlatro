@@ -1,3 +1,5 @@
+local flip_cards = nil
+
 SMODS.Joker {
     key = 'blindfolded',
 
@@ -36,11 +38,19 @@ SMODS.Joker {
         }
     end,
 
+    add_to_deck = function(self, card, from_debuff)
+        if G.hand.cards then
+            flip_cards(G.hand.cards, 'back')
+        end
+    end,
+
     calculate = function(self, card, context)
         if context.selling_self then
-            for i = 1, #G.hand.cards do
-                if G.hand.cards[i].facing == 'back' then
-                    G.hand.cards[i]:flip()
+            if G.hand.cards and G.jokers.cards then
+
+                local self_count = #SMODS.find_card(self.key, true) - 1
+                if self_count < 1 then
+                    flip_cards(G.hand.cards, 'front')
                 end
             end
         end
@@ -58,3 +68,11 @@ SMODS.Joker {
         end
     end
 }
+
+flip_cards = function(cards, side)
+    for i, card in ipairs(cards) do
+        if card.facing ~= side then
+            card:flip()
+        end
+    end
+end
