@@ -61,7 +61,7 @@ SMODS.Joker { --The Doctor
 
         if context.end_of_round and not context.repetition and not context.individual and not context.blueprint then
             local prev_mult = card.ability.extra.current_x_mult
-            local new_mult = math.max( 1, MahrMath.round(prev_mult / 2, rounded_decimals) )
+            local new_mult = math.max( 1, round_number(prev_mult / 2, rounded_decimals) )
 
             if prev_mult > new_mult then
                 card.ability.extra.current_x_mult = new_mult
@@ -84,7 +84,7 @@ register_money_spent = function(card, amount)
     local e = card.ability.extra
 
     e.money_spent = e.money_spent + amount
-    e.current_x_mult = MahrMath.round(e.current_x_mult + (amount * e.x_mult_gained), rounded_decimals)
+    e.current_x_mult = round_number(e.current_x_mult + (amount * e.x_mult_gained), rounded_decimals)
 
     card_eval_status_text(card, 'extra', nil, nil, nil, {
         message = localize('k_upgrade_ex'),
