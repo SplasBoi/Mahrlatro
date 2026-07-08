@@ -473,6 +473,15 @@ return {
                     '{C:attention}other poker hand{}.',
                     '{C:inactive}(except High Card){}'
                 }
+            },
+
+            j_mahrlatr_februany = {
+                name = 'Februany',
+                text = {
+                    'This Jokahr gains {C:red}+#2#{} Mult',
+                    'for each round beaten.',
+                    '{C:inactive}(Currently: {C:red}+#1#{}{C:inactive}){}'
+                }
             }
         },
 
