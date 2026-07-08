@@ -67,8 +67,8 @@ return {
                 text = {
                     "This Jokahr gains {C:chips}+#2#{} Chips",
                     "if played hand has",
-                    "exactly {C:attention}5{} cards",
-                    "{C:inactive}(Currently {C:chips}#1#{C:inactive} Chips)",
+                    "{C:attention}5{} scoring cards",
+                    "{C:inactive}(Currently: {C:chips}+#1#{C:inactive} Chips){}",
                 },
             },
             

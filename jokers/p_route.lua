@@ -2,7 +2,7 @@ SMODS.Joker {
     key = "p_route",
     blueprint_compat = true,
     perishable_compat = false,
-    rarity = 2,
+    rarity = 1,
     cost = 4,
     pos = { x = 6, y = 7 },
     config = { extra = { chips = 0, chip_mod = 12 } },
@@ -16,14 +16,14 @@ SMODS.Joker {
 
 
     calculate = function(self, card, context)
-        if context.before and not context.blueprint and #context.full_hand == 5 then
-            -- See note about SMODS Scaling Manipulation on the wiki
+        if context.before and not context.blueprint and #context.scoring_hand == 5 then
             card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.chip_mod
             return {
                 message = localize('k_upgrade_ex'),
                 colour = G.C.CHIPS
             }
         end
+
         if context.joker_main then
             return {
                 chips = card.ability.extra.chips
