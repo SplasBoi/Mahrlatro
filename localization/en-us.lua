@@ -508,6 +508,17 @@ return {
                     'for each round beaten.',
                     '{C:inactive}(Currently: {C:red}+#1#{}{C:inactive}){}'
                 }
+            },
+
+            j_mahrlatr_vegahrs_pro = {
+                name = 'VEGAHRS Pro',
+                text = {
+                    'Generates a random consumable',
+                    'at the start of the round.',
+                    '{C:inactive}(must have room){}',
+                    '{C:red}#1# in #2# chance of crashing the game{}',
+                    '{C:red}at the end of the round.{}'
+                }
             }
         },
 
@@ -552,7 +563,10 @@ return {
 
             config_mahrlatr_cards_only = 'Mahrlatro cards only',
 
-            phrskgg_value_increased = 'Value Increased!!'
+            phrskgg_value_increased = 'Value Increased!!',
+
+            vegahrs_pro_edited = 'VEGAHRS Pro has edited your run!',
+            vegahrs_pro_crashed = 'Whoopsies! VEGAHRS Pro will now crash!'
         },
 
         achievement_names = {
