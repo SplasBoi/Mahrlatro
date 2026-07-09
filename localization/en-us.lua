@@ -422,6 +422,13 @@ return {
                 },
             },
 
+            j_mahrlatr_fifahr = {
+                name = "Fifahr",
+                text = {
+                    "Turns {C:red}Red{} Cards into Club cards"
+                },
+            },
+
             j_mahrlatr_mahrio = {
                 name = 'Mahrio',
                 text = {
@@ -437,6 +444,25 @@ return {
                 text = {
                     '{C:money}+$10{} if hand',
                     '{C:attention}one-shots{} the blind'
+                }
+            },
+
+            j_mahrlatr_mihrrar = {
+                name = "Mahrn In The Mihrrar",
+                text = {
+                    "{X:mult,C:white} X#1# {} Mult if played",
+                    "{C:attention}poker hand{} has already",
+                    "been played this round",
+                },
+            },
+
+            j_mahrlatr_drivahrs_license = {
+                name = "Drivahr's License",
+                text = {
+                    "{X:mult,C:white} X#1# {} Mult if you have",
+                    "at least {C:attention}#2#{} Enhanced",
+                    "cards in your full deck",
+                    "{C:inactive}(Currently {C:attention}#3#{C:inactive})",
                 }
             },
 
@@ -518,6 +544,7 @@ return {
             scary_crimson_spreads = 'The Crimson spreads...',
 
             mahrfia_member_card_destroyed = 'Pleasure Doing Business',
+            fifahr_suit_change = 'Red Card Reverted',
 
             le_hospital_medical_debt = 'Medical Debt',
             le_hospital_saved = 'Le Hospital Saved You..',
