@@ -536,6 +536,14 @@ return {
                     '{C:red}#1# in #2# chance of crashing the game{}',
                     '{C:red}at the end of the round.{}'
                 }
+            },
+
+            j_mahrlatr_the_leadahrboard = {
+                name = 'The Leadahrboard',
+                text = {
+                    '{C:red}+10{} Mult if card of',
+                    'rank {C:attention}#2#{} is scored.'
+                }
             }
         },
 
