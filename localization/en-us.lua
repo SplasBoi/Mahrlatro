@@ -583,7 +583,9 @@ return {
             phrskgg_value_increased = 'Value Increased!!',
 
             vegahrs_pro_edited = 'VEGAHRS Pro has edited your run!',
-            vegahrs_pro_crashed = 'Whoopsies! VEGAHRS Pro will now crash!'
+            vegahrs_pro_crashed = 'Whoopsies! VEGAHRS Pro will now crash!',
+
+            joker_merged = "Merged!"
         },
 
         achievement_names = {
