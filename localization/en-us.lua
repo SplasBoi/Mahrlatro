@@ -38,7 +38,24 @@ return {
                     "If {C:attention}first hand{} of round",
                     "has only {C:attention}#1#{} card, add a",
                     "permanent copy to deck."
+                }
+            },
+
+            j_mahrlatr_funny_numbers = {
+                name = "Funny Numbers",
+                text = {
+                    "Retrigger",
+                    "each played",
+                    "{C:attention}6{}, {C:attention}7{}, {C:attention}8{}, or {C:attention}9{}",
                 },
+            },
+
+            j_mahrlatr_footbahrll = {
+                name = "Footbahrll Sticker",
+                text = {
+                    "{C:green}Uncommon{} Jokahrs",
+                    "each give {X:mult,C:white} X#1# {} Mult",
+                }
             },
 
             j_mahrlatr_pot_lobster = {
