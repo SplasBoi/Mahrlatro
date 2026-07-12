@@ -544,6 +544,14 @@ return {
                     '{C:red}+10{} Mult if card of',
                     'rank {C:attention}#2#{} is scored.'
                 }
+            },
+
+            j_mahrlatr_mabels_house = {
+                name = "Mabels House",
+                text = {
+                    "{C:green}#2# in #3#{} chance of upgrading hand level",
+                    "if hand contains #1#"
+                }
             }
         },
 
