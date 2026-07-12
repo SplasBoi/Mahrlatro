@@ -2,8 +2,8 @@ SMODS.Joker {
     key = "mabels_house",
 
     pos = {
-        x = 0,
-        y = 0
+        x = 2,
+        y = 9
     },
 
     display_size = {
@@ -11,7 +11,7 @@ SMODS.Joker {
         h = 95 * 1
     },
 
-    --atlas = 'CustomJokers',
+    atlas = 'CustomJokers',
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
 
     unlocked = true,

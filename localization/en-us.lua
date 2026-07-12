@@ -508,6 +508,17 @@ return {
                 }
             },
 
+            j_mahrlatr_sahrns = {
+                name = "Sahrns",
+                text = {
+                    "Prevents Death",
+                    "if chips scored",
+                    "are at least {C:attention}25%",
+                    "of required chips",
+                    "{C:red,E:2}self destructs{}",
+                }
+            },
+
             j_mahrlatr_the_choir = {
                 name = 'The Choir',
                 text = {
@@ -541,8 +552,8 @@ return {
             j_mahrlatr_the_leadahrboard = {
                 name = 'The Leadahrboard',
                 text = {
-                    '{C:red}+10{} Mult if card of',
-                    'rank {C:attention}#2#{} is scored.'
+                    'Played {C:attention}#2#{} cards give {C:red}+10{} Mult',
+                    'when scored.'
                 }
             },
 
@@ -592,6 +603,7 @@ return {
 
             le_hospital_medical_debt = 'Medical Debt',
             le_hospital_saved = 'Le Hospital Saved You..',
+            sahrns_saved = 'i dont have time for you right now',
             le_hospital_destroyed = 'Destroyed!',
 
             config_mahrlatr_cards_only = 'Mahrlatro cards only',
