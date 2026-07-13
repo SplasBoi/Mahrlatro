@@ -1,4 +1,4 @@
-local has_three_pair = nil
+local has_x_pair = nil
 
 SMODS.Joker {
     key = "mahrjong",
