@@ -568,8 +568,8 @@ return {
             j_mahrlatr_mahrjong = {
                 name = "Mahrjong",
                 text = {
-                    "{C:red}X#1#{} Mult if held hand contains",
-                    "a Three of a Kind or a 3-rank sequence"
+                    "{X:mult,C:white}X#1#{} Mult if held hand contains",
+                    "{C:attention}Three of a Kind{} or {C:attention}3 card sequence{}"
                 }
             }
         },

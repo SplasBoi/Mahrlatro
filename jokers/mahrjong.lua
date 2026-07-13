@@ -1,4 +1,6 @@
-local has_x_pair = nil
+local has_three_of_a_kind = nil
+local has_sequence = nil
+local sort_held_hand = nil
 
 SMODS.Joker {
     key = "mahrjong",
@@ -9,11 +11,11 @@ SMODS.Joker {
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
 
     rarity = 2,
-    cost = 4,
+    cost = 5,
 
     config = {
         extra = {
-            xmult = 3
+            x_mult = 3
         }
     },
 
@@ -22,7 +24,7 @@ SMODS.Joker {
 
         return {
             vars = {
-                e.xmult
+                e.x_mult
             }
         }
     end,
@@ -31,27 +33,46 @@ SMODS.Joker {
         local e = card.ability.extra
 
         if context.joker_main then
-            local pair_count = 3
-            if has_x_pair(context.scoring_hand, pair_count) then
+            local sorted_held_hand = sort_held_hand(G.hand.cards)
+            print(sorted_held_hand)
+
+            if has_three_of_a_kind(sorted_held_hand) or has_sequence(sorted_held_hand) then
                 return {
-                    xmult = e.xmult
+                    x_mult = e.x_mult
                 }
             end
         end
     end
 }
 
-has_x_pair = function(cards, pair_count)
-    local rank_counts = {}
+has_three_of_a_kind = function(cards)
+    for i = 1, #cards do
+        if i == #cards - 1 then break end
 
-    for _, card in ipairs(cards) do
-        local rank = card:get_id()
-        rank_counts[rank] = (rank_counts[rank] or 0) + 1
+        if (cards[i] == cards[i + 1]) and (cards[i + 1] == cards[i + 2]) then return true end
     end
 
-    for _, count in pairs(rank_counts) do
-        if count >= pair_count then
-            return true
-        end
+    return false
+end
+
+has_sequence = function(cards)
+    for i = 1, #cards do
+        if i == #cards - 1 then break end
+
+        if (cards[i] == (cards[i + 1] + 1)) and (cards[i + 1] == (cards[i + 2] + 1)) then return true end
     end
+
+    return false
+end
+
+sort_held_hand = function(cards)
+    local held_cards = {}
+
+    for _, playing_card in ipairs(cards) do
+        table.insert(held_cards, playing_card:get_id())
+    end
+
+    table.sort(held_cards, function(a, b) return a > b end)
+    
+    return held_cards
 end
