@@ -34,7 +34,6 @@ SMODS.Joker {
 
         if context.joker_main then
             local sorted_held_hand = sort_held_hand(G.hand.cards)
-            print(sorted_held_hand)
 
             if has_three_of_a_kind(sorted_held_hand) or has_sequence(sorted_held_hand) then
                 return {
@@ -46,9 +45,7 @@ SMODS.Joker {
 }
 
 has_three_of_a_kind = function(cards)
-    for i = 1, #cards do
-        if i == #cards - 1 then break end
-
+    for i = 1, #cards - 1 do
         if (cards[i] == cards[i + 1]) and (cards[i + 1] == cards[i + 2]) then return true end
     end
 
@@ -56,9 +53,7 @@ has_three_of_a_kind = function(cards)
 end
 
 has_sequence = function(cards)
-    for i = 1, #cards do
-        if i == #cards - 1 then break end
-
+    for i = 1, #cards - 1 do
         if (cards[i] == (cards[i + 1] + 1)) and (cards[i + 1] == (cards[i + 2] + 1)) then return true end
     end
 
