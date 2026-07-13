@@ -563,6 +563,14 @@ return {
                     "{C:green}#2# in #3#{} chance of upgrading hand level",
                     "if hand contains #1#"
                 }
+            },
+
+            j_mahrlatr_mahrjong = {
+                name = "Mahrjong",
+                text = {
+                    "{C:red}X#1#{} Mult if held hand contains",
+                    "a Three of a Kind or a 3-rank sequence"
+                }
             }
         },
 
