@@ -571,6 +571,19 @@ return {
                     "{X:mult,C:white}X#1#{} Mult if held hand contains",
                     "{C:attention}Three of a Kind{} or {C:attention}3 card sequence{}"
                 }
+            },
+
+            j_mahrlatr_bobby_garlic = {
+                name = "Bobby Garlic",
+                text = {
+                    {
+                        "Suggests hand to play at start of round,",
+                        "if played hand is said hand, gives {X:mult,C:white}X#1#{} Mult",
+                    },
+                    {
+                        "Bobby Garlic is suggesting a: {C:attention}#2#{}"
+                    }
+                }
             }
         },
 
