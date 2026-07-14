@@ -609,14 +609,15 @@ return {
             mahrfia_member_card_destroyed = 'Pleasure Doing Business',
             fifahr_suit_change = 'Red Card Reverted',
 
+            sahrns_saved = 'i dont have time for you right now',
+
             le_hospital_medical_debt = 'Medical Debt',
             le_hospital_saved = 'Le Hospital Saved You..',
-            sahrns_saved = 'i dont have time for you right now',
             le_hospital_destroyed = 'Destroyed!',
 
             config_mahrlatr_cards_only = 'Mahrlatro cards only',
 
-            phrskgg_value_increased = 'Value Increased!!',
+            phrskgg_value_increased = 'Värde ökat!!',
 
             vegahrs_pro_edited = 'VEGAHRS Pro has edited your run!',
             vegahrs_pro_crashed = 'Whoopsies! VEGAHRS Pro will now crash!',
