@@ -612,6 +612,9 @@ return {
         },
 
         dictionary = {
+            bobby_good_job = 'Good Job!!!',
+            bobby_try_this_hand = 'Alright! Try playing this hand!!',
+
             the_doctor_halved = 'Halved!',
             the_doctor_back_to_1x = 'Back where it began!',
 

@@ -142,6 +142,18 @@ SMODS.Sound {
     pitch = 1.0
 }
 
+SMODS.Sound {
+    key = "bobby_good_job",
+    path = "sfx/bobby_good_job.ogg",
+    pitch = 1.0
+}
+
+SMODS.Sound {
+    key = "bobby_try_this_hand",
+    path = "sfx/bobby_try_this_hand.ogg",
+    pitch = 1.0
+}
+
 SMODS.Sound({
     key = "music1",
     pitch = 1.0,
