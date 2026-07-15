@@ -46,16 +46,21 @@ SMODS.Joker {
 }
 
 has_three_of_a_kind = function(cards)
-    for i = 1, #cards - 1 do
-        if (cards[i] == cards[i + 1]) and (cards[i + 1] == cards[i + 2]) then return true end
+    for i = 1, #cards - 2 do
+        if cards[i] == cards[i + 1] and cards[i + 1] == cards[i + 2] then
+            return true
+        end
     end
-
+    
     return false
 end
 
 has_sequence = function(cards)
-    for i = 1, #cards - 1 do
-        if (cards[i] == (cards[i + 1] + 1)) and (cards[i + 1] == (cards[i + 2] + 1)) then return true end
+    for i = 1, #cards - 2 do
+        if cards[i] == cards[i + 1] + 1
+        and cards[i + 1] == cards[i + 2] + 1 then
+            return true
+        end
     end
 
     return false
