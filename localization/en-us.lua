@@ -584,6 +584,16 @@ return {
                         "Bobby Garlic is suggesting a: {C:attention}#2#{}"
                     }
                 }
+            },
+
+            j_mahrlatr_the_evil_mahrchine = {
+                name = "The Evil Mahrchine",
+                text = {
+                    "Debuffs random suit",
+                    "at the start of round,",
+                    "increases blind payout by {C:attention}#1#%{}",
+                    "{C:inactive}(Debuffed suit: {}{V:1}#2#{}{C:inactive}){}"
+                }
             }
         },
 
