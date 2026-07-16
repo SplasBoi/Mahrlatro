@@ -622,6 +622,15 @@ return {
                     "blinds don't give",
                     "money reward."
                 }
+            },
+
+            j_mahrlatr_nightmahre = {
+                name = "Nightmahre",
+                text = {
+                    "Increases blind score",
+                    "requirements by {C:attention}#1#%{},",
+                    "increases payout by {C:attention}#2#%{}."
+                }
             }
         },
 
