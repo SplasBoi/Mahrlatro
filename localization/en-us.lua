@@ -624,8 +624,18 @@ return {
                 }
             },
 
-            j_mahrlatr_nightmahre = {
-                name = "Nightmahre",
+            j_mahrlatr_cheese = {
+                name = "Very Good Cheese",
+                text = {
+                    "{C:chips}+#1#{} Chips",
+                    "{C:chips}+#2#{} Chips for",
+                    "every hand played",
+                    "{C:inactive}[Goes bad at 100 chips]{}"
+                },
+            },
+
+            j_mahrlatr_nightmahr = {
+                name = "Nightmahr",
                 text = {
                     "Increases blind score",
                     "requirements by {C:attention}#1#%{},",
@@ -662,6 +672,12 @@ return {
             bobby_good_job = 'Good Job!!!',
             bobby_try_this_hand = 'Alright! Try playing this hand!!',
 
+            config_mahrlatr_cards_only = 'Mahrlatro cards only',
+
+            fifahr_suit_change = 'Red Card Reverted',
+
+            gone_bad = 'Gone Bad!',
+
             the_doctor_halved = 'Halved!',
             the_doctor_back_to_1x = 'Back where it began!',
 
@@ -670,15 +686,12 @@ return {
             scary_crimson_spreads = 'The Crimson spreads...',
 
             mahrfia_member_card_destroyed = 'Pleasure Doing Business',
-            fifahr_suit_change = 'Red Card Reverted',
 
             sahrns_saved = 'i dont have time for you right now',
 
             le_hospital_medical_debt = 'Medical Debt',
             le_hospital_saved = 'Le Hospital Saved You..',
             le_hospital_destroyed = 'Destroyed!',
-
-            config_mahrlatr_cards_only = 'Mahrlatro cards only',
 
             phrskgg_value_increased = 'Värde ökat!!',
 

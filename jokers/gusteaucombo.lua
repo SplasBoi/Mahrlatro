@@ -12,8 +12,8 @@ SMODS.Joker {
 
     -- Fix when we have the art.
     pos = {
-        x = -1,
-        y = -1
+        x = 2,
+        y = 10
     },
 
     display_size = {

@@ -1,5 +1,5 @@
 SMODS.Joker {
-    key = "nightmahre",
+    key = "nightmahr",
 
     config = {
         extra = {
@@ -12,8 +12,8 @@ SMODS.Joker {
 
     -- Fix when we have the art.
     pos = {
-        x = -1,
-        y = -1
+        x = 3,
+        y = 10
     },
 
     display_size = {
