@@ -590,8 +590,9 @@ return {
                 name = "The Evil Mahrchine",
                 text = {
                     "Debuffs random suit",
-                    "at the start of round,",
-                    "increases blind payout by {C:attention}#1#%{}",
+                    "at the start of the round,",
+                    "returns {C:attention}#1#%{} of blind payout",
+                    "at the end of the round.",
                     "{C:inactive}(Debuffed suit: {}{V:1}#2#{}{C:inactive}){}"
                 }
             },
@@ -601,6 +602,15 @@ return {
                 text = {
                     "Lowers odds of jokers but",
                     "retriggers chance based items"
+                }
+            },
+
+            j_mahrlatr_door_mahrfia = {
+                name = "Door Mahrfia",
+                text = {
+                    "If hand contains {C:attention}Pair{},",
+                    "Gives {C:money}#1##2#{} for each scored card,",
+                    "and then destroys them."
                 }
             }
         },

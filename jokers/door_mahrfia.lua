@@ -1,16 +1,16 @@
-
 SMODS.Joker { --Mahrfia Member
-    key = "mahrfia_member",
+    key = "door_mahrfia",
 
     config = {
         extra = {
-            dollars = 5
+            dollars = 1
         }
     },
 
+    -- Fix when we have the art.
     pos = {
-        x = 1,
-        y = 0
+        x = -1,
+        y = -1
     },
 
     display_size = {
@@ -18,7 +18,7 @@ SMODS.Joker { --Mahrfia Member
         h = 95 * 1
     },
 
-    cost = 7,
+    cost = 6,
     rarity = 2,
     blueprint_compat = false,
     eternal_compat = true,
@@ -41,10 +41,14 @@ SMODS.Joker { --Mahrfia Member
         if context.destroy_card and context.destroy_card.should_destroy  then
             return { remove = true }
         end
+
         if context.individual and context.cardarea == G.play  then
             context.other_card.should_destroy = false
-            if context.other_card:is_suit("Hearts") then
-                context.other_card.should_destroy = true
+            if next(context.poker_hands['Pair']) then
+                for _, v in ipairs(context.scoring_hand) do
+                    context.other_card.should_destroy = true
+                end
+                
                 return {
                     func = function()
                         local amount = card.ability.extra.dollars
@@ -60,11 +64,7 @@ SMODS.Joker { --Mahrfia Member
                                 colour = G.C.MONEY
                             }
                         )
-                    end,
-                    extra = {
-                        message = localize('mahrfia_member_card_destroyed'),
-                        colour = G.C.RED
-                    }
+                    end
                 }
             end
         end
