@@ -594,6 +594,14 @@ return {
                     "increases blind payout by {C:attention}#1#%{}",
                     "{C:inactive}(Debuffed suit: {}{V:1}#2#{}{C:inactive}){}"
                 }
+            },
+
+            j_mahrlatr_salad_rng = {
+                name = "Salad RNG",
+                text = {
+                    "Lowers odds of jokers but",
+                    "retriggers chance based items"
+                }
             }
         },
 
