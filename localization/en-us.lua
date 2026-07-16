@@ -138,7 +138,7 @@ return {
                 name = 'The Doctor',
                 text = {
                     'Gains {X:mult,C:white}X#1#{} Mult for each {C:money}#2##3#{} spent',
-                    'Halves for every ante',
+                    'Halves for every round',
                     '{C:inactive}(Currently{} {X:mult,C:white}X#4#{} {C:inactive}Mult){}'
                 }
             },
