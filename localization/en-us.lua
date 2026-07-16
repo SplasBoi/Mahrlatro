@@ -612,6 +612,16 @@ return {
                     "Gives {C:money}#1##2#{} for each scored card,",
                     "and then destroys them."
                 }
+            },
+
+            j_mahrlatr_gusteaucombo = {
+                name = "Gusteaucombo",
+                text = {
+                    "Decreases blind score",
+                    "requirements by {C:attention}#1#%{},",
+                    "blinds don't give",
+                    "money reward."
+                }
             }
         },
 
