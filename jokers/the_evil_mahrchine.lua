@@ -1,4 +1,5 @@
 local reset_suit = nil
+local rounded_decimals = 0
 
 SMODS.Joker {
     key = "the_evil_mahrchine",
@@ -19,7 +20,7 @@ SMODS.Joker {
 
     config = {
         extra = {
-            payout_increase = 25,
+            payout_increase = 75,
             debuffed_suit = 'Spades'
         }
     },
@@ -53,6 +54,12 @@ SMODS.Joker {
 			end
 		end
 	end,
+
+    calc_dollar_bonus = function(self,card)
+        local payout = round_number(G.GAME.blind.dollars * 0.75, rounded_decimals)
+
+        return payout
+    end,
 
     calculate = function(self, card, context)
         if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
