@@ -534,7 +534,8 @@ return {
                 name = 'Skibidi Mahr Disease',
                 text = {
                     '{C:attention,E:1,s:1.4}Resets{} the number',
-                    'of {C:blue}hands{} and {C:red}discards{}.'
+                    'of {C:blue}hands{} and {C:red}discards{}.',
+                    'when sold.'
                 }
             },
 
