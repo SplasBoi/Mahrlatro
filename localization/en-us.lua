@@ -651,7 +651,7 @@ return {
                     "Debuffs random suit",
                     "at the start of the round,",
                     "returns {C:attention}#1#%{} of blind payout",
-                    "at the end of the round.",
+                    "at the end of the round",
                     "{C:inactive}(Debuffed suit: {}{V:1}#2#{}{C:inactive}){}"
                 }
             },
@@ -669,7 +669,7 @@ return {
                 text = {
                     "If hand contains {C:attention}Pair{},",
                     "Gives {C:money}#1##2#{} for each scored card,",
-                    "and then destroys them."
+                    "and then destroys them"
                 }
             },
 
@@ -679,7 +679,7 @@ return {
                     "Decreases blind score",
                     "requirements by {C:attention}#1#%{},",
                     "blinds don't give",
-                    "money reward."
+                    "money reward"
                 }
             },
 
@@ -698,7 +698,16 @@ return {
                 text = {
                     "Increases blind score",
                     "requirements by {C:attention}#1#%{},",
-                    "increases payout by {C:attention}#2#%{}."
+                    "increases payout by {C:attention}#2#%{}"
+                }
+            },
+
+            j_mahrlatr_suikahr = {
+                name = "Suikahr",
+                text = { -- TODO: add colored text
+                    "If hand is #1#, merge played cards",
+                    "into 1 new card of increased rank",
+                    "Played aces will turn into 1 enhanced ace"
                 }
             }
         },
