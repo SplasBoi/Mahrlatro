@@ -32,12 +32,22 @@ return {
                 }
             },
 
+            j_mahrlatr_the_nyahr = {
+                name = "The Nyahr",
+                text = {
+                    "This Jokahr gains {X:mult,C:white} X#1# {} Mult",
+                    "every time a {C:attention}Lucky{} card",
+                    "{C:green}successfully{} triggers",
+                    "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
+                },
+            },
+
             j_mahrlatr_pirate = {
                 name = "Pirates of the Mahribbean",
                 text = {
                     "Adds the sell value",
                     "of all other owned",
-                    "{C:attention}Jokers{} to Mult",
+                    "{C:attention}Jokahrs{} to Mult",
                     "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
                 }
             },
@@ -78,7 +88,17 @@ return {
             },
 
             j_mahrlatr_pot_lobster = {
-                name = "Pot Lobster",
+                name = "Potlobster",
+                text = {
+                    "When {C:attention}Small Blind{} or {C:attention}Big Blind{}",
+                    "is selected, gain {X:mult,C:white} X#1# {} Mult",
+                    "and {C:attention}destroy{} a random Jokahr",
+                    "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
+                }
+            },
+
+            j_mahrlatr_amahrngus = {
+                name = "Amahrngus",
                 text = {
                     "When {C:attention}Blind{} is selected,",
                     "destroy Jokahr to the right",
@@ -165,7 +185,7 @@ return {
             j_mahrlatr_draculahr = {
                 name = "Draculahr",
                 text = {
-                    "This Joker gains {X:mult,C:white} X#1# {} Mult",
+                    "This Jokahr gains {X:mult,C:white} X#1# {} Mult",
                     "per scoring {C:attention}Enhanced card{} played,",
                     "removes card {C:attention}Enhancement",
                     "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
@@ -254,12 +274,12 @@ return {
                         'Sets:',
                         '{C:blue}Hands{} to {C:blue}#1#{}',
                         '{C:red}Discards{} to {C:red}#2#{}',
-                        '{V:1}Joker Slots{} to {V:1}#3#{}',
+                        '{V:1}Jokahr Slots{} to {V:1}#3#{}',
                         '{C:purple}Consumable Slots{} to {C:purple}#4#{}'
                     },
                     {
                         'Destroys overflowing',
-                        'jokers/consumables',
+                        'jokahrs/consumables',
                         'from right to left',
                         "(excluding Normal Guy)"
                     }
@@ -299,7 +319,7 @@ return {
                 name = 'Supahr Nutellio',
                 text = {
                     'Gives {C:blue}#1# chips{} for each played',
-                    'hand and for each stahr joker',
+                    'hand and for each stahr jokahr',
                     '{C:inactive}Currently:{} {C:blue}#2#{} {C:inactive}Chips{}'
                 }
             },
@@ -639,7 +659,7 @@ return {
             j_mahrlatr_salad_rng = {
                 name = "Salad RNG",
                 text = {
-                    "Lowers odds of jokers but",
+                    "Lowers odds of chance based jokahrs but",
                     "retriggers chance based items"
                 }
             },
