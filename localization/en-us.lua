@@ -32,6 +32,25 @@ return {
                 }
             },
 
+            j_mahrlatr_pirate = {
+                name = "Pirates of the Mahribbean",
+                text = {
+                    "Adds the sell value",
+                    "of all other owned",
+                    "{C:attention}Jokers{} to Mult",
+                    "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
+                }
+            },
+
+            j_mahrlatr_mahrllion = {
+                name = "Mahrllionaire",
+                text = {
+                    "{C:mult}+#1#{} Mult for every",
+                    "{C:money}$#2#{} you have",
+                    "{C:inactive}(Currently {C:mult}+#3#{C:inactive} Mult)",
+                }
+            },
+
             j_mahrlatr_mahrtosis = {
                 name = "Mahrtosis",
                 text = {
@@ -453,6 +472,25 @@ return {
                     'a {C:attention}Stahr Jokahr{} at the',
                     'end of the round',
                     '{C:inactive}(must have room){}'
+                }
+            },
+
+            j_mahrlatr_wayne = {
+                name = 'Wayne',
+                text = {
+                    'Creates {C:attention}Double Tag{} at the',
+                    'end of the round.',
+                    '{C:green,E:2}#1# in #2#{} chance of destroying',
+                    'a random Jokahr {C:inactive}(Including self){}'
+                }
+            },
+
+            j_mahrlatr_wanye = {
+                name = 'Wanye',
+                text = {
+                    '{C:green,E:2}#1# in #2#{} chance to',
+                    'Create a {C:attention}Double Tag{} at the',
+                    'end of the round.'
                 }
             },
 
