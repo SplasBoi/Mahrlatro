@@ -714,9 +714,9 @@ return {
             j_mahrlatr_suikahr = {
                 name = "Suikahr",
                 text = { -- TODO: add colored text
-                    "If hand is {C:attention}#1#{}, merge played cards",
+                    "If hand is {C:attention}#1#{}, merge scored cards",
                     "into 1 new card of increased rank",
-                    "{C:inactive}[Ace pairs will turn into 1 enhanced ace]{}"
+                    "{C:inactive}[Ace pairs will turn into 1 enhanced Ace]{}"
                 }
             }
         },

@@ -1,4 +1,3 @@
-local create_destroy_cards_event = nil
 local create_upgraded_card_event = nil
 
 SMODS.Joker {
@@ -33,12 +32,13 @@ SMODS.Joker {
         local e = self.config.extra or card.ability.extra
 
         if context.joker_main and context.scoring_name == e.wanted_hand then
-            local selected_card = context.full_hand[math.random(#context.scoring_hand)]
+            local selected_card = context.scoring_hand[math.random(#context.scoring_hand)]
 
             local suit = selected_card.base.suit
             local rank = selected_card.base.value
 
-            G.E_MANAGER:add_event(create_destroy_cards_event(context.scoring_hand))
+            SMODS.destroy_cards(context.scoring_hand)
+
             G.E_MANAGER:add_event(create_upgraded_card_event(rank, suit))
 
             card_eval_status_text(card, 'extra', nil, nil, nil, {
@@ -48,20 +48,6 @@ SMODS.Joker {
         end
     end
 }
-
-create_destroy_cards_event = function(cards)
-    local event = Event({
-        func = function()
-            for _, card in ipairs(cards) do
-                card:start_dissolve({G.C.RED}, nil, 1.6)
-            end
-
-            return true
-        end
-    })
-    
-    return event
-end
 
 create_upgraded_card_event = function(rank, suit)
     if rank == "Ace" then
