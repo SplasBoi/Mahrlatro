@@ -54,9 +54,8 @@ return {
             j_mahrlatr_pirate = {
                 name = "Pirates of the Mahribbean",
                 text = {
-                    "Adds the sell value",
-                    "of all other owned",
-                    "{C:attention}Jokahrs{} to Mult",
+                    "Adds the sell value of all other",
+                    "owned {C:attention}Jokahrs{} to Mult",
                     "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
                 }
             },
@@ -718,7 +717,22 @@ return {
                     "into 1 new card of increased rank",
                     "{C:inactive}[Ace pairs will turn into 1 enhanced Ace]{}"
                 }
-            }
+            },
+
+            j_mahrlatr_colettahr = {
+                name = "Colettahr",
+                text = {
+                    {
+                        "Suggests hand to play,",
+                        "at start of round",
+                        "if played hand is said hand,",
+                        "upgrades it by 1 level."
+                    },
+                    {
+                        "Colletahr is suggesting a: {C:attention}#1#{}"
+                    }
+                }
+            },
         },
 
         Tarot = {
@@ -775,7 +789,9 @@ return {
             vegahrs_pro_edited = 'VEGAHRS Pro has edited your run!',
             vegahrs_pro_crashed = 'Whoopsies! VEGAHRS Pro will now crash!',
 
-            joker_merged = "Merged!"
+            joker_merged = "Merged!",
+
+            colettahr_do_as_i_say = "Jesus! Do as I say!!"
         },
 
         achievement_names = {

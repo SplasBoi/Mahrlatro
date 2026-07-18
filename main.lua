@@ -154,6 +154,12 @@ SMODS.Sound {
     pitch = 1.0
 }
 
+SMODS.Sound {
+    key = "mahr_no_no_dont",
+    path = "sfx/mahr_no_no_dont.ogg",
+    pitch = 1.0
+}
+
 SMODS.Sound({
     key = "music1",
     pitch = 1.0,
