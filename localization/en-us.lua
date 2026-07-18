@@ -32,6 +32,15 @@ return {
                 }
             },
 
+            j_mahrlatr_raised_hands = {
+                name = "Raised Hands",
+                text = {
+                    "Adds {C:attention}double{} the rank",
+                    "of {C:attention}lowest{} ranked card",
+                    "held in hand to Mult"
+                }
+            },
+
             j_mahrlatr_the_nyahr = {
                 name = "The Nyahr",
                 text = {
@@ -705,9 +714,9 @@ return {
             j_mahrlatr_suikahr = {
                 name = "Suikahr",
                 text = { -- TODO: add colored text
-                    "If hand is #1#, merge played cards",
+                    "If hand is {C:attention}#1#{}, merge played cards",
                     "into 1 new card of increased rank",
-                    "Played aces will turn into 1 enhanced ace"
+                    "{C:inactive}[Ace pairs will turn into 1 enhanced ace]{}"
                 }
             }
         },

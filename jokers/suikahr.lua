@@ -6,10 +6,12 @@ SMODS.Joker {
 
     discovered = true,
     unlocked = true,
+    atlas = 'CustomJokers',
 
-    -- TODO: adjust cost and rarity
-    cost = 1,
-    rarity = 1,
+    pos = { x = 1, y = 11 },
+
+    cost = 6,
+    rarity = 2,
 
     config = {
         extra = {
@@ -31,12 +33,12 @@ SMODS.Joker {
         local e = self.config.extra or card.ability.extra
 
         if context.joker_main and context.scoring_name == e.wanted_hand then
-            local selected_card = context.full_hand[math.random(#context.full_hand)]
+            local selected_card = context.full_hand[math.random(#context.scoring_hand)]
 
             local suit = selected_card.base.suit
             local rank = selected_card.base.value
 
-            G.E_MANAGER:add_event(create_destroy_cards_event(context.full_hand))
+            G.E_MANAGER:add_event(create_destroy_cards_event(context.scoring_hand))
             G.E_MANAGER:add_event(create_upgraded_card_event(rank, suit))
 
             card_eval_status_text(card, 'extra', nil, nil, nil, {
