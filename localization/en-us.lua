@@ -741,6 +741,14 @@ return {
                 text = {
                     'Applies {C:tarot,E:1}TheMahr{} seal to selected card'
                 }
+            },
+            c_mahrlatr_weakness = {
+                name = "Strength",
+                text = {
+                    "Decreases rank of",
+                    "up to {C:attention}#1#{} selected",
+                    "cards by {C:attention}1",
+                },
             }
         },
 
