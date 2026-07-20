@@ -14,8 +14,8 @@ SMODS.Joker {
     blueprint_compat = false,
     eternal_compat = false,
     perishable_compat = false,
-    unlocked = true, -- I was thinking about having an unlock condition for this one: being negative in money at any póint. I will not add it yet because I don't know how to do it. I'll probably look into that after we are done with the jokahrs I guess.
-    discovered = true,
+    unlocked = false,
+    discovered = false,
     atlas = 'CustomJokers',
     pools = { ["mahr_mahr_jokers"] = true },
 
@@ -32,52 +32,66 @@ SMODS.Joker {
     },
 
     loc_vars = function(self, info_queue, card)
+        local e = self.config.extra or card.ability.extra
+
         return {
             vars = {
                 localize('$'),
-                card.ability.extra.current_debt,
-                card.ability.extra.loan,
-                card.ability.extra.installment_value,
-                card.ability.extra.interest_value
+                e.current_debt,
+                e.loan,
+                e.installment_value,
+                e.interest_value
             }
         }
     end,
 
-    add_to_deck = function(self, card, from_debuff)
-        ease_dollars(card.ability.extra.loan)
+    check_for_unlock = function(self, args)
+        return G.GAME.dollars < 0
+    end,
 
-        card.ability.extra.current_debt = card.ability.extra.loan
+    can_sell = function(self, card, context)
+        return false
+    end,
+
+    add_to_deck = function(self, card, from_debuff)
+        local e = self.config.extra or card.ability.extra
+
+        ease_dollars(e.loan)
+        e.current_debt = e.loan
     end,
 
     calculate = function(self, card, context)
-        local e = card.ability.extra
+        local e = self.config.extra or card.ability.extra
 
         if context.end_of_round and context.main_eval then
-            ease_dollars(-(e.installment_value + e.interest_value))
-            e.current_debt = e.current_debt - e.installment_value
+            local interest = math.abs(e.installment_value + e.interest_value)
+            
+            ease_dollars(-interest)
 
             card_eval_status_text(
-                card,
-                'extra',
-                nil,
-                nil,
-                nil,
-                {
-                    message = localize('$')..-(e.installment_value + e.interest_value),
+                card, 'extra', nil, nil, nil, {
+                    message = localize('$').. -interest,
                     colour = G.C.RED
                 }
             )
 
-            if card.ability.extra.current_debt == 0 then
+            e.current_debt = e.current_debt - e.installment_value
+
+            if e.current_debt <= 0 then
                 SMODS.destroy_cards(card, nil, nil, true)
             end
         end
     end
 }
 
+-- Are these really necessary?
+
+--[[
+local loan_shark_key = "j_mahrlatr_loan_shark"
+
 local og_can_sell = Card.can_sell_card
-Card.can_sell_card = function(self, context, ...)
-    if self.config.center.key == 'j_mahrlatr_loan_shark' then
+Card.can_sell_card = function(self, context)
+    if self.config.center.key == loan_shark_key then
         return false
     end
 
@@ -86,9 +100,10 @@ end
 
 local og_set_sell_value = Card.set_sell_value
 Card.set_sell_value = function(self)
-    if self.config.center.key == 'j_mahrlatr_loan_shark' then
+    if self.config.center.key == loan_shark_key then
         return 0
     end
 
     og_set_sell_value(self)
 end
+--]]
