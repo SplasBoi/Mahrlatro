@@ -19,7 +19,7 @@ SMODS.Joker {
     atlas = 'CustomJokers',
     pools = { ["mahr_mahr_jokers"] = true },
 
-    cost = 5,
+    cost = 8,
     rarity = 3,
 
     calculate = function(self, card, context)

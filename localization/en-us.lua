@@ -711,9 +711,9 @@ return {
             },
 
             j_mahrlatr_flying_dragon = {
-                name = "Flying Dragon",
+                name = "FlyingDragon",
                 text = {
-                    "Retriggers {C:attention}lucky cards{}."
+                    "Retriggers {C:attention}Lucky Cards{} once"
                 }
             },
 
