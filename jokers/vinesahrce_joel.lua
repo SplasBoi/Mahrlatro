@@ -47,7 +47,6 @@ SMODS.Joker {
     calculate = function(self, card, context)
         if context.pseudorandom_result then
             if context.identifier == "wheel_of_fortune" and not context.result then
-                -- evento da silva aqui
                 G.E_MANAGER:add_event(Event({trigger = 'after', delay = 1.5, func = function()
                 
                     SMODS.scale_card(card, {
@@ -68,6 +67,12 @@ SMODS.Joker {
                     message = localize("joel_nope_hahaha")
                 }
             end
+        end
+
+        if context.joker_main then
+            return {
+                mult = card.ability.extra.mult
+            }
         end
     end
 }
