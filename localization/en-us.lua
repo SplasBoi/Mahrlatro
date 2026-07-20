@@ -733,6 +733,17 @@ return {
                     }
                 }
             },
+
+            j_mahrlatr_vinesahrce_joel = {
+                name = "{V:1}Vinesahrce{} {V:2}Joel{}",
+                text = {
+                    {
+                        "Gains {C:red}+#2#{} Mult for each",
+                        "{C:red}failed{} {C:tarot,E:1}Wheel of Fortune{}.",
+                        "{C:inactive}(Currently: {C:red}+#1#{{} Mult){}"
+                    }
+                }
+            },
         },
 
         Tarot = {
@@ -799,7 +810,9 @@ return {
 
             joker_merged = "Merged!",
 
-            colettahr_do_as_i_say = "Jesus! Do as I say!!"
+            colettahr_do_as_i_say = "Jesus! Do as I say!!",
+
+            joel_nope_hahaha = "Nope! Hahahahahahah"
         },
 
         achievement_names = {
