@@ -770,6 +770,23 @@ return {
                     }
                 }
             },
+
+            j_mahrlatr_loan_shark = {
+                name = "Loan Shark",
+                text = {
+                    {
+                        "Provides an immediate {C:money}#1##3#{} loan.",
+                        "Pays an installment of",
+                        "{C:money}#1##4#{} + {C:money}#1##5#{} of interest",
+                        "{C:attention}for 10 rounds{}",
+                        "{C:red,E:1}Cannot be sold until{}",
+                        "{C:red,E:1}the debt is paid off.{}"
+                    },
+                    {
+                        "{C:red}Current debt: {}{C:money}#1##2#{}"
+                    }
+                }
+            },
         },
 
         Tarot = {
@@ -838,7 +855,7 @@ return {
 
             joker_merged = "Merged!",
 
-            joel_nope_hahaha = "Nope! Hahahahahahah"
+            joel_nope_hahaha = "Nope! Hahahahahahah",
         },
 
         achievement_names = {
