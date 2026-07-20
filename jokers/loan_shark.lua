@@ -43,10 +43,6 @@ SMODS.Joker {
         }
     end,
 
-    can_sell_card = function(context)
-        return card.ability.extra.current_debt > 0
-    end,
-
     add_to_deck = function(self, card, from_debuff)
         ease_dollars(card.ability.extra.loan)
 
