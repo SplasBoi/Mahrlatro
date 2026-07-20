@@ -785,6 +785,9 @@ return {
                     {
                         "{C:red}Current debt: {}{C:money}#1##2#{}"
                     }
+                },
+                unlock = {
+                    "Go broke"
                 }
             },
         },
