@@ -56,7 +56,7 @@ SMODS.Joker {
                     })
                     
                     card:juice_up()
-                    local random_sound_index = math.random(1,2)
+                    local random_sound_index = math.random(1,3)
                     play_sound('mahrlatr_joel_laughing_'..random_sound_index, 1.0, 0.5)
 
                     return true

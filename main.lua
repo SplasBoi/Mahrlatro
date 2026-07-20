@@ -167,6 +167,12 @@ SMODS.Sound {
 }
 
 SMODS.Sound {
+    key = "joel_laughing_3",
+    path = "sfx/joel_laughing_3.ogg",
+    pitch = 1.0
+}
+
+SMODS.Sound {
     key = "mahr_no_no_dont",
     path = "sfx/mahr_no_no_dont.ogg",
     pitch = 1.0
