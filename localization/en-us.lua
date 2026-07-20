@@ -710,13 +710,39 @@ return {
                 }
             },
 
+            j_mahrlatr_flying_dragon = {
+                name = "Flying Dragon",
+                text = {
+                    "Retriggers {C:attention}lucky cards{}."
+                }
+            },
+
             j_mahrlatr_suikahr = {
                 name = "Suikahr",
-                text = { -- TODO: add colored text
+                text = {
                     "If hand is {C:attention}#1#{}, merge scored cards",
                     "into 1 new card of increased rank",
                     "{C:inactive}[Ace pairs will turn into 1 enhanced Ace]{}"
                 }
+            },
+
+            j_mahrlatr_mahrtini = {
+                name = "Mahrtini",
+                text = {
+                    "If {C:attention}poker hand{} is a",
+                    "{C:attention}#1#{}, create a",
+                    "random {C:spectral}Spectral{} card",
+                    "{C:inactive}(Must have room)",
+                },
+            },
+
+            j_mahrlatr_wompyay = {
+                name = "Wompyay",
+                text = {
+                    "Adds one {C:attention}Stone{} card",
+                    "to deck when",
+                    "{C:attention}Blind{} is selected",
+                },
             },
 
             j_mahrlatr_colettahr = {
@@ -754,7 +780,7 @@ return {
                 }
             },
             c_mahrlatr_weakness = {
-                name = "Strength",
+                name = "Weakness",
                 text = {
                     "Decreases rank of",
                     "up to {C:attention}#1#{} selected",
@@ -781,6 +807,8 @@ return {
         dictionary = {
             bobby_good_job = 'Good Job!!!',
             bobby_try_this_hand = 'Alright! Try playing this hand!!',
+
+            colettahr_do_as_i_say = "Jesus! Do as I say!!",
 
             config_mahrlatr_cards_only = 'Mahrlatro cards only',
 
@@ -809,8 +837,6 @@ return {
             vegahrs_pro_crashed = 'Whoopsies! VEGAHRS Pro will now crash!',
 
             joker_merged = "Merged!",
-
-            colettahr_do_as_i_say = "Jesus! Do as I say!!",
 
             joel_nope_hahaha = "Nope! Hahahahahahah"
         },

@@ -1,10 +1,9 @@
 SMODS.Joker {
     key = "vinesahrce_joel",
 
-    -- Fix when we have the art added.
     pos = {
-        x = -1,
-        y = -1
+        x = 0,
+        y = 12
     },
 
     display_size = {
