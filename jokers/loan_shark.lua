@@ -84,19 +84,7 @@ SMODS.Joker {
     end
 }
 
--- Are these really necessary?
-
---[[
 local loan_shark_key = "j_mahrlatr_loan_shark"
-
-local og_can_sell = Card.can_sell_card
-Card.can_sell_card = function(self, context)
-    if self.config.center.key == loan_shark_key then
-        return false
-    end
-
-    return og_can_sell(self, context)
-end
 
 local og_set_sell_value = Card.set_sell_value
 Card.set_sell_value = function(self)
@@ -106,4 +94,3 @@ Card.set_sell_value = function(self)
 
     og_set_sell_value(self)
 end
---]]
