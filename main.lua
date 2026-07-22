@@ -100,6 +100,20 @@ SMODS.ObjectType({
     },
 })
 
+SMODS.ObjectType {
+    key = "mahrlatr_food_jokahr",
+    cards = {
+        ["j_mahrlatr_cheese"] = true,
+        ["j_mahrlatr_coca_colahr"] = true,
+        ["j_mahrlatr_feijoada"] = true,
+        ["j_mahrlatr_fish"] = true,
+        ["j_mahrlatr_laugen_geback"] = true,
+        ["j_mahrlatr_mahrffin"] = true,
+        ["j_mahrlatr_mahrtini"] = true,
+        ["j_mahrlatr_meat"] = true,
+        ["j_mahrlatr_agg"] = true,
+    }
+}
 
 SMODS.current_mod.optional_features = function()
     return {

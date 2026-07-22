@@ -790,6 +790,18 @@ return {
                     "Go broke"
                 }
             },
+
+            j_mahrlatr_le_festin = {
+                name = "Le Festin",
+                text = {
+                    {
+                        "Gains {C:red}+#2#{} Mult for each",
+                        "{C:attention,s:1.4}unique{} Food Jokahr owned",
+                        "throught the run.",
+                        "{C:inactive}(Currently{} {C:red}+#1#{} {C:inactive}Mult){}"
+                    }
+                }
+            }
         },
 
         Tarot = {
