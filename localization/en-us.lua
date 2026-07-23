@@ -901,11 +901,11 @@ return {
         },
 
         achievement_names = {
-            ach_mahrlatr_obtain_trolley = 'obtain_trolley_name'
+            ach_mahrlatr_obtain_trolley = 'Trolalero Trolala'
         },
 
         achievement_descriptions = {
-            ach_mahrlatr_obtain_trolley = 'obtain_trolley_description'
+            ach_mahrlatr_obtain_trolley = 'Obtain Mahrbles trolley from combining the Mahrffin, Meat and Fish jokahrs'
         }
     }
 }
