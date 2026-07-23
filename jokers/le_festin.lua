@@ -3,10 +3,9 @@ local is_unique = nil
 SMODS.Joker {
     key = "le_festin",
 
-    -- You know what to do.
     pos = {
-        x = -1,
-        y = -1
+        x = 4,
+        y = 12
     },
 
     display_size = {

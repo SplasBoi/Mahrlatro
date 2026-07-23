@@ -3,6 +3,12 @@ SMODS.Joker {
 
     discovered = true,
     unlocked = true,
+    atlas = 'CustomJokers',
+
+    pos = {
+        x = 3,
+        y = 12
+    },
 
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
 
@@ -11,7 +17,7 @@ SMODS.Joker {
 
     config = {
         extra = {
-            denominator_increase = 2
+            denominator_increase = 4
         }
     },
 

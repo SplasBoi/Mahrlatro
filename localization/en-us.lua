@@ -377,6 +377,16 @@ return {
                 }
             },
 
+            j_mahrlatr_takanaka = {
+                name = 'Mahrsayoshi Takanahrka',
+                text = {
+                    {
+                        '{C:blue}+#1#{} Chips if game language',
+                        'is set to Brazilian (Brazil mentioned)'
+                    }
+                }
+            },
+
             j_mahrlatr_splas = {
                 name = 'Splas',
                 text = {
@@ -393,6 +403,15 @@ return {
                     '{C:red}+#1#{} Mult, {C:blue}+#2#{} Chips',
                     'and {C:money}#3##4#{} for each',
                     'played {C:blue}hand'
+                }
+            },
+
+            j_mahrlatr_romahrnia = {
+                name = 'Romahrnia',
+                text = {
+                    'Gives {X:mult,C:white} X#1# {} Mult,',
+                    '{C:blue}+#2#{} Chips and {C:money}#3##4#{}',
+                    'for each played {C:blue}hand'
                 }
             },
 
@@ -653,6 +672,15 @@ return {
                 }
             },
 
+            j_mahrlatr_mahrket = {
+                name = "Mahrket",
+                text = {
+                    "When {C:attention}Blind{} is selected,",
+                    "create {C:attention}#1# {C:blue}Common{C:attention} Jokahrs",
+                    "{C:inactive}(Must have room)",
+                }
+            },
+
             j_mahrlatr_the_evil_mahrchine = {
                 name = "The Evil Mahrchine",
                 text = {
@@ -667,8 +695,7 @@ return {
             j_mahrlatr_salad_rng = {
                 name = "Salad RNG",
                 text = {
-                    "Lowers odds of chance based jokahrs but",
-                    "retriggers chance based items"
+                    "{C:red}Lowers odds{} of chance based jokahrs"
                 }
             },
 
@@ -761,7 +788,7 @@ return {
             },
 
             j_mahrlatr_vinesahrce_joel = {
-                name = "{V:1}Vinesahrce{} {V:2}Joel{}",
+                name = "{V:1}Vahrgskelethor{} {V:2}Joel{}",
                 text = {
                     {
                         "Gains {C:red}+#2#{} Mult for each",
