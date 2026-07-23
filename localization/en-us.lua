@@ -787,7 +787,7 @@ return {
                 }
             },
 
-            j_mahrlatr_vinesahrce_joel = {
+            j_mahrlatr_vahrgskelethor_joel = {
                 name = "{V:1}Vahrgskelethor{} {V:2}Joel{}",
                 text = {
                     {
