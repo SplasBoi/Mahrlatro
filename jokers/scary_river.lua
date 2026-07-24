@@ -58,6 +58,8 @@ SMODS.Joker {
         end
         
         if context.individual and context.cardarea == G.play then
+            if not context.other_card:is_suit(e.suit) then return end
+
             return {
                 mult = e.mult
             }
