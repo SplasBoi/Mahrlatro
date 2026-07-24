@@ -838,9 +838,16 @@ return {
                         "suit of {C:attention}less{} cards",
                         "in the deck give",
                         "{C:red}+#1#{} Mult when scored",
-                        --
                         "Suit of less cards: {B:1,C:white}#2#{}"
                     }
+                }
+            },
+
+            j_mahrlatr_black_mahrket = {
+                name = "Black Mahrket",
+                text = {
+                    "Upon selling this joker, destroy #1# jokers",
+                    "and turn another negative"
                 }
             }
         },

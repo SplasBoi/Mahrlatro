@@ -15,7 +15,17 @@ SMODS.Joker {
     },
 
     rarity = 3,
-    cost = 67,
+    cost = 4,
+
+    loc_vars = function(self, info_queue, card)
+        local e = self.config.extra or card.ability.extra
+
+        return {
+            vars = {
+                e.joker_destroy_count
+            }
+        }
+    end,
 
     can_sell = function(self, card, context)
         local e = self.config.extra or card.ability.extra
