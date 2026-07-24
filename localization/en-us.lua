@@ -828,6 +828,20 @@ return {
                         "{C:inactive}(Currently{} {C:red}+#1#{} {C:inactive}Mult){}"
                     }
                 }
+            },
+
+            j_mahrlatr_scary_river = {
+                name = "Scary River",
+                text = {
+                    {
+                        "Played cards with the",
+                        "suit of {C:attention}less{} cards",
+                        "in the deck give",
+                        "{C:red}+#1#{} Mult when scored",
+                        --
+                        "Suit of less cards: {B:1,C:white}#2#{}"
+                    }
+                }
             }
         },
 
