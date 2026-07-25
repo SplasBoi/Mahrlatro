@@ -60,6 +60,14 @@ return {
                 }
             },
 
+            j_mahrlatr_pirannahr_plant = {
+                name = "Pirannahr Plant",
+                text = {
+                    "{X:mult,C:white} X#1# {} Mult if poker",
+                    "hand contains {C:attention}3 unique suits{}"
+                }
+            },
+
             j_mahrlatr_mahrllion = {
                 name = "Mahrllionaire",
                 text = {
@@ -161,6 +169,16 @@ return {
                     "Gives {X:mult,C:white} X#1# {} Mult",
                     "for each {C:attention}Wild Card",
                     "in your {C:attention}full deck",
+                    "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)"
+                }
+            },
+
+            j_mahrlatr_skibidi_gimler = {
+                name = 'Skibidi Gimler',
+                text = {
+                    "Destroys played stone cards.",
+                    "Gives {X:mult,C:white} X#1# {} Mult",
+                    "for each {C:attention}Destroyed Card{}",
                     "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)"
                 }
             },
@@ -834,11 +852,10 @@ return {
                 name = "Scary River",
                 text = {
                     {
-                        "Played cards with the",
-                        "suit of {C:attention}less{} cards",
-                        "in the deck give",
-                        "{C:red}+#1#{} Mult when scored",
-                        "Suit of less cards: {B:1,C:white}#2#{}"
+                        "Played cards of suit with the",
+                        "{C:attention}least amount{} of cards in the deck",
+                        "give {C:red}+#1#{} Mult when scored",
+                        "Suit with least amount of cards: {B:1,C:white}#2#{}"
                     }
                 }
             },
