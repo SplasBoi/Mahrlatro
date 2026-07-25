@@ -8,6 +8,7 @@ SMODS.Joker {
     pos = { x = 4, y = 6 },
     config = { extra = { h_size = 2, chip_mod = 322 } },
     atlas = 'CustomJokers',
+    pools = { ["mahrlatr_mahrlatr_jokers"] = true },
 
 
     loc_vars = function(self, info_queue, card)

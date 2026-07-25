@@ -10,7 +10,7 @@ SMODS.Joker {
     cost = 7,
     pos = { x = 0, y = 4 },
     atlas = 'CustomJokers',
-    pools = { ["modprefix_mahrlatr_jokers"] = true },
+    pools = { ["mahrlatr_mahrlatr_jokers"] = true },
 
     config = {
         extra = {

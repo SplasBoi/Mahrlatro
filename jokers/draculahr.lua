@@ -6,6 +6,7 @@ SMODS.Joker {
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
+    pools = { ["mahrlatr_mahrlatr_jokers"] = true },
     rarity = 2,
     cost = 7,
     pos = { x = 4, y = 4 },

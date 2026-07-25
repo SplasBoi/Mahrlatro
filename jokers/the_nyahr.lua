@@ -10,7 +10,7 @@ SMODS.Joker {
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
-    pools = { ["mahr_mahr_jokers"] = true },
+    pools = { ["mahrlatr_mahrlatr_jokers"] = true },
 
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS.m_lucky

@@ -20,7 +20,7 @@ SMODS.Joker { --Scary Crimson
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
-    pools = { ["mahr_mahr_jokers"] = true },
+    pools = { ["mahrlatr_mahrlatr_jokers"] = true },
 
     cost = 4,
     rarity = 2,

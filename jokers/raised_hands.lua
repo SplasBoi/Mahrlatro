@@ -8,6 +8,7 @@ SMODS.Joker {
     discovered = true,
     unlocked = true,
     atlas = 'CustomJokers',
+    pools = { ["mahrlatr_mahrlatr_jokers"] = true },
 
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.hand and not context.end_of_round then

@@ -24,6 +24,7 @@ SMODS.Joker { --Splas
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
+    pools = { ["mahrlatr_mahrlatr_jokers"] = true },
     
     calculate = function(self, card, context)
         

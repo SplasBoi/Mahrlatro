@@ -7,6 +7,7 @@ SMODS.Joker {
     rarity = 2,
     cost = 5,
     atlas = 'CustomJokers',
+    pools = { ["mahrlatr_mahrlatr_jokers"] = true },
     pos = { x = 5, y = 9 },
 
     calculate = function(self, card, context)

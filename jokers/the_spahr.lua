@@ -26,6 +26,7 @@ SMODS.Joker { --The Spahr
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
+    pools = { ["mahrlatr_mahrlatr_jokers"] = true },
     
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play  then

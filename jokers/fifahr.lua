@@ -7,7 +7,7 @@ SMODS.Joker {
     cost = 7,
     pos = { x = 4, y = 8 },
     atlas = 'CustomJokers',
-    pools = { ["modprefix_mahrlatr_jokers"] = true },
+    pools = { ["mahrlatr_mahrlatr_jokers"] = true },
 
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play  then

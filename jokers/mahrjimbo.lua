@@ -7,7 +7,7 @@ SMODS.Joker {
     cost = 2,
     discovered = true,
     atlas = 'CustomJokers',
-    pools = { ["mahr_mahr_jokers"] = true },
+    pools = { ["mahrlatr_mahrlatr_jokers"] = true },
 
 
     config = { extra = { mult = 4 }, },

@@ -8,7 +8,7 @@ SMODS.Joker {
     config = { extra = { xmult = 3, driver_amount = 16 } },
     pos = { x = 6, y = 8 },
     atlas = 'CustomJokers',
-    pools = { ["modprefix_mahrlatr_jokers"] = true },
+    pools = { ["mahrlatr_mahrlatr_jokers"] = true },
 
     loc_vars = function(self, info_queue, card)
         local driver_tally = 0

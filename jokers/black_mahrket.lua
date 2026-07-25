@@ -1,11 +1,13 @@
 SMODS.Joker {
     key = "black_mahrket",
     atlas = 'CustomJokers',
+    unlocked = true,
+    discovered = true,
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
 
     pos = {
-        x = 5,
-        y = 12
+        x = 0,
+        y = 13
     },
 
     config = {

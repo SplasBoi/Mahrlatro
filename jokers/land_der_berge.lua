@@ -19,7 +19,7 @@ SMODS.Joker { -- Land der Berge
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
-    pools = { ["mahr_mahr_jokers"] = true },
+    pools = { ["mahrlatr_mahrlatr_jokers"] = true },
 
     cost = 5,
     rarity = 2,

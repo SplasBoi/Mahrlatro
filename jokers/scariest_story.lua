@@ -24,7 +24,7 @@ SMODS.Joker{ --New Joker
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
-    pools = { ["modprefix_mahrlatr_jokers"] = true },
+    pools = { ["mahrlatr_mahrlatr_jokers"] = true },
     
 
     loc_vars = function(self, info_queue, card)

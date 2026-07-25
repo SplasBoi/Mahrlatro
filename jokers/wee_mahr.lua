@@ -26,6 +26,7 @@ SMODS.Joker { --Wee Mahr
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
+    pools = { ["mahrlatr_mahrlatr_jokers"] = true },
     
     loc_vars = function(self, info_queue, card)
         return {

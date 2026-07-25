@@ -26,6 +26,7 @@ SMODS.Joker { --Mimahr
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
+    pools = { ["mahrlatr_mahrlatr_jokers"] = true },
     
     calculate = function(self, card, context)
         if context.repetition and context.cardarea == G.play then
