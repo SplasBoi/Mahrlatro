@@ -878,10 +878,14 @@ return {
                 name = "Scary River",
                 text = {
                     {
-                        "Played cards of suit with the",
-                        "{C:attention}least amount{} of cards in the deck",
-                        "give {C:red}+#1#{} Mult when scored",
-                        "Suit with least amount of cards: {B:1,C:white}#2#{}"
+                        "Played cards of the {E:2,C:attention}sole{} suit",
+                        "with the {C:attention}least amount{} of cards",
+                        "in the {C:attention}full deck{} give",
+                        "{C:red}+#1#{} Mult when scored",
+                    },
+                    {
+                        "Suit with the least amount",
+                        "of cards: {B:1,C:white}#2#{}"
                     }
                 }
             },

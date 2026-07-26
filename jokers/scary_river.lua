@@ -1,6 +1,6 @@
 local tally_suits = nil
-local pick_pseudorandom_suit = nil
 local get_buffed_suit = nil
+local are_suits_equal = nil
 
 SMODS.Joker {
     key = "scary_river",
@@ -29,7 +29,7 @@ SMODS.Joker {
     config = {
         extra = {
             mult = 12,
-            suit = 'Spades'
+            suit = 'Multiple'
         }
     },
 
@@ -39,26 +39,32 @@ SMODS.Joker {
         return {
             vars = {
                 e.mult,
-                localize(e.suit, 'suits_plural'),
+                e.suit,
                 
                 colours = {
-                    G.C.SUITS[e.suit]
+                    G.C.SUITS[e.suit] or HEX('AAAAAA')
                 }
             }
         }
     end,
 
+    update = function(self, card, front)
+        if not G.playing_cards then return end
+
+        local e = card.ability.extra
+        local tally = tally_suits(G.playing_cards)
+
+        e.suit = get_buffed_suit(tally)
+        if (e.suit ~= "Multiple") then
+            localize(e.suit, "suits_plural")
+        end
+    end,
+
     calculate = function(self, card, context)
         local e = card.ability.extra
 
-        if context.ending_shop or context.ending_booster or context.change_suit or context.playing_card_added or context.remove_playing_cards then
-            local tally = tally_suits(G.playing_cards)
-
-            e.suit = get_buffed_suit(tally)
-        end
-        
         if context.individual and context.cardarea == G.play then
-            if not context.other_card:is_suit(e.suit) then return end
+            if e.suit == "Multiple" or not context.other_card:is_suit(e.suit) then return end
 
             return {
                 mult = e.mult
@@ -85,8 +91,9 @@ get_buffed_suit = function(tally)
         end
     end
 
-    -- If there is more than one suit with less cards, picks a random one.
-    return min_suits[math.random(1, #min_suits)]
+    if #min_suits > 1 then return "Multiple" end
+
+    return min_suits[1]
 end
 
 tally_suits = function(cards_in_deck)
