@@ -177,9 +177,9 @@ return {
                 name = 'Skibidi Gimler',
                 text = {
                     "Destroys played stone cards.",
-                    "Gives {X:mult,C:white} X#1# {} Mult",
+                    "Gives {X:mult,C:white} X#2# {} Mult",
                     "for each {C:attention}Destroyed Card{}",
-                    "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)"
+                    "{C:inactive}(Currently {X:mult,C:white} X#1# {C:inactive} Mult)"
                 }
             },
 

@@ -3,8 +3,8 @@ SMODS.Joker{
     key = "skibidi_gimler",
     config = {
         extra = {
-            x_mult_gain = 0.5,
-            gained_x_mult = 1
+            gained_x_mult = 1,
+            scaling = 0.5
         }
     },
 
@@ -28,18 +28,32 @@ SMODS.Joker{
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
     
     loc_vars = function(self, info_queue, card)
-        return {vars = {self.config.extra.gained_x_mult}}
+        return { 
+            vars = {
+                card.ability.extra.gained_x_mult,
+                card.ability.extra.scaling
+            }
+        }
     end,
     
     calculate = function(self, card, context)
         if context.destroy_card and context.destroy_card.should_destroy  then
-            return { remove = true }
+            return {
+                remove = true
+            }
         end
+
         if context.individual and context.cardarea == G.play  then
             context.other_card.should_destroy = false
             if SMODS.get_enhancements(context.other_card)["m_stone"] == true then
                 context.other_card.should_destroy = true
-                card.ability.extra.gained_x_mult = card.ability.extra.gained_x_mult + card.ability.extra.x_mult_gain
+                
+                SMODS.scale_card(card, {
+                    ref_table = card.ability.extra,
+                    ref_value = 'gained_x_mult',
+                    scalar_value = 'scaling'
+                })
+
                 return {
                     Xmult = card.ability.extra.gained_x_mult
                 }
