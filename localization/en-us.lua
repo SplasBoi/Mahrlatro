@@ -713,7 +713,33 @@ return {
             j_mahrlatr_salad_rng = {
                 name = "Salad RNG",
                 text = {
-                    "{C:red}Lowers odds{} of chance based jokahrs"
+                    "{C:red}Lowers odds{} of chance based cards & jokahrs"
+                }
+            },
+
+            j_mahrlatr_zoomahr = {
+                name = "Zoomahr",
+                text = {
+                    "{C:attention}Significantly increases{} game speed."
+                }
+            },
+
+            j_mahrlatr_fibonahrcci = {
+                name = "Fibonahrcci",
+                text = {
+                    "Each played {C:attention}Ace{},",
+                    "{C:attention}2{}, {C:attention}3{}, {C:attention}5{}, or {C:attention}8{} gives",
+                    "{C:mult}+#1#{} Mult when scored"
+                }
+            },
+
+            j_mahrlatr_speedrunnahr = {
+                name = "Speedrunnahr",
+                text = {
+                    "Gains {C:chips}+#2#{} Chips",
+                    "if played hand",
+                    "contains a {C:attention}Straight{}",
+                    "{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips)",
                 }
             },
 
