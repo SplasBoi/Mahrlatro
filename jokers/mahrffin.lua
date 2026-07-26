@@ -3,7 +3,8 @@ SMODS.Joker { --Mahrffin
 
     config = {
         extra = {
-            dollars = 1
+            dollars = 1,
+            required_jokers_to_merge = {"j_mahrlatr_fish", "j_mahrlatr_meat"}
         }
     },
     
@@ -38,17 +39,15 @@ SMODS.Joker { --Mahrffin
     end,
     
     calculate = function(self, card, context)
+        local e = card.ability.extra
+
         if context.before then
             return {
                 func = function()
                     ease_dollars(card.ability.extra.dollars)
                     card_eval_status_text(
                         context.blueprint_card or card,
-                        'extra',
-                        nil,
-                        nil,
-                        nil,
-                        {
+                        'extra', nil, nil, nil, {
                             message = "+".. localize('$').. card.ability.extra.dollars,
                             colour = G.C.MONEY
                         }
@@ -57,122 +56,52 @@ SMODS.Joker { --Mahrffin
                 end
             }
         end
-        if context.first_hand_drawn  then
-            if ((function()
-                for i, v in pairs(G.jokers.cards) do
-                    if v.config.center.key == "j_mahrlatr_mahrffin" then 
-                        return true
-                    end
-                end
-            end)() and (function()
-                for i, v in pairs(G.jokers.cards) do
-                    if v.config.center.key == "j_mahrlatr_fish" then 
-                        return true
-                    end
-                end
-            end)() and (function()
-                for i, v in pairs(G.jokers.cards) do
-                    if v.config.center.key == "j_mahrlatr_meat" then 
-                        return true
-                    end
-                end
-            end)()) then
+
+        if context.first_hand_drawn then
+            if JokerUtility.can_merge_jokers(e.required_jokers_to_merge) then
                 return {
+                    -- Merged Jokers' Deletion
                     func = function()
-                        
-                        local created_joker = true
-                        G.E_MANAGER:add_event(Event({
-                            func = function()
-                                local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_mahrlatr_mahrbles_trolley' })
-                                if joker_card then
-                                    
-                                    
-                                end
-                                
-                                return true
-                            end
-                        }))
-                        
-                        if created_joker then
-                            card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = localize('k_plus_joker'), colour = G.C.BLUE})
-                        end
-                        return true
-                    end,
-                    extra = {
-                        func = function()
-                            local target_joker = nil
-                            for i, joker in ipairs(G.jokers.cards) do
-                                if joker.config.center.key == "j_mahrlatr_fish" and not joker.getting_sliced then
-                                    target_joker = joker
+                        local sliced_joker
+
+                        for _, v in ipairs(e.required_jokers_to_merge) do
+                            for _, joker in ipairs(G.jokers.cards) do
+                                -- If it detects a joker already being sliced. Doesn't mark it to be sliced again (nil).
+                                if joker.config.center.key == v and not joker.getting_sliced then
+                                    sliced_joker = joker
                                     break
                                 end
                             end
-                            
-                            if target_joker then
-                                if target_joker.ability.eternal then
-                                    target_joker.ability.eternal = nil
-                                end
-                                target_joker.getting_sliced = true
-                                G.E_MANAGER:add_event(Event({
-                                    func = function()
-                                        target_joker:start_dissolve({G.C.RED}, nil, 1.6)
-                                        return true
-                                    end
-                                }))
-                                card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "Collected!", colour = G.C.RED})
-                            end
-                            return true
-                        end,
-                        colour = G.C.RED,
-                        extra = {
-                            func = function()
-                                local target_joker = nil
-                                for i, joker in ipairs(G.jokers.cards) do
-                                    if joker.config.center.key == "j_mahrlatr_meat" and not joker.getting_sliced then
-                                        target_joker = joker
-                                        break
-                                    end
-                                end
-                                
-                                if target_joker then
-                                    if target_joker.ability.eternal then
-                                        target_joker.ability.eternal = nil
-                                    end
-                                    target_joker.getting_sliced = true
-                                    G.E_MANAGER:add_event(Event({
-                                        func = function()
-                                            target_joker:start_dissolve({G.C.RED}, nil, 1.6)
-                                            return true
-                                        end
-                                    }))
-                                    card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "Collected!", colour = G.C.RED})
-                                end
-                                return true
-                            end,
-                            colour = G.C.RED,
-                            extra = {
-                                func = function()
-                                    local target_joker = card
-                                    
-                                    if target_joker then
-                                        if target_joker.ability.eternal then
-                                            target_joker.ability.eternal = nil
-                                        end
-                                        target_joker.getting_sliced = true
-                                        G.E_MANAGER:add_event(Event({
-                                            func = function()
-                                                target_joker:start_dissolve({G.C.RED}, nil, 1.6)
-                                                return true
-                                            end
-                                        }))
-                                        card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "Collected!", colour = G.C.RED})
-                                    end
-                                    return true
-                                end,
+
+                            if sliced_joker == nil then return end
+
+                            sliced_joker.getting_sliced = true
+                            JokerUtility.slice_joker(sliced_joker)
+                            card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {
+                                message = "Collected!",
                                 colour = G.C.RED
-                            }
-                        }
-                    }
+                            })
+                        end
+                        
+                        -- Ends it there if sliced_joker is nil, which means it is already being sliced, so  shouldn't be again.
+                        if sliced_joker == nil then return end
+
+                        JokerUtility.slice_joker(card)
+                        card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {
+                            message = "Collected!",
+                            colour = G.C.RED
+                        })
+                        
+                        -- Mahrble's Trolley Instantiation
+                        JokerUtility.instantiate_joker("j_mahrlatr_mahrbles_trolley")
+
+                        card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {
+                            message = localize('k_plus_joker'),
+                            colour = G.C.BLUE
+                        })
+                            
+                        return true
+                    end
                 }
             end
         end
