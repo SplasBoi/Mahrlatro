@@ -836,8 +836,8 @@ return {
                 text = {
                     {
                         "Gains {C:red}+#2#{} Mult for each",
-                        "{C:red}failed{} {C:tarot,E:1}Wheel of Fortune{}.",
-                        "{C:inactive}(Currently: {C:red}+#1#{{} Mult){}"
+                        "{C:red}failed{} {C:tarot,E:1}Wheel of Fortune{}",
+                        "{C:inactive}(Currently: {C:red}+#1#{}{C:inactive} Mult){}"
                     }
                 }
             },
