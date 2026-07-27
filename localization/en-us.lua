@@ -400,7 +400,8 @@ return {
                 text = {
                     {
                         '{C:blue}+#1#{} Chips if game language',
-                        'is set to Brazilian (Brazil mentioned)'
+                        'is set to ({V:1}B{V:2}r{V:3}a{V:1}z{V:2}i{V:3}l{V:1}i{V:2}a{V:3}n{}) {V:1}P{V:2}o{V:3}r{V:1}t{V:2}u{V:3}g{V:1}u{V:2}e{V:3}s{V:1}e',
+                        '{E:2}(Brazil mentioned){}'
                     }
                 }
             },

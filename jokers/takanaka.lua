@@ -28,6 +28,12 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
+                colours = {
+                    HEX('009440'),
+                    HEX('FEDF00'),
+                    HEX('302681')
+                },
+
                 card.ability.extra.chips
             }
         }
