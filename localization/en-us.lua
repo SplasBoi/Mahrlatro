@@ -24,12 +24,28 @@ return {
                 }
             },
 
+            j_mahrlatr_ratatouille = {
+                name = "Ratatouille",
+                text = {
+                    "{C:red}+#1#{} Mult if played",
+                    "hand contains a {C:attention}#2#",
+                    "{c:inactive}(Rata - TWO - ee){}"
+                }
+            },
+
             j_mahrlatr_golden_mahr = {
                 name = 'Golden Mahr',
                 text = {
                     "Played {C:attention}Gold{} cards",
                     "earn {C:money}$#1#{} when scored"
                 }
+            },
+
+            j_mahrlatr_noiflo = {
+                name = "Noiflo",
+                text = {
+                    ""
+                },
             },
 
             j_mahrlatr_raised_hands = {
@@ -309,6 +325,26 @@ return {
                         'from right to left',
                         "(excluding Normal Guy)"
                     }
+                }
+            },
+
+            j_mahrlatr_januel = {
+                name = 'Januel',
+                text = {
+                    {
+                        'Sets {C:blue}Hands{} to {C:blue}#1#{}',
+                        '{C:red}Discards{} to {C:red}#2#{}',
+                        'Draws all cards in {c:attention}full deck{}.'
+                    }
+                }
+            },
+
+            j_mahrlatr_four_fingahrs = {
+                name = "Four Fingahrs",
+                text = {
+                    "All {C:attention}Flushes{} and",
+                    "{C:attention}Straights{} can be",
+                    "made with {C:attention}4{} cards",
                 }
             },
 

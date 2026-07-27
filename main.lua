@@ -133,6 +133,16 @@ SMODS.Sound {
 }
 
 SMODS.Sound {
+    key = "ratatouille",
+    path = "sfx/ratatouille.ogg",
+}
+
+SMODS.Sound {
+    key = "noiflo",
+    path = "sfx/noiflo.ogg",
+}
+
+SMODS.Sound {
     key = "ratatouille_honk",
     path = "sfx/ratatouille_honk.ogg",
     pitch = 1.0
