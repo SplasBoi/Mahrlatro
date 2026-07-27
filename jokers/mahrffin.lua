@@ -57,7 +57,7 @@ SMODS.Joker { --Mahrffin
             }
         end
 
-        if context.first_hand_drawn then
+        if context.ending_shop then
             if JokerUtility.can_merge_jokers(e.required_jokers_to_merge) then
                 return {
                     -- Merged Jokers' Deletion
