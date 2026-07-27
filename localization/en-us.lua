@@ -288,7 +288,7 @@ return {
             j_mahrlatr_epic_weed = {
                 name = 'Epic Weed',
                 text = {
-                    'Played cards with {C:uncommon}Club{} suit ',
+                    'Played cards with {V:1}Club{} suit',
                     'give {C:mult}+3{} Mult when scored'
                 }
             },
@@ -895,6 +895,15 @@ return {
                 text = {
                     "Upon selling this joker, destroy #1# jokers",
                     "and turn another negative"
+                }
+            },
+
+            j_mahrlatr_dutch_plus_ratio = {
+                name = "Dutch Plus Ratio",
+                text = {
+                    "{C:red}+#1#{} Mult for {V:1}Club{} cards scored",
+                    "{C:red}-#3#{} hand size, {C:blue}+#2#{} chips",
+                    "{C:red}+#4#{} Mult for each card below {C:attention}#5#{} ({C:red}#6#{})"
                 }
             }
         },
