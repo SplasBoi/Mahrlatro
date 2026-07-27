@@ -53,47 +53,15 @@ SMODS.Joker { --Epic Weed
 
             if JokerUtility.can_merge_jokers(e.required_jokers_to_merge) then
                 return {
-                    -- Merged Jokers' Deletion
-                    func = function()
-                        local sliced_joker
-
-                        for _, v in ipairs(e.required_jokers_to_merge) do
-                            for _, joker in ipairs(G.jokers.cards) do
-                                -- If it detects a joker already being sliced. Doesn't mark it to be sliced again (nil).
-                                if joker.config.center.key == v and not joker.getting_sliced then
-                                    sliced_joker = joker
-                                    break
-                                end
-                            end
-
-                            if sliced_joker == nil then return end
-
-                            sliced_joker.getting_sliced = true
-                            JokerUtility.slice_joker(sliced_joker)
-                            card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {
-                                message = "Dit is Nederlands!!",
-                                colour = G.C.DIAMONDS
-                            })
-                        end
-                        
-                        -- Ends it there if sliced_joker is nil, which means it is already being sliced, so  shouldn't be again.
-                        if sliced_joker == nil then return end
-
-                        JokerUtility.slice_joker(card)
-                        card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {
-                            message = "Dit is Nederlands!",
-                            colour = G.C.DIAMONDS
-                        })
-                        
-                        -- Dutch Plus Ratio Instantiation
-                        JokerUtility.instantiate_joker("j_mahrlatr_dutch_plus_ratio")
-
-                        card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {
-                            message = "Too Dutch for you.",
-                            colour = G.C.DIAMONDS
-                        })
-                            
-                        return true
+                    func = function ()
+                        return JokerUtility.slice_and_merge_jokers(
+                            context,
+                            card,
+                            "j_mahrlatr_dutch_plus_ratio",
+                            G.C.DIAMONDS,
+                            "Dit is Nederlands!",
+                            "Too Dutch for you!!"
+                        )
                     end
                 }
             end

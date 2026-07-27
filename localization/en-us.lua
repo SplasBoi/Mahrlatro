@@ -563,7 +563,7 @@ return {
             j_mahrlatr_nutellas_cahr = {
                 name = 'Nutella\'s Cahr',
                 text = {
-                    '{C:money}+$10{} if hand',
+                    '{C:money}+$#1#{} if hand',
                     '{C:attention}one-shots{} the blind'
                 }
             },

@@ -5,7 +5,8 @@ SMODS.Joker{ --Supahr Nutellio
 
     config = {
         extra = {
-            chips = 67
+            chips = 67,
+            required_jokers_to_merge = {"j_mahrlatr_nutella_sweep", "j_mahrlatr_nutellas_cahr"}
         }
     },
     
@@ -55,6 +56,25 @@ SMODS.Joker{ --Supahr Nutellio
             else
                 return {
                     chips = card.ability.extra.chips
+                }
+            end
+        end
+
+        if context.ending_shop then
+            local e = card.ability.extra
+
+            if JokerUtility.can_merge_jokers(e.required_jokers_to_merge) then
+                return {
+                    func = function ()
+                        return JokerUtility.slice_and_merge_jokers(
+                            context,
+                            card,
+                            "j_mahrlatr_romahrnia",
+                            HEX('002B7F'),
+                            "EZ!",
+                            "Bine ai venit în Româhrnia!"
+                        )
+                    end
                 }
             end
         end

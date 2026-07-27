@@ -3,7 +3,7 @@ SMODS.Joker{
     config = {
         extra = {
             chips = 67,
-            dollars = 5,
+            dollars = 2,
             xmult = 3.75
         }
     },
