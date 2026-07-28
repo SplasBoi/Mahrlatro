@@ -971,6 +971,15 @@ return {
                     "{C:red}-#3#{} hand size, {C:blue}+#2#{} chips",
                     "{C:red}+#4#{} Mult for each card below {C:attention}#5#{} ({C:red}#6#{})"
                 }
+            },
+
+            j_mahrlatr_hundo = {
+                name = "Hundo",
+                text = {
+                    "Earns +{C:money}#3##1#{} for each",
+                    "{C:attention}unique hand{} played.",
+                    "{C:inactive}(Currently {C:money}+#3##2#{C:inactive}){}"
+                }
             }
         },
 

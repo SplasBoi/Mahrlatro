@@ -17,7 +17,7 @@ SMODS.Joker {
     },
 
     rarity = 3,
-    cost = 4,
+    cost = 10,
 
     loc_vars = function(self, info_queue, card)
         local e = self.config.extra or card.ability.extra
