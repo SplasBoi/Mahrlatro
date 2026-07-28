@@ -3,7 +3,7 @@ SMODS.Joker{
     key = "skibidi_gimler",
     config = {
         extra = {
-            gained_x_mult = 1,
+            gained_x_chips = 1,
             scaling = 0.5
         }
     },
@@ -30,7 +30,7 @@ SMODS.Joker{
     loc_vars = function(self, info_queue, card)
         return { 
             vars = {
-                card.ability.extra.gained_x_mult,
+                card.ability.extra.gained_x_chips,
                 card.ability.extra.scaling
             }
         }
@@ -47,17 +47,21 @@ SMODS.Joker{
             context.other_card.should_destroy = false
             if SMODS.get_enhancements(context.other_card)["m_stone"] == true then
                 context.other_card.should_destroy = true
+
+                print("scale")
                 
                 SMODS.scale_card(card, {
                     ref_table = card.ability.extra,
-                    ref_value = 'gained_x_mult',
+                    ref_value = 'gained_x_chips',
                     scalar_value = 'scaling'
                 })
-
-                return {
-                    Xmult = card.ability.extra.gained_x_mult
-                }
             end
+        end
+
+        if context.joker_main then
+            return {
+                x_chips = card.ability.extra.gained_x_chips
+            }
         end
     end
 }
