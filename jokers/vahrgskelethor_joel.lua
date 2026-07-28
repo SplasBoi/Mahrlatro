@@ -6,6 +6,11 @@ SMODS.Joker {
         y = 12
     },
 
+    soul_pos = {
+        x = 3,
+        y = 14
+    },
+
     display_size = {
         w = 71 * 1, 
         h = 95 * 1

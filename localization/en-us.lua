@@ -33,6 +33,35 @@ return {
                 }
             },
 
+            j_mahrlatr_mahrs_sixth_sense = {
+                name = "Mahrs Sixth Sense",
+                text = {
+                    "If {C:attention}first hand{} of round is",
+                    "a single {C:attention}6{}, destroy it and",
+                    "create a {C:spectral}Spectral{} card",
+                    "{C:inactive}(Must have room)"
+                }
+            },
+
+            j_mahrlatr_mahrs_screenshare = {
+                name = "Mahrs Screenshare",
+                text = {
+                    "{C:hearts}Hearts{} and {C:diamonds}Diamonds",
+                    "count as the same suit,",
+                    "{C:spades}Spades{} and {C:clubs}Clubs",
+                    "count as the same suit",
+                }
+            },
+
+            j_mahrlatr_evil_scary_face = {
+                name = "Evil Scary Face",
+                text = {
+                    "Played {C:attention}face{} cards",
+                    "give {C:chips}+#1#{} Chips",
+                    "when scored",
+                },
+            },
+
             j_mahrlatr_golden_mahr = {
                 name = 'Golden Mahr',
                 text = {
@@ -930,7 +959,7 @@ return {
             j_mahrlatr_black_mahrket = {
                 name = "Black Mahrket",
                 text = {
-                    "Upon selling this joker, destroy #1# jokers",
+                    "Upon selling this jokahr, destroy #1# jokahrs",
                     "and turn another negative"
                 }
             },
