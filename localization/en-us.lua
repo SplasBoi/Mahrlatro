@@ -980,6 +980,22 @@ return {
                     "{C:attention}unique hand{} played.",
                     "{C:inactive}(Currently {C:money}+#3##2#{C:inactive}){}"
                 }
+            },
+
+            j_mahrlatr_no_levels_early = {
+                name = "No Levels Early",
+                text = {
+                    '{X:mult,C:white}X#1#{} Mult if played',
+                    'poker hand level is {C:attention}1{}',
+                }
+            },
+
+            j_mahrlatr_any_percent = {
+                name = "Any%",
+                text = {
+                    'Adds poker hand',
+                    'level to Mult',
+                }
             }
         },
 
