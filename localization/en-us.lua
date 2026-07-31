@@ -1004,6 +1004,15 @@ return {
                     'Retriggers all',
                     '{C:attention}non-face cards{} once.'
                 }
+            },
+
+            j_mahrlatr_considerable_girth = {
+                name = "Considerable Girth",
+                text = {
+                    "Adds the rank of all",
+                    "cards held in hand",
+                    "to Chips"
+                }
             }
         },
 
