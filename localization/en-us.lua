@@ -996,6 +996,14 @@ return {
                     'Adds poker hand',
                     'level to Mult',
                 }
+            },
+
+            j_mahrlatr_mahrs_keyboard = {
+                name = "Mahr's Keyboard",
+                text = {
+                    'Retriggers all',
+                    '{C:attention}non-face cards{} once.'
+                }
             }
         },
 
