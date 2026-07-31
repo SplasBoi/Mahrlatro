@@ -42,11 +42,19 @@ SMODS.Joker {
 
         if context.individual and context.cardarea == G.play then
             local scored_suit = context.other_card.base.suit
+            local is_wild = SMODS.has_enhancement(context.other_card, 'm_wild')
 
-            if not TableUtility.contains_individual(scored_suit, e.scored_suits) then
-                table.insert(e.scored_suits, scored_suit)
+            if not TableUtility.contains_individual(scored_suit, e.scored_suits) or is_wild then
+                if is_wild then
+                    table.insert(e.scored_suits, "Wild")
+                else
+                    table.insert(e.scored_suits, scored_suit)
+                end
 
                 card:juice_up(0.8, 0.8)
+
+                -- If hand has 4 scoring cards with different suits + wild, wild will still be added, so the scoring_suits table will imply a hand has five suits, which doesn't make sense. So it also doesn't make sense giving +Mult for a "fifth" suit.
+                if #e.scored_suits > 4 then return end
 
                 return {
                     mult = card.ability.extra.mult
