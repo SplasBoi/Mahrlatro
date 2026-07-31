@@ -1013,6 +1013,20 @@ return {
                     "cards held in hand",
                     "to Chips"
                 }
+            },
+
+            j_mahrlatr_luahr = {
+                name = "Luahr",
+                text = {
+                    {
+                        "{V:4}if {V:1}playing_card_gets_modified{V:2}() {V:4}then{}",
+                        "{V:5,E:2}luahr{V:8}.{V:3}ability{V:8}.{V:3}extra{V:8}.{V:3}chips {V:5}+ {V:6}#2#{}",
+                        "{V:4}end",
+                    },
+                    {
+                        "{C:inactive}({V:5,E:2}luahr{V:8}.{V:3}ability{V:8}.{V:3}extra{V:8}.{V:3}chips{V:8} {V:5}= +{V:6}#1#{C:inactive}){}"
+                    }
+                }
             }
         },
 
