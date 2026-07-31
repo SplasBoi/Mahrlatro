@@ -1027,6 +1027,15 @@ return {
                         "{C:inactive}({V:5,E:2}luahr{V:8}.{V:3}ability{V:8}.{V:3}extra{V:8}.{V:3}chips{V:8} {V:5}= +{V:6}#1#{C:inactive}){}"
                     }
                 }
+            },
+
+            j_mahrlatr_switches = {
+                name = "Switches",
+                text = {
+                    "Gives {X:chips,C:white} X#2# {} Chips",
+                    "every time a card {C:attention}changes suit{]",
+                    "{C:inactive}(Currently {X:chips,C:white} X#1# {C:inactive} Chips)"
+                }
             }
         },
 
