@@ -1036,6 +1036,15 @@ return {
                     "every time a card {C:attention}changes suit{]",
                     "{C:inactive}(Currently {X:chips,C:white} X#1# {C:inactive} Chips)"
                 }
+            },
+
+            j_mahrlatr_hue = {
+                name = "Hue",
+                text = {
+                    "{C:mult}+#1#{} Mult for each",
+                    "{C:attention} unique suit{} scored",
+                    "in hand"
+                }
             }
         },
 

@@ -63,9 +63,5 @@ SMODS.Joker {
 }
 
 is_unique = function(joker_key, already_owned)
-    for _, v in ipairs(already_owned) do
-        if v == joker_key then return false end
-    end
-
-    return true
+    return not TableUtility.contains_individual(joker_key, already_owned)
 end
