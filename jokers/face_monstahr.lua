@@ -1,5 +1,5 @@
 SMODS.Joker {
-    key = "face_mahrnster",
+    key = "face_monstahr",
 
     pos = {
         x = -1,
@@ -42,7 +42,7 @@ SMODS.Joker {
 
     calculate = function(self, card, context)
         if context.discard and context.other_card:is_face() then
-            if SMODS.pseudorandom_probability(card, 'j_mahrlatr_face_mahrnster', card.ability.extra.numerator, card.ability.extra.denominator) then
+            if SMODS.pseudorandom_probability(card, 'j_mahrlatr_face_monstahr', card.ability.extra.numerator, card.ability.extra.denominator) then
                 return {
                     extra = {
                         message = localize('k_plus_tarot'),
@@ -53,7 +53,7 @@ SMODS.Joker {
                                     if #G.consumeables.cards < G.consumeables.config.card_limit then
                                         SMODS.add_card {
                                             set = 'Tarot',
-                                            key_append = 'j_mahrlatr_face_mahrnster'
+                                            key_append = 'j_mahrlatr_face_monstahr'
                                         }
                                     end
                                     
