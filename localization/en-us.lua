@@ -1045,7 +1045,17 @@ return {
                     "{C:attention} unique suit{} scored",
                     "in hand"
                 }
-            }
+            },
+
+            j_mahrlatr_face_monstahr = {
+                name = 'Face Monstahr',
+                text = {
+                    '{C:green,E:2}#1# in #2# chance{} of creating a',
+                    '{C:tarot}Tarot{} card when a',
+                    '{C:attention}face card{} is discarded',
+                    '{C:inactive}(must have room){}'
+                }
+            },
         },
 
         Tarot = {

@@ -1,11 +1,11 @@
 SMODS.Joker {
-    key = "black_metahrl",
+    key = "face_mahrnster",
 
     pos = {
-        x = 1,
-        y = 4
+        x = -1,
+        y = -1
     },
-
+    
     display_size = {
         w = 71 * 1, 
         h = 95 * 1
@@ -20,12 +20,12 @@ SMODS.Joker {
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
 
     cost = 5,
-    rarity = 2,
+    rarity = 1,
 
     config = {
         extra = {
             numerator = 1,
-            denominator = 8
+            denominator = 3
         }
     },
 
@@ -34,8 +34,6 @@ SMODS.Joker {
 
         return {
             vars = {
-                colours = { HEX('000000') },
-
                 num,
                 denom
             }
@@ -43,8 +41,8 @@ SMODS.Joker {
     end,
 
     calculate = function(self, card, context)
-        if context.individual and context.cardarea == G.play and SuitHelpers.is_black_card(context.other_card) then
-            if SMODS.pseudorandom_probability(card, 'j_mahrlatr_black_metahrl', card.ability.extra.numerator, card.ability.extra.denominator) then
+        if context.discard and context.other_card:is_face() then
+            if SMODS.pseudorandom_probability(card, 'j_mahrlatr_face_mahrnster', card.ability.extra.numerator, card.ability.extra.denominator) then
                 return {
                     extra = {
                         message = localize('k_plus_tarot'),
@@ -55,7 +53,7 @@ SMODS.Joker {
                                     if #G.consumeables.cards < G.consumeables.config.card_limit then
                                         SMODS.add_card {
                                             set = 'Tarot',
-                                            key_append = 'j_mahrlatr_black_metahrl'
+                                            key_append = 'j_mahrlatr_face_mahrnster'
                                         }
                                     end
                                     
