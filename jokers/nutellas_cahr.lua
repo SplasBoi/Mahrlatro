@@ -31,32 +31,28 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.dollars
+                
             }
         }
     end,
 
     calculate = function(self, card, context)
-        if context.after and SMODS.last_hand_oneshot then
-            return {
-                func = function()
-                    local amount = card.ability.extra.dollars
-                    
-                    ease_dollars(amount)
-                    card_eval_status_text(
-                        context.blueprint_card or card,
-                        'extra',
-                        nil,
-                        nil,
-                        nil,
-                        {
-                            message = "+$".. amount,
-                            colour = G.C.MONEY
-                        }
-                    )
-                    return true
-                end
-            }
+        if context.pre_joker then
+            local card = context.scoring_hand[1]
+
+            if SMODS.has_no_rank(card) then return end
+            
+            if #context.full_hand == 1 then
+                G.E_MANAGER:add_event(Event({
+                    trigger = 'after',
+                    delay = 0.1,
+                    func = function()
+                        assert(SMODS.modify_rank(card, 1))
+                        card:juice_up(0.5, 0.5)
+                        return true
+                    end
+                }))
+            end
         end
     end
 }

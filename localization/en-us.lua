@@ -626,7 +626,24 @@ return {
             },
 
             j_mahrlatr_nutellas_cahr = {
-                name = 'Nutella\'s Cahr',
+                name = "Nutella\'s Cahr",
+                text = {
+                    "If played hand has only",
+                    "{C:attention}1{} card, increases",
+                    "rank by {C:attention}1{}"
+                }
+            },
+
+            j_mahrlatr_mahrs_cahr = {
+                name = "Mahr\'s Cahr",
+                text = {
+                    '{C:money}+$#1#{} if hand',
+                    'wins on the {C:attention}last hand{}'
+                }
+            },
+
+            j_mahrlatr_perfect_pull = {
+                name = 'Perfect Pull',
                 text = {
                     '{C:money}+$#1#{} if hand',
                     '{C:attention}one-shots{} the blind'
