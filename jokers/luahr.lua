@@ -2,8 +2,13 @@ SMODS.Joker {
     key = "luahr",
 
     pos = {
-        x = -1,
-        y = -1
+        x = 2,
+        y = 15
+    },
+
+    soul_pos = {
+        x = 3,
+        y = 15
     },
     
     display_size = {

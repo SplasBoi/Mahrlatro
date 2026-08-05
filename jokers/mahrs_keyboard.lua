@@ -2,8 +2,8 @@ SMODS.Joker {
     key = "mahrs_keyboard",
 
     pos = {
-        x = -1,
-        y = -1
+        x = 1,
+        y = 15
     },
     
     display_size = {
