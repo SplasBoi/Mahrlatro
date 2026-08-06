@@ -50,10 +50,5 @@ SMODS.Joker {
                 end
             end
         end
-        
-        if context.joker_main and not context.end_of_round then
-            -- retorna a soma
-            
-        end
     end
 }
