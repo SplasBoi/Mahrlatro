@@ -2,12 +2,14 @@ SMODS.Enhancement {
     key = 'pink_stone',
 
     pos = { x = 0, y = 0 },
-    config = { mult = 5 },
+    
+    config = {
+        mult = 5
+    },
     
     badge_colour = HEX('FF7DFE'),
 
     atlas = 'CustomEnhancements',
-
 
     replace_base_card = true,
     no_rank = true,
@@ -15,6 +17,10 @@ SMODS.Enhancement {
     always_scores = true,
 
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.mult } }
+        return {
+            vars = {
+                card.ability.mult
+            }
+        }
     end
 }
