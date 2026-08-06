@@ -1075,6 +1075,18 @@ return {
             },
         },
 
+
+        Enhanced = {
+            m_mahrlatr_pink_stone = {
+                name = "Pinkstone Card",
+                text = {
+                    "{C:mult}+#1#{} Mult",
+                    "no rank or suit",
+                }
+            }
+        },
+
+
         Tarot = {
             c_mahrlatr_mahr_mentioned = {
                 name = 'Mahr Mentioned',
@@ -1088,6 +1100,14 @@ return {
                     "Decreases rank of",
                     "up to {C:attention}#1#{} selected",
                     "cards by {C:attention}1",
+                },
+            },
+            c_mahrlatr_pink_tower = {
+                name = "Pink Tower",
+                text = {
+                    "Enhances {C:attention}1{} selected",
+                    "card into a",
+                    "{C:legendary}Pinkstone{} Card",
                 },
             }
         },
