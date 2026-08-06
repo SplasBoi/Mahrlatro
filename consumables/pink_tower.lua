@@ -1,10 +1,10 @@
 SMODS.Consumable {
-    key = 'pink_tower',
-    set = 'Tarot',
+    key = "pink_tower",
+    set = "Tarot",
     unlocked = true,
     discovered = true,
 
-    atlas = 'CustomConsumables',
+    atlas = "CustomConsumables",
 
     pos = { x = 2, y = 0 },
 
@@ -13,8 +13,10 @@ SMODS.Consumable {
         mod_conv = 'm_mahrlatr_pink_stone'
     },
 
-    loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
-        return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
+    can_use = function(self, card)
+        local conf = self.config or card.ability
+
+        local selected_cards = #G.hand.highlighted
+        return selected_cards > 0 and selected_cards <= conf.max_highlighted
     end
 }
