@@ -2,8 +2,8 @@ SMODS.Joker {
     key = "switches",
 
     pos = {
-        x = -1,
-        y = -1
+        x = 0,
+        y = 16
     },
     
     display_size = {

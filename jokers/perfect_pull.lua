@@ -2,8 +2,13 @@ SMODS.Joker {
     key = "perfect_pull",
 
     pos = {
-        x = -1,
-        y = -1
+        x = 1,
+        y = 16
+    },
+
+    soul_pos = {
+        x = 2,
+        y = 16
     },
 
     display_size = {
@@ -24,7 +29,8 @@ SMODS.Joker {
 
     config = {
         extra = {
-            dollars = 5
+            dollars = 5,
+            has_triggered = false
         }
     },
 
@@ -41,6 +47,15 @@ SMODS.Joker {
             return {
                 func = function()
                     local amount = card.ability.extra.dollars
+
+                    if card.ability.extra.has_triggered then
+                        play_sound('mahrlatr_splas_perfect_again') else
+                            play_sound("mahrlatr_splas_perfect")
+                    end
+
+                    card.ability.extra.has_triggered = true
+
+                    
                     
                     ease_dollars(amount)
                     card_eval_status_text(

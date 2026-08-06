@@ -43,6 +43,14 @@ SMODS.Atlas({
 })
 
 SMODS.Atlas({
+    key = "CustomEnhancements", 
+    path = "CustomEnhancements.png", 
+    px = 71,
+    py = 95, 
+    atlas_table = "ASSET_ATLAS"
+})
+
+SMODS.Atlas({
     key = "CustomSeals", 
     path = "CustomSeals.png", 
     px = 71,
@@ -68,6 +76,7 @@ load_folder("jokers/")
 load_folder("consumables/")
 load_folder("rarities/")
 load_folder("seals/")
+load_folder("enhancements/")
 load_folder("common/")
 load_folder('ui/')
 load_folder('util/')
@@ -205,6 +214,18 @@ SMODS.Sound {
 SMODS.Sound {
     key = "mahr_no_no_dont",
     path = "sfx/mahr_no_no_dont.ogg",
+    pitch = 1.0
+}
+
+SMODS.Sound {
+    key = "splas_perfect",
+    path = "sfx/splas_perfect.ogg",
+    pitch = 1.0
+}
+
+SMODS.Sound {
+    key = "splas_perfect_again",
+    path = "sfx/splas_perfect_again.ogg",
     pitch = 1.0
 }
 

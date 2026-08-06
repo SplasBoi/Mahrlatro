@@ -1,10 +1,9 @@
 SMODS.Joker {
     key = "hundo",
 
-    -- Fix when we have the art.
     pos = {
-        x = -1,
-        y = -1
+        x = 4,
+        y = 16
     },
 
     display_size = {

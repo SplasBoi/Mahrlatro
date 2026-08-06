@@ -2,8 +2,8 @@ SMODS.Joker {
     key = "any_percent",
 
     pos = {
-        x = -1,
-        y = -1
+        x = 3,
+        y = 16
     },
 
     display_size = {

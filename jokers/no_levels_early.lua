@@ -2,8 +2,8 @@ SMODS.Joker {
     key = "no_levels_early",
 
     pos = {
-        x = -1,
-        y = -1
+        x = 5,
+        y = 16
     },
 
     display_size = {
