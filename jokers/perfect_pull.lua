@@ -30,7 +30,7 @@ SMODS.Joker {
     config = {
         extra = {
             dollars = 5,
-            has_triggered = false
+            trigger_count = 0
         }
     },
 
@@ -43,32 +43,32 @@ SMODS.Joker {
     end,
 
     calculate = function(self, card, context)
+        local e = self.config.extra or card.ability.extra
+
         if context.after and SMODS.last_hand_oneshot then
+            local sound = (e.trigger_count <= 0) and "mahrlatr_splas_perfect" or "mahrlatr_splas_perfect_again"
+            e.trigger_count = e.trigger_count + 1
+
             return {
                 func = function()
-                    local amount = card.ability.extra.dollars
+                    local dollar_amount = e.dollars
 
-                    if card.ability.extra.has_triggered then
-                        play_sound('mahrlatr_splas_perfect_again') else
-                            play_sound("mahrlatr_splas_perfect")
-                    end
-
-                    card.ability.extra.has_triggered = true
-
+                    G.E_MANAGER:add_event(Event({
+                        trigger = "immediate",
+                        func = function()
+                            play_sound(sound)
+                            return true
+                        end
+                    }))
                     
-                    
-                    ease_dollars(amount)
+                    ease_dollars(dollar_amount)
                     card_eval_status_text(
-                        context.blueprint_card or card,
-                        'extra',
-                        nil,
-                        nil,
-                        nil,
-                        {
-                            message = "+$".. amount,
+                        context.blueprint_card or card, 'extra', nil, nil, nil, {
+                            message = "+" .. localize('$') .. dollar_amount,
                             colour = G.C.MONEY
                         }
                     )
+
                     return true
                 end
             }
