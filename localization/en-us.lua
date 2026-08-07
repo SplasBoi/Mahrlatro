@@ -1113,17 +1113,10 @@ return {
         },
 
         Back = {
-            b_mahrlatr_mahrchine = {
-                name = "The Mahrchine",
+            b_mahrlatr_mahrket = {
+                name = "The mahrket",
                 text = {
-                    "The {C:red}evil{} mahrchine"
-                }
-            },
-
-            b_mahrlatr_mahrnster = {
-                name = "The Mahrnster",
-                text = {
-                    "The {C:red}evil{} mahrnster"
+                    "The {C:red}evil{} mahrket"
                 }
             }
         },

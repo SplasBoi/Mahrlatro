@@ -373,7 +373,7 @@ SMODS.DeckSkin {
 }
 
 SMODS.Back {
-    key = "mahrchine",
+    key = "mahrket",
 
     atlas = "CustomBacks",
     pos = {
@@ -403,16 +403,4 @@ SMODS.Back {
     check_for_unlock = function(self, args)
         return true
     end
-}
-
-SMODS.Back {
-    key = "mahrnster",
-
-    atlas = "CustomBacks",
-    pos = {
-        x = 0,
-        y = 0
-    },
-
-    unlocked = true,
 }
