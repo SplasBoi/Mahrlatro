@@ -1112,6 +1112,22 @@ return {
             }
         },
 
+        Back = {
+            b_mahrlatr_mahrchine = {
+                name = "The Mahrchine",
+                text = {
+                    "The {C:red}evil{} mahrchine"
+                }
+            },
+
+            b_mahrlatr_mahrnster = {
+                name = "The Mahrnster",
+                text = {
+                    "The {C:red}evil{} mahrnster"
+                }
+            }
+        },
+
         Other = {
             mahrlatr_mahr_seal = {
                 name = 'Mahr Seal',

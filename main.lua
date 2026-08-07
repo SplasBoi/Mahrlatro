@@ -1,19 +1,19 @@
-SMODS.Atlas({
+SMODS.Atlas {
     key = "modicon", 
     path = "ModIcon.png", 
     px = 34,
     py = 34,
     atlas_table = "ASSET_ATLAS"
-})
+}
 
-SMODS.Atlas({
+SMODS.Atlas {
     key = "balatro", 
     path = "balatro.png", 
     px = 333,
     py = 216,
     prefix_config = { key = false },
     atlas_table = "ASSET_ATLAS"
-})
+}
 
 SMODS.Atlas{
     key = "shop_sign",
@@ -26,37 +26,45 @@ SMODS.Atlas{
     prefix_config = {key = false}
 }
 
-SMODS.Atlas({
+SMODS.Atlas {
     key = "CustomJokers", 
     path = "CustomJokers.png", 
     px = 71,
     py = 95, 
     atlas_table = "ASSET_ATLAS"
-})
+}
 
-SMODS.Atlas({
+SMODS.Atlas {
     key = "CustomConsumables", 
     path = "CustomConsumables.png", 
     px = 71,
     py = 95, 
     atlas_table = "ASSET_ATLAS"
-})
+}
 
-SMODS.Atlas({
+SMODS.Atlas {
     key = "CustomEnhancements", 
     path = "CustomEnhancements.png", 
     px = 71,
     py = 95, 
     atlas_table = "ASSET_ATLAS"
-})
+}
 
-SMODS.Atlas({
+SMODS.Atlas {
     key = "CustomSeals", 
     path = "CustomSeals.png", 
     px = 71,
     py = 95, 
     atlas_table = "ASSET_ATLAS"
-}):register()
+}
+
+SMODS.Atlas {
+    key = "CustomBacks",
+    path = "CustomBack.png",
+    px = 71,
+    py = 95,
+    atlas_table = "ASSET_ATLAS"
+}
 
 local NFS = require("nativefs")
 to_big = to_big or function(a) return a end
@@ -362,4 +370,49 @@ SMODS.DeckSkin {
             hc_default = true,
         },
     },
+}
+
+SMODS.Back {
+    key = "mahrchine",
+
+    atlas = "CustomBacks",
+    pos = {
+        x = 1,
+        y = 0
+    },
+
+    config = {
+        rank = "Ace"
+    },
+
+    -- Temp
+    apply = function(self, back)
+        local conf = self.config
+        
+        G.E_MANAGER:add_event(Event({
+            func = function()
+                for _, card in ipairs(G.playing_cards) do
+                    SMODS.change_base(card, nil, conf.rank)
+                end
+                return true
+            end
+        }))
+    end,
+
+    -- add unlock condition here
+    check_for_unlock = function(self, args)
+        return true
+    end
+}
+
+SMODS.Back {
+    key = "mahrnster",
+
+    atlas = "CustomBacks",
+    pos = {
+        x = 0,
+        y = 0
+    },
+
+    unlocked = true,
 }
