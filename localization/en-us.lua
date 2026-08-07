@@ -1123,8 +1123,10 @@ return {
             b_mahrlatr_themahr = {
                 name = "The Mahr",
                 text = {
-                    "All cards have {C:yellow}TheMahr{} seal,",
-                    "Halves {C:blue}Chips{} when scoring"
+                    "All cards have",
+                    "a {C:gold}Mahr Seal{},",
+                    "halves {C:blue}Chips{}",
+                    "when scoring"
                 }
             }
         },
