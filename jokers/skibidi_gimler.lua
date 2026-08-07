@@ -48,7 +48,7 @@ SMODS.Joker{
             if SMODS.get_enhancements(context.other_card)["m_stone"] == true then
                 context.other_card.should_destroy = true
 
-                print("scale")
+                --print("scale")
                 
                 SMODS.scale_card(card, {
                     ref_table = card.ability.extra,
