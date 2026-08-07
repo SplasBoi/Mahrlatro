@@ -1116,7 +1116,15 @@ return {
             b_mahrlatr_mahrket = {
                 name = "The mahrket",
                 text = {
-                    "The {C:red}evil{} mahrket"
+                    "Adds 1 extra Voucher slot in Shop"
+                }
+            },
+
+            b_mahrlatr_themahr = {
+                name = "The Mahr",
+                text = {
+                    "All cards have {C:yellow}TheMahr{} seal,",
+                    "Halves {C:blue}Chips{} when scoring"
                 }
             }
         },

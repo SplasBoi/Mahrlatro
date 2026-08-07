@@ -89,6 +89,7 @@ load_folder("common/")
 load_folder('ui/')
 load_folder('util/')
 load_folder('achievements/')
+load_folder('decks/')
 
 
 SMODS.ObjectType({
@@ -370,37 +371,4 @@ SMODS.DeckSkin {
             hc_default = true,
         },
     },
-}
-
-SMODS.Back {
-    key = "mahrket",
-
-    atlas = "CustomBacks",
-    pos = {
-        x = 1,
-        y = 0
-    },
-
-    config = {
-        rank = "Ace"
-    },
-
-    -- Temp
-    apply = function(self, back)
-        local conf = self.config
-        
-        G.E_MANAGER:add_event(Event({
-            func = function()
-                for _, card in ipairs(G.playing_cards) do
-                    SMODS.change_base(card, nil, conf.rank)
-                end
-                return true
-            end
-        }))
-    end,
-
-    -- add unlock condition here
-    check_for_unlock = function(self, args)
-        return true
-    end
 }
