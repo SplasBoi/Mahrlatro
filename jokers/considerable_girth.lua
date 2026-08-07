@@ -21,32 +21,26 @@ SMODS.Joker {
 
     cost = 5,
     rarity = 1,
-
-    config = {
-        extra = {
-            
-        }
-    },
-
-    loc_vars = function(self, info_queue, card)
-        return {
-            vars = {
-                
-            }
-        }
-    end,
     
     calculate = function(self, card, context)
         if context.pre_joker then
-            for i = 1, #G.hand.cards do
-                if not SMODS.has_no_rank(G.hand.cards[i]) then
-                    local rank = G.hand.cards[i].base.nominal
+            for _, deck_card in ipairs(G.hand.cards) do
+                if not SMODS.has_no_rank(deck_card) and not deck_card.debuff then
+                    local rank = deck_card.base.nominal
+
+                    G.E_MANAGER:add_event(Event({
+                        trigger = "immediate",
+                        func = function()
+                            card:juice_up()
+                            return true
+                        end
+                    }))
 
                     SMODS.calculate_effect({
                         chips = rank,
                         message = "+"..rank,
                         colour = G.C.CHIPS
-                    }, G.hand.cards[i])
+                    }, deck_card)
                 end
             end
         end
