@@ -1138,6 +1138,13 @@ return {
                     "Debuffs all",
                     "{C:blue}Common{} jokers"
                 }
+            },
+
+            bl_mahrlatr_themahrnster = {
+                name = "The Mahrnster",
+                text = {
+                    "Skibidi"
+                }
             }
         },
 

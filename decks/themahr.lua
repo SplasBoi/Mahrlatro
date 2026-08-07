@@ -1,5 +1,3 @@
--- TODO: halve scored chips
-
 SMODS.Back {
     key = "themahr",
 
