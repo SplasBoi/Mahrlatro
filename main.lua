@@ -90,6 +90,7 @@ load_folder('ui/')
 load_folder('util/')
 load_folder('achievements/')
 load_folder('decks/')
+load_folder('blinds/')
 
 
 SMODS.ObjectType({

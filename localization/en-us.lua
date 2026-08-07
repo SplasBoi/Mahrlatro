@@ -1129,6 +1129,16 @@ return {
             }
         },
 
+        Blind = {
+            bl_mahrlatr_themahr = {
+                name = "The Mahr",
+                text = {
+                    "Debuffs all",
+                    "{C:blue}Common{} jokers"
+                }
+            }
+        },
+
         Other = {
             mahrlatr_mahr_seal = {
                 name = 'Mahr Seal',
