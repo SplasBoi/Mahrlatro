@@ -1,11 +1,11 @@
-
 SMODS.Joker{
     key = "januel",
 
     config = {
         extra = {
             hands = 1,
-            discards = 0
+            discards = 0,
+            music_pitch = 0.8
         }
     },
 
@@ -55,6 +55,18 @@ SMODS.Joker{
 
             G.hand:change_size(handsize)
 
+        end
+    end,
+
+    update = function(self, card, dt)
+        if not G or not G.PITCH_MOD then return end
+        
+        local e = self.config.extra or card.ability.extra
+
+        if card.area == G.jokers and not card.removed then
+            G.PITCH_MOD = e.music_pitch
+        else
+            G.PITCH_MOD = 1.0
         end
     end
 }
