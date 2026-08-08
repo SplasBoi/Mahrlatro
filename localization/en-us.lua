@@ -1145,6 +1145,15 @@ return {
                 text = {
                     "Skibidi"
                 }
+            },
+
+            bl_mahrlatr_themahrchine = {
+                name = "The Mahrchine",
+                text = {
+                    "Score requirement varies",
+                    "between {C:attention}1X{} and {C:attention}2X{}",
+                    "for each hand played"
+                }
             }
         },
 
