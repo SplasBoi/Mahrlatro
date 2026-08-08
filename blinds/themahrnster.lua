@@ -4,6 +4,14 @@ SMODS.Blind {
     dollars = 5,
     mult = 1,
 
+    atlas = 'CustomBlinds',
+
+    pos = {
+        x = 0,
+        y = 2
+    },
+
+
     boss = {
         min = 1,
         max = 10,

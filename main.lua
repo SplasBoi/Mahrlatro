@@ -66,10 +66,19 @@ SMODS.Atlas {
     atlas_table = "ASSET_ATLAS"
 }
 
+SMODS.Atlas {
+    key = "CustomBlinds",
+    path = "CustomBlinds.png",
+    px = 34,
+    py = 34,
+    frames = 21,
+    atlas_table = "ANIMATION_ATLAS"
+}
+
 local NFS = require("nativefs")
 to_big = to_big or function(a) return a end
 lenient_bignum = lenient_bignum or function(a) return a end
--- this function is used to load everything within a folder.-- Jokerforge doesnt use it because it doesnt make loading order easy
+
 local function load_folder(path)
     local files = NFS.getDirectoryItemsInfo(SMODS.current_mod.path .. "/" .. path)
     for i = 1, #files do
