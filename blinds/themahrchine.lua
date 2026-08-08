@@ -26,7 +26,7 @@ SMODS.Blind {
         local original_score = get_blind_amount(G.GAME.round_resets.ante) * G.GAME.starting_params.ante_scaling * 2
         
         change_score_requirement(
-            get_new_score_requirement(original_score)
+            get_new_score_requirement(original_score, G.GAME.chips)
         )
 	end,
 
@@ -43,15 +43,24 @@ SMODS.Blind {
             local original_score = get_blind_amount(G.GAME.round_resets.ante) * G.GAME.starting_params.ante_scaling * 2
             
             change_score_requirement(
-                get_new_score_requirement(original_score)
+                get_new_score_requirement(original_score, G.GAME.chips)
             )
         end
     end
 }
 
-get_new_score_requirement = function(base_score)
-    -- Hardcoded until I find out how to set blind variables just like joker variables.
-    local random_xmult = 1.0 + math.random() * 1.0
+get_new_score_requirement = function(base_score, current_score)
+    -- Hardcoded until I find out how to set blind variables just like config joker variables.
+    local min_xmult = 1.0
+    local max_xmult = 2.0
+
+    -- Bottom caps the score requirement so it doesn't go lower than the current score.
+    if (current_score > base_score) then
+        -- +0.01 so there is absolutely no chance of the new score being equal to the current score.
+        min_xmult = current_score / base_score + 0.01
+    end
+
+    local random_xmult = min_xmult + math.random() * (max_xmult - min_xmult)
 
     return base_score * random_xmult
 end
