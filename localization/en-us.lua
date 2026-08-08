@@ -1143,7 +1143,8 @@ return {
             bl_mahrlatr_themahrnster = {
                 name = "The Mahrnster",
                 text = {
-                    "Skibidi"
+                    "If played hand is #1#",
+                    "debuffs all scoring cards"
                 }
             },
 
