@@ -1073,6 +1073,16 @@ return {
                     '{C:inactive}(must have room){}'
                 }
             },
+
+            j_mahrlatr_brasil_mentioned = {
+                name = '{V:1}B{V:2}r{V:3}a{V:1}s{V:2}i{V:3}l {V:1}M{V:2}e{V:3}n{V:1}t{V:2}i{V:3}o{V:1}n{V:2}e{V:3}d',
+                text = {
+                    '{C:blue}+#1#{} hand size',
+                    '{C:chips}+#2#{} Chips',
+                    'When in a boss blind',
+                    '{C:green,E:2}#3# in #4# chance{} of disabling it'
+                }
+            },
         },
 
 
