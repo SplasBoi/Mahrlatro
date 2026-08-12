@@ -728,11 +728,15 @@ return {
             j_mahrlatr_vegahrs_pro = {
                 name = 'VEGAHRS Pro',
                 text = {
-                    'Generates a random consumable',
-                    'at the start of the round.',
-                    '{C:inactive}(must have room){}',
-                    '{C:red}#1# in #2# chance of crashing the game{}',
-                    '{C:red}at the end of the round.{}'
+                    {
+                        'Generates a random consumable',
+                        'at the start of the round.',
+                        '{C:inactive}(must have room){}',
+                    },
+                    {
+                        '{C:red}#1# in #2# chance of ending the run{}',
+                        '{C:red}at the end of the round.{}'
+                    }
                 }
             },
 

@@ -1,3 +1,6 @@
+local end_run_event = nil
+local create_consumable_event = nil
+
 SMODS.Joker {
     key = 'vegahrs_pro',
 
@@ -30,52 +33,75 @@ SMODS.Joker {
     },
     
     loc_vars = function(self, info_queue, card)
-        local num_crash, denom_crash = SMODS.get_probability_vars(card, card.ability.extra.numerator, card.ability.extra.denominator)
+        local e = self.config.extra or card.ability.extra
+        local numerator, denominator = SMODS.get_probability_vars(card, e.numerator, e.denominator)
 
         return {
             vars = {
-                num_crash,
-                denom_crash
+                numerator,
+                denominator
             }
         }
     end,
 
     calculate = function(self, card, context)
+        local e = self.config.extra or card.ability.extra
+
         if context.setting_blind and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
             G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
-            
-            G.E_MANAGER:add_event(Event({
-                func = (function()
-                    G.E_MANAGER:add_event(Event({
-                        func = function()
-                            SMODS.add_card {
-                                set = "Consumeables"
-                            }
-                            G.GAME.consumeable_buffer = 0
-                            return true
-                        end
-                    }))
-                    SMODS.calculate_effect({ message = localize('vegahrs_pro_edited'), colour = G.C.PURPLE },
-                        context.blueprint_card or card)
-                    return true
-                end)
-            }))
-            return nil, true
 
+            G.E_MANAGER:add_event(create_consumable_event(context.blueprint_card or card))
+            return nil, true
         end
 
         if context.end_of_round and context.main_eval and not context.game_over then
-            if SMODS.pseudorandom_probability(card, 'j_mahrlatr_vegahrs_pro', card.ability.extra.numerator, card.ability.extra.denominator) then
-                
-                SMODS.calculate_effect({ message = localize('vegahrs_pro_crashed'), colour = G.C.RED }, context.blueprint_card or card)
+            if SMODS.pseudorandom_probability(card, self.key, e.numerator, e.denominator) then
+                G.E_MANAGER:add_event(Event({
+                    trigger = "immediate",
+                    func = function()
+                        SMODS.calculate_effect({
+                            message = localize('vegahrs_pro_crashed'),
+                            colour = G.C.RED },
+                            context.blueprint_card or card
+                        )
 
-                G.E_MANAGER:add_event(Event({trigger = 'after', delay = 2, func = function()
-                    -- This will crash the game LUL
-                    card.ability.extra.vegahrs_pro_stability = card.ability.extra.vegahrs_pro_stability + 1
-                
-                    return nil
-                end }))
+                        G.E_MANAGER:add_event(end_run_event())
+                        return true
+                    end
+                }))
+            else
+                SMODS.calculate_effect({
+                    message = localize('k_saved_ex'),
+                    colour = G.C.RED },
+                    context.blueprint_card or card
+                )
             end
         end
     end
 }
+
+end_run_event = function()
+    return Event({
+        trigger = "after",
+        delay = 2,
+        func = function()
+            G.STATE = G.STATES.GAME_OVER
+            G.STATE_COMPLETE = false
+            return true
+        end
+    })
+end
+
+create_consumable_event = function(card)
+    return Event({
+        trigger = "immediate",
+        func = function()
+            SMODS.add_card({
+                set = "Consumeables"
+            })
+            G.GAME.consumeable_buffer = 0
+            card:juice_up(0.5, 0.5)
+            return true
+        end
+    })
+end
