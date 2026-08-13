@@ -722,6 +722,10 @@ return {
                     'contains {C:attention}#2# and any{}',
                     '{C:attention}other poker hand{}.',
                     '{C:inactive}(except High Card){}'
+                },
+                unlock = {
+                    "Play a {C:attention}Flush Five{}",
+                    "or {C:attention}Flush House{}"
                 }
             },
 
