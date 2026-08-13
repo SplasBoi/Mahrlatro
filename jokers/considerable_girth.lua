@@ -21,28 +21,42 @@ SMODS.Joker {
 
     cost = 5,
     rarity = 1,
-    
+
     calculate = function(self, card, context)
-        if context.pre_joker then
-            for _, deck_card in ipairs(G.hand.cards) do
-                if not SMODS.has_no_rank(deck_card) and not deck_card.debuff then
-                    local rank = deck_card.base.nominal
+        if not context.end_of_round and context.individual and context.cardarea == G.hand then
+            local held_card = context.other_card
 
-                    G.E_MANAGER:add_event(Event({
-                        trigger = "immediate",
-                        func = function()
-                            card:juice_up()
-                            return true
-                        end
-                    }))
-
-                    SMODS.calculate_effect({
-                        chips = rank,
-                        message = "+"..rank,
-                        colour = G.C.CHIPS
-                    }, deck_card)
-                end
-            end
+            return {
+                chips = held_card.base.nominal
+            }
         end
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        ---@type JDJokerDefinition
+        return {
+            text = {
+                {
+                    text = '+'
+                },
+                {
+                    ref_table = "card.joker_display_values",
+                    ref_value = "chips",
+                }
+            },
+            text_config = { colour = G.C.CHIPS },
+
+            calc_function = function(card)
+                local chips = 0
+
+                for _, deck_card in ipairs(G.hand.cards) do
+                    if not deck_card.highlighted and not SMODS.has_no_rank(deck_card) and not deck_card.debuff then
+                        chips = chips + deck_card.base.nominal
+                    end
+                end
+
+                card.joker_display_values.chips = chips
+            end
+        }
     end
 }
