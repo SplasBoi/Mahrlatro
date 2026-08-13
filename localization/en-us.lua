@@ -215,6 +215,9 @@ return {
                     "for each {C:attention}Wild Card",
                     "in your {C:attention}full deck",
                     "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)"
+                },
+                unlock = {
+                    "Have at least 8 {C:attention}Wild Cards{} in the deck."
                 }
             },
 
@@ -278,6 +281,9 @@ return {
                     "Sets hands to {C:attention}#2#{},",
                     "{C:red}+#1#{} discards"
                 },
+                unlock = {
+                    "Beat {C:attention}The Needle{}"
+                }
             },
 
             j_mahrlatr_laugen_geback = {
@@ -514,6 +520,9 @@ return {
                     'Converts {C:attention}all scored cards{}',
                     'into a random {C:red,E:1}red suit card{}',
                     '{C:inactive}Currently:{} {X:mult,C:white}X#2#{}'
+                },
+                unlock = {
+                    "Have over 52 {E:1,C:red}red{} cards in the deck."
                 }
             },
 

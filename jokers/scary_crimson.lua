@@ -1,5 +1,6 @@
 local get_x_mult = nil
 local count_black_cards = nil
+local count_red_cards = nil
 
 SMODS.Joker { --Scary Crimson
     key = "scary_crimson",
@@ -17,8 +18,8 @@ SMODS.Joker { --Scary Crimson
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    unlocked = true,
-    discovered = true,
+    unlocked = false,
+    discovered = false,
     atlas = 'CustomJokers',
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
 
@@ -65,6 +66,10 @@ SMODS.Joker { --Scary Crimson
                 x_mult = get_x_mult(count_black_cards())
             }
         end
+    end,
+
+    check_for_unlock = function(self, args)
+        return count_red_cards() >= 52
     end
 }
 
@@ -84,4 +89,18 @@ count_black_cards = function()
     end
 
     return black_cards_in_deck
+end
+
+count_red_cards = function()
+    if (not G.playing_cards) then return 0 end
+
+    local red_cards_in_deck = 0
+
+    for _, v in pairs(G.playing_cards) do
+        if SuitHelpers.is_red_card(v) or SMODS.has_enhancement(v, 'm_wild') then
+            red_cards_in_deck = red_cards_in_deck + 1
+        end
+    end
+
+    return red_cards_in_deck
 end

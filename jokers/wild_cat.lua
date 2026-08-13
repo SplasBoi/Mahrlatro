@@ -25,8 +25,8 @@ SMODS.Joker { --Wild Cat
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    unlocked = true,
-    discovered = true,
+    unlocked = false,
+    discovered = false,
     atlas = 'CustomJokers',
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
     
@@ -59,5 +59,17 @@ SMODS.Joker { --Wild Cat
             end
         end
         return false
+    end,
+
+    check_for_unlock = function(self, args)
+        local wilds_in_deck = 0
+
+        for _, playing_card in ipairs(G.playing_cards or {}) do
+            if SMODS.has_enhancement(playing_card, 'm_wild') then
+                wilds_in_deck = wilds_in_deck + 1
+            end
+        end
+
+        return wilds_in_deck >= 9
     end
 }

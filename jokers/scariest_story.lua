@@ -21,8 +21,8 @@ SMODS.Joker{ --New Joker
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    unlocked = true,
-    discovered = true,
+    unlocked = false,
+    discovered = false,
     atlas = 'CustomJokers',
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
     
@@ -50,5 +50,13 @@ SMODS.Joker{ --New Joker
                 }
             }
         end
+    end,
+
+    check_for_unlock = function(self, args)
+        if args.type == 'round_win' then
+            return G.GAME.blind.name == 'The Needle'
+        end
+
+        return false
     end
 }
