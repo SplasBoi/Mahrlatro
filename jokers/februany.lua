@@ -14,8 +14,8 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    unlocked = true,
-    discovered = true,
+    unlocked = false,
+    discovered = false,
     atlas = 'CustomJokers',
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
 
@@ -53,5 +53,9 @@ SMODS.Joker {
                 mult = card.ability.extra.current_mult
             }
         end
+    end,
+
+    check_for_unlock = function(self, args)
+        return args.type == 'win_custom'
     end
 }

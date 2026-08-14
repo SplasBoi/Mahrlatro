@@ -1,8 +1,8 @@
 SMODS.Joker {
     key = "black_mahrket",
     atlas = 'CustomJokers',
-    unlocked = true,
-    discovered = true,
+    unlocked = false,
+    discovered = false,
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
 
     pos = {
@@ -67,5 +67,17 @@ SMODS.Joker {
             
             c:set_edition({ negative = true }, true)
         end
+    end,
+
+    check_for_unlock = function(self, args)
+        if not G.jokers then return false end
+
+        for _, joker in ipairs(G.jokers.cards) do
+            if joker.edition and joker.edition.negative then
+                return true
+            end
+        end
+
+        return false
     end
 }

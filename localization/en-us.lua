@@ -656,6 +656,9 @@ return {
                 text = {
                     '{C:money}+$#1#{} if hand',
                     '{C:attention}one-shots{} the blind'
+                },
+                unlock = {
+                    "{C:attention}One-shot{} a blind"
                 }
             },
 
@@ -735,6 +738,9 @@ return {
                     'This Jokahr gains {C:red}+#2#{} Mult',
                     'for each round beaten.',
                     '{C:inactive}(Currently: {C:red}+#1#{}{C:inactive}){}'
+                },
+                unlock = {
+                    "Win a run"
                 }
             },
 
@@ -939,6 +945,10 @@ return {
                         "{C:red}failed{} {C:tarot,E:1}Wheel of Fortune{}",
                         "{C:inactive}(Currently: {C:red}+#1#{}{C:inactive} Mult){}"
                     }
+                },
+                unlock = {
+                    "Use {C:tarot,E:1}Wheel of Fortune{}",
+                    "and have it fail."
                 }
             },
 
@@ -994,7 +1004,10 @@ return {
                 name = "Black Mahrket",
                 text = {
                     "Upon selling this jokahr, destroy #1# jokahrs",
-                    "and turn another negative"
+                    "and turn another {C:dark_edition}Negative{}"
+                },
+                unlock = {
+                    "Obtain a {C:dark_edition}Negative{} Joker"
                 }
             },
 
