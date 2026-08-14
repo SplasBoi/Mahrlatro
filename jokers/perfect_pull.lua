@@ -76,6 +76,6 @@ SMODS.Joker {
     end,
 
     check_for_unlock = function(self, args)
-        -- One shot a blind.
+        return args and args.oneshot
     end
 }
