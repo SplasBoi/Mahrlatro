@@ -10,23 +10,40 @@ SMODS.Joker {
     atlas = 'CustomJokers',
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
 
-    config = { extra = { chips = 0, chip_mod = 15 } },
+    config = {
+        extra = {
+            chips = 0,
+            chip_mod = 15,
+            required_hand = "Straight"
+        }
+    },
+
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.chips, card.ability.extra.chip_mod } }
+        local e = self.config.extra or card.ability.extra
+
+        return {
+            vars = {
+                e.chips,
+                e.chip_mod
+            }
+        }
     end,
 
     calculate = function(self, card, context)
-        if context.before and not context.blueprint and next(context.poker_hands['Straight']) then
-            -- See note about SMODS Scaling Manipulation on the wiki
-            card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.chip_mod
+        local e = self.config.extra or card.ability.extra
+
+        if context.before and not context.blueprint and next(context.poker_hands[e.required_hand]) then
+            e.chips = e.chips + e.chip_mod
+
             return {
                 message = localize('k_upgrade_ex'),
                 colour = G.C.CHIPS,
             }
         end
+        
         if context.joker_main then
             return {
-                chips = card.ability.extra.chips
+                chips = e.chips
             }
         end
     end
