@@ -78,9 +78,7 @@ SMODS.Joker {
                 mult = card.ability.extra.mult
             }
         end
-    end,
-
-    check_for_unlock = function(self, args)
-        -- Use Wheel of Fortune and have it fail.
     end
+
+    -- Unlock logic done externally in wheel_of_fortune.toml
 }

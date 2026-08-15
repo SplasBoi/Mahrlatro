@@ -1,0 +1,21 @@
+[manifest]
+version = "0.6.7"
+priority = 0
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = "attention_text({"
+position = "before"
+payload = '''
+if G and G.P_CENTERS and G.P_CENTERS.j_mahrlatr_vahrgskelethor_joel then
+    local joker = G.P_CENTERS.j_mahrlatr_vahrgskelethor_joel
+    if not joker.unlocked then
+        joker.unlocked = true
+
+        G:save_progress(joker)
+        G:save_notify(joker)
+    end
+end
+'''
+match_indent = true
