@@ -9,12 +9,9 @@ pattern = "attention_text({"
 position = "before"
 payload = '''
 if G and G.P_CENTERS and G.P_CENTERS.j_mahrlatr_vahrgskelethor_joel then
-    local joker = G.P_CENTERS.j_mahrlatr_vahrgskelethor_joel
-    if not joker.unlocked then
-        joker.unlocked = true
-
-        G:save_progress(joker)
-        G:save_notify(joker)
+    local card = G.P_CENTERS.j_mahrlatr_vahrgskelethor_joel
+    if not card.unlocked then
+        unlock_card(card)
     end
 end
 '''
