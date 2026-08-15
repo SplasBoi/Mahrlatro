@@ -4,7 +4,7 @@ local create_joker = nil
 SMODS.Joker {
     key = "nedahrland",
     unlocked = true,
-    discovered = true,
+    discovered = false,
     blueprint_compat = true,
     rarity = 2,
     cost = 7,

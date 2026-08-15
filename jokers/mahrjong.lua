@@ -5,7 +5,7 @@ local sort_held_hand = nil
 SMODS.Joker {
     key = "mahrjong",
 
-    discovered = true,
+    discovered = false,
     unlocked = true,
     atlas = 'CustomJokers',
     pos = {x = 6, y = 9},

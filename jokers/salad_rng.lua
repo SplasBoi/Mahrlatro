@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "salad_rng",
 
-    discovered = true,
+    discovered = false,
     unlocked = true,
     atlas = 'CustomJokers',
 

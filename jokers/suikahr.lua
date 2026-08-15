@@ -3,7 +3,7 @@ local create_upgraded_card_event = nil
 SMODS.Joker {
     key = "suikahr",
 
-    discovered = true,
+    discovered = false,
     unlocked = true,
     atlas = 'CustomJokers',
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },

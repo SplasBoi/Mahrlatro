@@ -8,7 +8,7 @@ SMODS.Joker {
 
     eternal_compat = true,
     perishable_compat = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
 

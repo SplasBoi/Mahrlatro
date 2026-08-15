@@ -4,7 +4,7 @@ SMODS.Joker {
     rarity = 2,
     cost = 6,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     config = { extra = { Xmult = 3 } },
     pos = { x = 5, y = 8 },
     atlas = 'CustomJokers',

@@ -3,7 +3,7 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = false,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
 

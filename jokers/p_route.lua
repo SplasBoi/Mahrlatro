@@ -7,7 +7,7 @@ SMODS.Joker {
     pos = { x = 6, y = 7 },
     config = { extra = { chips = 0, chip_mod = 12 } },
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
 

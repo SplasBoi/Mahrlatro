@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "vaalserberg",
     unlocked = true,
-    discovered = true,
+    discovered = false,
     blueprint_compat = true,
     rarity = 3,
     cost = 7,

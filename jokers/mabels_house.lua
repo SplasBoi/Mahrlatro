@@ -15,7 +15,7 @@ SMODS.Joker {
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
 
     unlocked = true,
-    discovered = true,
+    discovered = false,
     rarity = 2,
     cost = 8,
 

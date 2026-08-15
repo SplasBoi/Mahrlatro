@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "fifahr",
     unlocked = true,
-    discovered = true,
+    discovered = false,
     blueprint_compat = true,
     rarity = 2,
     cost = 7,

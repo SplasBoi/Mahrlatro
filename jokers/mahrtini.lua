@@ -7,7 +7,7 @@ SMODS.Joker {
     config = { extra = { poker_hand = 'Straight Flush' } },
 
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
     

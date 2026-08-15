@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "drivahrs_license",
     unlocked = true,
-    discovered = true,
+    discovered = false,
     blueprint_compat = true,
     rarity = 3,
     cost = 7,

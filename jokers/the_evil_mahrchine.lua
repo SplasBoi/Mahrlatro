@@ -4,7 +4,7 @@ local rounded_decimals = 0
 SMODS.Joker {
     key = "the_evil_mahrchine",
 
-    discovered = true,
+    discovered = false,
     unlocked = true,
     atlas = 'CustomJokers',
 

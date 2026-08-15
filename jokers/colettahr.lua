@@ -3,7 +3,7 @@ local set_random_poker_hand = nil
 SMODS.Joker {
     key = "colettahr",
 
-    discovered = true,
+    discovered = false,
     unlocked = true,
     atlas = 'CustomJokers',
 

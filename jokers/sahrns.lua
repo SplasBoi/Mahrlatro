@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "sahrns",
     unlocked = true,
-    discovered = true,
+    discovered = false,
     blueprint_compat = false,
     eternal_compat = false,
     rarity = 2,

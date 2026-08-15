@@ -5,7 +5,7 @@ SMODS.Joker {
     rarity = 1,
     blueprint_compat = true,
     cost = 2,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
 

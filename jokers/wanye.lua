@@ -3,7 +3,7 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = false,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     rarity = 2,
     cost = 6,
