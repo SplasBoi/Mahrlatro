@@ -3,6 +3,7 @@ SMODS.Joker{ --New Joker
     key = "zoomahr",
     config = {
         extra = {
+            mahrlatr_speed_mod = 5
         }
     },
 
@@ -23,15 +24,5 @@ SMODS.Joker{ --New Joker
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
-    pools = { ["mahrlatr_mahrlatr_jokers"] = true },
-    
-    calculate = function(self, card, context)
-        local max_default_game_speed = 4
-        if context.first_hand_drawn  then
-            G.SETTINGS.GAMESPEED = 20
-        end
-        if context.selling_self  then
-            G.SETTINGS.GAMESPEED = max_default_game_speed
-        end
-    end
+    pools = { ["mahrlatr_mahrlatr_jokers"] = true }
 }

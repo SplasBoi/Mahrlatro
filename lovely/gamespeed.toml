@@ -1,0 +1,28 @@
+[manifest]
+version = "0.6.7"
+priority = 0
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = "self.SPEEDFACTOR = self.SPEEDFACTOR + math.max(0, math.abs(G.ACC) - 2)"
+position = "after"
+payload = '''
+if G.STAGE == G.STAGES.RUN and G.jokers then
+    local speed_mult = 1
+
+    for _, card in ipairs(G.jokers.cards) do
+        if card
+            and not card.debuff
+            and card.ability
+            and card.ability.extra
+            and card.ability.extra.mahrlatr_speed_mod
+        then
+            speed_mult = speed_mult + card.ability.extra.mahrlatr_speed_mod
+        end
+    end
+
+    self.SPEEDFACTOR = self.SPEEDFACTOR + speed_mult
+end
+'''
+match_indent = true
