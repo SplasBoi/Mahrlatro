@@ -61,6 +61,10 @@ SMODS.Joker {
         return payout
     end,
 
+    add_to_deck = function(self, card, from_debuff)
+        card.ability.extra.debuffed_suit = reset_suit(card.ability.extra.debuffed_suit)
+    end,
+
     calculate = function(self, card, context)
         if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
             card.ability.extra.debuffed_suit = reset_suit(card.ability.extra.debuffed_suit)

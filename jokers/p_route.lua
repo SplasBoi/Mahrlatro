@@ -5,7 +5,7 @@ SMODS.Joker {
     rarity = 1,
     cost = 4,
     pos = { x = 6, y = 7 },
-    config = { extra = { chips = 0, chip_mod = 12 } },
+    config = { extra = { chips = 0, chip_mod = 6 } },
     unlocked = true,
     discovered = false,
     atlas = 'CustomJokers',
