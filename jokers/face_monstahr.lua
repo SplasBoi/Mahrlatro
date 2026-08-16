@@ -45,6 +45,8 @@ SMODS.Joker {
         local e = self.config.extra or card.ability.extra
 
         if context.discard and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
+            if not context.other_card:is_face() then return end
+            
             G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
             G.E_MANAGER:add_event(Event({
                 func = (function()
