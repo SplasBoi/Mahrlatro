@@ -5,7 +5,8 @@ SMODS.Joker{
         extra = {
             hands = 1,
             discards = 0,
-            music_pitch = 0.8
+            music_pitch = 0.8,
+            original_hand_size
         }
     },
 
@@ -26,9 +27,9 @@ SMODS.Joker{
 
     cost = 7,
     rarity = 4,
-    blueprint_compat = true,
-    eternal_compat = true,
-    perishable_compat = true,
+    blueprint_compat = false,
+    eternal_compat = false,
+    perishable_compat = false,
     unlocked = true,
     discovered = false,
     atlas = 'CustomJokers',
@@ -44,6 +45,9 @@ SMODS.Joker{
     end,
     
     calculate = function(self, card, context)
+        local handsize = #G.playing_cards
+        local e = card.ability.extra
+
         if context.first_hand_drawn  then
             card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = tostring(card.ability.extra.hands).." Hand", colour = G.C.BLUE})
             G.GAME.current_round.hands_left = card.ability.extra.hands
@@ -51,10 +55,12 @@ SMODS.Joker{
             card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = tostring(card.ability.extra.discards).." Discards", colour = G.C.BLUE})
             G.GAME.current_round.discards_left = card.ability.extra.discards
 
-            local handsize = #G.playing_cards
+            e.original_hand_size = G.hand.config.card_limit
+            G.hand:change_size(#G.playing_cards - e.original_hand_size)
+        end
 
-            G.hand:change_size(handsize)
-
+        if (context.end_of_round and not context.game_over) or context.selling_self then
+            G.hand:change_size(-(#G.playing_cards - e.original_hand_size))
         end
     end,
 
