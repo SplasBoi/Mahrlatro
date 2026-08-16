@@ -4,7 +4,7 @@ SMODS.Blind {
     key = "themahrnster",
     
     dollars = 5,
-    mult = 1,
+    mult = 2,
 
     atlas = 'CustomBlinds',
 
@@ -15,7 +15,7 @@ SMODS.Blind {
 
 
     boss = {
-        min = 1,
+        min = 4,
         max = 27,
     },
 
