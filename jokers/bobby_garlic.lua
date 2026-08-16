@@ -1,4 +1,5 @@
 local set_random_poker_hand = nil
+local play_sound_from_event = nil
 
 SMODS.Joker {
     key = "bobby_garlic",
@@ -20,7 +21,7 @@ SMODS.Joker {
     config = {
         extra = {
             x_mult = 2,
-            poker_hand = 'High Card'
+            poker_hand = "High Card"
         }
     },
 
@@ -40,19 +41,22 @@ SMODS.Joker {
     
     calculate = function(self, card, context)
         if context.joker_main and context.scoring_name == card.ability.extra.poker_hand then
+
+            play_sound_from_event("mahrlatr_bobby_good_job")
+
             return {
                 x_mult = card.ability.extra.x_mult,
-                message = localize('bobby_good_job'),
-                sound = "mahrlatr_bobby_good_job"
+                message = localize('bobby_good_job')
             }
         end
 
         if context.end_of_round and not context.game_over and context.main_eval and not context.blueprint then
             card.ability.extra.poker_hand = get_random_poker_hand(card)
 
+            play_sound_from_event("mahrlatr_bobby_try_this_hand")
+
             return {
-                message = localize('bobby_try_this_hand'),
-                sound = "mahrlatr_bobby_try_this_hand"
+                message = localize('bobby_try_this_hand')
             }
         end
     end
@@ -69,4 +73,14 @@ get_random_poker_hand = function(card)
     end
 
     return pseudorandom_element(poker_hands, card.config.center_key)
+end
+
+play_sound_from_event = function(sound_id)
+    G.E_MANAGER:add_event(Event({
+        trigger = "immediate",
+        func = function()
+            play_sound(sound_id)
+            return true
+        end
+    }))
 end
