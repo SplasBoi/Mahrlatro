@@ -20,7 +20,7 @@ SMODS.Joker {
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
 
     cost = 5,
-    rarity = 1,
+    rarity = 'mahrlatr_krejsi_rarity',
 
     config = {
         extra = {
