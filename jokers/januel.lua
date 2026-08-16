@@ -60,6 +60,8 @@ SMODS.Joker{
         end
 
         if (context.end_of_round and not context.game_over) or context.selling_self then
+            if e.original_hand_size == nil then return end
+            
             G.hand:change_size(-(#G.playing_cards - e.original_hand_size))
         end
     end,
