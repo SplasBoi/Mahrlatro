@@ -3,7 +3,8 @@ SMODS.Joker {
 
     config = {
         extra = {
-            chips = 75
+            chips = 75,
+            required_jokers_to_merge = {"j_mahrlatr_feijoada", "j_mahrlatr_bossa_nova"}
         }
     },
 
@@ -44,6 +45,25 @@ SMODS.Joker {
             return {
                 chips = card.ability.extra.chips
             }
+        end
+
+        if context.ending_shop then
+            local e = card.ability.extra
+
+            if JokerUtility.can_merge_jokers(e.required_jokers_to_merge) then
+                return {
+                    func = function ()
+                        return JokerUtility.slice_and_merge_jokers(
+                            context,
+                            card,
+                            "j_mahrlatr_brasil_mentioned",
+                            HEX('009440'),
+                            "O Brasil não é para amadores",
+                            "HOLY SHIT!! Is that a motherfucking Brasil reference????"
+                        )
+                    end
+                }
+            end
         end
     end
 }
