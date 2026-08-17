@@ -760,8 +760,9 @@ return {
             j_mahrlatr_the_leadahrboard = {
                 name = 'The Leadahrboard',
                 text = {
-                    'Played {C:attention}#2#{} cards give {C:red}+10{} Mult',
-                    'when scored.'
+                    'Cards of rank{C:attention}#2#{}',
+                    'give {C:red}+#1#{} Mult when scored',
+                    '{C:inactive}(Changes at the end of each round){}'
                 }
             },
 
@@ -869,10 +870,10 @@ return {
             j_mahrlatr_cheese = {
                 name = "Very Good Cheese",
                 text = {
-                    "{C:chips}+#1#{} Chips",
-                    "{C:chips}+#2#{} Chips for",
+                    "This Jokahr gains",
+                    "{C:chips}+#2#{} Chips",
                     "every hand played",
-                    "{C:inactive}[Goes bad at 100 chips]{}"
+                    "{C:inactive}(Goes bad at 100 chips){}"
                 },
             },
 
@@ -1022,7 +1023,7 @@ return {
                 name = "Hundo",
                 text = {
                     "Earns +{C:money}#3##1#{} for each",
-                    "{C:attention}unique hand{} played.",
+                    "{C:attention}unique poker hand{} played.",
                     "{C:inactive}(Currently {C:money}+#3##2#{C:inactive}){}"
                 }
             },
@@ -1038,8 +1039,10 @@ return {
             j_mahrlatr_any_percent = {
                 name = "Any%",
                 text = {
-                    'Adds poker hand',
-                    'level to Mult',
+                    'Adds {C:mult}+#1#{} Mult',
+                    'for each poker',
+                    'hand level of',
+                    'current hand'
                 }
             },
 

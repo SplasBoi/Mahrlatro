@@ -10,6 +10,12 @@ SMODS.Joker {
         w = 71 * 1, 
         h = 95 * 1
     },
+
+    config = {
+        extra = {
+            scaling = 3,
+        }
+    },
     
     blueprint_compat = true,
     eternal_compat = true,
@@ -25,7 +31,7 @@ SMODS.Joker {
     calculate = function(self, card, context)
         if context.joker_main then
             return {
-                mult = G.GAME.hands[context.scoring_name].level
+                mult = G.GAME.hands[context.scoring_name].level * card.ability.extra.scaling
             }
         end
     end
