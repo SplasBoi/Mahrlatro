@@ -45,27 +45,27 @@ SMODS.Joker {
         local e = card.ability.extra
 
         if context.discard and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
-            if not context.other_card:is_face() then return end
-            
-            G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
-            G.E_MANAGER:add_event(Event({
-                func = (function()
-                    G.E_MANAGER:add_event(Event({
-                        func = function()
-                            SMODS.add_card {
-                                set = 'Tarot',
-                                key_append = 'j_mahrlatr_face_monstahr'
-                            }
-                            G.GAME.consumeable_buffer = 0
-                            return true
-                        end
-                    }))
-                    SMODS.calculate_effect({ message = localize('k_plus_tarot'), colour = G.C.PURPLE },
-                        context.blueprint_card or card)
-                    return true
-                end)
-            }))
-            return nil, true -- This is for Joker retrigger purposes
+            if SMODS.pseudorandom_probability(card, 'j_mahrlatr_face_monstahr', card.ability.extra.numerator, card.ability.extra.denominator) and context.other_card:is_face() then
+                G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
+                G.E_MANAGER:add_event(Event({
+                    func = (function()
+                        G.E_MANAGER:add_event(Event({
+                            func = function()
+                                SMODS.add_card {
+                                    set = 'Tarot',
+                                    key_append = 'j_mahrlatr_face_monstahr'
+                                }
+                                G.GAME.consumeable_buffer = 0
+                                return true
+                            end
+                        }))
+                        SMODS.calculate_effect({ message = localize('k_plus_tarot'), colour = G.C.PURPLE },
+                            context.blueprint_card or card)
+                        return true
+                    end)
+                }))
+                return nil, true -- This is for Joker retrigger purposes
+            end
         end
     end
 }
