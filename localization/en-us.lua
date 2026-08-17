@@ -78,12 +78,7 @@ return {
             },
 
             j_raised_fist = {
-                name = "Raised Hands",
-                text = {
-                    "Adds {C:attention}double{} the rank",
-                    "of {C:attention}lowest{} ranked card",
-                    "held in hand to Mult"
-                }
+                name = "Raised Hands"
             },
 
             j_mahrlatr_the_nyahr = {
@@ -141,21 +136,11 @@ return {
             },
 
             j_baseball = {
-                name = "Footbahrll Sticker",
-                text = {
-                    "{C:green}Uncommon{} Jokahrs",
-                    "each give {X:mult,C:white} X#1# {} Mult",
-                }
+                name = "Footbahrll Sticker"
             },
 
             j_madness = {
-                name = "Potlobster",
-                text = {
-                    "When {C:attention}Small Blind{} or {C:attention}Big Blind{}",
-                    "is selected, gain {X:mult,C:white} X#1# {} Mult",
-                    "and {C:attention}destroy{} a random Jokahr",
-                    "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
-                }
+                name = "Potlobster"
             },
 
             j_mahrlatr_amahrngus = {
@@ -170,13 +155,7 @@ return {
             },
 
             j_square = {
-                name = "Squahr Jokahr",
-                text = {
-                    "This Jokahr gains {C:chips}+#2#{} Chips",
-                    "if played hand has",
-                    "exactly {C:attention}4{} cards",
-                    "{C:inactive}(Currently {C:chips}#1#{C:inactive} Chips)",
-                },
+                name = "Squahr Jokahr"
             },
 
             j_mahrlatr_p_route = {
@@ -257,13 +236,7 @@ return {
             },
 
             j_vampire= {
-                name = "Draculahr",
-                text = {
-                    "This Jokahr gains {X:mult,C:white} X#1# {} Mult",
-                    "per scoring {C:attention}Enhanced card{} played,",
-                    "removes card {C:attention}Enhancement",
-                    "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
-                },
+                name = "Draculahr"
             },
 
             j_mahrlatr_feijoada = {
@@ -312,11 +285,7 @@ return {
             },
 
             j_rough_gem = {
-                name = 'Diamahrnds Are Forever',
-                text = {
-                    'Played cards with {C:diamonds}Diamond{} suit',
-                    'give {C:mult}+3{} Mult when scored'
-                }
+                name = 'Diamahrnds Are Forever'
             },
 
             j_wrathful_joker = {
@@ -588,6 +557,8 @@ return {
 
             j_diet_cola = {
                 name = "Coca Colahr",
+                
+                -- keeping this description because of the funny "jokahr"
                 text = {
                     "Sell this Jokahr to",
                     "create a free",
@@ -680,16 +651,6 @@ return {
 
             j_drivers_license = {
                 name = "Drivahr's License",
-                text = {
-                    "{X:mult,C:white} X#1# {} Mult if you have",
-                    "at least {C:attention}16{} Enhanced",
-                    "cards in your full deck",
-                    "{C:inactive}(Currently {C:attention}#2#{C:inactive})"
-                },
-                unlock = {
-                    "Enhance {E:1,C:attention}#1#{} cards",
-                    "in your deck"
-                }
             },
 
             j_mahrlatr_blindfolded = {
