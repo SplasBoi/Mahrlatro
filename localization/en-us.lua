@@ -682,9 +682,9 @@ return {
                 name = "Drivahr's License",
                 text = {
                     "{X:mult,C:white} X#1# {} Mult if you have",
-                    "at least {C:attention}#2#{} Enhanced",
+                    "at least {C:attention}16{} Enhanced",
                     "cards in your full deck",
-                    "{C:inactive}(Currently {C:attention}#3#{C:inactive})"
+                    "{C:inactive}(Currently {C:attention}#2#{C:inactive})"
                 },
                 unlock = {
                     "Enhance {E:1,C:attention}#1#{} cards",
