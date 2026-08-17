@@ -122,11 +122,11 @@ return {
                 }
             },
 
-            j_mahrlatr_mahrtosis = {
+            j_dna = {
                 name = "Mahrtosis",
                 text = {
                     "If {C:attention}first hand{} of round",
-                    "has only {C:attention}#1#{} card, add a",
+                    "has only {C:attention}1{} card, add a",
                     "permanent copy to deck."
                 }
             },
@@ -477,12 +477,10 @@ return {
                 }
             },
 
-            j_mahrlatr_splas = {
+            j_splash = {
                 name = 'Splas',
                 text = {
-                    {
-                        'Every {C:attention}played card{} counts in scoring'
-                    }
+                    'Every {C:attention}played card{} counts in scoring'
                 }
 
             },
