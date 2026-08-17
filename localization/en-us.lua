@@ -77,7 +77,7 @@ return {
                 },
             },
 
-            j_mahrlatr_raised_hands = {
+            j_raised_fist = {
                 name = "Raised Hands",
                 text = {
                     "Adds {C:attention}double{} the rank",
@@ -140,7 +140,7 @@ return {
                 },
             },
 
-            j_mahrlatr_footbahrll = {
+            j_baseball = {
                 name = "Footbahrll Sticker",
                 text = {
                     "{C:green}Uncommon{} Jokahrs",
@@ -148,7 +148,7 @@ return {
                 }
             },
 
-            j_mahrlatr_pot_lobster = {
+            j_madness = {
                 name = "Potlobster",
                 text = {
                     "When {C:attention}Small Blind{} or {C:attention}Big Blind{}",
@@ -169,7 +169,7 @@ return {
                 }
             },
 
-            j_mahrlatr_squahr = {
+            j_square = {
                 name = "Squahr Jokahr",
                 text = {
                     "This Jokahr gains {C:chips}+#2#{} Chips",
@@ -256,7 +256,7 @@ return {
                 }
             },
 
-            j_mahrlatr_draculahr = {
+            j_vampire= {
                 name = "Draculahr",
                 text = {
                     "This Jokahr gains {X:mult,C:white} X#1# {} Mult",
@@ -311,7 +311,7 @@ return {
                 }
             },
 
-            j_mahrlatr_diamahrnds = {
+            j_rough_gem = {
                 name = 'Diamahrnds Are Forever',
                 text = {
                     'Played cards with {C:diamonds}Diamond{} suit',
@@ -319,7 +319,7 @@ return {
                 }
             },
 
-            j_mahrlatr_spahr = {
+            j_wrathful_joker = {
                 name = 'The Spahr',
                 text = {
                     'Played cards with {C:spades}Spade{} suit',
@@ -374,7 +374,7 @@ return {
                 }
             },
 
-            j_mahrlatr_four_fingahrs = {
+            j_four_fingers = {
                 name = "Four Fingahrs",
                 text = {
                     "All {C:attention}Flushes{} and",
@@ -383,10 +383,19 @@ return {
                 }
             },
 
-            j_mahrlatr_bank_of_amahrica = {
+            j_photograph = {
+                name = "Photograph!",
+                text = {
+                    "Look at this {C:attention}Photograph{}!",
+                    "Everytime I do it makes me {X:mult,C:white}X2{} mult",
+                    "on the first scored face card!"
+                }
+            },
+
+            j_credit_card = {
                 name = 'Bank Of Amahrica',
                 text = {
-                    'Go up to {C:red}-#1##2#{} in debt'
+                    'Go up to {C:red}-$#1#{} in debt'
                 }
             },
 
@@ -577,10 +586,10 @@ return {
                 }
             },
 
-            j_mahrlatr_coca_colahr = {
+            j_diet_cola = {
                 name = "Coca Colahr",
                 text = {
-                    "Sell this card to",
+                    "Sell this Jokahr to",
                     "create a free",
                     "{C:attention}#1#",
                 },
@@ -669,13 +678,17 @@ return {
                 },
             },
 
-            j_mahrlatr_drivahrs_license = {
+            j_drivers_license = {
                 name = "Drivahr's License",
                 text = {
                     "{X:mult,C:white} X#1# {} Mult if you have",
                     "at least {C:attention}#2#{} Enhanced",
                     "cards in your full deck",
-                    "{C:inactive}(Currently {C:attention}#3#{C:inactive})",
+                    "{C:inactive}(Currently {C:attention}#3#{C:inactive})"
+                },
+                unlock = {
+                    "Enhance {E:1,C:attention}#1#{} cards",
+                    "in your deck"
                 }
             },
 

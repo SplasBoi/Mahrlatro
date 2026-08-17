@@ -1,53 +1,16 @@
-
-local get_debt_amount
-
-SMODS.Joker { --Bank Of Amahrica
-    key = "bank_of_amahrica",
-    config = {
-        extra = {
-            debt_amount = 20
-        }
-    },
-
-    pos = {
-        x = 1,
-        y = 1
-    },
-    display_size = {
-        w = 71 * 1, 
-        h = 95 * 1
-    },
-    cost = 1,
-    rarity = 1,
-    blueprint_compat = false,
-    eternal_compat = true,
-    perishable_compat = true,
-    unlocked = true,
-    discovered = false,
+SMODS.Joker:take_ownership('j_credit_card',
+    { -- table of properties to change from the existing object
+    pos = { x = 1, y = 1 },
     atlas = 'CustomJokers',
-    pools = { ["mahrlatr_mahrlatr_jokers"] = true },
-
-    loc_vars = function(self, info_queue, card)
-        return {
-            vars = {
-                localize('$'),
-                get_debt_amount(card)
-            }
-        }
-    end,
-    
-    calculate = function(self, card, context)
-    end,
-    
-    add_to_deck = function(self, card, from_debuff)
-        G.GAME.bankrupt_at = G.GAME.bankrupt_at - get_debt_amount(card)
-    end,
-    
-    remove_from_deck = function(self, card, from_debuff)
-        G.GAME.bankrupt_at = G.GAME.bankrupt_at + get_debt_amount(card)
-    end
-}
-
-get_debt_amount = function(card)
-    return math.abs(card.ability.extra.debt_amount)
-end
+    --loc_vars = function(self, info_queue, card)
+    --    return {
+    --        vars = {
+    --            localize('$'),
+    --            get_debt_amount(card)
+    --        }
+    --    }
+    --end,
+    pools = { ["mahrlatr_mahrlatr_jokers"] = true }
+    },
+    false -- silent suppresses mod badge
+)
