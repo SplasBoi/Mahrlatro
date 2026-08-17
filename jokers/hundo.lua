@@ -25,7 +25,8 @@ SMODS.Joker {
     config = {
         extra = {
             scaling = 1,
-            current_dollars_received = 0
+            current_dollars_received = 0,
+            played_poker_hands = {}
         }
     },
 
@@ -40,7 +41,12 @@ SMODS.Joker {
     end,
 
     calculate = function(self, card, context)
-        if context.before and G.GAME.hands[context.scoring_name] and G.GAME.hands[context.scoring_name].played_this_round == 1 then
+        local e = card.ability.extra
+        if context.before then
+            if TableUtility.contains_individual(context.scoring_name, e.played_poker_hands) then return end
+
+            table.insert(e.played_poker_hands, context.scoring_name)
+
             SMODS.scale_card(card, {
                 ref_table = card.ability.extra,
                 ref_value = 'current_dollars_received',

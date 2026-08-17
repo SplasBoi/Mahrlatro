@@ -1035,9 +1035,10 @@ return {
             j_mahrlatr_hundo = {
                 name = "Hundo",
                 text = {
-                    "Earns +{C:money}#3##1#{} for each",
+                    "Earns {C:money}#3##1#{} for each",
                     "{C:attention}unique poker hand{} played.",
-                    "{C:inactive}(Currently {C:money}+#3##2#{C:inactive}){}"
+                    "while owning this Jokahr",
+                    "{C:inactive}(Currently {C:money}#3##2#{C:inactive}){}"
                 }
             },
 
