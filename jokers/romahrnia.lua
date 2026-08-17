@@ -28,7 +28,7 @@ SMODS.Joker{
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
     
     loc_vars = function(self, info_queue, card)
-        local e = self.config.extra or card.ability.extra
+        local e = card.ability.extra
 
         return {
             vars = {
@@ -42,7 +42,7 @@ SMODS.Joker{
 
 
     calculate = function(self, card, context)
-        local e = self.config.extra or card.ability.extra
+        local e = card.ability.extra
 
         if context.cardarea == G.jokers and context.joker_main  then
             return {

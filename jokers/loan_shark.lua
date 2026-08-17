@@ -32,7 +32,7 @@ SMODS.Joker {
     },
 
     loc_vars = function(self, info_queue, card)
-        local e = self.config.extra or card.ability.extra
+        local e = card.ability.extra
 
         return {
             vars = {
@@ -54,14 +54,14 @@ SMODS.Joker {
     end,
 
     add_to_deck = function(self, card, from_debuff)
-        local e = self.config.extra or card.ability.extra
+        local e = card.ability.extra
 
         ease_dollars(e.loan)
         e.current_debt = e.loan
     end,
 
     calculate = function(self, card, context)
-        local e = self.config.extra or card.ability.extra
+        local e = card.ability.extra
 
         if context.end_of_round and context.main_eval then
             local interest = math.abs(e.installment_value + e.interest_value)

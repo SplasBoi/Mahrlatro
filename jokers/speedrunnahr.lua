@@ -19,7 +19,7 @@ SMODS.Joker {
     },
 
     loc_vars = function(self, info_queue, card)
-        local e = self.config.extra or card.ability.extra
+        local e = card.ability.extra
 
         return {
             vars = {
@@ -30,7 +30,7 @@ SMODS.Joker {
     end,
 
     calculate = function(self, card, context)
-        local e = self.config.extra or card.ability.extra
+        local e = card.ability.extra
 
         if context.before and not context.blueprint and next(context.poker_hands[e.required_hand]) then
             e.chips = e.chips + e.chip_mod

@@ -20,7 +20,7 @@ SMODS.Joker {
     },
 
     loc_vars = function(self, info_queue, card)
-        local e = self.config.extra or card.ability.extra
+        local e = card.ability.extra
 
         return {
             vars = {
@@ -30,7 +30,7 @@ SMODS.Joker {
     end,
 
     calculate = function(self, card, context)
-        local e = self.config.extra or card.ability.extra
+        local e = card.ability.extra
 
         if context.joker_main and context.scoring_name == e.wanted_hand then
             local selected_card = context.scoring_hand[math.random(#context.scoring_hand)]

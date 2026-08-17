@@ -33,7 +33,7 @@ SMODS.Joker {
     },
     
     loc_vars = function(self, info_queue, card)
-        local e = self.config.extra or card.ability.extra
+        local e = card.ability.extra
         local numerator, denominator = SMODS.get_probability_vars(card, e.numerator, e.denominator)
 
         return {
@@ -45,7 +45,7 @@ SMODS.Joker {
     end,
 
     calculate = function(self, card, context)
-        local e = self.config.extra or card.ability.extra
+        local e = card.ability.extra
 
         if context.setting_blind and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
             G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1

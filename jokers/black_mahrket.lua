@@ -20,7 +20,7 @@ SMODS.Joker {
     cost = 10,
 
     loc_vars = function(self, info_queue, card)
-        local e = self.config.extra or card.ability.extra
+        local e = card.ability.extra
 
         return {
             vars = {
@@ -30,7 +30,7 @@ SMODS.Joker {
     end,
 
     can_sell = function(self, card, context)
-        local e = self.config.extra or card.ability.extra
+        local e = card.ability.extra
 
         local jokers_in_hand = #G.jokers.cards
         local available_jokers = math.max(0, jokers_in_hand - e.joker_destroy_count - 1)
@@ -39,7 +39,7 @@ SMODS.Joker {
     end,
 
     calculate = function(self, card, context)
-        local e = self.config.extra or card.ability.extra
+        local e = card.ability.extra
 
         if context.selling_self then
             local available_jokers = {}

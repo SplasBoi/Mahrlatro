@@ -43,7 +43,7 @@ SMODS.Joker {
     end,
 
     calculate = function(self, card, context)
-        local e = self.config.extra or card.ability.extra
+        local e = card.ability.extra
 
         if context.after and SMODS.last_hand_oneshot then
             local sound = (e.trigger_count <= 0) and "mahrlatr_splas_perfect" or "mahrlatr_splas_perfect_again"

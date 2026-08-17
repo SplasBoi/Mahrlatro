@@ -69,7 +69,7 @@ SMODS.Joker{
     update = function(self, card, dt)
         if not G or not G.PITCH_MOD then return end
         
-        local e = self.config.extra or card.ability.extra
+        local e = card.ability.extra
 
         if card.area == G.jokers and not card.removed then
             G.PITCH_MOD = e.music_pitch

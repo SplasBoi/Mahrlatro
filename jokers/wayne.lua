@@ -21,7 +21,7 @@ SMODS.Joker {
     },
 
     loc_vars = function(self, info_queue, card)
-        local e = self.config.extra or card.ability.extra
+        local e = card.ability.extra
 
         local num, denom = SMODS.get_probability_vars(card, e.base_numerator, e.base_denominator)
 
@@ -36,7 +36,7 @@ SMODS.Joker {
     end,
 
     calculate = function(self, card, context)
-        local e = self.config.extra or card.ability.extra
+        local e = card.ability.extra
 
         if context.end_of_round and not context.game_over and context.main_eval then
             local num, denom = SMODS.get_probability_vars(card, e.base_numerator, e.base_denominator)
