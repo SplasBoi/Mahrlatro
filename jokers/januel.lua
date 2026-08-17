@@ -6,7 +6,7 @@ SMODS.Joker{
             hands = 1,
             discards = 0,
             music_pitch = 0.8,
-            original_hand_size
+            added_hand_size
         }
     },
 
@@ -43,26 +43,24 @@ SMODS.Joker{
             }
         }
     end,
-    
+
+    add_to_deck = function(self, card, from_debuff)
+        local e = card.ability.extra
+        e.original_hand_size = G.hand.config.card_limit
+    end,
+
     calculate = function(self, card, context)
         local handsize = #G.playing_cards
         local e = card.ability.extra
 
-        if context.first_hand_drawn  then
-            card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = tostring(card.ability.extra.hands).." Hand", colour = G.C.BLUE})
-            G.GAME.current_round.hands_left = card.ability.extra.hands
-
-            card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = tostring(card.ability.extra.discards).." Discards", colour = G.C.BLUE})
-            G.GAME.current_round.discards_left = card.ability.extra.discards
-
-            e.original_hand_size = G.hand.config.card_limit
-            G.hand:change_size(#G.playing_cards - e.original_hand_size)
+        if context.first_hand_drawn then
+            e.added_hand_size = draw_entire_deck(G.hand.config.card_limit, card, context)
         end
 
-        if (context.end_of_round and not context.game_over) or context.selling_self then
-            if e.original_hand_size == nil then return end
-            
-            G.hand:change_size(-(#G.playing_cards - e.original_hand_size))
+        if (context.end_of_round and context.main_eval and not context.game_over) or (context.selling_self and G.GAME.blind.boss) then
+            if e.added_hand_size == nil then return end
+    
+            G.hand:change_size(-e.added_hand_size)
         end
     end,
 
@@ -78,3 +76,18 @@ SMODS.Joker{
         end
     end
 }
+
+draw_entire_deck = function(original_hand_size, card, context)
+    local e = card.ability.extra
+
+    card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = tostring(e.hands).." Hand", colour = G.C.BLUE})
+    G.GAME.current_round.hands_left = e.hands
+
+    card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = tostring(e.discards).." Discards", colour = G.C.BLUE})
+    G.GAME.current_round.discards_left = e.discards
+
+    local amount = #G.playing_cards - original_hand_size
+    G.hand:change_size(amount)
+
+    return amount
+end
