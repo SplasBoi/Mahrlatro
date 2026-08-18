@@ -55,7 +55,7 @@ SMODS.Joker {
     end,
     
     calculate = function(self, card, context)
-        if context.change_suit or context.change_rank or context.setting_ability then
+        if context.change_suit or context.change_rank or (context.setting_ability and not context.unchanged and G.P_CENTERS[context.new].set == 'Enhanced') then
             SMODS.scale_card(card, {
                 ref_table = card.ability.extra,
                 ref_value = 'chips',
