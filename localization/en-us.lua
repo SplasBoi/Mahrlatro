@@ -725,7 +725,7 @@ return {
                 }
             },
 
-            j_mahrlatr_mahrket = {
+            j_riff_raff = {
                 name = "Mahrket",
                 text = {
                     "When {C:attention}Blind{} is selected,",
@@ -748,7 +748,7 @@ return {
             j_mahrlatr_salad_rng = {
                 name = "Salad RNG",
                 text = {
-                    "{C:red}Lowers odds{} of chance based cards & jokahrs"
+                    "{C:red}Lowers odds{} of chance based cards & Jokahrs"
                 }
             },
 
@@ -763,14 +763,8 @@ return {
                 name = "Fibonahrcci"
             },
 
-            j_mahrlatr_speedrunnahr = {
-                name = "Speedrunnahr",
-                text = {
-                    "Gains {C:chips}+#2#{} Chips",
-                    "if played hand",
-                    "contains a {C:attention}Straight{}",
-                    "{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips)",
-                }
+            j_runner = {
+                name = "Speedrunnahr"
             },
 
             j_mahrlatr_door_mahrfia = {
