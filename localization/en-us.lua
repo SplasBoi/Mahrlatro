@@ -15,7 +15,7 @@ return {
                 }
             },
 
-            j_mahrlatr_wee_mahr = {
+            j_wee = {
                 name = 'Wee Mahr',
                 text = {
                     'This Jokahr gains {C:blue}+8{} Chips',
@@ -24,8 +24,8 @@ return {
                 }
             },
 
-            j_mahrlatr_ratatouille = {
-                name = "Ratatouille",
+            j_jolly = {
+                name = "Ratatouille DVD",
                 text = {
                     "{C:red}+#1#{} Mult if played",
                     "hand contains a {C:attention}#2#",
@@ -33,41 +33,20 @@ return {
                 }
             },
 
-            j_mahrlatr_mahrs_sixth_sense = {
-                name = "Mahrs Sixth Sense",
-                text = {
-                    "If {C:attention}first hand{} of round is",
-                    "a single {C:attention}6{}, destroy it and",
-                    "create a {C:spectral}Spectral{} card",
-                    "{C:inactive}(Must have room)"
-                }
+            j_sixth_sense = {
+                name = "Mahrs Sixth Sense"
             },
 
-            j_mahrlatr_mahrs_screenshare = {
-                name = "Mahrs Screenshare",
-                text = {
-                    "{C:hearts}Hearts{} and {C:diamonds}Diamonds",
-                    "count as the same suit,",
-                    "{C:spades}Spades{} and {C:clubs}Clubs",
-                    "count as the same suit",
-                }
+            j_smeared = {
+                name = "Mahrs Screenshare"
             },
 
-            j_mahrlatr_evil_scary_face = {
-                name = "Evil Scary Face",
-                text = {
-                    "Played {C:attention}face{} cards",
-                    "give {C:chips}+#1#{} Chips",
-                    "when scored",
-                },
+            j_scary_face = {
+                name = "Evil Scary Face"
             },
 
-            j_mahrlatr_golden_mahr = {
-                name = 'Golden Mahr',
-                text = {
-                    "Played {C:attention}Gold{} cards",
-                    "earn {C:money}$#1#{} when scored"
-                }
+            j_ticket = {
+                name = 'Golden Mahr'
             },
 
             j_mahrlatr_noiflo = {
@@ -81,7 +60,7 @@ return {
                 name = "Raised Hands"
             },
 
-            j_mahrlatr_the_nyahr = {
+            j_lucky_cat = {
                 name = "The Nyahr",
                 text = {
                     "This Jokahr gains {X:mult,C:white} X#1# {} Mult",
@@ -91,7 +70,7 @@ return {
                 },
             },
 
-            j_mahrlatr_pirate = {
+            j_swashbuckler = {
                 name = "Pirates of the Mahribbean",
                 text = {
                     "Adds the sell value of all other",
@@ -108,13 +87,8 @@ return {
                 }
             },
 
-            j_mahrlatr_mahrllion = {
-                name = "Mahrllionaire",
-                text = {
-                    "{C:mult}+#1#{} Mult for every",
-                    "{C:money}$#2#{} you have",
-                    "{C:inactive}(Currently {C:mult}+#3#{C:inactive} Mult)",
-                }
+            j_bootstraps = {
+                name = "Mahrllionaire"
             },
 
             j_dna = {
@@ -136,14 +110,24 @@ return {
             },
 
             j_baseball = {
-                name = "Footbahrll Sticker"
+                name = "Footbahrll Sticker",
+                text = {
+                    "{C:green}Uncommon{} Jokahrs",
+                    "each give {X:mult,C:white} X#1# {} Mult",
+                }
             },
 
             j_madness = {
-                name = "Potlobster"
+                name = "Potlobster",
+                text = {
+                    "When {C:attention}Small Blind{} or {C:attention}Big Blind{}",
+                    "is selected, gain {X:mult,C:white} X#1# {} Mult",
+                    "and {C:attention}destroy{} a random Jokahr",
+                    "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
+                }
             },
 
-            j_mahrlatr_amahrngus = {
+            j_ceremonial = {
                 name = "Amahrngus",
                 text = {
                     "When {C:attention}Blind{} is selected,",
@@ -155,7 +139,13 @@ return {
             },
 
             j_square = {
-                name = "Squahr Jokahr"
+                name = "Squahr Jokahr",
+                text = {
+                    "This Jokahr gains {C:chips}+#2#{} Chips",
+                    "if played hand has",
+                    "exactly {C:attention}4{} cards",
+                    "{C:inactive}(Currently {C:chips}#1#{C:inactive} Chips)",
+                },
             },
 
             j_mahrlatr_p_route = {
@@ -168,14 +158,8 @@ return {
                 },
             },
             
-            j_mahrlatr_rat_bingo = {
-                name = "Rat Bingo",
-                text = {
-                    "Earn {C:money}$#1#{} if {C:attention}poker hand{}",
-                    "is a {C:attention}#2#{},",
-                    "poker hand changes",
-                    "at end of round",
-                },
+            j_todo_list = {
+                name = "Rat Bingo"
             },
 
             j_mahrlatr_nedahrland = {
@@ -236,16 +220,17 @@ return {
             },
 
             j_vampire= {
-                name = "Draculahr"
+                name = "Draculahr",
+                text = {
+                    "This Jokahr gains {X:mult,C:white} X#1# {} Mult",
+                    "per scoring {C:attention}Enhanced card{} played,",
+                    "removes card {C:attention}Enhancement",
+                    "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
+                },
             },
 
-            j_mahrlatr_feijoada = {
-                name = "Feijoada",
-                text = {
-                    "{C:attention}+#1#{} hand size,",
-                    "reduces by",
-                    "{C:red}#2#{} every round",
-                },
+            j_turtle_bean = {
+                name = "Feijoada"
             },
 
             j_mahrlatr_scariest_story = {
@@ -259,13 +244,8 @@ return {
                 }
             },
 
-            j_mahrlatr_laugen_geback = {
-                name = "Laugengbäck",
-                text = {
-                    "{X:mult,C:white} X#1# {} Mult,",
-                    "loses {X:mult,C:white} X#2# {} Mult",
-                    "per {C:attention}card{} discarded",
-                },
+            j_ramen = {
+                name = "Laugengbäck"
             },
 
             j_mahrlatr_bossa_nova = {
@@ -276,15 +256,11 @@ return {
                 }
             },
 
-            j_mahrlatr_the_hahrt = {
-                name = 'The Hahrt',
-                text = {
-                    'Played cards with {C:hearts}Heart{} suit',
-                    'give {C:mult}+3{} Mult when scored'
-                }
+            j_lusty_joker = {
+                name = 'The Hahrt'
             },
 
-            j_rough_gem = {
+            j_greedy_joker = {
                 name = 'Diamahrnds Are Forever'
             },
 
@@ -511,20 +487,12 @@ return {
                 }
             },
 
-            j_mahrlatr_sea_level = {
-                name = 'Below Sea Level',
-                text = {
-                    '{C:red}+#1#{} Mult for each card',
-                    'below {C:attention}#2#{} in your {C:attention}full deck{}',
-                    '{C:inactive}Currently: {}{C:red}+#3#{}'
-                }
+            j_erosion = {
+                name = 'Below Sea Level'
             },
 
-            j_mahrlatr_agg = {
-                name = 'Påhrsk Ägg',
-                text = {
-                    'Gains {C:money}#1##2#{} of {C:attention}sell value{} at end of round'
-                }
+            j_egg = {
+                name = 'Påhrsk Ägg'
             },
 
             j_mahrlatr_evil_chicken = {
@@ -566,7 +534,7 @@ return {
                 },
             },
 
-            j_mahrlatr_where_mahr = {
+            j_stencil = {
                 name = "Wait where did he go??",
                 text = {
                     "{X:red,C:white} X1 {} Mult for each",
@@ -640,13 +608,8 @@ return {
                 }
             },
 
-            j_mahrlatr_mihrrar = {
-                name = "Mahrn In The Mihrrar",
-                text = {
-                    "{X:mult,C:white} X#1# {} Mult if played",
-                    "{C:attention}poker hand{} has already",
-                    "been played this round",
-                },
+            j_card_sharp = {
+                name = "Mahrn In The Mihrrar"
             },
 
             j_drivers_license = {
@@ -679,15 +642,8 @@ return {
                 }
             },
 
-            j_mahrlatr_sahrns = {
-                name = "Sahrns",
-                text = {
-                    "Prevents Death",
-                    "if chips scored",
-                    "are at least {C:attention}25%",
-                    "of required chips",
-                    "{C:red,E:2}self destructs{}",
-                }
+            j_mr_bones = {
+                name = "Sahrns"
             },
 
             j_mahrlatr_the_choir = {
@@ -803,13 +759,8 @@ return {
                 }
             },
 
-            j_mahrlatr_fibonahrcci = {
-                name = "Fibonahrcci",
-                text = {
-                    "Each played {C:attention}Ace{},",
-                    "{C:attention}2{}, {C:attention}3{}, {C:attention}5{}, or {C:attention}8{} gives",
-                    "{C:mult}+#1#{} Mult when scored"
-                }
+            j_fibonacci = {
+                name = "Fibonahrcci"
             },
 
             j_mahrlatr_speedrunnahr = {
@@ -876,23 +827,12 @@ return {
                 }
             },
 
-            j_mahrlatr_mahrtini = {
-                name = "Mahrtini",
-                text = {
-                    "If {C:attention}poker hand{} is a",
-                    "{C:attention}#1#{}, create a",
-                    "random {C:spectral}Spectral{} card",
-                    "{C:inactive}(Must have room)",
-                },
+            j_seance = {
+                name = "Mahrtini"
             },
 
-            j_mahrlatr_wompyay = {
-                name = "Wompyay",
-                text = {
-                    "Adds one {C:attention}Stone{} card",
-                    "to deck when",
-                    "{C:attention}Blind{} is selected",
-                },
+            j_marble = {
+                name = "Wompyay"
             },
 
             j_mahrlatr_colettahr = {

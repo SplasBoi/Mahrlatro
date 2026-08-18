@@ -1,26 +1,16 @@
-SMODS.Joker {
-    key = "ratatouille",
+SMODS.Joker:take_ownership('j_jolly',
+    { -- table of properties to change from the existing object
     pos = { x = 3, y = 13 },
-    rarity = 1,
-    blueprint_compat = true,
-    cost = 3,
-    unlocked = true,
-    discovered = false,
     atlas = 'CustomJokers',
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
-
-    config = { extra = { t_mult = 8, type = 'Pair' }, },
-
-    loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.t_mult, localize(card.ability.extra.type, 'poker_hands') } }
-    end,
-
     calculate = function(self, card, context)
-        if context.joker_main and next(context.poker_hands[card.ability.extra.type]) then
+        if context.joker_main and next(context.poker_hands['Pair']) then
             play_sound('mahrlatr_ratatouille')
             return {
-                mult = card.ability.extra.t_mult
+                mult = 8
             }
         end
     end
-}
+    },
+    false -- silent suppresses mod badge
+)
