@@ -789,8 +789,8 @@ return {
             j_mahrlatr_cheese = {
                 name = "Very Good Cheese",
                 text = {
-                    "This Jokahr gains",
-                    "{C:chips}+#2#{} Chips",
+                    "{C:chips}+#1#{} Chips",
+                    "Gains {C:chips}+#2#{} Chips",
                     "every hand played",
                     "{C:inactive}(Goes bad at 100 chips){}"
                 },

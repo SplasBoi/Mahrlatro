@@ -60,7 +60,7 @@ custom_color = Color of the message effect, pass nil for standard color -> HEX c
 slice_message = Message show when a joker is sliced, pass nil for no message -> string or nil
 instantiation_message = Message shown when new joker is instanced, pass nil for no message -> string or nil
 ]]
-function JokerUtility.slice_and_merge_jokers(context, card, new_joker, custom_color, slice_message, instantiation_message)
+function JokerUtility.slice_and_merge_jokers(context, card, new_joker, custom_color, slice_message, instantiation_message) --> void
     local e = card.ability.extra
     local sliced_joker
 
@@ -101,4 +101,32 @@ function JokerUtility.slice_and_merge_jokers(context, card, new_joker, custom_co
     })
         
     return true
+end
+
+-- Argument 1 is the key is the list of jokers owned (G.jokers.cards) -> table
+-- Argument 2 is the key of the joker we are checking for -> string
+function JokerUtility.has_dupe(jokers_owned, key) --> bool
+    local jokers = {}
+
+    for _, joker in ipairs(jokers_owned) do
+        if TableUtility.contains_individual(key, jokers) then return true end
+        
+        print(jokers)
+        print('--')
+        table.insert(jokers, joker.config.center.key)
+    end
+
+    return false
+end
+
+-- Argument 1 is the key is the list of jokers owned (G.jokers.cards) -> table
+-- Argument 2 is the key of the joker we are looking for -> string
+function JokerUtility.player_has_joker(jokers_owned, key) --> bool
+    for _, joker in ipairs(jokers_owned) do
+        if joker.config.center.key == key then
+            return true
+        end
+    end
+
+    return false
 end
