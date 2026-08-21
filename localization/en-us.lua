@@ -41,6 +41,14 @@ return {
                 name = "Mahrs Screenshare"
             },
 
+            j_joker = {
+                name = "Jokahr"
+            },
+
+            j_half = {
+                name = "Half Jokahr"
+            },
+
             j_scary_face = {
                 name = "Evil Scary Face"
             },
@@ -79,7 +87,7 @@ return {
                 }
             },
 
-            j_mahrlatr_pirannahr_plant = {
+            j_flower_pot = {
                 name = "Pirannahr Plant",
                 text = {
                     "{X:mult,C:white} X#1# {} Mult if poker",

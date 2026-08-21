@@ -1,20 +1,8 @@
-SMODS.Joker {
-    key = "pirannahr_plant",
-    blueprint_compat = true,
-    rarity = 2,
-    cost = 6,
+SMODS.Joker:take_ownership('j_flower_pot',
+    { -- table of properties to change from the existing object
     pos = { x = 6, y = 12 },
-    config = { extra = { Xmult = 3 } },
-    unlocked = true,
-    discovered = false,
     atlas = 'CustomJokers',
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
-
-    loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.Xmult } }
-    end,
-
-
     calculate = function(self, card, context)
         if context.joker_main then
             local suits = {
@@ -56,7 +44,6 @@ SMODS.Joker {
             end
         end
     end,
-    locked_loc_vars = function(self, info_queue, card)
-        return { vars = { 8 } }
-    end
-}
+    },
+    false -- silent suppresses mod badge
+)
