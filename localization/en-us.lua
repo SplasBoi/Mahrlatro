@@ -340,8 +340,9 @@ return {
                 name = "Photograph!",
                 text = {
                     "Look at this {C:attention}Photograph{}!",
-                    "Everytime I do it makes me {X:mult,C:white}X2{} mult",
-                    "on the first scored face card!"
+                    "Everytime I do it makes me",
+                    "{X:mult,C:white}X2{} Mult on the first",
+                    "scored face card!"
                 }
             },
 
@@ -591,9 +592,9 @@ return {
             j_mahrlatr_nutellas_cahr = {
                 name = "Nutella\'s Cahr",
                 text = {
-                    "If played hand has only",
+                    "If first played hand has only",
                     "{C:attention}1{} card, increases",
-                    "rank by {C:attention}1{}"
+                    "its rank by {C:attention}1{}"
                 }
             },
 
