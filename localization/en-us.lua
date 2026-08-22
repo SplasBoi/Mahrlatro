@@ -834,6 +834,14 @@ return {
                 name = "Mahrtini"
             },
 
+            j_order = {
+                name = "The Ordahr"
+            },
+
+            j_family = {
+                name = "The Famahrly"
+            },
+
             j_marble = {
                 name = "Wompyay"
             },
@@ -1114,6 +1122,16 @@ return {
                     "between {C:attention}1X{} and {C:attention}2X{}",
                     "for each hand played"
                 }
+            }
+        },
+
+        Planet = {
+            c_mars = {
+                name = 'Mahrs'
+            },
+
+            c_mercury = {
+                name = 'Mahrcury'
             }
         },
 
