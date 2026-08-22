@@ -1132,6 +1132,50 @@ return {
 
             c_mercury = {
                 name = 'Mahrcury'
+            },
+
+            c_jupiter = {
+                name = 'Jupitahr'
+            },
+
+            c_venus = {
+                name = 'Venahrs'
+            },
+
+            c_ceres = {
+                name = 'Cerahrs'
+            },
+
+            c_planet_x = {
+                name = 'Plahrnet X'
+            },
+
+            c_earth = {
+                name = 'Eahrth'
+            },
+
+            c_saturn = {
+                name = 'Sahrturn'
+            },
+
+            c_uranus = {
+                name = 'Urahrnus'
+            },
+
+            c_neptune = {
+                name = 'Neptahrn'
+            },
+
+            c_pluto = {
+                name = 'Plutahr'
+            },
+
+            c_black_hole = {
+                name = 'Blahrck Hole'
+            },
+
+            c_eris = {
+                name = 'Ahris'
             }
         },
 
@@ -1147,10 +1191,17 @@ return {
 
     misc = {
         labels = {
-            mahrlatr_mahr_seal = 'Mahr Seal'
+            mahrlatr_mahr_seal = 'Mahr Seal',
+            planet = 'Plahrnet',
+            eternal = 'Eternahrl',
+            rental = 'Rentahrl',
+            tarot = 'Tahrot'
         },
 
         dictionary = {
+            k_planet = "Plahrnet",
+            k_planet_cards = 'Plahrnet Cards',
+
             bobby_good_job = 'Good Job!!!',
             bobby_try_this_hand = 'Alright! Try playing this hand!!',
 
