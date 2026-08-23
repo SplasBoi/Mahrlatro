@@ -526,7 +526,7 @@ return {
                 name = '{V:1}Black Metahrl{}',
                 text = {
                     '{C:green,E:2}#1# in #2# chance{} of creating a',
-                    '{C:tarot}Tarot{} card when a',
+                    '{C:tarot}Tahrot{} card when a',
                     '{V:1,E:1}black card{} is scored',
                     '{C:inactive}(must have room){}'
                 }
@@ -866,12 +866,12 @@ return {
                 text = {
                     {
                         "Gains {C:red}+#2#{} Mult for each",
-                        "{C:red}failed{} {C:tarot,E:1}Wheel of Fortune{}",
+                        "{C:red}failed{} {C:tarot,E:1}Wheel of Fahrtune{}",
                         "{C:inactive}(Currently: {C:red}+#1#{}{C:inactive} Mult){}"
                     }
                 },
                 unlock = {
-                    "Use {C:tarot,E:1}Wheel of Fortune{}",
+                    "Use {C:tarot,E:1}Wheel of Fahrtune{}",
                     "and have it fail."
                 }
             },
@@ -1025,7 +1025,7 @@ return {
                 name = 'Face Monstahr',
                 text = {
                     '{C:green,E:2}#1# in #2# chance{} of creating a',
-                    '{C:tarot}Tarot{} card when a',
+                    '{C:tarot}Tahrot{} card when a',
                     '{C:attention}face card{} is discarded',
                     '{C:inactive}(must have room){}'
                 }
@@ -1070,12 +1070,78 @@ return {
                 },
             },
             c_mahrlatr_pink_tower = {
-                name = "Pink Tower",
+                name = "Pink Towahr",
                 text = {
                     "Enhances {C:attention}1{} selected",
                     "card into a",
                     "{C:legendary}Pinkstone{} Card",
                 },
+            },
+            c_fool = {
+                name = "Fooahrl"
+            },
+            c_magician = {
+                name = "Mahrgician"
+            },
+            c_high_priestess = {
+                name = "High Mahrstes"
+            },
+            c_empress = {
+                name = "Emprahrss"
+            },
+            c_emperor = {
+                name = "Emperahr"
+            },
+            c_heirophant = {
+                name = "Hierophahrnt"
+            },
+            c_lovers = {
+                name = "Lovahrs"
+            },
+            c_chariot = {
+                name = "Chahriot"
+            },
+            c_justice = {
+                name = "Jahrstice"
+            },
+            c_hermit = {
+                name = "Hermahrt"
+            },
+            c_wheel_of_fortune = {
+                name = "Wheel Of Fahrtune"
+            },
+            c_strength = {
+                name = "Strahrngth"
+            },
+            c_hanged_man = {
+                name = "Hanged Mahrn"
+            },
+            c_death = {
+                name = "Deahrth"
+            },
+            c_temperance = {
+                name = "Temprahrnce"
+            },
+            c_devil = {
+                name = "Devahrl"
+            },
+            c_tower = {
+                name = "Towahr"
+            },
+            c_star = {
+                name = "Stahr"
+            },
+            c_moon = {
+                name = "Mahrn"
+            },
+            c_sun = {
+                name = "Sahrn"
+            },
+            c_judgement = {
+                name = "Judgemahrnt"
+            },
+            c_world = {
+                name = "Wahrld"
             }
         },
 
@@ -1200,7 +1266,10 @@ return {
 
         dictionary = {
             k_planet = "Plahrnet",
-            k_planet_cards = 'Plahrnet Cards',
+            b_planet_cards = 'Plahrnet Cards',
+            k_tarot = "Tahrot",
+            b_tarot_cards = "Tahrot Cards",
+
 
             bobby_good_job = 'Good Job!!!',
             bobby_try_this_hand = 'Alright! Try playing this hand!!',

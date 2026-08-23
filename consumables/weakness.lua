@@ -2,7 +2,7 @@
 SMODS.Consumable {
     key = 'weakness',
     set = 'Tarot',
-    pos = { x = 1, y = 0 },
+    pos = { x = 3, y = 2 },
     config = { max_highlighted = 2 },
 
     unlocked = true,

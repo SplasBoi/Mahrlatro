@@ -6,7 +6,7 @@ SMODS.Consumable {
 
     atlas = "CustomConsumables",
 
-    pos = { x = 2, y = 0 },
+    pos = { x = 4, y = 2 },
 
     config = {
         max_highlighted = 1,
