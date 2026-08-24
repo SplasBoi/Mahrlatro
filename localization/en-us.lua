@@ -49,6 +49,56 @@ return {
                 name = "Half Jokahr"
             },
 
+            j_hanging_chad = {
+                name = "Roffle's Chad"
+            },
+
+            j_faceless = {
+                name = "Faceless Jokahr"
+            },
+
+            j_fortune_teller = {
+                name = "Fahrtune Teller",
+                text = {
+                    "{C:red}+#1#{} Mult per {C:purple}Tahrot{}",
+                    "card used this run",
+                    "{C:inactive}(Currently {C:red}+#2#{C:inactive})",
+                },
+            },
+
+            j_reserved_parking = {
+                name = "Reserved Pahrking"
+            },
+
+            j_stuntman = {
+                name = "Mahrx Verstappen"
+            },
+
+            j_invisible = {
+                name = "Invisible Jokahr"
+            },
+
+            j_gift = {
+                text = {
+                    "Add {C:money}$#1#{} of {C:attention}sell value",
+                    "to every {C:attention}Jokahr{} and",
+                    "{C:attention}Consumahrble{} card at",
+                    "end of round",
+                },
+            },
+
+
+            j_hologram = {
+                name = "The Lighthouse",
+                text = {
+                    "Don't forget to add to deck,",
+                    "this Jokahr gains {X:mult,C:white} X#1# {} Mult",
+                    "every time a {C:attention}playing card{}",
+                    "is added to your deck",
+                    "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
+                },
+            },
+
             j_scary_face = {
                 name = "Evil Scary Face"
             },
