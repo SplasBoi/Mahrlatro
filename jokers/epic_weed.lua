@@ -5,7 +5,7 @@ SMODS.Joker { --Epic Weed
     config = {
         extra = {
             mult = 3,
-            required_jokers_to_merge = {"j_mahrlatr_vaalserberg", "j_mahrlatr_sea_level"}
+            required_jokers_to_merge = {"j_mahrlatr_vaalserberg", "j_erosion"}
         }
     },
 
