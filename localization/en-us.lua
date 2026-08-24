@@ -4,7 +4,7 @@ return {
             j_mahrlatr_the_mahr = {
                 name = 'The Mahr!?',
                 text = {
-                    '{C:money}#1##2#{} & {C:red}#2# Mult{} for every hand played'
+                    '{C:money}#1##2#{} & {C:red}#3# Mult{} for every hand played'
                 }
             },
 
@@ -224,7 +224,7 @@ return {
                 name = "Rat Bingo"
             },
 
-            j_mahrlatr_nedahrland = {
+            j_rough_gem = {
                 name = "Nedahrland",
                 text = {
                     "Played cards with",
