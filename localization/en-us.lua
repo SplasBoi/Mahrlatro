@@ -103,6 +103,10 @@ return {
                 name = "Evil Scary Face"
             },
 
+            j_gros_michel = {
+                name = "Banana Monkey"
+            },
+
             j_ticket = {
                 name = 'Golden Mahr'
             },
