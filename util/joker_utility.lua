@@ -103,7 +103,7 @@ function JokerUtility.slice_and_merge_jokers(context, card, new_joker, custom_co
     return true
 end
 
--- Argument 1 is the key is the list of jokers owned (G.jokers.cards) -> table
+-- Argument 1 is the list of jokers owned (G.jokers.cards) -> table
 -- Argument 2 is the key of the joker we are checking for -> string
 function JokerUtility.has_dupe(jokers_owned, key) --> bool
     local jokers = {}
@@ -111,8 +111,6 @@ function JokerUtility.has_dupe(jokers_owned, key) --> bool
     for _, joker in ipairs(jokers_owned) do
         if TableUtility.contains_individual(key, jokers) then return true end
         
-        print(jokers)
-        print('--')
         table.insert(jokers, joker.config.center.key)
     end
 
