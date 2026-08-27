@@ -1,4 +1,4 @@
-SMODS.Joker:take_ownership('j_vremade_bootstraps',
+SMODS.Joker:take_ownership('j_bootstraps',
     { -- table of properties to change from the existing object
     pos = { x = 5, y = 10 },
     atlas = 'CustomJokers',

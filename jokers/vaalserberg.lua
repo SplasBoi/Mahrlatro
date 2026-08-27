@@ -1,32 +1,21 @@
-SMODS.Joker {
-    key = "vaalserberg",
-    unlocked = true,
-    discovered = false,
-    blueprint_compat = true,
-    rarity = 3,
-    cost = 7,
+SMODS.Joker:take_ownership('j_stuntman',
+    { -- table of properties to change from the existing object
     pos = { x = 4, y = 6 },
-    config = { extra = { h_size = 2, chip_mod = 322 } },
     atlas = 'CustomJokers',
-    pools = { ["mahrlatr_mahrlatr_jokers"] = true },
-
-
-    loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.chip_mod, card.ability.extra.h_size } }
-    end,
-
-
     calculate = function(self, card, context)
         if context.joker_main then
             return {
-                chips = card.ability.extra.chip_mod
+                chips = 322
             }
         end
     end,
     add_to_deck = function(self, card, from_debuff)
-        G.hand:change_size(-card.ability.extra.h_size)
+        G.hand:change_size(-2)
     end,
     remove_from_deck = function(self, card, from_debuff)
-        G.hand:change_size(card.ability.extra.h_size)
-    end
-}
+        G.hand:change_size(2)
+    end,
+    pools = { ["mahrlatr_mahrlatr_jokers"] = true }
+    },
+    false -- silent suppresses mod badge
+)

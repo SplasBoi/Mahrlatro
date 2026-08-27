@@ -78,7 +78,7 @@ return {
                 name = "Reserved Pahrking"
             },
 
-            j_stuntman = {
+            j_throwback = {
                 name = "Mahrx Verstappen"
             },
 
@@ -275,11 +275,11 @@ return {
                 }
             },
 
-            j_mahrlatr_vaalserberg = {
+            j_stuntman = {
                 name = "Vaalserberg",
                 text = {
-                    "{C:chips}+#1#{} Chips,",
-                    "{C:attention}-#2#{} hand size",
+                    "{C:chips}+322{} Chips,",
+                    "{C:attention}-2{} hand size",
                 }
             },
             
@@ -288,6 +288,15 @@ return {
                 text = {
                     "Gives {C:red,s:1.1}+#1#{} Mult if hand",
                     "contains {C:attention}High Card{}"
+                },
+            },
+            
+            j_mahrlatr_red_card = {
+                text = {
+                    "This Jokahr gains",
+                    "{C:red}+#1#{} Mult when any",
+                    "{C:attention}Booster Pack{} is skipped",
+                    "{C:inactive}(Currently {C:red}+#2#{C:inactive} Mult)",
                 },
             },
 
