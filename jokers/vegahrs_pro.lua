@@ -1,4 +1,4 @@
-local end_run_event = nil
+local self_destruct_event = nil
 local create_consumable_event = nil
 
 SMODS.Joker {
@@ -28,7 +28,7 @@ SMODS.Joker {
     config = {
         extra = {
             numerator = 1,
-            denominator = 5
+            denominator = 3
         }
     },
     
@@ -55,7 +55,7 @@ SMODS.Joker {
         end
 
         if context.end_of_round and context.main_eval and not context.game_over then
-            if SMODS.pseudorandom_probability(card, self.key, e.numerator, e.denominator) then
+            if SMODS.pseudorandom_probability(card, 'j_mahrlatr_vegahrs_pro', e.numerator, e.denominator) then
                 G.E_MANAGER:add_event(Event({
                     trigger = "immediate",
                     func = function()
@@ -65,7 +65,7 @@ SMODS.Joker {
                             context.blueprint_card or card
                         )
 
-                        G.E_MANAGER:add_event(end_run_event())
+                        G.E_MANAGER:add_event(self_destruct_event(card))
                         return true
                     end
                 }))
@@ -80,13 +80,12 @@ SMODS.Joker {
     end
 }
 
-end_run_event = function()
+self_destruct_event = function(card)
     return Event({
         trigger = "after",
         delay = 2,
         func = function()
-            G.STATE = G.STATES.GAME_OVER
-            G.STATE_COMPLETE = false
+            SMODS.destroy_cards(card, nil, nil, true)
             return true
         end
     })

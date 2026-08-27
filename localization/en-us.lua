@@ -772,8 +772,8 @@ return {
                         '{C:inactive}(must have room){}',
                     },
                     {
-                        '{C:red}#1# in #2# chance of ending the run{}',
-                        '{C:red}at the end of the round.{}'
+                        '{C:red}#1# in #2# chance of crashing (self-destroying){}',
+                        '{C:red}at the end of each round.{}'
                     }
                 }
             },
