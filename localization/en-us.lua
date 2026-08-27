@@ -57,6 +57,14 @@ return {
                 name = "Faceless Jokahr"
             },
 
+            j_trading = {
+                name = "Pokémahrn Card"
+            },
+
+            j_scholar = {
+                name = "Scholahr"
+            },
+
             j_fortune_teller = {
                 name = "Fahrtune Teller",
                 text = {
@@ -75,7 +83,18 @@ return {
             },
 
             j_invisible = {
-                name = "Invisible Jokahr"
+                name = "Invisible Jokahr",
+                text = {
+                    "After {C:attention}#1#{} rounds,",
+                    "sell this card to",
+                    "{C:attention}Duplicate{} a random Jokahr",
+                    "{C:inactive}(Currently {C:attention}#2#{C:inactive}/#1#)",
+                },
+                unlock = {
+                    "Win a run without",
+                    "ever having more",
+                    "than {E:1,C:attention}4 Jokahrs{}",
+                },
             },
 
             j_gift = {
@@ -1315,7 +1334,10 @@ return {
             planet = 'Plahrnet',
             eternal = 'Eternahrl',
             rental = 'Rentahrl',
-            tarot = 'Tahrot'
+            tarot = 'Tahrot',
+            common = 'Commahrn',
+            uncommon = 'Uncommahrn',
+            rare = 'Rahr'
         },
 
         dictionary = {
@@ -1323,6 +1345,10 @@ return {
             b_planet_cards = 'Plahrnet Cards',
             k_tarot = "Tahrot",
             b_tarot_cards = "Tahrot Cards",
+
+            k_common = 'Commahrn',
+            k_uncommon = 'Uncommahrn',
+            k_rare = "Rahr",
 
 
             bobby_good_job = 'Good Job!!!',
