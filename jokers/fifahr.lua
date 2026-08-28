@@ -40,12 +40,7 @@ SMODS.Joker {
 instantiate_green_card = function(card, context)
     for _, joker in ipairs(G.jokers.cards) do
         if joker.config.center.key == "j_red_card" then
-            G.E_MANAGER:add_event(Event({
-                func = function()
-                    SMODS.destroy_cards(joker, nil, nil, true)
-                    return true
-                end
-            }))
+            SMODS.destroy_cards(joker, nil, nil, false)
 
             card:juice_up(0.5, 0.5)
 
