@@ -33,13 +33,8 @@ function JokerUtility.can_merge_jokers(joker_keys) --> bool
 end
 
 -- Argument 1 is the key of the joker we want to instantiate -> string
-function JokerUtility.instantiate_joker(joker_key) --> void
-    G.E_MANAGER:add_event(Event({
-        func = function()
-            SMODS.add_card({ set = 'Joker', key = joker_key })
-            return true
-        end
-    }))
+function JokerUtility.instantiate_joker(joker_key) --> Card
+    return SMODS.add_card({ set = 'Joker', key = joker_key })
 end
 
 -- Argument 1 is the card object of the joker we want to slice -> Card object

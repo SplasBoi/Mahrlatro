@@ -1122,6 +1122,16 @@ return {
                     '{C:green,E:2}#3# in #4# chance{} of disabling it'
                 }
             },
+
+            j_mahrlatr_green_card = {
+                name = '{V:1}Green Card{}',
+                text = {
+                    'This Jokahr gains',
+                    '{C:mult}+#1#{} Mult for each',
+                    '{C:attention}Booster Pack{} opened.',
+                    '{C:inactive}(Currently: {C:mult}+#2#{} {C:inactive}Mult){}'
+                }
+            },
         },
 
 
