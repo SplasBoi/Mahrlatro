@@ -9,12 +9,6 @@ SMODS.Joker:take_ownership('j_stuntman',
             }
         end
     end,
-    add_to_deck = function(self, card, from_debuff)
-        G.hand:change_size(-2)
-    end,
-    remove_from_deck = function(self, card, from_debuff)
-        G.hand:change_size(2)
-    end,
     pools = { ["mahrlatr_mahrlatr_jokers"] = true }
     },
     false -- silent suppresses mod badge
