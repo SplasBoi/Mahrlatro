@@ -2,8 +2,8 @@ SMODS.Joker {
     key = "green_card",
 
     pos = {
-        x = -1,
-        y = -1
+        x = 2,
+        y = 19
     },
     
     display_size = {

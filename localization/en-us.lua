@@ -37,6 +37,22 @@ return {
                 name = "Mahrs Sixth Sense"
             },
 
+            j_golden = {
+                name = "Golden Jokahr"
+            },
+
+            j_baron = {
+                name = "Bahron"
+            },
+
+            j_green_joker = {
+                name = "Green Jokahr"
+            },
+
+            j_merry_andy = {
+                name = "Mahry Andy"
+            },
+
             j_smeared = {
                 name = "Mahrs Screenshare"
             },
