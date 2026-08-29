@@ -109,6 +109,16 @@ SMODS.Atlas {
     atlas_table = "ANIMATION_ATLAS"
 }
 
+SMODS.Atlas {
+    key = "Benjamin",
+    path = "Benjamin.png",
+    px = 71,
+    py = 95,
+    frames = 30,
+    fps = 30,
+    atlas_table = "ANIMATION_ATLAS"
+}
+
 local NFS = require("nativefs")
 to_big = to_big or function(a) return a end
 lenient_bignum = lenient_bignum or function(a) return a end
@@ -214,6 +224,12 @@ SMODS.Sound {
 SMODS.Sound {
     key = "star",
     path = "sfx/ratatouille_star.ogg",
+    pitch = 1.0
+}
+
+SMODS.Sound {
+    key = "uh_guys",
+    path = "sfx/uh_guys.ogg",
     pitch = 1.0
 }
 
