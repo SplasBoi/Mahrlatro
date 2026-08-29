@@ -351,7 +351,7 @@ return {
             },
 
             j_ramen = {
-                name = "Laugengbäck"
+                name = "Laugengebäck"
             },
 
             j_mahrlatr_bossa_nova = {
