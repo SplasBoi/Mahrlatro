@@ -179,7 +179,7 @@ return {
             j_flower_pot = {
                 name = "Pirannahr Plant",
                 text = {
-                    "{X:mult,C:white} X#1# {} Mult if poker",
+                    "{X:mult,C:white} X#1# {} Mult if pokahr",
                     "hand contains {C:attention}3 unique suits{}"
                 }
             },
@@ -403,11 +403,11 @@ return {
                         '{C:blue}Hands{} to {C:blue}#1#{}',
                         '{C:red}Discards{} to {C:red}#2#{}',
                         '{V:1}Jokahr Slots{} to {V:1}#3#{}',
-                        '{C:purple}Consumable Slots{} to {C:purple}#4#{}'
+                        '{C:purple}Consumahrble Slots{} to {C:purple}#4#{}'
                     },
                     {
                         'Destroys overflowing',
-                        'jokahrs/consumables',
+                        'jokahrs/consumahrbles',
                         'from right to left',
                         "(excluding Normal Guy)"
                     }
@@ -758,7 +758,7 @@ return {
                 text = {
                     '{X:mult,C:white}X#1#{} Mult if hand',
                     'contains {C:attention}#2# and any{}',
-                    '{C:attention}other poker hand{}.',
+                    '{C:attention}other pokahr hand{}.',
                     '{C:inactive}(except High Card){}'
                 },
                 unlock = {
@@ -783,7 +783,7 @@ return {
                 name = 'VEGAHRS Pro',
                 text = {
                     {
-                        'Generates a random consumable',
+                        'Generates a random consumahrble',
                         'at the start of the round.',
                         '{C:inactive}(must have room){}',
                     },
@@ -1025,11 +1025,11 @@ return {
             j_mahrlatr_black_mahrket = {
                 name = "Black Mahrket",
                 text = {
-                    "Upon selling this jokahr, destroy #1# jokahrs",
+                    "Upon selling this Jokahr, destroy #1# Jokahrs",
                     "and turn another {C:dark_edition}Negative{}"
                 },
                 unlock = {
-                    "Obtain a {C:dark_edition}Negative{} Joker"
+                    "Obtain a {C:dark_edition}Negative{} Jokahr"
                 }
             },
 
@@ -1046,7 +1046,7 @@ return {
                 name = "Hundo",
                 text = {
                     "Earns {C:money}#3##1#{} for each",
-                    "{C:attention}unique poker hand{} played.",
+                    "{C:attention}unique pokahr hand{} played.",
                     "while owning this Jokahr",
                     "{C:inactive}(Currently {C:money}#3##2#{C:inactive}){}"
                 }
@@ -1056,7 +1056,7 @@ return {
                 name = "No Levels Early",
                 text = {
                     '{X:mult,C:white}X#1#{} Mult if played',
-                    'poker hand level is {C:attention}1{}',
+                    'pokahr hand level is {C:attention}1{}',
                 }
             },
 
@@ -1064,7 +1064,7 @@ return {
                 name = "Any%",
                 text = {
                     'Adds {C:mult}+#1#{} Mult',
-                    'for each poker',
+                    'for each pokahr',
                     'hand level of',
                     'current hand'
                 }
@@ -1253,6 +1253,76 @@ return {
             }
         },
 
+        Spectral = {
+            c_familiar = {
+                name = "Familiahr"
+            },
+            c_grim = {
+                name = "Grahrm"
+            },
+            c_incantation = {
+                name = "Incahrntation"
+            },
+            c_talisman = {
+                name = "Talsimahrn"
+            },
+            c_aura = {
+                name = "Auhra"
+            },
+            c_sigil = {
+                name = "Sigahrl"
+            },
+            c_ankh = {
+                name = "Ahrnkh"
+            },
+            c_deja_vu = {
+                name = "Dejahr Vu"
+            },
+            c_trance = {
+                name = "Trahrnce"
+            },
+            c_medium = {
+                name = "Mahrdium"
+            },
+            c_immolate = {
+                name = "Imahrlate"
+            },
+            c_black_hole = {
+                name = 'Blahrck Hole'
+            },
+            c_wraith = {
+                name = "Wrahrth",
+                text = {
+                    "Creates a random",
+                    "{C:red}Rahr{C:attention} Jokahr{},",
+                    "sets money to {C:money}$0",
+                },
+            },
+            c_ectoplasm = {
+                name = "Ectoplahrsm",
+                text = {
+                    "Add {C:dark_edition}Negative{} to",
+                    "a random {C:attention}Jokahr,",
+                    "{C:red}-#1#{} hand size"
+                },
+            },
+            c_soul = {
+                text = {
+                    "Creates a",
+                    "{C:legendary,E:1}Legendahry{} Jokahr",
+                    "{C:inactive}(Must have room)"
+                },
+            },
+            c_hex = {
+                name = "Hahrx",
+                text = {
+                    "Add {C:dark_edition}Polychrome{} to a",
+                    "random {C:attention}Jokahr{}, destroy",
+                    "all other Jokahrs",
+                },
+            },
+        },
+
         Back = {
             b_mahrlatr_mahrket = {
                 name = "The mahrket",
@@ -1277,7 +1347,7 @@ return {
                 name = "The Mahr",
                 text = {
                     "Debuffs all",
-                    "{C:blue}Common{} jokers"
+                    "{C:blue}Commahrn{} Jokahrs"
                 }
             },
 
@@ -1344,10 +1414,6 @@ return {
                 name = 'Plutahr'
             },
 
-            c_black_hole = {
-                name = 'Blahrck Hole'
-            },
-
             c_eris = {
                 name = 'Ahris'
             }
@@ -1370,9 +1436,11 @@ return {
             eternal = 'Eternahrl',
             rental = 'Rentahrl',
             tarot = 'Tahrot',
+            spectral = 'Spectrahrl',
             common = 'Commahrn',
             uncommon = 'Uncommahrn',
-            rare = 'Rahr'
+            rare = 'Rahr',
+            legendary = 'Legendahry'
         },
 
         dictionary = {
@@ -1380,10 +1448,14 @@ return {
             b_planet_cards = 'Plahrnet Cards',
             k_tarot = "Tahrot",
             b_tarot_cards = "Tahrot Cards",
+            k_spectral = "Spectrahrl",
+            b_spectral_cards = "Spectrahrl Cards",
+
 
             k_common = 'Commahrn',
             k_uncommon = 'Uncommahrn',
             k_rare = "Rahr",
+            k_legendary = 'Legendahry',
 
 
             bobby_good_job = 'Good Job!!!',

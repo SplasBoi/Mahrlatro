@@ -59,6 +59,14 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+    key = "CustomSpectrals", 
+    path = "CustomSpectrals.png", 
+    px = 71,
+    py = 95, 
+    atlas_table = "ASSET_ATLAS"
+}
+
+SMODS.Atlas {
     key = "CustomSeals", 
     path = "CustomSeals.png", 
     px = 71,
