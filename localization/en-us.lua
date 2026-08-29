@@ -889,7 +889,7 @@ return {
                     "Decreases blind score",
                     "requirements by {C:attention}#1#%{},",
                     "blinds don't give",
-                    "money reward"
+                    "mahrney reward"
                 }
             },
 
@@ -1295,7 +1295,7 @@ return {
                 text = {
                     "Creates a random",
                     "{C:red}Rahr{C:attention} Jokahr{},",
-                    "sets money to {C:money}$0",
+                    "sets mahrney to {C:money}$0",
                 },
             },
             c_ectoplasm = {
@@ -1327,7 +1327,7 @@ return {
             b_mahrlatr_mahrket = {
                 name = "The mahrket",
                 text = {
-                    "Adds 1 extra Voucher slot in Shop"
+                    "Adds 1 extra Voucher slot in The Mahrket"
                 }
             },
 
@@ -1416,6 +1416,123 @@ return {
 
             c_eris = {
                 name = 'Ahris'
+            }
+        },
+
+        Tag = {
+            tag_buffoon = {
+                name = "Jokahr Tag",
+                text = {
+                    "Gives a free",
+                    "{C:attention}Mega Jokahr Pack",
+                },
+            },
+            tag_charm = {
+                name = "Chahrm Tag",
+                text = {
+                    "Gives a free",
+                    "{C:tarot}Mega Arcanahr Pack",
+                },
+            },
+            tag_coupon = {
+                text = {
+                    "Initial cards and",
+                    "boostahr packs in next",
+                    "Mahrket are free",
+                },
+            },
+            tag_d_six = {
+                text = {
+                    "Rerolls in next Mahrket",
+                    "start at {C:money}$0",
+                },
+            },
+            tag_economy = {
+                text = {
+                    "Doubles your mahrney",
+                    "{C:inactive}(Max of {C:money}$#1#{C:inactive})",
+                },
+            },
+            tag_ethereal = {
+                text = {
+                    "Gives a free",
+                    "{C:spectral}Spectrahrl Pack",
+                },
+            },
+            tag_foil = {
+                text = {
+                    "Next base edition Mahrket",
+                    "Jokahr is free and",
+                    "becomes {C:dark_edition}Foil",
+                },
+            },
+            tag_garbage = {
+                name = "Garbahrge Tag"
+            },
+            tag_holo = {
+                text = {
+                    "Next base edition Mahrket",
+                    "Jokahr is free and",
+                    "becomes {C:dark_edition}Holographic",
+                },
+            },
+            tag_investment = {
+                name = "Investmahrnt Tag"
+            },
+            tag_meteor = {
+                name = "Meteahr Tag",
+                text = {
+                    "Gives a free",
+                    "{C:planet}Mega Celestiahrl Pack",
+                },
+            },
+            tag_negative = {
+                text = {
+                    "Next base edition Mahrket",
+                    "Jokahr is free and",
+                    "becomes {C:dark_edition}Negative",
+                },
+            },
+            tag_orbital = {
+                name = "Orbitahrl Tag"
+            },
+            tag_polychrome = {
+                text = {
+                    "Next base edition Mahrket",
+                    "Jokahr is free and",
+                    "becomes {C:dark_edition}Polychrome",
+                },
+            },
+            tag_rare = {
+                name = "Rahr Tag",
+                text = {
+                    "Mahrket has a free",
+                    "{C:red}Rahr Jokahr",
+                },
+            },
+            tag_skip = {
+                name = "Speedrunnahr Tag"
+            },
+            tag_standard = {
+                name = "Standahrd Tag",
+                text = {
+                    "Gives a free",
+                    "{C:attention}Mega Standahrd Pack",
+                },
+            },
+            tag_top_up = {
+                text = {
+                    "Create up to {C:attention}#1#",
+                    "{C:blue}Commahrn{} Jokahrs",
+                    "{C:inactive}(Must have room)",
+                },
+            },
+            tag_vremade_uncommon = {
+                name = "Uncommahrn Tag",
+                text = {
+                    "Mahrket has a free",
+                    "{C:green}Uncommahrn Jokahr",
+                },
             }
         },
 
