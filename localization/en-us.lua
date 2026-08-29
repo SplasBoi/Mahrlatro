@@ -1425,7 +1425,115 @@ return {
                 text = {
                     'Gives {C:red}#1# mult{}'
                 }
-            }
+            },
+            p_arcana_jumbo = {
+                name = "Jumbo Arcanahr Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:tarot} Tahrot{} cards to",
+                    "be used immediately",
+                },
+            },
+            p_arcana_mega = {
+                name = "Mega Arcanahr Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:tarot} Tarot{} cards to",
+                    "be used immediately",
+                },
+            },
+            p_arcana_normal = {
+                name = "Arcanahr Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:tarot} Tahrot{} cards to",
+                    "be used immediately",
+                },
+            },
+            p_buffoon_jumbo = {
+                name = "Jumbo Jokahr Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:joker} Jokahr{} cards",
+                },
+            },
+            p_buffoon_mega = {
+                name = "Mega Jokahr Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:joker} Jokahr{} cards",
+                },
+            },
+            p_buffoon_normal = {
+                name = "Jokahr Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:joker} Jokahr{} cards",
+                },
+            },
+            p_celestial_jumbo = {
+                name = "Jumbo Celestiahrl Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:planet} Plahrnet{} cards to",
+                    "be used immediately",
+                },
+            },
+            p_celestial_mega = {
+                name = "Mega Celestiahrl Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:planet} Plahrnet{} cards to",
+                    "be used immediately",
+                },
+            },
+            p_celestial_normal = {
+                name = "Celestiahrl Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:planet} Plahrnet{} cards to",
+                    "be used immediately",
+                },
+            },
+            p_spectral_jumbo = {
+                name = "Jumbo Spectrahrl Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:spectral} Spectrahrl{} cards to",
+                    "be used immediately",
+                },
+            },
+            p_spectral_mega = {
+                name = "Mega Spectrahrl Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:spectral} Spectrahrl{} cards to",
+                    "be used immediately",
+                },
+            },
+            p_spectral_normal = {
+                name = "Spectrahrl Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:spectral} Spectrahrl{} cards to",
+                    "be used immediately",
+                },
+            },
+            p_standard_jumbo = {
+                name = "Jumbo Standahrd Pack"
+            },
+            p_standard_mega = {
+                name = "Mega Standahrd Pack"
+            },
+            p_standard_normal = {
+                name = "Standahrd Pack"
+            },
+            rental = {
+                name = "Rentahrl"
+            },
+            eternal = {
+                name = "Eternahrl"
+            },
         },
     },
 

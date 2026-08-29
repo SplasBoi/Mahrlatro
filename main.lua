@@ -67,6 +67,14 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+    key = "CustomBoosters", 
+    path = "CustomBoosters.png", 
+    px = 71,
+    py = 95, 
+    atlas_table = "ASSET_ATLAS"
+}
+
+SMODS.Atlas {
     key = "CustomSeals", 
     path = "CustomSeals.png", 
     px = 71,
@@ -117,6 +125,7 @@ end
 
 load_folder("jokers/")
 load_folder("consumables/")
+load_folder("boosters/")
 load_folder("rarities/")
 load_folder("seals/")
 load_folder("enhancements/")
