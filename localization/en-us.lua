@@ -1253,6 +1253,207 @@ return {
             }
         },
 
+        Voucher = {
+            v_antimatter = {
+                name = "Antimahrtter",
+                text = {
+                    "{C:dark_edition}+1{} Jokahr Slot",
+                }
+            },
+            v_clearance_sale = {
+                name = "Clearance Sale",
+                text = {
+                    "All cards and packs in",
+                    "Mahrket are {C:attention}#1#%{} off",
+                },
+            },
+            v_crystal_ball = {
+                text = {
+                    "{C:attention}+1{} consumahrble slot",
+                },
+            },
+            v_glow_up = {
+                unlock = {
+                    "Have at least {C:attention}#1#",
+                    "{C:attention}Jokahr{} cards with",
+                    "{C:dark_edition}Foil{}, {C:dark_edition}Holographic{}, or",
+                    "{C:dark_edition}Polychrome{} edition",
+                },
+            },
+            v_grabber = {
+                name = "Grabbahr",
+                text = {
+                    "Permahrnently",
+                    "gain {C:blue}+#1#{} hand",
+                    "per round",
+                },
+            },
+            v_illusion = {
+                text = {
+                    "{C:attention}Playing cards{} in the Mahrket",
+                    "may have an {C:enhanced}Enhancement{},",
+                    "{C:dark_edition}Edition{}, and/or a {C:attention}Seal{}",
+                },
+                unlock = {
+                    "Buy a total of",
+                    "{C:attention}#1#{} playing cards",
+                    "from the Mahrket",
+                    "{C:inactive}(#2#)",
+                },
+            },
+            v_liquidation = {
+                name = "Liquidatiahrn",
+                text = {
+                    "All cards and packs in",
+                    "the Mahrket are {C:attention}#1#%{} off",
+                }
+            },
+            v_magic_trick = {
+                name = "Mahrgic Trick",
+                text = {
+                    "{C:attention}Playing cards{} can",
+                    "be purchased",
+                    "from the {C:attention}Mahrket",
+                },
+            },
+            v_money_tree = {
+                name = "Mahrney Tree"
+            },
+            v_nacho_tong = {
+                name = "Nahrcho Tong",
+                text = {
+                    "Permahrnently",
+                    "gain {C:blue}+#1#{} hand",
+                    "per round",
+                }
+            },
+            v_observatory = {
+                name = "Observahrtory",
+                text = {
+                    "{C:planet}Plahrnet{} cards in your",
+                    "{C:attention}consumahrble{} area give",
+                    "{X:red,C:white} X#1# {} Mult for their",
+                    "specified {C:attention}pokahr hand",
+                },
+                unlock = {
+                    "Use a total of {C:attention}#1#",
+                    "{C:planet}Plahrnet{} cards from any",
+                    "{C:planet}Celestiahrl Pack",
+                    "{C:inactive}(#2#)",
+                },
+            },
+            v_omen_globe = {
+                name = "Omahrnn Globe",
+                text = {
+                    "{C:spectral}Spectrahrl{} cards may",
+                    "appear in any of",
+                    "the {C:attention}Arcanahr Packs",
+                },
+                unlock = {
+                    "Use a total of {C:attention}#1#",
+                    "{C:tarot}Tahrot{} cards from any",
+                    "{C:tarot}Arcanahr Pack",
+                    "{C:inactive}(#2#)",
+                },
+            },
+            v_overstock_norm = {
+                name = "Ovahrstock",
+                text = {
+                    "{C:attention}+1{} card slot",
+                    "available in the Mahrket",
+                },
+            },
+            v_overstock_plus = {
+                name = "Ovahrstock Plus",
+                text = {
+                    "{C:attention}+1{} card slot",
+                    "available in the Mahrket",
+                },
+                unlock = {
+                    "Spend a total of",
+                    "{C:money}$#1#{} at the Mahrket",
+                    "{C:inactive}($#2#)",
+                },
+            },
+            v_planet_merchant = {
+                name = "Plahrnet Mahrchant",
+                text = {
+                    "{C:planet}Plahrnet{} cards appear",
+                    "{C:attention}#1#X{} more frequently",
+                    "in the Mahrket",
+                },
+            },
+            v_planet_tycoon = {
+                name = "Plahrnet Tycoon",
+                text = {
+                    "{C:planet}Plahrnet{} cards appear",
+                    "{C:attention}#1#X{} more frequently",
+                    "in the Mahrket",
+                },
+                unlock = {
+                    "Buy a total of",
+                    "{C:attention}#1#{C:planet} Plahrnet{} cards",
+                    "from the Mahrket",
+                    "{C:inactive}(#2#)",
+                },
+            },
+            v_recyclomancy = {
+                name = "Recyclomahrncy",
+                text = {
+                    "Permahrnently",
+                    "gain {C:red}+#1#{} discard",
+                    "each round",
+                }
+            },
+            v_reroll_glut = {
+                unlock = {
+                    "Reroll the Mahrket a",
+                    "total of {C:attention}#1#{} times",
+                    "{C:inactive}(#2#)",
+                },
+            },
+            v_seed_money = {
+                name = "Seed Mahrney"
+            },
+            v_tarot_merchant = {
+                name = "Tahrot Mahrchant",
+                text = {
+                    "{C:tarot}Tahrot{} cards appear",
+                    "{C:attention}#1#X{} more frequently",
+                    "in the Mahrket",
+                },
+            },
+            v_tarot_tycoon = {
+                name = "Tahrot Tycoon",
+                text = {
+                    "{C:tarot}Tahrot{} cards appear",
+                    "{C:attention}#1#X{} more frequently",
+                    "in the Mahrket",
+                },
+                unlock = {
+                    "Buy a total of",
+                    "{C:attention}#1#{C:tarot} Tahrot{} cards",
+                    "from the Mahrket",
+                    "{C:inactive}(#2#)",
+                },
+            },
+            v_telescope = {
+                text = {
+                    "{C:attention}Celestiahrl Packs{} always",
+                    "contain the {C:planet}Plahrnet{}",
+                    "card for your most",
+                    "played {C:attention}pokahr hand",
+                },
+            },
+            v_wasteful = {
+                text = {
+                    "Permahrnently",
+                    "gain {C:red}+#1#{} discard",
+                    "each round",
+                },
+            },
+        },
+
         Spectral = {
             c_familiar = {
                 name = "Familiahr"
