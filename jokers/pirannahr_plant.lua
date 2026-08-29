@@ -39,7 +39,7 @@ SMODS.Joker:take_ownership('j_flower_pot',
             end
             if suits["Hearts"] + suits["Diamonds"] + suits["Spades"] + suits["Clubs"] > 2 then
                 return {
-                    xmult = card.ability.extra.Xmult
+                    xmult = 3
                 }
             end
         end

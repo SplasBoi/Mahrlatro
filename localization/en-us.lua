@@ -797,7 +797,7 @@ return {
             j_mahrlatr_the_leadahrboard = {
                 name = 'The Leadahrboard',
                 text = {
-                    'Cards of rank{C:attention}#2#{}',
+                    'Cards of rank {C:attention}#2#{}',
                     'give {C:red}+#1#{} Mult when scored',
                     '{C:inactive}(Changes at the end of each round){}'
                 }
