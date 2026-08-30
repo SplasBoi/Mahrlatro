@@ -2,12 +2,12 @@ SMODS.Blind {
     key = "themahr",
     
     dollars = 5,
-    mult = 1,
+    mult = 2,
 
     boss = {
         min = 1,
         max = 10,
-        showdown = true
+        showdown = false
     },
 
     atlas = 'CustomBlinds',

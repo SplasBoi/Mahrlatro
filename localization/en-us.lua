@@ -4,7 +4,8 @@ return {
             j_mahrlatr_the_mahr = {
                 name = 'The Mahr!?',
                 text = {
-                    '{C:money}#1##2#{} & {C:red}#3# Mult{} for every hand played'
+                    'Gives {C:money}#1##2#{} & {C:red}+#3#{} Mult',
+                    'for every hand played'
                 }
             },
 
@@ -126,11 +127,11 @@ return {
             j_hologram = {
                 name = "The Lighthouse",
                 text = {
-                    "Don't forget to add to deck,",
-                    "this Jokahr gains {X:mult,C:white} X#1# {} Mult",
+                    "This Jokahr gains {X:mult,C:white}X#1#{} Mult",
                     "every time a {C:attention}playing card{}",
                     "is added to your deck",
                     "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
+                    "{E:1,C:inactive,s:0.75}(Don't forget to add to deck){}"
                 },
             },
 
@@ -469,16 +470,18 @@ return {
             j_mahrlatr_mimahr = {
                 name = 'Mimahr',
                 text = {
-                    'Retrigger all cards with a {C:tarot}the mahr{} seal'
+                    'Retrigger all cards with',
+                    '{C:tarot}TheMahr{} seal once'
                 }
             },
 
             j_mahrlatr_supahr_nutellio = {
                 name = 'Supahr Nutellio',
                 text = {
-                    'Gives {C:blue}#1# chips{} for each played',
-                    'hand and for each stahr jokahr',
-                    '{C:inactive}Currently:{} {C:blue}#2#{} {C:inactive}Chips{}'
+                    '{C:chips}+#1#{} Chips',
+                    'Gains extra {C:chips}+#1#{} Chips',
+                    'for each {C:attention}The Stahr{} jokahr owned',
+                    '{C:inactive}Currently:{} {C:chips}+#2#{} {C:inactive}Chips{}'
                 }
             },
 
@@ -1000,7 +1003,7 @@ return {
                     {
                         "Gains {C:red}+#2#{} Mult for each",
                         "{C:attention,s:1.4}unique{} Food Jokahr owned",
-                        "throught the run.",
+                        "while owning this Jokahr.",
                         "{C:inactive}(Currently{} {C:red}+#1#{} {C:inactive}Mult){}"
                     }
                 }
@@ -1092,11 +1095,11 @@ return {
                 text = {
                     {
                         "{V:4}if {V:1}playing_card_gets_modified{V:2}() {V:4}then{}",
-                        "{V:5,E:2}luahr{V:8}.{V:3}ability{V:8}.{V:3}extra{V:8}.{V:3}chips {V:5}+ {V:6}#2#{}",
+                        "{V:5,E:2}self.{V:3}chips {V:5}+ {V:6}#2#{}",
                         "{V:4}end",
                     },
                     {
-                        "{C:inactive}({V:5,E:2}luahr{V:8}.{V:3}ability{V:8}.{V:3}extra{V:8}.{V:3}chips{V:8} {V:5}= +{V:6}#1#{C:inactive}){}"
+                        "{C:inactive}({V:5,E:2}self.{V:3}chips. {V:5}= +{V:6}#1#{C:inactive}){}"
                     }
                 }
             },
@@ -1526,9 +1529,10 @@ return {
 
         Back = {
             b_mahrlatr_mahrket = {
-                name = "The mahrket",
+                name = "The Mahrket",
                 text = {
-                    "Adds 1 extra Voucher slot in The Mahrket"
+                    "Adds an extra",
+                    "Voucher slot"
                 }
             },
 
@@ -1563,9 +1567,10 @@ return {
             bl_mahrlatr_themahrchine = {
                 name = "The Mahrchine",
                 text = {
-                    "Score requirement varies",
+                    "After playing a hand,",
+                    "score requirement varies",
                     "between {C:attention}1X{} and {C:attention}2X{}",
-                    "for each hand played"
+                    "of the original score"
                 }
             }
         },

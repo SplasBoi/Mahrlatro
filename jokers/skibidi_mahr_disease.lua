@@ -28,17 +28,16 @@ SMODS.Joker {
             starting_discards,
         }
     },
-
-    loc_vars = function(self, info_queue, card)
-        return {
-            
-        }
+    
+    add_to_deck = function(self, card, from_debuff)
+        card.ability.extra.starting_hands = G.GAME.round_resets.hands   
+        card.ability.extra.starting_discards = G.GAME.round_resets.discards
     end,
 
     calculate = function(self, card, context)
         if context.setting_blind then
             card.ability.extra.starting_hands = G.GAME.round_resets.hands   
-            card.ability.extra.starting_discards = G.GAME.current_round.discards_left
+            card.ability.extra.starting_discards = G.GAME.round_resets.discards
         end
         
         if context.selling_self and G.GAME.blind.in_blind then
