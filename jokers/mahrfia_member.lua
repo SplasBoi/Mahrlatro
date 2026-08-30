@@ -4,7 +4,8 @@ SMODS.Joker { --Mahrfia Member
 
     config = {
         extra = {
-            dollars = 5
+            dollars = 5,
+            activated = false
         }
     },
 
@@ -41,30 +42,39 @@ SMODS.Joker { --Mahrfia Member
         if context.destroy_card and context.destroy_card.should_destroy  then
             return { remove = true }
         end
-        if context.individual and context.cardarea == G.play  then
+
+        if context.individual and context.cardarea == G.play then
+            card.ability.extra.activated = false
+
             context.other_card.should_destroy = false
             if context.other_card:is_suit("Hearts") then
                 context.other_card.should_destroy = true
+
+                card.ability.extra.activated = true
+
                 return {
-                    func = function()
-                        local amount = card.ability.extra.dollars
-                        ease_dollars(amount)
-                        card_eval_status_text(
-                            context.blueprint_card or card,
-                            'extra',
-                            nil,
-                            nil,
-                            nil,
-                            {
-                                message = "+"..localize('$')..amount,
-                                colour = G.C.MONEY
-                            }
-                        )
-                    end,
                     extra = {
                         message = localize('mahrfia_member_card_destroyed'),
                         colour = G.C.RED
                     }
+                }
+            end
+        end
+
+        if context.after then
+            if card.ability.extra.activated then
+                return {
+                    func = function()
+                        ease_dollars(card.ability.extra.dollars)
+                        card_eval_status_text(
+                            context.blueprint_card or card, 'extra', nil, nil, nil, {
+                                message = "+"..localize('$')..card.ability.extra.dollars,
+                                colour = G.C.MONEY
+                            }
+                        )
+                        
+                        card.ability.extra.activated = false
+                    end
                 }
             end
         end
