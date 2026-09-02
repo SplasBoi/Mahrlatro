@@ -82,6 +82,10 @@ return {
                 name = "Scholahr"
             },
 
+            j_cavendish = {
+                name = "Benjamin"
+            },
+
             j_fortune_teller = {
                 name = "Fahrtune Teller",
                 text = {
