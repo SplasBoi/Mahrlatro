@@ -1568,6 +1568,142 @@ return {
                 }
             },
 
+            bl_needle = {
+                name = "TickTock"
+            },
+
+            bl_wall = {
+                name = "The Wahrll"
+            },
+
+            bl_fish = {
+                name = "Evil Fish"
+            },
+
+            bl_manacle = {
+                name = "The Mahrnacle"
+            },
+
+            bl_serpent = {
+                name = "The Sahrpent"
+            },
+
+            bl_pillar = {
+                name = "The Pillahr",
+                text = {
+                    "Cards played previously",
+                    "this Ante are debahrffed",
+                },
+            },
+
+            bl_mark = {
+                name = "The Mahrk"
+            },
+
+            bl_final_acorn = {
+                name = "Ambahr Acorn",
+                text = {
+                    "Flahrps and shahrffles",
+                    "all Jokahr cards",
+                },
+            },
+
+            bl_final_leaf = {
+                name = "Verdahrnt Leaf",
+                text = {
+                    "All cards debahrffed",
+                    "until 1 Jokahr sold",
+                },
+            },
+
+            bl_final_vessel = {
+                name = "Viahrlet Vessel",
+                text = {
+                    "Very lahrge blind",
+                },
+            },
+
+            bl_final_heart = {
+                name = "Crimsahrn Heart",
+                text = {
+                    "One random Jokahr",
+                    "disabled every hand",
+                },
+            },
+
+            bl_final_bell = {
+                name = "Ceruleahrn Bell"
+            },
+
+            bl_mouth = {
+                name = "The Mouahrth"
+            },
+
+            bl_water = {
+                name = "The Wahrter"
+            },
+
+            bl_goad = {
+                name = "The Goahrd",
+                text = {
+                    "All Spade cards",
+                    "are debahrffed",
+                },
+            },
+
+            bl_vremade_window = {
+                name = "The Windahrw",
+                text = {
+                    "All Diamond cards",
+                    "are debahrffed",
+                },
+            },
+
+            bl_plant = {
+                name = "The Plahrnt",
+                text = {
+                    "All face cards",
+                    "are debahrffed",
+                },
+            },
+
+            bl_ox = {
+                name = "The Ahrx",
+                text = {
+                    "Playing a #1#",
+                    "sets mahrney to $0",
+                },
+            },
+
+            bl_psychic = {
+                text = {
+                    "Mahrst play 5 cards"
+                },
+            },
+
+            bl_club = {
+                name = "The Clahrb",
+                text = {
+                    "All Club cards",
+                    "are debahrffed",
+                },
+            },
+
+            bl_head = {
+                text = {
+                    "All Heart cards",
+                    "are debahrffed",
+                },
+            },
+
+            bl_arm = {
+                name = "The Ahrm",
+                text = {
+                    "Decrease level of",
+                    "played pokahr hand",
+                },
+            },
+
             bl_mahrlatr_themahrchine = {
                 name = "The Mahrchine",
                 text = {
