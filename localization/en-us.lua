@@ -351,7 +351,7 @@ return {
                     "{C:red}+#1#{} discards"
                 },
                 unlock = {
-                    "Beat {C:attention}The Needle{}"
+                    "Beat {C:attention}TickTock{}"
                 }
             },
 
@@ -1651,7 +1651,7 @@ return {
                 },
             },
 
-            bl_vremade_window = {
+            bl_window = {
                 name = "The Windahrw",
                 text = {
                     "All Diamond cards",
@@ -1788,7 +1788,7 @@ return {
                     "{s:0.8}Applies all previous Stakes",
                 },
             },
-            stake_vremade_red = {
+            stake_red = {
                 text = {
                     "{C:attention}Small Blind{} gives",
                     "no reward mahrney",
@@ -1906,7 +1906,7 @@ return {
                     "{C:inactive}(Must have room)",
                 },
             },
-            tag_vremade_uncommon = {
+            tag_uncommon = {
                 name = "Uncommahrn Tag",
                 text = {
                     "Mahrket has a free",
