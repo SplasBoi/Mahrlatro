@@ -1765,6 +1765,38 @@ return {
             }
         },
 
+        Stake = {
+            stake_black = {
+                text = {
+                    "Shop can have {C:attention}Eternahrl{} Jokahrs",
+                    "{C:inactive,s:0.8}(Can't be sold or destroyed)",
+                    "{s:0.8}Applies all previous Stakes",
+                },
+            },
+            stake_gold = {
+                text = {
+                    "Shop can have {C:attention}Rentahrl{} Jokahrs",
+                    "{C:inactive,s:0.8}(Costs {C:money,s:0.8}$3{C:inactive,s:0.8} per round)",
+                    "{s:0.8}Applies all previous Stakes",
+                },
+            },
+            stake_orange = {
+                name = "Orahrnge Stake",
+                text = {
+                    "Shop can have {C:attention}Perishable{} Jokahrs",
+                    "{C:inactive,s:0.8}(Debahrffed after 5 Rounds)",
+                    "{s:0.8}Applies all previous Stakes",
+                },
+            },
+            stake_vremade_red = {
+                text = {
+                    "{C:attention}Small Blind{} gives",
+                    "no reward mahrney",
+                    "{s:0.8}Applies all previous Stakes",
+                },
+            }
+        },
+
         Tag = {
             tag_buffoon = {
                 name = "Jokahr Tag",
@@ -1794,6 +1826,7 @@ return {
                 },
             },
             tag_economy = {
+                name = "Econahrmy Tag",
                 text = {
                     "Doubles your mahrney",
                     "{C:inactive}(Max of {C:money}$#1#{C:inactive})",
@@ -1997,6 +2030,70 @@ return {
             eternal = {
                 name = "Eternahrl"
             },
+            black_sticker = {
+                name = "Black Stickahr",
+                text = {
+                    "Used this Jokahr",
+                    "to win on {C:attention}Black",
+                    "{C:attention}Stake{} difficulty",
+                },
+            },
+            blue_sticker = {
+                name = "Blue Stickahr",
+                text = {
+                    "Used this Jokahr",
+                    "to win on {C:attention}Blue",
+                    "{C:attention}Stake{} difficulty",
+                },
+            },
+            gold_sticker = {
+                name = "Gold Stickahr",
+                text = {
+                    "Used this Jokahr",
+                    "to win on {C:attention}Gold",
+                    "{C:attention}Stake{} difficulty",
+                },
+            },
+            green_sticker = {
+                name = "Green Stickahr",
+                text = {
+                    "Used this Jokahr",
+                    "to win on {C:attention}Green",
+                    "{C:attention}Stake{} difficulty",
+                },
+            },
+            orange_sticker = {
+                name = "Orahrnge Sticker",
+                text = {
+                    "Used this Jokahr",
+                    "to win on {C:attention}Orahrnge",
+                    "{C:attention}Stake{} difficulty",
+                },
+            },
+            purple_sticker = {
+                name = "Purple Stickahr",
+                text = {
+                    "Used this Jokahr",
+                    "to win on {C:attention}Purple",
+                    "{C:attention}Stake{} difficulty",
+                },
+            },
+            red_sticker = {
+                name = "Red Stickahr",
+                text = {
+                    "Used this Jokahr",
+                    "to win on {C:attention}Red",
+                    "{C:attention}Stake{} difficulty",
+                },
+            },
+            white_sticker = {
+                name = "White Stickahr",
+                text = {
+                    "Used this Jokahr",
+                    "to win on {C:attention}White",
+                    "{C:attention}Stake{} difficulty",
+                },
+            }
         },
     },
 
@@ -2071,6 +2168,14 @@ return {
 
         achievement_descriptions = {
             ach_mahrlatr_obtain_trolley = 'Obtain Mahrbles trolley from combining the Mahrffin, Meat and Fish jokahrs'
+        },
+
+        poker_hands = {
+            Flush = "Flahrsh",
+            ["Flush Five"] = "Flahrsh Five",
+            ["Flush House"] = "Flahrsh House",
+            ["Royal Flush"] = "Royal Flahrsh",
+            ["Straight Flush"] = "Straight Flahrsh"
         }
     }
 }
