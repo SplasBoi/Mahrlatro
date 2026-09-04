@@ -9,7 +9,7 @@
   "description": "This mod brings TheMahr, one of our universe's most beloved characters, to live in Balatro.",
   "prefix": "mahrlatr",
   "main_file": "main.lua",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "priority": 1,
   "badge_colour": "666665",
   "badge_text_colour": "FFFFFF",
