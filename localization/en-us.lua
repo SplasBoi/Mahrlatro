@@ -198,7 +198,7 @@ return {
                 text = {
                     "If {C:attention}first hand{} of round",
                     "has only {C:attention}1{} card, add a",
-                    "permanent copy to deck."
+                    "permanent copy to deck"
                 }
             },
 
@@ -282,14 +282,14 @@ return {
                     "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)"
                 },
                 unlock = {
-                    "Have at least 8 {C:attention}Wild Cards{} in the deck."
+                    "Have at least 8 {C:attention}Wild Cards{} in the deck"
                 }
             },
 
             j_mahrlatr_skibidi_gimler = {
                 name = 'Skibidi Gimler',
                 text = {
-                    "Destroys played stone cards.",
+                    "Destroys played stone cards",
                     "Gives {X:chips,C:white} X#2# {} Chips",
                     "for each {C:attention}destroyed card{}",
                     "{C:inactive}(Currently {X:chips,C:white} X#1# {C:inactive} Chips)"
@@ -425,7 +425,7 @@ return {
                     {
                         'Sets {C:blue}Hands{} to {C:blue}#1#{}',
                         '{C:red}Discards{} to {C:red}#2#{}',
-                        'Draws all cards in {c:attention}full deck{}.'
+                        'Draws all cards in {c:attention}full deck{}'
                     }
                 }
             },
@@ -588,7 +588,7 @@ return {
                     '{C:inactive}Currently:{} {X:mult,C:white}X#2#{}'
                 },
                 unlock = {
-                    "Have over 52 {E:1,C:red}red{} cards in the deck."
+                    "Have over 52 {E:1,C:red}red{} cards in the deck"
                 }
             },
 
@@ -679,7 +679,7 @@ return {
                 name = 'Wayne',
                 text = {
                     'Creates {C:attention}Double Tag{} at the',
-                    'end of the round.',
+                    'end of the round',
                     '{C:green,E:2}#1# in #2#{} chance of destroying',
                     'a random Jokahr {C:inactive}(Including self){}'
                 }
@@ -690,7 +690,7 @@ return {
                 text = {
                     '{C:green,E:2}#1# in #2#{} chance to',
                     'Create a {C:attention}Double Tag{} at the',
-                    'end of the round.'
+                    'end of the round'
                 }
             },
 
@@ -743,8 +743,8 @@ return {
                 name = 'Skibidi Mahr Disease',
                 text = {
                     '{C:attention,E:1,s:1.4}Resets{} the number',
-                    'of {C:blue}hands{} and {C:red}discards{}.',
-                    'when sold.'
+                    'of {C:blue}hands{} and {C:red}discards{}',
+                    'when sold'
                 }
             },
 
@@ -752,7 +752,7 @@ return {
                 name = 'All Main Categories',
                 text = {
                     '{X:mult,C:white}X#1#{} Mult if hand',
-                    '{C:attention}has not{} been played this round.'
+                    '{C:attention}has not{} been played this round'
                 }
             },
 
@@ -765,7 +765,7 @@ return {
                 text = {
                     '{X:mult,C:white}X#1#{} Mult if hand',
                     'contains {C:attention}#2# and any{}',
-                    '{C:attention}other pokahr hand{}.',
+                    '{C:attention}other pokahr hand{}',
                     '{C:inactive}(except High Card){}'
                 },
                 unlock = {
@@ -778,7 +778,7 @@ return {
                 name = 'Februany',
                 text = {
                     'This Jokahr gains {C:red}+#2#{} Mult',
-                    'for each round beaten.',
+                    'for each round beaten',
                     '{C:inactive}(Currently: {C:red}+#1#{}{C:inactive}){}'
                 },
                 unlock = {
@@ -791,12 +791,12 @@ return {
                 text = {
                     {
                         'Generates a random consumahrble',
-                        'at the start of the round.',
+                        'at the start of the round',
                         '{C:inactive}(must have room){}',
                     },
                     {
                         '{C:red}#1# in #2# chance of crashing (self-destroying){}',
-                        '{C:red}at the end of each round.{}'
+                        '{C:red}at the end of each round{}'
                     }
                 }
             },
@@ -869,7 +869,7 @@ return {
             j_mahrlatr_zoomahr = {
                 name = "Zoomahr",
                 text = {
-                    "{C:attention}Significantly increases{} game speed."
+                    "{C:attention}Significantly increases{} game speed"
                 }
             },
 
@@ -958,7 +958,7 @@ return {
                         "Suggests hand to play,",
                         "at start of round",
                         "if played hand is said hand,",
-                        "upgrades it by 1 level."
+                        "upgrades it by 1 level"
                     },
                     {
                         "Colletahr is suggesting a: {C:attention}#1#{}"
@@ -977,7 +977,7 @@ return {
                 },
                 unlock = {
                     "Use {C:tarot,E:1}Wheel of Fahrtune{}",
-                    "and have it fail."
+                    "and have it fail"
                 }
             },
 
@@ -985,12 +985,12 @@ return {
                 name = "Loan Shark",
                 text = {
                     {
-                        "Provides an immediate {C:money}#1##3#{} loan.",
+                        "Provides an immediate {C:money}#1##3#{} loan",
                         "Pays an installment of",
                         "{C:money}#1##4#{} + {C:money}#1##5#{} of interest",
                         "{C:attention}for 10 rounds{}",
                         "{C:red,E:1}Cannot be sold until{}",
-                        "{C:red,E:1}the debt is paid off.{}"
+                        "{C:red,E:1}the debt is paid off{}"
                     },
                     {
                         "{C:red}Current debt: {}{C:money}#1##2#{}"
@@ -1007,7 +1007,7 @@ return {
                     {
                         "Gains {C:red}+#2#{} Mult for each",
                         "{C:attention,s:1.4}unique{} Food Jokahr owned",
-                        "while owning this Jokahr.",
+                        "while owning this Jokahr",
                         "{C:inactive}(Currently{} {C:red}+#1#{} {C:inactive}Mult){}"
                     }
                 }
@@ -1053,7 +1053,7 @@ return {
                 name = "Hundo",
                 text = {
                     "Earns {C:money}#3##1#{} for each",
-                    "{C:attention}unique pokahr hand{} played.",
+                    "{C:attention}unique pokahr hand{} played",
                     "while owning this Jokahr",
                     "{C:inactive}(Currently {C:money}#3##2#{C:inactive}){}"
                 }
@@ -1081,7 +1081,7 @@ return {
                 name = "Mahr's Keyboard",
                 text = {
                     'Retriggers all',
-                    '{C:attention}non-face cards{} once.'
+                    '{C:attention}non-face cards{} once'
                 }
             },
 
@@ -1151,7 +1151,7 @@ return {
                 text = {
                     'This Jokahr gains',
                     '{C:mult}+#1#{} Mult for each',
-                    '{C:attention}Booster Pack{} opened.',
+                    '{C:attention}Booster Pack{} opened',
                     '{C:inactive}(Currently: {C:mult}+#2#{} {C:inactive}Mult){}'
                 }
             },
