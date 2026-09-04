@@ -301,13 +301,13 @@ SMODS.Sound {
     pitch = 1.0
 }
 
+-- Benjamin
+
 SMODS.Sound {
     key = "benjamin_place_01",
     path = "sfx/benjamin/PlaceBenjamin01.ogg",
     pitch = 1.0
 }
-
--- Benjamin
 
 SMODS.Sound {
     key = "benjamin_place_02",
@@ -478,7 +478,6 @@ local spades_atlas = SMODS.Atlas {
     py = 95,
     disable_mipmap = true,
 }
-
 
 -- Deck Skins
 SMODS.DeckSkin {
