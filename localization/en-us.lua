@@ -466,7 +466,7 @@ return {
             j_mahrlatr_mahrfia_member = {
                 name = 'Mahrfia Member',
                 text = {
-                    'Destroys every played {C:red}Heart{}',
+                    'Destroys every played {C:red}#3#{}',
                     'card for {C:gold}#1##2#{}'
                 }
             },

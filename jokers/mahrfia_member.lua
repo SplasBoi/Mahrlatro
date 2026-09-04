@@ -5,7 +5,7 @@ SMODS.Joker { --Mahrfia Member
     config = {
         extra = {
             dollars = 5,
-            activated = false
+            suit = "Hearts"
         }
     },
 
@@ -30,53 +30,56 @@ SMODS.Joker { --Mahrfia Member
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
     
     loc_vars = function(self, info_queue, card)
+        local e = card.ability.extra or self.config.extra
+
         return {
             vars = {
                 localize('$'),
-                card.ability.extra.dollars
+                e.dollars,
+                e.suit
             }
         }
     end,
 
     calculate = function(self, card, context)
-        if context.destroy_card and context.destroy_card.should_destroy  then
-            return { remove = true }
+        local e = card.ability.extra or self.config.extra
+
+        if context.destroy_card and context.destroy_card.should_destroy then
+            return {
+                remove = true
+            }
         end
 
-        if context.individual and context.cardarea == G.play then
-            card.ability.extra.activated = false
+        if context.individual and context.cardarea == G.play and context.other_card:is_suit(e.suit) then
+            context.other_card.should_destroy = true
 
-            context.other_card.should_destroy = false
-            if context.other_card:is_suit("Hearts") then
-                context.other_card.should_destroy = true
-
-                card.ability.extra.activated = true
-
-                return {
-                    extra = {
-                        message = localize('mahrfia_member_card_destroyed'),
-                        colour = G.C.RED
-                    }
-                }
+            if context.other_card._mahrfia_bought then
+                return
+            else
+                context.other_card._mahrfia_bought = true
             end
-        end
 
-        if context.after then
-            if card.ability.extra.activated then
-                return {
-                    func = function()
-                        ease_dollars(card.ability.extra.dollars)
-                        card_eval_status_text(
-                            context.blueprint_card or card, 'extra', nil, nil, nil, {
-                                message = "+"..localize('$')..card.ability.extra.dollars,
-                                colour = G.C.MONEY
-                            }
-                        )
-                        
-                        card.ability.extra.activated = false
-                    end
+            return {
+                func = function()
+                    local amount = e.dollars
+                    ease_dollars(amount)
+                    card_eval_status_text(
+                        context.blueprint_card or card,
+                        'extra',
+                        nil,
+                        nil,
+                        nil,
+                        {
+                            message = "+"..localize('$').. amount,
+                            colour = G.C.MONEY
+                        }
+                    )
+                end,
+                extra = {
+                    message = localize("mahrfia_member_card_destroyed"),
+                    colour = G.C.RED
                 }
-            end
+            }
         end
     end
 }
