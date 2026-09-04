@@ -2163,11 +2163,15 @@ return {
         },
 
         achievement_names = {
-            ach_mahrlatr_obtain_trolley = 'Trolalero Trolala'
+            ach_mahrlatr_obtain_trolley = "Trolalero Trolala",
+            ach_mahrlatr_score_pink_stone_card = "Pinkie Promise",
+            ach_mahrlatr_win_mahrlatr_deck = "M As In Mahr"
         },
 
         achievement_descriptions = {
-            ach_mahrlatr_obtain_trolley = 'Obtain Mahrbles trolley from combining the Mahrffin, Meat and Fish jokahrs'
+            ach_mahrlatr_obtain_trolley = "Obtain Mahrbles trolley from combining the Mahrffin, Meat and Fish jokahrs",
+            ach_mahrlatr_score_pink_stone_card = "Score a Pink Stone",
+            ach_mahrlatr_win_mahrlatr_deck = "Win any Mahrlatro deck"
         },
 
         poker_hands = {
