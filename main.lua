@@ -194,6 +194,8 @@ SMODS.current_mod.optional_features = function()
     }
 end
 
+-- SFX
+
 SMODS.Sound {
     key = "nutella_easy",
     path = "sfx/nutella_easy.ogg",
@@ -224,12 +226,6 @@ SMODS.Sound {
 SMODS.Sound {
     key = "star",
     path = "sfx/ratatouille_star.ogg",
-    pitch = 1.0
-}
-
-SMODS.Sound {
-    key = "uh_guys",
-    path = "sfx/uh_guys.ogg",
     pitch = 1.0
 }
 
@@ -305,6 +301,112 @@ SMODS.Sound {
     pitch = 1.0
 }
 
+-- Benjamin
+
+SMODS.Sound {
+    key = "benjamin_place_01",
+    path = "sfx/benjamin/PlaceBenjamin01.ogg",
+    pitch = 1.0
+}
+
+SMODS.Sound {
+    key = "benjamin_place_02",
+    path = "sfx/benjamin/PlaceBenjamin02.ogg",
+    pitch = 1.0
+}
+
+SMODS.Sound {
+    key = "benjamin_game_over",
+    path = "sfx/benjamin/LeakBenjamin02.ogg",
+    pitch = 1.0
+}
+
+SMODS.Sound {
+    key = "benjamin_might_wanna_take_a_look",
+    path = "sfx/benjamin/ZomgWarningBenjamin.ogg",
+    pitch = 1.0
+}
+
+SMODS.Sound {
+    key = "benjamin_nice",
+    path = "sfx/benjamin/UpgradeBenjamin01.ogg",
+    pitch = 1.0
+}
+
+SMODS.Sound {
+    key = "benjamin_oh_yeah",
+    path = "sfx/benjamin/UpgradeBenjamin02.ogg",
+    pitch = 1.0
+}
+
+SMODS.Sound {
+    key = "benjamin_awesome",
+    path = "sfx/benjamin/UpgradeBenjamin03.ogg",
+    pitch = 1.0
+}
+
+SMODS.Sound {
+    key = "benjamin_dude",
+    path = "sfx/benjamin/UpgradeBenjamin04.ogg",
+    pitch = 1.0
+}
+
+SMODS.Sound {
+    key = "benjamin_yes",
+    path = "sfx/benjamin/UpgradeBenjamin05.ogg",
+    pitch = 1.0
+}
+
+SMODS.Sound {
+    key = "benjamin_haha",
+    path = "sfx/benjamin/UpgradeBenjamin06.ogg",
+    pitch = 1.0
+}
+
+SMODS.Sound {
+    key = "benjamin_hah",
+    path = "sfx/benjamin/UpgradeBenjamin07.ogg",
+    pitch = 1.0
+}
+
+SMODS.Sound {
+    key = "benjamin_level_up",
+    path = "sfx/benjamin/UpgradeBenjamin08.ogg",
+    pitch = 1.0
+}
+
+SMODS.Sound {
+    key = "benjamin_theres_me_smart",
+    path = "sfx/benjamin/UpgradeBenjaminMaxLevel.ogg",
+    pitch = 1.0
+}
+
+SMODS.Sound {
+    key = "benjamin_whats_up",
+    path = "sfx/benjamin/SelectBenjamin03.ogg",
+    pitch = 1.0
+}
+
+SMODS.Sound {
+    key = "benjamin_sliced_and_diced",
+    path = "sfx/benjamin/MoabDestroyedBenjaminBento.ogg",
+    pitch = 1.0
+}
+
+SMODS.Sound {
+    key = "benjamin_uh_guys_01",
+    path = "sfx/benjamin/DdtWarningBenjamin.ogg",
+    pitch = 1.0
+}
+
+SMODS.Sound {
+    key = "benjamin_uh_guys_02",
+    path = "sfx/benjamin/BfbWarningBenjamin.ogg",
+    pitch = 1.0
+}
+
+-- Music
+
 SMODS.Sound({
     key = "music1",
     pitch = 1.0,
@@ -376,7 +478,6 @@ local spades_atlas = SMODS.Atlas {
     py = 95,
     disable_mipmap = true,
 }
-
 
 -- Deck Skins
 SMODS.DeckSkin {

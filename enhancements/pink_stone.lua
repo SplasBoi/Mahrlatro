@@ -22,5 +22,11 @@ SMODS.Enhancement {
                 card.ability.mult
             }
         }
+    end,
+
+    calculate = function(self, card, context)
+        if context.main_scoring and context.cardarea == G.play then
+            unlock_achievement("ach_mahrlatr_score_pink_stone_card")
+        end
     end
 }

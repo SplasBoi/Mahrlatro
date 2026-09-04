@@ -54,7 +54,7 @@ SMODS.Joker{ --New Joker
 
     check_for_unlock = function(self, args)
         if args.type == 'round_win' then
-            return G.GAME.blind.name == 'The Needle'
+            return G.GAME.blind.config.blind.key == 'bl_needle'
         end
 
         return false

@@ -38,6 +38,23 @@ return {
                 name = "Mahrs Sixth Sense"
             },
 
+            j_blueprint = {
+                name = "Lahrper",
+                text = {
+                    "Copies ability of",
+                    "{C:attention}Jokahr{} to the right",
+                }
+            },
+
+            j_ring_master = {
+                name = "Showmahrn",
+                text = {
+                    "{C:attention}Jokahr{}, {C:tarot}Tahrot{}, {C:planet}Plahrnet{},",
+                    "and {C:spectral}Spectrahrl{} cards may",
+                    "appear mahrltiple times"
+                },
+            },
+
             j_golden = {
                 name = "Golden Jokahr"
             },
@@ -80,6 +97,10 @@ return {
 
             j_scholar = {
                 name = "Scholahr"
+            },
+
+            j_cavendish = {
+                name = "Benjamin"
             },
 
             j_fortune_teller = {
@@ -194,7 +215,7 @@ return {
                 text = {
                     "If {C:attention}first hand{} of round",
                     "has only {C:attention}1{} card, add a",
-                    "permanent copy to deck."
+                    "permanent copy to deck"
                 }
             },
 
@@ -278,14 +299,14 @@ return {
                     "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)"
                 },
                 unlock = {
-                    "Have at least 8 {C:attention}Wild Cards{} in the deck."
+                    "Have at least 8 {C:attention}Wild Cards{} in the deck"
                 }
             },
 
             j_mahrlatr_skibidi_gimler = {
                 name = 'Skibidi Gimler',
                 text = {
-                    "Destroys played stone cards.",
+                    "Destroys played stone cards",
                     "Gives {X:chips,C:white} X#2# {} Chips",
                     "for each {C:attention}destroyed card{}",
                     "{C:inactive}(Currently {X:chips,C:white} X#1# {C:inactive} Chips)"
@@ -347,7 +368,7 @@ return {
                     "{C:red}+#1#{} discards"
                 },
                 unlock = {
-                    "Beat {C:attention}The Needle{}"
+                    "Beat {C:attention}TickTock{}"
                 }
             },
 
@@ -421,7 +442,7 @@ return {
                     {
                         'Sets {C:blue}Hands{} to {C:blue}#1#{}',
                         '{C:red}Discards{} to {C:red}#2#{}',
-                        'Draws all cards in {c:attention}full deck{}.'
+                        'Draws all cards in {c:attention}full deck{}'
                     }
                 }
             },
@@ -462,7 +483,7 @@ return {
             j_mahrlatr_mahrfia_member = {
                 name = 'Mahrfia Member',
                 text = {
-                    'Destroys every played {C:red}Heart{}',
+                    'Destroys every played {C:red}#3#{}',
                     'card for {C:gold}#1##2#{}'
                 }
             },
@@ -584,7 +605,7 @@ return {
                     '{C:inactive}Currently:{} {X:mult,C:white}X#2#{}'
                 },
                 unlock = {
-                    "Have over 52 {E:1,C:red}red{} cards in the deck."
+                    "Have over 52 {E:1,C:red}red{} cards in the deck"
                 }
             },
 
@@ -675,7 +696,7 @@ return {
                 name = 'Wayne',
                 text = {
                     'Creates {C:attention}Double Tag{} at the',
-                    'end of the round.',
+                    'end of the round',
                     '{C:green,E:2}#1# in #2#{} chance of destroying',
                     'a random Jokahr {C:inactive}(Including self){}'
                 }
@@ -686,7 +707,7 @@ return {
                 text = {
                     '{C:green,E:2}#1# in #2#{} chance to',
                     'Create a {C:attention}Double Tag{} at the',
-                    'end of the round.'
+                    'end of the round'
                 }
             },
 
@@ -739,8 +760,8 @@ return {
                 name = 'Skibidi Mahr Disease',
                 text = {
                     '{C:attention,E:1,s:1.4}Resets{} the number',
-                    'of {C:blue}hands{} and {C:red}discards{}.',
-                    'when sold.'
+                    'of {C:blue}hands{} and {C:red}discards{}',
+                    'when sold'
                 }
             },
 
@@ -748,7 +769,7 @@ return {
                 name = 'All Main Categories',
                 text = {
                     '{X:mult,C:white}X#1#{} Mult if hand',
-                    '{C:attention}has not{} been played this round.'
+                    '{C:attention}has not{} been played this round'
                 }
             },
 
@@ -761,7 +782,7 @@ return {
                 text = {
                     '{X:mult,C:white}X#1#{} Mult if hand',
                     'contains {C:attention}#2# and any{}',
-                    '{C:attention}other pokahr hand{}.',
+                    '{C:attention}other pokahr hand{}',
                     '{C:inactive}(except High Card){}'
                 },
                 unlock = {
@@ -774,7 +795,7 @@ return {
                 name = 'Februany',
                 text = {
                     'This Jokahr gains {C:red}+#2#{} Mult',
-                    'for each round beaten.',
+                    'for each round beaten',
                     '{C:inactive}(Currently: {C:red}+#1#{}{C:inactive}){}'
                 },
                 unlock = {
@@ -787,12 +808,12 @@ return {
                 text = {
                     {
                         'Generates a random consumahrble',
-                        'at the start of the round.',
+                        'at the start of the round',
                         '{C:inactive}(must have room){}',
                     },
                     {
                         '{C:red}#1# in #2# chance of crashing (self-destroying){}',
-                        '{C:red}at the end of each round.{}'
+                        '{C:red}at the end of each round{}'
                     }
                 }
             },
@@ -865,7 +886,7 @@ return {
             j_mahrlatr_zoomahr = {
                 name = "Zoomahr",
                 text = {
-                    "{C:attention}Significantly increases{} game speed."
+                    "{C:attention}Significantly increases{} game speed"
                 }
             },
 
@@ -954,7 +975,7 @@ return {
                         "Suggests hand to play,",
                         "at start of round",
                         "if played hand is said hand,",
-                        "upgrades it by 1 level."
+                        "upgrades it by 1 level"
                     },
                     {
                         "Colletahr is suggesting a: {C:attention}#1#{}"
@@ -973,7 +994,7 @@ return {
                 },
                 unlock = {
                     "Use {C:tarot,E:1}Wheel of Fahrtune{}",
-                    "and have it fail."
+                    "and have it fail"
                 }
             },
 
@@ -981,12 +1002,12 @@ return {
                 name = "Loan Shark",
                 text = {
                     {
-                        "Provides an immediate {C:money}#1##3#{} loan.",
+                        "Provides an immediate {C:money}#1##3#{} loan",
                         "Pays an installment of",
                         "{C:money}#1##4#{} + {C:money}#1##5#{} of interest",
                         "{C:attention}for 10 rounds{}",
                         "{C:red,E:1}Cannot be sold until{}",
-                        "{C:red,E:1}the debt is paid off.{}"
+                        "{C:red,E:1}the debt is paid off{}"
                     },
                     {
                         "{C:red}Current debt: {}{C:money}#1##2#{}"
@@ -1003,7 +1024,7 @@ return {
                     {
                         "Gains {C:red}+#2#{} Mult for each",
                         "{C:attention,s:1.4}unique{} Food Jokahr owned",
-                        "while owning this Jokahr.",
+                        "while owning this Jokahr",
                         "{C:inactive}(Currently{} {C:red}+#1#{} {C:inactive}Mult){}"
                     }
                 }
@@ -1049,7 +1070,7 @@ return {
                 name = "Hundo",
                 text = {
                     "Earns {C:money}#3##1#{} for each",
-                    "{C:attention}unique pokahr hand{} played.",
+                    "{C:attention}unique pokahr hand{} played",
                     "while owning this Jokahr",
                     "{C:inactive}(Currently {C:money}#3##2#{C:inactive}){}"
                 }
@@ -1077,7 +1098,7 @@ return {
                 name = "Mahr's Keyboard",
                 text = {
                     'Retriggers all',
-                    '{C:attention}non-face cards{} once.'
+                    '{C:attention}non-face cards{} once'
                 }
             },
 
@@ -1147,7 +1168,7 @@ return {
                 text = {
                     'This Jokahr gains',
                     '{C:mult}+#1#{} Mult for each',
-                    '{C:attention}Booster Pack{} opened.',
+                    '{C:attention}Booster Pack{} opened',
                     '{C:inactive}(Currently: {C:mult}+#2#{} {C:inactive}Mult){}'
                 }
             },
@@ -1564,6 +1585,142 @@ return {
                 }
             },
 
+            bl_needle = {
+                name = "TickTock"
+            },
+
+            bl_wall = {
+                name = "The Wahrll"
+            },
+
+            bl_fish = {
+                name = "Evil Fish"
+            },
+
+            bl_manacle = {
+                name = "The Mahrnacle"
+            },
+
+            bl_serpent = {
+                name = "The Sahrpent"
+            },
+
+            bl_pillar = {
+                name = "The Pillahr",
+                text = {
+                    "Cards played previously",
+                    "this Ante are debahrffed",
+                },
+            },
+
+            bl_mark = {
+                name = "The Mahrk"
+            },
+
+            bl_final_acorn = {
+                name = "Ambahr Acorn",
+                text = {
+                    "Flahrps and shahrffles",
+                    "all Jokahr cards",
+                },
+            },
+
+            bl_final_leaf = {
+                name = "Verdahrnt Leaf",
+                text = {
+                    "All cards debahrffed",
+                    "until 1 Jokahr sold",
+                },
+            },
+
+            bl_final_vessel = {
+                name = "Viahrlet Vessel",
+                text = {
+                    "Very lahrge blind",
+                },
+            },
+
+            bl_final_heart = {
+                name = "Crimsahrn Heart",
+                text = {
+                    "One random Jokahr",
+                    "disabled every hand",
+                },
+            },
+
+            bl_final_bell = {
+                name = "Ceruleahrn Bell"
+            },
+
+            bl_mouth = {
+                name = "The Mouahrth"
+            },
+
+            bl_water = {
+                name = "The Wahrter"
+            },
+
+            bl_goad = {
+                name = "The Goahrd",
+                text = {
+                    "All Spade cards",
+                    "are debahrffed",
+                },
+            },
+
+            bl_window = {
+                name = "The Windahrw",
+                text = {
+                    "All Diamond cards",
+                    "are debahrffed",
+                },
+            },
+
+            bl_plant = {
+                name = "The Plahrnt",
+                text = {
+                    "All face cards",
+                    "are debahrffed",
+                },
+            },
+
+            bl_ox = {
+                name = "The Ahrx",
+                text = {
+                    "Playing a #1#",
+                    "sets mahrney to $0",
+                },
+            },
+
+            bl_psychic = {
+                text = {
+                    "Mahrst play 5 cards"
+                },
+            },
+
+            bl_club = {
+                name = "The Clahrb",
+                text = {
+                    "All Club cards",
+                    "are debahrffed",
+                },
+            },
+
+            bl_head = {
+                text = {
+                    "All Heart cards",
+                    "are debahrffed",
+                },
+            },
+
+            bl_arm = {
+                name = "The Ahrm",
+                text = {
+                    "Decrease level of",
+                    "played pokahr hand",
+                },
+            },
+
             bl_mahrlatr_themahrchine = {
                 name = "The Mahrchine",
                 text = {
@@ -1625,6 +1782,38 @@ return {
             }
         },
 
+        Stake = {
+            stake_black = {
+                text = {
+                    "Shop can have {C:attention}Eternahrl{} Jokahrs",
+                    "{C:inactive,s:0.8}(Can't be sold or destroyed)",
+                    "{s:0.8}Applies all previous Stakes",
+                },
+            },
+            stake_gold = {
+                text = {
+                    "Shop can have {C:attention}Rentahrl{} Jokahrs",
+                    "{C:inactive,s:0.8}(Costs {C:money,s:0.8}$3{C:inactive,s:0.8} per round)",
+                    "{s:0.8}Applies all previous Stakes",
+                },
+            },
+            stake_orange = {
+                name = "Orahrnge Stake",
+                text = {
+                    "Shop can have {C:attention}Perishable{} Jokahrs",
+                    "{C:inactive,s:0.8}(Debahrffed after 5 Rounds)",
+                    "{s:0.8}Applies all previous Stakes",
+                },
+            },
+            stake_red = {
+                text = {
+                    "{C:attention}Small Blind{} gives",
+                    "no reward mahrney",
+                    "{s:0.8}Applies all previous Stakes",
+                },
+            }
+        },
+
         Tag = {
             tag_buffoon = {
                 name = "Jokahr Tag",
@@ -1654,6 +1843,7 @@ return {
                 },
             },
             tag_economy = {
+                name = "Econahrmy Tag",
                 text = {
                     "Doubles your mahrney",
                     "{C:inactive}(Max of {C:money}$#1#{C:inactive})",
@@ -1733,7 +1923,7 @@ return {
                     "{C:inactive}(Must have room)",
                 },
             },
-            tag_vremade_uncommon = {
+            tag_uncommon = {
                 name = "Uncommahrn Tag",
                 text = {
                     "Mahrket has a free",
@@ -1857,6 +2047,70 @@ return {
             eternal = {
                 name = "Eternahrl"
             },
+            black_sticker = {
+                name = "Black Stickahr",
+                text = {
+                    "Used this Jokahr",
+                    "to win on {C:attention}Black",
+                    "{C:attention}Stake{} difficulty",
+                },
+            },
+            blue_sticker = {
+                name = "Blue Stickahr",
+                text = {
+                    "Used this Jokahr",
+                    "to win on {C:attention}Blue",
+                    "{C:attention}Stake{} difficulty",
+                },
+            },
+            gold_sticker = {
+                name = "Gold Stickahr",
+                text = {
+                    "Used this Jokahr",
+                    "to win on {C:attention}Gold",
+                    "{C:attention}Stake{} difficulty",
+                },
+            },
+            green_sticker = {
+                name = "Green Stickahr",
+                text = {
+                    "Used this Jokahr",
+                    "to win on {C:attention}Green",
+                    "{C:attention}Stake{} difficulty",
+                },
+            },
+            orange_sticker = {
+                name = "Orahrnge Sticker",
+                text = {
+                    "Used this Jokahr",
+                    "to win on {C:attention}Orahrnge",
+                    "{C:attention}Stake{} difficulty",
+                },
+            },
+            purple_sticker = {
+                name = "Purple Stickahr",
+                text = {
+                    "Used this Jokahr",
+                    "to win on {C:attention}Purple",
+                    "{C:attention}Stake{} difficulty",
+                },
+            },
+            red_sticker = {
+                name = "Red Stickahr",
+                text = {
+                    "Used this Jokahr",
+                    "to win on {C:attention}Red",
+                    "{C:attention}Stake{} difficulty",
+                },
+            },
+            white_sticker = {
+                name = "White Stickahr",
+                text = {
+                    "Used this Jokahr",
+                    "to win on {C:attention}White",
+                    "{C:attention}Stake{} difficulty",
+                },
+            }
         },
     },
 
@@ -1926,11 +2180,23 @@ return {
         },
 
         achievement_names = {
-            ach_mahrlatr_obtain_trolley = 'Trolalero Trolala'
+            ach_mahrlatr_obtain_trolley = "Trolalero Trolala",
+            ach_mahrlatr_score_pink_stone_card = "Pinkie Promise",
+            ach_mahrlatr_win_mahrlatr_deck = "M As In Mahr"
         },
 
         achievement_descriptions = {
-            ach_mahrlatr_obtain_trolley = 'Obtain Mahrbles trolley from combining the Mahrffin, Meat and Fish jokahrs'
+            ach_mahrlatr_obtain_trolley = "Obtain Mahrbles trolley from combining the Mahrffin, Meat and Fish jokahrs",
+            ach_mahrlatr_score_pink_stone_card = "Score a Pink Stone",
+            ach_mahrlatr_win_mahrlatr_deck = "Win any Mahrlatro deck"
+        },
+
+        poker_hands = {
+            Flush = "Flahrsh",
+            ["Flush Five"] = "Flahrsh Five",
+            ["Flush House"] = "Flahrsh House",
+            ["Royal Flush"] = "Royal Flahrsh",
+            ["Straight Flush"] = "Straight Flahrsh"
         }
     }
 }
