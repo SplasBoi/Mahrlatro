@@ -38,6 +38,23 @@ return {
                 name = "Mahrs Sixth Sense"
             },
 
+            j_blueprint = {
+                name = "Lahrper",
+                text = {
+                    "Copies ability of",
+                    "{C:attention}Jokahr{} to the right",
+                }
+            },
+
+            j_ring_master = {
+                name = "Showmahrn",
+                text = {
+                    "{C:attention}Jokahr{}, {C:tarot}Tahrot{}, {C:planet}Plahrnet{},",
+                    "and {C:spectral}Spectrahrl{} cards may",
+                    "appear mahrltiple times"
+                },
+            },
+
             j_golden = {
                 name = "Golden Jokahr"
             },
