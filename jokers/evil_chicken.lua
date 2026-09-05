@@ -15,7 +15,7 @@ local function create_egg_event()
                     G.E_MANAGERS.evil_chicken_sound_played = true
                 end
 
-                SMODS.add_card({key = 'j_mahrlatr_agg'})
+                SMODS.add_card({key = 'j_egg'})
             end
             return true
         end
