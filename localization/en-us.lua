@@ -483,7 +483,7 @@ return {
             j_mahrlatr_mahrfia_member = {
                 name = 'Mahrfia Member',
                 text = {
-                    'Destroys every played {C:red}#3#{}',
+                    'Destroys every scored {C:red}#3#{}',
                     'card for {C:gold}#1##2#{}'
                 }
             },
@@ -2169,7 +2169,7 @@ return {
             le_hospital_saved = 'Le Hospital Saved You..',
             le_hospital_destroyed = 'Destroyed!',
 
-            phrskgg_value_increased = 'Värde ökat!!',
+            phrskgg_value_increased = 'Javisst! Värde ökat!!',
 
             vegahrs_pro_edited = 'VEGAHRS Pro has edited your run!',
             vegahrs_pro_crashed = 'Whoopsies! VEGAHRS Pro will now crash!',

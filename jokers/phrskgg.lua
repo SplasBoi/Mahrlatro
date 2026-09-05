@@ -7,7 +7,7 @@ SMODS.Joker:take_ownership('j_egg',
         if context.end_of_round and context.game_over == false and context.main_eval  and not context.blueprint then
             return {
                 func = function()
-                    card.ability.extra_value = (card.ability.extra_value or 0) + card.ability.extra.value_increase
+                    card.ability.extra_value = card.ability.extra_value + 3
                     card:set_cost()
                     return true
                 end,
