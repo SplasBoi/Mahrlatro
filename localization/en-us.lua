@@ -16,6 +16,14 @@ return {
                 }
             },
 
+            j_mahrlatr_mahrbot = {
+                name = 'MahrBot',
+                text = {
+                    'Applies {C:tarot}Mahr Seal{} to',
+                    'every {C:attention}scored card{}.'
+                }
+            },
+
             j_wee = {
                 name = 'Wee Mahr',
                 text = {
@@ -36,6 +44,20 @@ return {
 
             j_sixth_sense = {
                 name = "Mahrs Sixth Sense"
+            },
+
+            j_shoot_the_moon = {
+                name = "Shoot The Mahrn"
+            },
+
+            j_constellation = {
+                name = "Constellahrtion",
+                text = {
+                    "This Jokahr gains",
+                    "{X:mult,C:white} X#1# {} Mult every time",
+                    "a {C:planet}Plahrnet{} card is used",
+                    "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
+                },
             },
 
             j_blueprint = {
