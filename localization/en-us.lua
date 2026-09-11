@@ -16,6 +16,14 @@ return {
                 }
             },
 
+            j_mahrlatr_mahrbot = {
+                name = 'MahrBot',
+                text = {
+                    'Applies {C:tarot}Mahr Seal{} to',
+                    'every {C:attention}scored card{}.'
+                }
+            },
+
             j_wee = {
                 name = 'Wee Mahr',
                 text = {
@@ -36,6 +44,20 @@ return {
 
             j_sixth_sense = {
                 name = "Mahrs Sixth Sense"
+            },
+
+            j_shoot_the_moon = {
+                name = "Shoot The Mahrn"
+            },
+
+            j_constellation = {
+                name = "Constellahrtion",
+                text = {
+                    "This Jokahr gains",
+                    "{X:mult,C:white} X#1# {} Mult every time",
+                    "a {C:planet}Plahrnet{} card is used",
+                    "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
+                },
             },
 
             j_blueprint = {
@@ -483,7 +505,7 @@ return {
             j_mahrlatr_mahrfia_member = {
                 name = 'Mahrfia Member',
                 text = {
-                    'Destroys every played {C:red}#3#{}',
+                    'Destroys every scored {C:red}#3#{}',
                     'card for {C:gold}#1##2#{}'
                 }
             },
@@ -2169,7 +2191,7 @@ return {
             le_hospital_saved = 'Le Hospital Saved You..',
             le_hospital_destroyed = 'Destroyed!',
 
-            phrskgg_value_increased = 'Värde ökat!!',
+            phrskgg_value_increased = 'Javisst! Värde ökat!!',
 
             vegahrs_pro_edited = 'VEGAHRS Pro has edited your run!',
             vegahrs_pro_crashed = 'Whoopsies! VEGAHRS Pro will now crash!',
