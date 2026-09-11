@@ -513,7 +513,7 @@ return {
             j_mahrlatr_mimahr = {
                 name = 'Mimahr',
                 text = {
-                    'Retrigger all cards with',
+                    'Retrigger all scored cards with',
                     '{C:tarot}TheMahr{} seal once'
                 }
             },
@@ -736,8 +736,8 @@ return {
             j_mahrlatr_nutellas_cahr = {
                 name = "Nutella\'s Cahr",
                 text = {
-                    "If first played hand has only",
-                    "{C:attention}1{} card, increases",
+                    "If first played hand of round has",
+                    "only {C:attention}1{} card, increases",
                     "its rank by {C:attention}1{}"
                 }
             },
@@ -1045,7 +1045,7 @@ return {
                 text = {
                     {
                         "Gains {C:red}+#2#{} Mult for each",
-                        "{C:attention,s:1.4}unique{} Food Jokahr owned",
+                        "{C:attention,s:1.4}unique{} Food Jokahr bought",
                         "while owning this Jokahr",
                         "{C:inactive}(Currently{} {C:red}+#1#{} {C:inactive}Mult){}"
                     }
