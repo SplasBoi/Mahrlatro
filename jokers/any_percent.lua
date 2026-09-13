@@ -13,14 +13,16 @@ SMODS.Joker {
 
     config = {
         extra = {
-            scaling = 3,
+            mult_scaling = 3,
         }
     },
 
     loc_vars = function(self, info_queue, card)
+        local e = card.ability.extra or self.config.extra
+
         return {
             vars = {
-                card.ability.extra.scaling
+                e.mult_scaling
             }
         }
     end,
@@ -37,10 +39,40 @@ SMODS.Joker {
     rarity = 1,
     
     calculate = function(self, card, context)
+        local e = card.ability.extra or self.config.extra
+
         if context.joker_main then
             return {
-                mult = G.GAME.hands[context.scoring_name].level * card.ability.extra.scaling
+                mult = G.GAME.hands[context.scoring_name].level * e.mult_scaling
             }
         end
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        return {
+            text = {
+                { text = "+" },
+                {
+                    ref_table = "card.joker_display_values",
+                    ref_value = "mult"
+                }
+            },
+            text_config = { colour = G.C.RED },
+            
+            calc_function = function(card)
+                local e = card.ability.extra
+                local hand_name = JokerDisplay.current_hand_info.text
+
+                if G.GAME.hands[hand_name] then
+                    local hand_level = G.GAME.hands[hand_name].level or 1
+                    local scaling = e.mult_scaling or 1
+                    local mult = hand_level > 1 and hand_level * scaling or 0
+
+                    card.joker_display_values.mult = mult
+                else
+                    card.joker_display_values.mult = 0
+                end
+            end
+        }
     end
 }
