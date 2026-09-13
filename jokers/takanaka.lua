@@ -4,7 +4,8 @@ SMODS.Joker {
     config = {
         extra = {
             chips = 75,
-            required_jokers_to_merge = {"j_mahrlatr_feijoada", "j_mahrlatr_bossa_nova"}
+            required_jokers_to_merge = { "j_mahrlatr_feijoada", "j_mahrlatr_bossa_nova" },
+            required_language = "pt_BR"
         }
     },
 
@@ -41,15 +42,15 @@ SMODS.Joker {
     end,
 
     calculate = function(self, card, context)
-        if G.SETTINGS.language == 'pt_BR' and context.joker_main then
+        local e = card.ability.extra or self.config.extra
+        
+        if context.joker_main and G.SETTINGS.language == e.required_language then
             return {
                 chips = card.ability.extra.chips
             }
         end
 
         if context.ending_shop then
-            local e = card.ability.extra
-
             if JokerUtility.can_merge_jokers(e.required_jokers_to_merge) then
                 return {
                     func = function ()
@@ -65,5 +66,24 @@ SMODS.Joker {
                 }
             end
         end
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        return {
+            text = {
+                { text = "+" },
+                {
+                    ref_table = "card.joker_display_values",
+                    ref_value = "chips"
+                }
+            },
+            text_config = { colour = G.C.CHIPS },
+            calc_function = function(card)
+                local e = card.ability.extra
+                
+                local chips = (G.SETTINGS.language == e.required_language and e.chips) or 0
+                card.joker_display_values.chips = chips
+            end
+        }
     end
 }
