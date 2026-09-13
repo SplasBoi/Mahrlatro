@@ -42,5 +42,34 @@ SMODS.Joker {
                 xmult = card.ability.extra.x_mult
             }
         end
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        return {
+            text = {
+                { text = "X" },
+                {
+                    ref_table = "card.joker_display_values",
+                    ref_value = "x_mult"
+                }
+            },
+            text_config = { colour = G.C.RED },
+            calc_function = function(card)
+                local hand_name = JokerDisplay.current_hand_info.text
+
+                if hand_name ~= "NULL" and G.GAME.hands[hand_name] then
+                    local played = G.GAME.hands[hand_name].played_this_round or 0
+
+                    -- This is a fix for play count incrementing when scoring starts
+                    if (G.STATE == G.STATES.HAND_PLAYED and played == 1) or played < 1 then
+                        card.joker_display_values.x_mult = card.ability.extra.x_mult
+                    else
+                        card.joker_display_values.x_mult = 1
+                    end
+                else
+                    card.joker_display_values.x_mult = 1
+                end
+            end
+        }
     end
 }
