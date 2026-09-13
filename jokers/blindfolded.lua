@@ -77,13 +77,18 @@ SMODS.Joker {
     joker_display_def = function(JokerDisplay)
         return {
             text = {
-                { text = "X" },
                 {
-                    ref_table = "card.joker_display_values",
-                    ref_value = "x_mult"
+                    border_nodes = {
+                        { text = "X" },
+                        {
+                            ref_table = "card.ability.extra",
+                            ref_value = "x_mult",
+                            retrigger_type = "exp"
+                        }
+                    }
                 }
             },
-            text_config = { colour = G.C.RED },
+            text_config = { colour = G.C.WHITE },
             calc_function = function(card)
                 card.joker_display_values.x_mult = card.ability.extra.x_mult
             end
