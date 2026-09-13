@@ -19,7 +19,7 @@ return {
             j_mahrlatr_mahrbot = {
                 name = 'MahrBot',
                 text = {
-                    'Applies {C:tarot}Mahr Seal{} to',
+                    'Applies {C:tarot}#1#{} to',
                     'every {C:attention}scored card{}.'
                 }
             },
