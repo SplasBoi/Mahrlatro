@@ -1,4 +1,10 @@
-local flip_cards = nil
+local function flip_cards(cards, side)
+    for i, card in ipairs(cards) do
+        if card.facing ~= side then
+            card:flip()
+        end
+    end
+end
 
 SMODS.Joker {
     key = 'blindfolded',
@@ -66,13 +72,21 @@ SMODS.Joker {
                 x_mult = card.ability.extra.x_mult
             }
         end
+    end,
+    
+    joker_display_def = function(JokerDisplay)
+        return {
+            text = {
+                { text = "X" },
+                {
+                    ref_table = "card.joker_display_values",
+                    ref_value = "x_mult"
+                }
+            },
+            text_config = { colour = G.C.RED },
+            calc_function = function(card)
+                card.joker_display_values.x_mult = card.ability.extra.x_mult
+            end
+        }
     end
 }
-
-flip_cards = function(cards, side)
-    for i, card in ipairs(cards) do
-        if card.facing ~= side then
-            card:flip()
-        end
-    end
-end
