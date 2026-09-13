@@ -803,9 +803,8 @@ return {
                 name = 'The Choir',
                 text = {
                     '{X:mult,C:white}X#1#{} Mult if hand',
-                    'contains {C:attention}#2# and any{}',
-                    '{C:attention}other pokahr hand{}',
-                    '{C:inactive}(except High Card){}'
+                    'contains {C:attention}#2# and',
+                    '{C:attention}#3#'
                 },
                 unlock = {
                     "Play a {C:attention}Flush Five{}",

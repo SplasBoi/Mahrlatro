@@ -30,7 +30,7 @@ SMODS.Joker {
     config = {
         extra = {
             chips = 0,
-            scaling = 5
+            scaling = 3
         }
     },
 
