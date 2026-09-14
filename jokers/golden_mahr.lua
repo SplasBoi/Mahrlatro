@@ -13,7 +13,7 @@ SMODS.Joker:take_ownership('j_ticket',
                     G.E_MANAGER:add_event(Event({
                         func = function()
                             G.GAME.dollar_buffer = 0
-                            play_sound('mahrlatr_gold')
+                            SoundUtility.play_sound_if_exists('mahrlatr_gold')
                             return true
                         end
                     }))

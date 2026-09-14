@@ -7,7 +7,7 @@ local function create_egg_event()
         trigger = 'immediate',
         func = function()
             if joker_slots_left() > 0 then
-                play_sound('mahrlatr_ratatouille_honk')
+                SoundUtility.play_sound_if_exists('mahrlatr_ratatouille_honk')
                 SMODS.add_card({key = 'j_egg'})
             end
             return true

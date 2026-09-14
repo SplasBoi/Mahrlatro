@@ -56,7 +56,7 @@ SMODS.Joker {
                     G.E_MANAGER:add_event(Event({
                         trigger = "immediate",
                         func = function()
-                            play_sound(sound)
+                            SoundUtility.play_sound_if_exists(sound)
                             return true
                         end
                     }))

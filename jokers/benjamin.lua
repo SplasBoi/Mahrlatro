@@ -46,7 +46,7 @@ SMODS.Joker:take_ownership('j_cavendish',
     atlas = 'Benjamin',
 
     add_to_deck = function(self, card, from_debuff)
-        play_sound(get_sound_from_pool(obtained_sound_pool))
+        SoundUtility.play_sound_if_exists(get_sound_from_pool(obtained_sound_pool))
     end,
 
     calculate = function(self, card, context)
@@ -64,22 +64,20 @@ SMODS.Joker:take_ownership('j_cavendish',
             if SMODS.pseudorandom_probability(card, 'cavendish', 1, e.odds) then
                 return {
                     message = localize('k_extinct_ex'),
-                    play_sound(get_sound_from_pool(destroyed_sound_pool)),
-                    func = function()
-                        SMODS.destroy_cards(card, nil, nil, true)
-                    end
+                    SoundUtility.play_sound_if_exists(get_sound_from_pool(destroyed_sound_pool)),
+                    SMODS.destroy_cards(card, nil, nil, true),
                 }
             else
                 return {
                     message = localize('k_safe_ex'),
-                    play_sound(get_sound_from_pool(blind_defeated_sound_pool))
+                    SoundUtility.play_sound_if_exists(get_sound_from_pool(blind_defeated_sound_pool))
                 }
             end
         end
 
         if context.setting_blind and context.blind.boss then
             return {
-                play_sound(get_sound_from_pool(boss_blind_sound_pool))
+                SoundUtility.play_sound_if_exists(get_sound_from_pool(boss_blind_sound_pool))
             }
         end
         

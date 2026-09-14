@@ -36,8 +36,8 @@ SMODS.Joker {
             G.E_MANAGER:add_event(Event({
                 func = (function()
                     add_tag({ key = 'tag_double' })
-                    play_sound('generic1', 0.9 + math.random() * 0.1, 0.8)
-                    play_sound('holo1', 1.2 + math.random() * 0.1, 0.4)
+                    SoundUtility.play_sound_if_exists('generic1', 0.9 + math.random() * 0.1, 0.8)
+                    SoundUtility.play_sound_if_exists('holo1', 1.2 + math.random() * 0.1, 0.4)
                     return true
                 end)
             }))

@@ -15,7 +15,7 @@ local function play_sound_from_event(sound_id)
     G.E_MANAGER:add_event(Event({
         trigger = "immediate",
         func = function()
-            play_sound(sound_id)
+            SoundUtility.play_sound_if_exists(sound_id)
             return true
         end
     }))
@@ -57,7 +57,7 @@ SMODS.Joker {
 
     add_to_deck = function(self, card, from_debuff)
         card.ability.extra.poker_hand = get_random_poker_hand(card)
-        play_sound("mahrlatr_bobby_try_this_hand")
+        SoundUtility.play_sound_if_exists("mahrlatr_bobby_try_this_hand")
     end,
     
     calculate = function(self, card, context)

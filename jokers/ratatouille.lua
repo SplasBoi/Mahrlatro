@@ -5,7 +5,7 @@ SMODS.Joker:take_ownership('j_jolly',
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
     calculate = function(self, card, context)
         if context.joker_main and next(context.poker_hands['Pair']) then
-            play_sound('mahrlatr_ratatouille')
+            SoundUtility.play_sound_if_exists('mahrlatr_ratatouille')
             return {
                 mult = 8
             }

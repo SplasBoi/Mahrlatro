@@ -1,3 +1,7 @@
+local function get_random_joel_sound()
+    return "mahrlatr_joel_laughing_" .. math.random(1, 4)
+end
+
 SMODS.Joker {
     key = "vahrgskelethor_joel",
 
@@ -30,11 +34,14 @@ SMODS.Joker {
     config = {
         extra = {
             mult = 0,
-            scaling = 4
+            scaling = 4,
+            target_tarot = "wheel_of_fortune"
         }
     },
 
     loc_vars = function(self, info_queue, card)
+        local e = card.ability.extra or self.config.extra
+
         return {
             vars = {
                 colours = {
@@ -42,33 +49,46 @@ SMODS.Joker {
                     HEX('FECC02')
                 },
 
-                card.ability.extra.mult,
-                card.ability.extra.scaling
+                e.mult,
+                e.scaling,
+
+                localize({
+                    type = "name_text",
+                    set = "Tarot",
+                    key = "c_" .. e.target_tarot
+                })
             }
         }
     end,
     
     calculate = function(self, card, context)
-        if context.pseudorandom_result then
-            if context.identifier == "wheel_of_fortune" and not context.result then
-                G.E_MANAGER:add_event(Event({trigger = 'after', delay = 1.5, func = function()
-                
-                    SMODS.scale_card(card, {
-                        ref_table = card.ability.extra,
-                        ref_value = 'mult',
-                        scalar_value = 'scaling',
-                        no_message = true
-                    })
-                    
-                    card:juice_up()
-                    local random_sound_index = math.random(1,4)
-                    play_sound('mahrlatr_joel_laughing_'..random_sound_index, 1.0, 0.5)
+        local e = card.ability.extra or self.config.extra
 
-                    return true
-                end }))
+        if context.pseudorandom_result then
+            if context.identifier == e.target_tarot and not context.result then
+                G.E_MANAGER:add_event(Event({
+                    trigger = "immediate",
+                    func = function()
+                        SMODS.scale_card(card, {
+                            ref_table = e,
+                            ref_value = 'mult',
+                            scalar_value = 'scaling',
+                            no_message = true
+                        })
+                        
+                        card:juice_up()
+                        
+                        local sound = get_random_joel_sound()
+                        local pitch = 1.0
+                        local volume = 0.5
+
+                        SoundUtility.play_sound_if_exists(sound, pitch, volume)
+                        return true
+                    end
+                }))
 
                 return {
-                    message = localize("joel_nope_hahaha")
+                    message = localize("joel_nope_hahaha"),
                 }
             end
         end
@@ -80,5 +100,5 @@ SMODS.Joker {
         end
     end
 
-    -- Unlock logic done externally in wheel_of_fortune.toml
+    -- Unlock logic done externally in lovely/wheel_of_fortune.toml
 }

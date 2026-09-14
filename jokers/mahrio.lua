@@ -50,7 +50,7 @@ SMODS.Joker {
 
             if SMODS.pseudorandom_probability(card, 'j_mahrlatr_mahrio', card.ability.extra.numerator, card.ability.extra.denominator) then
                 G.E_MANAGER:add_event(Event({trigger = 'immediate', func = function()
-                    play_sound('mahrlatr_mahrio_win',1.0,0.6)
+                    SoundUtility.play_sound_if_exists('mahrlatr_mahrio_win',1.0,0.6)
                     SMODS.add_card({key = 'j_mahrlatr_the_stahr'})
                 
                     return true

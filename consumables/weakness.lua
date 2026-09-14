@@ -20,19 +20,19 @@ SMODS.Consumable {
             trigger = 'after',
             delay = 0.4,
             func = function()
-                play_sound('tarot1')
+                SoundUtility.play_sound_if_exists("tarot1")
                 card:juice_up(0.3, 0.5)
                 return true
             end
         }))
         for i = 1, #G.hand.highlighted do
-            local percent = 1.15 - (i - 0.999) / (#G.hand.highlighted - 0.998) * 0.3
+            local percent = 1.15 - (i - 0.999) / (#G.hand.highlighted - 0.998) * 0.3 -- percent what?
             G.E_MANAGER:add_event(Event({
                 trigger = 'after',
                 delay = 0.15,
                 func = function()
                     G.hand.highlighted[i]:flip()
-                    play_sound('card1', percent)
+                    SoundUtility.play_sound_if_exists("card1", percent)
                     G.hand.highlighted[i]:juice_up(0.3, 0.3)
                     return true
                 end
@@ -57,7 +57,7 @@ SMODS.Consumable {
                 delay = 0.15,
                 func = function()
                     G.hand.highlighted[i]:flip()
-                    play_sound('tarot2', percent, 0.6)
+                    SoundUtility.play_sound_if_exists("tarot2", percent, 0.6)
                     G.hand.highlighted[i]:juice_up(0.3, 0.3)
                     return true
                 end

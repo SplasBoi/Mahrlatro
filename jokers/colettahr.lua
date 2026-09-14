@@ -44,7 +44,7 @@ SMODS.Joker {
 
     add_to_deck = function(self, card, from_debuff)
         card.ability.extra.poker_hand = get_random_poker_hand(card)
-        play_sound("mahrlatr_mahr_no_no_dont")
+        SoundUtility.play_sound_if_exists("mahrlatr_mahr_no_no_dont")
     end,
     
     calculate = function(self, card, context)
@@ -63,7 +63,7 @@ SMODS.Joker {
 
             return {
                 message = localize('colettahr_do_as_i_say'),
-                play_sound("mahrlatr_mahr_no_no_dont")
+                SoundUtility.play_sound_if_exists("mahrlatr_mahr_no_no_dont")
             }
         end
     end

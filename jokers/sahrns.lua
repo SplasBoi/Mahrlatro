@@ -10,7 +10,7 @@ SMODS.Joker:take_ownership('j_mr_bones',
                     func = function()
                         G.hand_text_area.blind_chips:juice_up()
                         G.hand_text_area.game_chips:juice_up()
-                        play_sound('tarot1')
+                        SoundUtility.play_sound_if_exists('tarot1')
                         SMODS.destroy_cards(card, nil, true)
                         return true
                     end

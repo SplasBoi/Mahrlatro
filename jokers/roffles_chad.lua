@@ -6,7 +6,7 @@ SMODS.Joker:take_ownership('j_hanging_chad',
         if context.repetition and context.cardarea == G.play and context.other_card == context.scoring_hand[1] then
             return {
                 repetitions = 2,
-                play_sound('mahrlatr_roffle')
+                SoundUtility.play_sound_if_exists('mahrlatr_roffle')
             }
         end
     end,

@@ -38,7 +38,7 @@ SMODS.Joker {
             stahrs_to_be_created = free_joker_slots
         end
 
-        play_sound('mahrlatr_star',1.0,0.5)
+        SoundUtility.play_sound_if_exists('mahrlatr_star',1.0,0.5)
         
         for i = 1, stahrs_to_be_created do
             G.E_MANAGER:add_event(Event({trigger = 'immediate', func = function()
