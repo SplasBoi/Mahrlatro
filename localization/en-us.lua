@@ -339,8 +339,8 @@ return {
             j_stuntman = {
                 name = "Vaalserberg",
                 text = {
-                    "{C:chips}+322{} Chips,",
-                    "{C:attention}-2{} hand size",
+                    "{C:chips}#1#{} Chips,",
+                    "{C:attention}-#2#{} hand size",
                 }
             },
             

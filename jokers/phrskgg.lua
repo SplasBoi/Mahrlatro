@@ -5,9 +5,11 @@ SMODS.Joker:take_ownership('j_egg',
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
     calculate = function(self, card, context)
         if context.end_of_round and context.game_over == false and context.main_eval  and not context.blueprint then
+            local dollar_increase = card.ability.extra or 3
+            
             return {
                 func = function()
-                    card.ability.extra_value = card.ability.extra_value + 3
+                    card.ability.extra_value = card.ability.extra_value + dollar_increase
                     card:set_cost()
                     return true
                 end,

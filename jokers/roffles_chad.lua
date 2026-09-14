@@ -9,8 +9,9 @@ SMODS.Joker:take_ownership('j_hanging_chad',
 
     calculate = function(self, card, context)
         if context.repetition and context.cardarea == G.play and context.other_card == context.scoring_hand[1] then
+            local fallback_reps = 2
             return {
-                repetitions = 2,
+                repetitions = card.ability.extra,
             }
         end
     end,
