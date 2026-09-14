@@ -1,7 +1,11 @@
 SMODS.Joker {
     key = "mahr_jimbo",
 
-    pos = { x = 0, y = 5 },
+    pos = {
+        x = 0,
+        y = 5
+    },
+    
     rarity = 1,
     blueprint_compat = true,
     cost = 2,
@@ -10,9 +14,18 @@ SMODS.Joker {
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
 
 
-    config = { extra = { mult = 4 }, },
+    config = {
+        extra = {
+            mult = 4
+        },
+    },
+
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.mult } }
+        return {
+            vars = {
+                card.ability.extra.mult
+            }
+        }
     end,
 
     calculate = function(self, card, context)
@@ -21,5 +34,18 @@ SMODS.Joker {
                 mult = card.ability.extra.mult
             }
         end
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        return {
+            text = {
+                { text = "+" },
+                {
+                    ref_table = "card.ability.extra",
+                    ref_value = "mult"
+                }
+            },
+            text_config = { colour = G.C.MULT }
+        }
     end
 }
