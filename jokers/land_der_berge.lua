@@ -1,6 +1,18 @@
-local get_mult = nil
+local function get_mult(playing_cards, starting_number)
+    if not playing_cards or type(playing_cards) ~= "table" or type(starting_number) ~= "number"  then
+        return 0
+    end
 
-SMODS.Joker { -- Land der Berge
+    local deck_size = #playing_cards
+
+    if deck_size >= starting_number then
+        return deck_size - starting_number
+    else
+        return 0
+    end
+end
+
+SMODS.Joker {
     key = "land_der_berge",
 
     pos = {
@@ -31,13 +43,15 @@ SMODS.Joker { -- Land der Berge
     },
 
     loc_vars = function(self, info_queue, card)
+        local e = card.ability.extra or self.config.extra
+
         return {
             vars = {
                 colours = { HEX('C8102E') },
                 
-                card.ability.extra.scaling,
+                e.scaling,
                 G.GAME.starting_deck_size,
-                get_mult(G.GAME.starting_deck_size),
+                get_mult(G.playing_cards, G.GAME.starting_deck_size),
             }
         }
     end,
@@ -45,20 +59,26 @@ SMODS.Joker { -- Land der Berge
     calculate = function(self, card, context)
         if context.joker_main then
             return {
-                mult = get_mult(G.GAME.starting_deck_size)
+                mult = get_mult(G.playing_cards, G.GAME.starting_deck_size)
             }
         end
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        return {
+            text = {
+                { text = "+" },
+                {
+                    ref_table = "card.joker_display_values",
+                    ref_value = "mult",
+                }
+            },
+            text_config = { colour = G.C.RED },
+
+            calc_function = function(card)
+                local e = card.ability.extra
+                card.joker_display_values.mult = get_mult(G.playing_cards, G.GAME.starting_deck_size)
+            end
+        }
     end
 }
-
-get_mult = function(starting_number)
-    if (not G.playing_cards) then return 0 end
-
-    local deck_size = #G.playing_cards
-
-    if deck_size >= starting_number then
-        return deck_size - starting_number
-    else
-        return 0
-    end
-end
