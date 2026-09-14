@@ -3,7 +3,11 @@ SMODS.Joker { --Meat
 
     config = {
         extra = {
-            mult = 7
+            mult = 7,
+            valid_suits = {
+                "Hearts",
+                "Diamonds"
+            }
         }
     },
     
@@ -37,10 +41,37 @@ SMODS.Joker { --Meat
     end,
 
     calculate = function(self, card, context)
-        if SuitHelpers.has_suit_in_hand(context, {'Hearts', 'Diamonds'}) then
+        local e = card.ability.extra or self.ability.extra
+
+        if context.final_scoring_step and SuitHelpers.has_suit_in_hand(context.scoring_hand, e.valid_suits) then
             return {
-                mult = card.ability.extra.mult
+                mult = e.mult
             }
         end
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        return {
+            text = {
+                { text = "+" },
+                {
+                    ref_table = "card.joker_display_values",
+                    ref_value = "mult"
+                }
+            },
+            text_config = { colour = G.C.MULT },
+
+            calc_function = function(card)
+                local e = card.ability.extra
+
+                local _, _, scoring_hand = JokerDisplay.evaluate_hand()
+
+                if SuitHelpers.has_suit_in_hand(scoring_hand, e.valid_suits) then
+                    card.joker_display_values.mult = e.mult
+                else
+                    card.joker_display_values.mult = 0
+                end
+            end
+        }
     end
 }
