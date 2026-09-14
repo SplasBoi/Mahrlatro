@@ -73,5 +73,23 @@ SMODS.Joker { --Mahrffin
                 }
             end
         end
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        return {
+            text = {
+                {
+                    text = "+" .. localize("$")
+                },
+                {
+                    ref_table = "card.ability.extra",
+                    ref_value = "dollars"
+                },
+            },
+
+            text_config = {
+                colour = G.C.MONEY
+            }
+        }
     end
 }
