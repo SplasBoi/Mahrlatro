@@ -25,37 +25,67 @@ SMODS.Joker {
     config = {
         extra = {
             scaling = 1,
-            current_dollars_received = 0,
+            dollars = 0,
             played_poker_hands = {}
         }
     },
 
     loc_vars = function(self, info_queue, card)
+        local e = card.ability.extra or self.config.extra
+
         return {
             vars = {
-                card.ability.extra.scaling,
-                card.ability.extra.current_dollars_received,
+                e.scaling,
+                e.dollars,
                 localize('$')
             }
         }
     end,
 
     calculate = function(self, card, context)
-        local e = card.ability.extra
-        if context.before then
-            if TableUtility.contains_individual(context.scoring_name, e.played_poker_hands) then return end
+        local e = card.ability.extra or self.config.extra
 
+        if context.before and not TableUtility.contains_individual(context.scoring_name, e.played_poker_hands) then
             table.insert(e.played_poker_hands, context.scoring_name)
 
             SMODS.scale_card(card, {
                 ref_table = card.ability.extra,
-                ref_value = 'current_dollars_received',
-                scalar_value = 'scaling'
+                ref_value = "dollars",
+                scalar_value = "scaling"
             })
         end
     end,
 
     calc_dollar_bonus = function(self, card)
-        return card.ability.extra.current_dollars_received
+        local dollars = card.ability.extra.dollars
+
+        if dollars > 0 then
+            return dollars
+        end
     end,
+
+    joker_display_def = function(JokerDisplay)
+        return {
+            text = {
+                { text = localize("$") },
+                {
+                    ref_table = "card.joker_display_values",
+                    ref_value = "dollars",
+                }
+            },
+            text_config = { colour = G.C.GOLD },
+
+            reminder_text = {
+                {
+                    text = "(Every Round)",
+                    colour = G.C.ORANGE
+                },
+            },
+
+            calc_function = function(card)
+                local e = card.ability.extra
+                card.joker_display_values.dollars = e.dollars
+            end
+        }
+    end
 }
