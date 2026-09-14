@@ -100,7 +100,11 @@ SMODS.Joker {
 
             reminder_text = {
                 { text = "(" },
-                { ref_table = "card.ability.extra", ref_value = "poker_hand", colour = G.C.ORANGE },
+                {
+                    ref_table = "card.joker_display_values",
+                    ref_value = "poker_hand_loc",
+                    colour = G.C.ORANGE
+                },
                 { text = ")" }
             },
 
@@ -113,6 +117,8 @@ SMODS.Joker {
                 else
                     card.joker_display_values.x_mult = 1
                 end
+
+                card.joker_display_values.poker_hand_loc = localize(e.poker_hand, "poker_hands")
             end
         }
     end
