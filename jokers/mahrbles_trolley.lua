@@ -2,14 +2,6 @@
 SMODS.Joker { --Mahrbles Trolley
     key = "mahrbles_trolley",
 
-    config = {
-        extra = {
-            mult = 10,
-            chips = 100,
-            dollars = 2
-        }
-    },
-
     pos = {
         x = 3,
         y = 2
@@ -30,13 +22,23 @@ SMODS.Joker { --Mahrbles Trolley
     atlas = 'CustomJokers',
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
 
+    config = {
+        extra = {
+            mult = 10,
+            chips = 100,
+            dollars = 2
+        }
+    },
+
     loc_vars = function(self, info_queue, card)
+        local e = card.ability.extra or self.config.extra
+
         return {
             vars = {
-                card.ability.extra.mult,
-                card.ability.extra.chips,
+                e.mult,
+                e.chips,
                 localize('$'),
-                card.ability.extra.dollars
+                e.dollars
             }
         }
     end,
@@ -68,5 +70,45 @@ SMODS.Joker { --Mahrbles Trolley
                 }
             }
         end
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        -- TODO: 
+        return {
+            text = {
+                -- Mult
+                {
+                    text = "+",
+                    colour = G.C.MULT
+                },
+                {
+                    ref_table = "card.ability.extra",
+                    ref_value = "mult",
+                    colour = G.C.MULT
+                },
+
+                -- Chips
+                {
+                    text = "+",
+                    colour = G.C.CHIPS
+                },
+                {
+                    ref_table = "card.ability.extra",
+                    ref_value = "chips",
+                    colour = G.C.CHIPS
+                },
+
+                -- Dollars
+                {
+                    text = "+" .. localize("$"),
+                    colour = G.C.MONEY
+                },
+                {
+                    ref_table = "card.ability.extra",
+                    ref_value = "dollars",
+                    colour = G.C.MONEY
+                }
+            }
+        }
     end
 }
