@@ -81,5 +81,40 @@ SMODS.Joker { --Mahrfia Member
                 }
             }
         end
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        return {
+            text = {
+                {
+                    text = "+" .. localize("$")
+                },
+                {
+                    ref_table = "card.joker_display_values",
+                    ref_value = "dollars"
+                },
+            },
+
+            text_config = {
+                colour = G.C.MONEY
+            },
+
+            calc_function = function(card)
+                local e = card.ability.extra
+
+                local _, _, scoring_hand = JokerDisplay.evaluate_hand()
+                local count = 0
+
+                if scoring_hand then
+                    for _, scoring_card in ipairs(scoring_hand) do
+                        if scoring_card:is_suit(e.suit) then
+                            count = count + 1
+                        end
+                    end
+                end
+
+                card.joker_display_values.dollars = count * e.dollars
+            end
+        }
     end
 }
