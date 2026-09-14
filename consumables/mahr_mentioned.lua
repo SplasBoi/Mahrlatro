@@ -15,11 +15,29 @@ SMODS.Consumable {
     can_repeat_soul = false,
     atlas = 'CustomConsumables',
 
+    config = {
+        extra = {
+            target_seal = "mahrlatr_mahr",
+        }
+    },
+
+    loc_vars = function(self, info_queue, card)
+        local e = card.ability.extra or self.config.extra
+
+        return {
+            vars = {
+                localize(e.target_seal .. "_seal", "labels")
+            }
+        }
+    end,
+
     can_use = function(self, card)
         return #G.hand.highlighted == 1
     end,
     
     use = function(self, card, area, copier)
+        local e = card.ability.extra or self.config.extra
+
         local used_card = copier or card
 
         local targets = {}
@@ -63,7 +81,7 @@ SMODS.Consumable {
                     delay = 0.1,
                     func = function()
                         if c then
-                            c:set_seal("mahrlatr_mahr", nil, true)
+                            c:set_seal(e.target_seal, nil, true)
                         end
                         return true
                     end

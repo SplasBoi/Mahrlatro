@@ -1,6 +1,3 @@
-G.E_MANAGERS = G.E_MANAGERS or {}
-G.E_MANAGERS.evil_chicken_sound_played = false
-
 local function joker_slots_left()
     return G.jokers.config.card_limit - #G.jokers.cards
 end
@@ -10,11 +7,7 @@ local function create_egg_event()
         trigger = 'immediate',
         func = function()
             if joker_slots_left() > 0 then
-                if not G.E_MANAGERS.evil_chicken_sound_played then
-                    play_sound('mahrlatr_ratatouille_honk')
-                    G.E_MANAGERS.evil_chicken_sound_played = true
-                end
-
+                play_sound('mahrlatr_ratatouille_honk')
                 SMODS.add_card({key = 'j_egg'})
             end
             return true
@@ -48,10 +41,7 @@ SMODS.Joker {
 
     calculate = function(self, card, context)
         if context.setting_blind then
-            G.E_MANAGERS.evil_chicken_sound_played = false
-            
-            local event = create_egg_event()
-            G.E_MANAGER:add_event(event)
+            G.E_MANAGER:add_event(create_egg_event())
         end
     end
 }

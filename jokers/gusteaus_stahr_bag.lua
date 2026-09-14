@@ -28,12 +28,6 @@ SMODS.Joker {
         }
     },
 
-    loc_vars = function(self, info_queue, card)
-        return {
-
-        }
-    end,
-
     remove_from_deck = function(self, card, from_debuff)
         local free_joker_slots = G.jokers.config.card_limit - #G.jokers.cards
         local stahrs_to_be_created

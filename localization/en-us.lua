@@ -20,7 +20,7 @@ return {
                 name = 'MahrBot',
                 text = {
                     'Applies {C:tarot}#1#{} to',
-                    'every {C:attention}scored card{}.'
+                    'every {C:attention}scored card{}'
                 }
             },
 
@@ -246,7 +246,8 @@ return {
                 text = {
                     "Retrigger",
                     "each played",
-                    "{C:attention}6{}, {C:attention}7{}, {C:attention}8{}, or {C:attention}9{}",
+                    "#1#",
+                    --"{C:attention}6{}, {C:attention}7{}, {C:attention}8{}, or {C:attention}9{}",
                 },
             },
 
@@ -944,7 +945,7 @@ return {
                     "{C:chips}+#1#{} Chips",
                     "Gains {C:chips}+#2#{} Chips",
                     "every hand played",
-                    "{C:inactive}(Goes bad at 100 chips){}"
+                    "{C:inactive}(Goes bad at #3# chips){}"
                 },
             },
 
@@ -1211,7 +1212,7 @@ return {
             c_mahrlatr_mahr_mentioned = {
                 name = 'Mahr Mentioned',
                 text = {
-                    'Applies {C:tarot,E:1}TheMahr{} seal to selected card'
+                    'Applies {C:tarot,E:1}#1#{} seal to selected card'
                 }
             },
             c_mahrlatr_weakness = {
@@ -2198,6 +2199,10 @@ return {
             joker_merged = "Merged!",
 
             joel_nope_hahaha = "Nope! Hahahahahahah",
+
+            fifahr_reverted = "Reverted!",
+
+            mahrbles_trolley_awoken = "Mahrble has awoken!"
         },
 
         achievement_names = {

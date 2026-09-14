@@ -39,16 +39,16 @@ SMODS.Joker { --Mahrffin
     end,
     
     calculate = function(self, card, context)
-        local e = card.ability.extra
+        local e = card.ability.extra or self.config.extra
 
-        if context.before then
+        if context.after then
             return {
                 func = function()
-                    ease_dollars(card.ability.extra.dollars)
+                    ease_dollars(e.dollars)
                     card_eval_status_text(
                         context.blueprint_card or card,
                         'extra', nil, nil, nil, {
-                            message = "+".. localize('$').. card.ability.extra.dollars,
+                            message = "+".. localize('$') .. e.dollars,
                             colour = G.C.MONEY
                         }
                     )
@@ -67,7 +67,7 @@ SMODS.Joker { --Mahrffin
                             "j_mahrlatr_mahrbles_trolley",
                             G.C.RED,
                             "Collected!",
-                            "Mahrble has awake!"
+                            localize("mahrbles_trolley_awoken")
                         )
                     end
                 }

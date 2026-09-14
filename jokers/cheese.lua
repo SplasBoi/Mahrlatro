@@ -14,12 +14,21 @@ SMODS.Joker {
     config = {
         extra = {
             chips = 5,
-            chip_mod = 5
+            chip_mod = 5,
+            chips_max = 100
         }
     },
 
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.chips, card.ability.extra.chip_mod } }
+        local e = card.ability.extra or self.config.extra
+
+        return {
+            vars = {
+                e.chips,
+                e.chip_mod,
+                e.chips_max
+            }
+        }
     end,
 
     calculate = function(self, card, context)
@@ -58,6 +67,7 @@ SMODS.Joker {
                 }
             },
             text_config = { colour = G.C.CHIPS },
+            
             calc_function = function(card)
                 local e = card.ability.extra
 

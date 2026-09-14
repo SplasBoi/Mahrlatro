@@ -1,4 +1,15 @@
-local set_random_poker_hand = nil
+local function get_random_poker_hand(card)
+    local current_hand = card.ability.extra.poker_hand or ""
+    local poker_hands = {}
+
+    for handname, _ in pairs(G.GAME.hands) do
+        if SMODS.is_poker_hand_visible(handname) and handname ~= current_hand then
+            table.insert(poker_hands, handname)
+        end
+    end
+
+    return pseudorandom_element(poker_hands, card.config.center_key)
+end
 
 SMODS.Joker {
     key = "colettahr",
@@ -19,14 +30,14 @@ SMODS.Joker {
 
     config = {
         extra = {
-            poker_hand = 'High Card'
+            poker_hand = "High Card"
         }
     },
 
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                localize(card.ability.extra.poker_hand, 'poker_hands')
+                localize(card.ability.extra.poker_hand, "poker_hands")
             }
         }
     end,
@@ -37,34 +48,23 @@ SMODS.Joker {
     end,
     
     calculate = function(self, card, context)
-        if context.before and context.scoring_name == card.ability.extra.poker_hand then
+        local e = card.ability.extra or self.config.extra
+
+        if context.before and context.scoring_name == e.poker_hand then
             return {
                 func = function()
-                    level_up_hand(card, card.ability.extra.poker_hand)
+                    level_up_hand(card, e.poker_hand)
                 end
             }
         end
 
         if context.end_of_round and not context.game_over and context.main_eval and not context.blueprint then
-            card.ability.extra.poker_hand = get_random_poker_hand(card)
+            e.poker_hand = get_random_poker_hand(card)
 
             return {
                 message = localize('colettahr_do_as_i_say'),
-                sound = "mahrlatr_mahr_no_no_dont"
+                play_sound("mahrlatr_mahr_no_no_dont")
             }
         end
     end
 }
-
-get_random_poker_hand = function(card)
-    local current_hand = card.ability.extra.poker_hand or ""
-    local poker_hands = {}
-
-    for handname, _ in pairs(G.GAME.hands) do
-        if SMODS.is_poker_hand_visible(handname) and handname ~= current_hand then
-            table.insert(poker_hands, handname)
-        end
-    end
-
-    return pseudorandom_element(poker_hands, card.config.center_key)
-end

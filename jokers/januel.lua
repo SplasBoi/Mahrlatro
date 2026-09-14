@@ -1,3 +1,18 @@
+local function draw_entire_deck(original_hand_size, card, context)
+    local e = card.ability.extra
+
+    card_eval_status_text(context.blueprint_card or card, "extra", nil, nil, nil, {message = tostring(e.hands).." Hand", colour = G.C.BLUE})
+    G.GAME.current_round.hands_left = e.hands
+
+    card_eval_status_text(context.blueprint_card or card, "extra", nil, nil, nil, {message = tostring(e.discards).." Discards", colour = G.C.BLUE})
+    G.GAME.current_round.discards_left = e.discards
+
+    local amount = #G.playing_cards - original_hand_size
+    G.hand:change_size(amount)
+
+    return amount
+end
+
 SMODS.Joker{
     key = "januel",
 
@@ -76,18 +91,3 @@ SMODS.Joker{
         end
     end
 }
-
-draw_entire_deck = function(original_hand_size, card, context)
-    local e = card.ability.extra
-
-    card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = tostring(e.hands).." Hand", colour = G.C.BLUE})
-    G.GAME.current_round.hands_left = e.hands
-
-    card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = tostring(e.discards).." Discards", colour = G.C.BLUE})
-    G.GAME.current_round.discards_left = e.discards
-
-    local amount = #G.playing_cards - original_hand_size
-    G.hand:change_size(amount)
-
-    return amount
-end

@@ -73,7 +73,7 @@ SMODS.Joker {
                     ref_value = "dollars",
                 }
             },
-            text_config = { colour = G.C.GOLD },
+            text_config = { colour = G.C.MONEY },
 
             reminder_text = {
                 {

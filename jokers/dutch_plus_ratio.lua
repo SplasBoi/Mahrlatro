@@ -1,4 +1,14 @@
-local get_mult = nil
+local function get_mult(starting_number)
+    if (not G.playing_cards) then return 0 end
+
+    local deck_size = #G.playing_cards
+
+    if deck_size <= starting_number then
+        return starting_number - deck_size
+    else
+        return 0
+    end
+end
 
 SMODS.Joker {
     key = "dutch_plus_ratio",
@@ -25,14 +35,9 @@ SMODS.Joker {
 
     config = {
         extra = {
-            -- Epic Weed
             epic_weed_mult = 3,
-
-            -- Vaalserberg
             vaalserberg_chip_mod = 322,
             vaalserberg_h_size = 2,
-
-            -- Sea Level
             sea_level_scaling = 1
         }
     },
@@ -45,17 +50,14 @@ SMODS.Joker {
                 colours = {
                     G.C.SUITS["Clubs"]
                 },
-
-                -- Epic Weed
                 e.epic_weed_mult,
 
-                -- Vaalserberg
                 e.vaalserberg_chip_mod,
                 e.vaalserberg_h_size,
-                
-                -- Sea Level
+
                 e.sea_level_scaling,
                 G.GAME.starting_deck_size,
+                
                 get_mult(G.GAME.starting_deck_size),
             }
         }
@@ -89,15 +91,3 @@ SMODS.Joker {
         end
     end
 }
-
-get_mult = function(starting_number)
-    if (not G.playing_cards) then return 0 end
-
-    local deck_size = #G.playing_cards
-
-    if deck_size <= starting_number then
-        return starting_number - deck_size
-    else
-        return 0
-    end
-end

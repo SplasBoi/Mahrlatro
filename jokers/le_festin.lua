@@ -81,7 +81,7 @@ SMODS.Joker {
                     ref_value = "mult",
                 }
             },
-            text_config = { colour = G.C.RED }
+            text_config = { colour = G.C.MULT }
         }
     end
 }

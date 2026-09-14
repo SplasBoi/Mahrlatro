@@ -1,4 +1,23 @@
-local instantiate_green_card = nil
+local function instantiate_green_card(card, context)
+    for _, joker in ipairs(G.jokers.cards) do
+        if joker.config.center.key == "j_red_card" then
+            SMODS.destroy_cards(joker, nil, nil, false)
+
+            card:juice_up(0.5, 0.5)
+
+            SMODS.calculate_effect({
+                message = localize("fifahr_reverted"),
+                colour = G.C.GREEN
+                }, context.blueprint_card or card
+            )
+
+            local green_card = JokerUtility.instantiate_joker("j_mahrlatr_green_card")
+            if green_card then
+                green_card.ability.extra.mult = joker.ability.mult
+            end
+        end
+    end
+end
 
 SMODS.Joker {
     key = "fifahr",
@@ -23,35 +42,16 @@ SMODS.Joker {
                 local scored_card = context.other_card
                 G.E_MANAGER:add_event(Event({
                     func = function()
-                        
                         assert(SMODS.change_base(scored_card, "Clubs", nil))
-                        message = "Card Reverted!"
+                        message = localize("fifahr_reverted")
                         return true
                     end
                 }))
-            return {
-                message = localize('fifahr_suit_change')
-            }
+            
+                return {
+                    message = localize('fifahr_suit_change')
+                }
             end
         end
     end
 }
-
-instantiate_green_card = function(card, context)
-    for _, joker in ipairs(G.jokers.cards) do
-        if joker.config.center.key == "j_red_card" then
-            SMODS.destroy_cards(joker, nil, nil, false)
-
-            card:juice_up(0.5, 0.5)
-
-            SMODS.calculate_effect({
-                message = "Reverted!", --Add funny message here
-                colour = G.C.GREEN },
-                context.blueprint_card or card
-            )
-
-            local green_card = JokerUtility.instantiate_joker("j_mahrlatr_green_card")
-            green_card.ability.extra.mult = joker.ability.mult
-        end
-    end
-end

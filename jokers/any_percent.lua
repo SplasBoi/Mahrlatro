@@ -57,7 +57,7 @@ SMODS.Joker {
                     ref_value = "mult"
                 }
             },
-            text_config = { colour = G.C.RED },
+            text_config = { colour = G.C.MULT },
             
             calc_function = function(card)
                 local e = card.ability.extra
