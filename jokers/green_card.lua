@@ -67,5 +67,22 @@ SMODS.Joker {
                 mult = e.mult
             }
         end
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        return {
+            text = {
+                { text = "+" },
+                {
+                    ref_table = "card.joker_display_values",
+                    ref_value = "mult"
+                }
+            },
+            text_config = { colour = G.C.RED },
+            
+            calc_function = function(card)
+                card.joker_display_values.mult = card.ability.extra.mult
+            end
+        }
     end
 }
