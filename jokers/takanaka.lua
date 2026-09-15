@@ -4,7 +4,7 @@ SMODS.Joker {
     config = {
         extra = {
             chips = 75,
-            required_jokers_to_merge = { "j_mahrlatr_feijoada", "j_mahrlatr_bossa_nova" },
+            required_jokers_to_merge = { "j_turtle_bean", "j_mahrlatr_bossa_nova" },
             required_language = "pt_BR"
         }
     },
