@@ -24,6 +24,48 @@ return {
                 }
             },
 
+            j_hallucination = {
+                name = "Hallucinahrtion",
+                text = {
+                    "{C:green}#1# in #2#{} chance to create",
+                    "a {C:tarot}Tahrot{} card when any",
+                    "{C:attention}Boostahr Pack{} is opened",
+                    "{C:inactive}(Must have room)",
+                },
+            },
+
+            j_bloodstone = {
+                name = "Chaos Emerahrld"
+            },
+
+            j_even_steven = {
+                name = "Even Stevahrn"
+            },
+
+            j_odd_todd = {
+                name = "Odd Stevahrn"
+            },
+
+            j_burglar = {
+                name = "Burglahr"
+            },
+
+            j_chaos = {
+                name = "Chaos the Clahrwn",
+                text = {
+                    "{C:attention}#1#{} free {C:green}Reroll",
+                    "per Mahrket",
+                },
+            },
+
+            j_pareidolia = {
+                name = "Pareidoliahr"
+            },
+
+            j_midas_mask = {
+                name = "Midas Mahrsk"
+            },
+
             j_wee = {
                 name = 'Wee Mahr',
                 text = {
@@ -229,7 +271,7 @@ return {
             },
 
             j_bootstraps = {
-                name = "Mahrllionaire"
+                name = "Billionahr"
             },
 
             j_dna = {
