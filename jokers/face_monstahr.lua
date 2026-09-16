@@ -69,7 +69,7 @@ SMODS.Joker {
         end
     end,
 
-    joker_display_def = function ()
+    joker_display_def = function(JokerDisplay)
         ---@type JDJokerDefinition
         
         return {
