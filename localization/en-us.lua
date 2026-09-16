@@ -288,8 +288,7 @@ return {
                 text = {
                     "Retrigger",
                     "each played",
-                    "#1#",
-                    --"{C:attention}6{}, {C:attention}7{}, {C:attention}8{}, or {C:attention}9{}",
+                    "{C:attention}#1#{}"
                 },
             },
 

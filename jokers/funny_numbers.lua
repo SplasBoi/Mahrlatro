@@ -10,7 +10,7 @@ local function get_valid_numbers_loc_string(min, max)
     local parts = {}
 
     for i = min, max do
-        parts[#parts + 1] = "{C:attention}" .. i .. "{}"
+        parts[#parts + 1] = i
     end
 
     if #parts == 1 then
