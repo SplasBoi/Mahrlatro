@@ -965,8 +965,8 @@ return {
             j_mahrlatr_door_mahrfia = {
                 name = "Door Mahrfia",
                 text = {
-                    "If hand contains {C:attention}Pair{},",
-                    "Gives {C:money}#1##2#{} for each scored card,",
+                    "If played hand contains {C:attention}#3#{}",
+                    "gives {C:money}#1##2#{} for each card scored",
                     "and then destroys them"
                 }
             },
