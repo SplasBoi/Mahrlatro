@@ -1169,9 +1169,9 @@ return {
             j_mahrlatr_considerable_girth = {
                 name = "Considerable Girth",
                 text = {
-                    "Adds the rank of all",
-                    "cards held in hand",
-                    "to Chips"
+                    "Adds the the sum of",
+                    "all held cards' ranks",
+                    "to {C:chips}Chips{}"
                 }
             },
 

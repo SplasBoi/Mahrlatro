@@ -23,7 +23,7 @@ SMODS.Joker {
     rarity = 1,
 
     calculate = function(self, card, context)
-        if not context.end_of_round and context.individual and context.cardarea == G.hand then
+        if not context.end_of_round and context.individual and context.cardarea == G.hand and context.other_card.facing == "front" then
             local held_card = context.other_card
 
             return {
@@ -50,7 +50,7 @@ SMODS.Joker {
                 local chips = 0
 
                 for _, deck_card in ipairs(G.hand.cards) do
-                    if not deck_card.highlighted and not SMODS.has_no_rank(deck_card) and not deck_card.debuff then
+                    if not deck_card.highlighted and not SMODS.has_no_rank(deck_card) and not deck_card.debuff and deck_card.facing == "front" then
                         chips = chips + deck_card.base.nominal
                     end
                 end
