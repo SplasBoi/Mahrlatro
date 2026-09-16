@@ -30,18 +30,22 @@ SMODS.Joker {
     },
 
     loc_vars = function(self, info_queue, card)
+        local e = card.ability.extra or self.config.extra
+
         return {
             vars = {
-                card.ability.extra.current_mult,
-                card.ability.extra.scaling,
+                e.current_mult,
+                e.scaling,
             }
         }
     end,
 
     calculate = function(self, card, context)
+        local e = card.ability.extra or self.config.extra
+
         if context.end_of_round and context.main_eval and not context.game_over then
             SMODS.scale_card(card, {
-                ref_table = card.ability.extra,
+                ref_table = e,
                 ref_value = 'current_mult',
                 scalar_value = 'scaling',
                 message_colour = G.C.ATTENTION
@@ -50,12 +54,25 @@ SMODS.Joker {
 
         if context.joker_main then
             return {
-                mult = card.ability.extra.current_mult
+                mult = e.current_mult
             }
         end
     end,
 
     check_for_unlock = function(self, args)
         return args.type == 'win_custom'
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        return {
+            text = {
+                { text = "+" },
+                {
+                    ref_table = "card.ability.extra",
+                    ref_value = "current_mult",
+                }
+            },
+            text_config = { colour = G.C.MULT }
+        }
     end
 }
