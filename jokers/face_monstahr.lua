@@ -67,5 +67,51 @@ SMODS.Joker {
                 return nil, true -- This is for Joker retrigger purposes
             end
         end
+    end,
+
+    joker_display_def = function ()
+        ---@type JDJokerDefinition
+        
+        return {
+            text = {
+                { text = "+" },
+                { ref_table = "card.joker_display_values", ref_value = "count", retrigger_type = "mult" },
+            },
+
+            text_config = { colour = G.C.SECONDARY_SET.Tarot },
+
+            extra = {
+                {
+                    { text = "(" },
+                    { ref_table = "card.joker_display_values", ref_value = "odds" },
+                    { text = ")" },
+                }
+            },
+
+            extra_config = { colour = G.C.GREEN, scale = 0.3 },
+
+            calc_function = function(card)
+                local count = 0
+                local in_blind = G.GAME.blind and G.GAME.blind.in_blind or G.STATE == G.STATES.SELECTING_HAND or
+                    G.STATE == G.STATES.HAND_PLAYED or G.STATE == G.STATES.DRAW_TO_HAND
+                    
+                local hand = in_blind and G.hand.highlighted or {}
+                for _, playing_card in pairs(hand) do
+                    if playing_card.facing and not (playing_card.facing == 'back') and playing_card:is_face() then
+                        count = count + 1
+                    end
+                end
+
+                card.joker_display_values.count = count
+
+                local numerator, denominator = SMODS.get_probability_vars(card, card.ability.extra.numerator, card.ability.extra.denominator, 'black_metahrl')
+
+                card.joker_display_values.odds = localize { 
+                    type = 'variable',
+                    key = "jdis_odds",
+                    vars = { numerator, denominator }
+                }
+            end
+        }
     end
 }
