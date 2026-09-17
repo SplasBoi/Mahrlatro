@@ -1,12 +1,28 @@
-local get_stahr_count
+local function get_stahr_count()
+    if not G.jokers then
+        return 0
+    end
 
-SMODS.Joker{ --Supahr Nutellio
+    local count = 0
+    for _, joker in ipairs(G.jokers.cards) do
+        if joker.config.center.key == 'j_mahrlatr_the_stahr' then
+            count = count + 1
+        end
+    end
+    return count
+end
+        
+
+SMODS.Joker{
     key = "supahr_nutellio",
 
     config = {
         extra = {
             chips = 67,
-            required_jokers_to_merge = {"j_mahrlatr_nutella_sweep", "j_mahrlatr_nutellas_cahr"}
+            required_jokers_to_merge = {
+                "j_mahrlatr_nutella_sweep",
+                "j_mahrlatr_nutellas_cahr"
+            }
         }
     },
     
@@ -41,57 +57,64 @@ SMODS.Joker{ --Supahr Nutellio
     end,
     
     calculate = function(self, card, context)
+        local e = card.ability.extra or self.config.extra
+
         if context.joker_main then
             local stahr_count = get_stahr_count()
 
-            if stahr_count > 0 then
-                local base_chips = card.ability.extra.chips
+            if stahr_count < 1 then
+                return {
+                    chips = card.ability.extra.chips
+                }
+            else
+                local base_chips = e.chips
                 local total_chips = base_chips + (stahr_count * base_chips)
                 return {
                     chips = total_chips,
                     message = localize('supahr_nutellio_easy'),
-                    sound = 'mahrlatr_nutella_easy'
-                }
-            
-            else
-                return {
-                    chips = card.ability.extra.chips
+                    SoundUtility.play_sound_if_exists("mahrlatr_nutella_easy")
                 }
             end
         end
 
-        if context.ending_shop then
-            local e = card.ability.extra
-
-            if JokerUtility.can_merge_jokers(e.required_jokers_to_merge) then
-                return {
-                    func = function ()
-                        return JokerUtility.slice_and_merge_jokers(
-                            context,
-                            card,
-                            "j_mahrlatr_romahrnia",
-                            HEX('002B7F'),
-                            "EZ!",
-                            "Bine ai venit în Româhrnia!"
-                        )
-                    end
-                }
-            end
+        if context.ending_shop and JokerUtility.can_merge_jokers(e.required_jokers_to_merge) then
+            return {
+                func = function ()
+                    return JokerUtility.slice_and_merge_jokers(
+                        context,
+                        card,
+                        "j_mahrlatr_romahrnia",
+                        HEX('002B7F'),
+                        "EZ!",
+                        "Bine ai venit în Româhrnia!"
+                    )
+                end
+            }
         end
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        return {
+            text = {
+                { text = "+" },
+                {
+                    ref_table = "card.joker_display_values",
+                    ref_value = "chips"
+                }
+            },
+            text_config = { colour = G.C.CHIPS },
+
+            calc_function = function(card)
+                local e = card.ability.extra
+
+                local stahr_count = get_stahr_count()
+
+                if stahr_count < 1 then
+                    card.joker_display_values.chips = e.chips
+                else
+                    card.joker_display_values.chips = e.chips + (e.chips * stahr_count)
+                end
+            end
+        }
     end
 }
-
-get_stahr_count = function()
-    if not G.jokers then
-        return 0
-    end
-
-    local count = 0
-    for _, joker in ipairs(G.jokers.cards) do
-        if joker.config.center.key == 'j_mahrlatr_the_stahr' then
-            count = count + 1
-        end
-    end
-    return count
-end
-        
