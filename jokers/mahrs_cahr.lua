@@ -58,5 +58,33 @@ SMODS.Joker {
                 end
             }
         end
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        return {
+            text = {
+                {
+                    text = "+" .. localize("$")
+                },
+                {
+                    ref_table = "card.joker_display_values",
+                    ref_value = "dollars"
+                },
+            },
+
+            text_config = {
+                colour = G.C.MONEY
+            },
+
+            calc_function = function(card)
+                local e = card.ability.extra
+
+                card.joker_display_values.dollars = 0
+
+                if G.GAME.current_round.hands_left == 1 then
+                    card.joker_display_values.dollars = e.dollars
+                end
+            end
+        }
     end
 }
