@@ -39,25 +39,10 @@ SMODS.Joker { --The Stahr
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play then
             local card_id = context.other_card:get_id()
-            if (card_id == 6 or card_id == 7) then
+            
+            if card_id == 6 or card_id == 7 then
                 return {
-                    func = function()
-                        local amount = card.ability.extra.dollars
-                        
-                        ease_dollars(amount)
-                        card_eval_status_text(
-                            context.blueprint_card or card,
-                            'extra',
-                            nil,
-                            nil,
-                            nil,
-                            {
-                                message = "+".. amount,
-                                colour = G.C.MONEY
-                            }
-                        )
-                        return true
-                    end
+                    dollars = card.ability.extra.dollars
                 }
             end
         end
