@@ -1,50 +1,92 @@
-SMODS.Joker:take_ownership('j_flower_pot',
-    { -- table of properties to change from the existing object
-    pos = { x = 6, y = 12 },
+SMODS.Joker {
+    key = "pirannahr_plant",
+
+    pos = {
+        x = 6,
+        y = 12
+    },
+
     atlas = 'CustomJokers',
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
-    calculate = function(self, card, context)
-        if context.joker_main then
-            local suits = {
-                ['Hearts'] = 0,
-                ['Diamonds'] = 0,
-                ['Spades'] = 0,
-                ['Clubs'] = 0
+
+    blueprint_compat = false,
+    perishable_compat = true,
+    unlocked = true,
+    discovered = false,
+
+    config = {
+        extra = {
+            unique_suits_required = 3,
+            x_mult = 3,
+            scored_suits = {}
+        }
+    },
+
+    loc_vars = function(self, info_queue, card)
+        local e = card.ability.extra or self.config.extra
+
+        return {
+            vars = {
+                e.x_mult,
+                e.unique_suits_required
             }
-            for i = 1, #context.scoring_hand do
-                if not SMODS.has_any_suit(context.scoring_hand[i]) then
-                    if context.scoring_hand[i]:is_suit('Hearts', true) and suits["Hearts"] == 0 then
-                        suits["Hearts"] = 1
-                    elseif context.scoring_hand[i]:is_suit('Diamonds', true) and suits["Diamonds"] == 0 then
-                        suits["Diamonds"] = 1
-                    elseif context.scoring_hand[i]:is_suit('Spades', true) and suits["Spades"] == 0 then
-                        suits["Spades"] = 1
-                    elseif context.scoring_hand[i]:is_suit('Clubs', true) and suits["Clubs"] == 0 then
-                        suits["Clubs"] = 1
-                    end
-                end
+        }
+    end,
+
+    calculate = function(self, card, context)
+        local e = card.ability.extra or self.config.extra
+
+        if context.initial_scoring_step then
+            e.scored_suits = {}
+        end
+
+        if context.joker_main then
+            for _, scored_card in ipairs(context.scoring_hand) do
+                local suit = scored_card.base.suit
+                e.scored_suits[suit] = (e.scored_suits[suit] or 0) + 1
             end
-            for i = 1, #context.scoring_hand do
-                if SMODS.has_any_suit(context.scoring_hand[i]) then
-                    if context.scoring_hand[i]:is_suit('Hearts') and suits["Hearts"] == 0 then
-                        suits["Hearts"] = 1
-                    elseif context.scoring_hand[i]:is_suit('Diamonds') and suits["Diamonds"] == 0 then
-                        suits["Diamonds"] = 1
-                    elseif context.scoring_hand[i]:is_suit('Spades') and suits["Spades"] == 0 then
-                        suits["Spades"] = 1
-                    elseif context.scoring_hand[i]:is_suit('Clubs') and suits["Clubs"] == 0 then
-                        suits["Clubs"] = 1
-                    end
-                end
-            end
-            if suits["Hearts"] + suits["Diamonds"] + suits["Spades"] + suits["Clubs"] > 2 then
-                local fallback_xmult = 3
+
+            if TableUtility.dict_size(e.scored_suits) >= e.unique_suits_required then
                 return {
-                    xmult = card.ability.extra or fallback_xmult
+                    x_mult = e.x_mult
                 }
             end
         end
     end,
-    },
-    false -- silent suppresses mod badge
-)
+
+    joker_display_def = function(JokerDisplay)
+        return {
+            text = {
+                {
+                    border_nodes = {
+                        { text = "X" },
+                        {
+                            ref_table = "card.joker_display_values",
+                            ref_value = "x_mult",
+                            retrigger_type = "exp"
+                        }
+                    }
+                }
+            },
+            text_config = { colour = G.C.WHITE },
+
+            calc_function = function(card)
+                local e = card.ability.extra
+                scored_suits = {}
+
+                text, _, scoring_hand = JokerDisplay.evaluate_hand()
+
+                for _, scored_card in ipairs(scoring_hand) do
+                    local suit = scored_card.base.suit
+                    scored_suits[suit] = (scored_suits[suit] or 0) + 1
+                end
+
+                if TableUtility.dict_size(scored_suits) >= e.unique_suits_required then
+                    card.joker_display_values.x_mult = e.x_mult
+                else
+                    card.joker_display_values.x_mult = 1
+                end
+            end
+        }
+    end
+}

@@ -262,11 +262,11 @@ return {
                 }
             },
 
-            j_flower_pot = {
+            j_mahrlatr_pirannahr_plant = {
                 name = "Pirannahr Plant",
                 text = {
-                    "{X:mult,C:white} X#1# {} Mult if pokahr",
-                    "hand contains {C:attention}3 unique suits{}"
+                    "{X:mult,C:white} X#1# {} Mult if scoring",
+                    "hand contains {C:attention}#2# unique suits{}"
                 }
             },
 
