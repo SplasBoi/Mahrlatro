@@ -1,3 +1,7 @@
+local function should_score(context)
+    return context and not context.end_of_round and context.individual and context.cardarea == G.hand and context.other_card.facing == "front"
+end
+
 SMODS.Joker {
     key = "considerable_girth",
 
@@ -23,7 +27,7 @@ SMODS.Joker {
     rarity = 1,
 
     calculate = function(self, card, context)
-        if not context.end_of_round and context.individual and context.cardarea == G.hand and context.other_card.facing == "front" then
+        if should_score(context) then
             local held_card = context.other_card
 
             return {
@@ -48,10 +52,14 @@ SMODS.Joker {
 
             calc_function = function(card)
                 local chips = 0
+                local hand = G.hand.cards
 
-                for _, deck_card in ipairs(G.hand.cards) do
-                    if not deck_card.highlighted and not SMODS.has_no_rank(deck_card) and not deck_card.debuff and deck_card.facing == "front" then
-                        chips = chips + deck_card.base.nominal
+                for _, deck_card in ipairs(hand) do
+                    if not deck_card.highlighted
+                    and not SMODS.has_no_rank(deck_card)
+                    and not deck_card.debuff
+                    and deck_card.facing == "front" then
+                        chips = chips + deck_card.base.nominal * JokerDisplay.calculate_card_triggers(deck_card, hand)
                     end
                 end
 
