@@ -66,5 +66,25 @@ SMODS.Joker {
                 SoundUtility.play_sound_if_exists("mahrlatr_mahr_no_no_dont")
             }
         end
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        return {
+            reminder_text = {
+                { text = "(" },
+                {
+                    ref_table = "card.joker_display_values",
+                    ref_value = "poker_hand_loc",
+                    colour = G.C.ORANGE
+                },
+                { text = ")" }
+            },
+
+            calc_function = function(card)
+                local e = card.ability.extra
+
+                card.joker_display_values.poker_hand_loc = localize(e.poker_hand, "poker_hands")
+            end
+        }
     end
 }
