@@ -45,6 +45,33 @@ SMODS.Joker{ --Nutella Sweep
                 Xmult = get_mult(card)
             }
         end
+    end,
+    
+    joker_display_def = function(JokerDisplay)
+        return {
+            text = {
+                {
+                    border_nodes = {
+                        { text = "X" },
+                        {
+                            ref_table = "card.joker_display_values",
+                            ref_value = "x_mult",
+                            retrigger_type = "exp"
+                        }
+                    }
+                }
+            },
+            text_config = { colour = G.C.WHITE },
+
+            calc_function = function(card)
+                local consumables_used = get_consumables_used()
+                card.joker_display_values.x_mult = 1
+                
+                if consumables_used > 0 then
+                    card.joker_display_values.x_mult = 1 + get_consumables_used() * card.ability.extra.mult_bonus
+                end
+            end
+        }
     end
 }
 
