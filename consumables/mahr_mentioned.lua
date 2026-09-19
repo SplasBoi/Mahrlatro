@@ -50,7 +50,7 @@ SMODS.Consumable {
                 trigger = 'after',
                 delay = 0.4,
                 func = function()
-                    SoundUtility.play_sound_if_exists("tarot1")
+                    play_sound("tarot1")
                     used_card:juice_up(0.3, 0.5)
                     return true
                 end
@@ -65,7 +65,7 @@ SMODS.Consumable {
                     func = function()
                         if c and c.flip then
                             c:flip()
-                            SoundUtility.play_sound_if_exists("card1", percent)
+                            play_sound("card1", percent)
                             c:juice_up(0.3, 0.3)
                         end
                         return true
@@ -97,7 +97,7 @@ SMODS.Consumable {
                     func = function()
                         if c and c.flip then
                             c:flip()
-                            SoundUtility.play_sound_if_exists("tarot2", percent, 0.6)
+                            play_sound("tarot2", percent, 0.6)
                             c:juice_up(0.3, 0.3)
                         end
                         return true
