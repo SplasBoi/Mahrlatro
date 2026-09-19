@@ -27,10 +27,29 @@ SMODS.Joker {
             r_chips[#r_chips + 1] = tostring(i)
         end
 
+        local loc_chips = ' Chips '
+
         local main_start = {
             { n = G.UIT.T, config = { text = '+', colour = G.C.CHIPS, scale = 0.32 } },
             { n = G.UIT.O, config = { object = DynaText({ string = r_chips, colours = { G.C.CHIPS }, pop_in_rate = 9999999, silent = true, random_element = true, pop_delay = 0.5, scale = 0.32, min_cycle_time = 0 }) } },
-            { n = G.UIT.T, config = { text = ' chips', colour = G.C.CHIPS, scale = 0.32 } },
+            {
+                n = G.UIT.O,
+                config = {
+                    object = DynaText({
+                        string = {
+                            { string = 'rand()', colour = G.C.JOKER_GREY }, { string = "#@" .. (G.deck and G.deck.cards[1] and G.deck.cards[#G.deck.cards].base.id or 11) .. (G.deck and G.deck.cards[1] and G.deck.cards[#G.deck.cards].base.suit:sub(1, 1) or 'D'), colour = G.C.CHIPS },
+                            loc_chips, loc_chips, loc_chips, loc_chips, loc_chips, loc_chips, loc_chips, loc_chips, loc_chips,
+                            loc_chips, loc_chips, loc_chips, loc_chips },
+                        colours = { G.C.UI.TEXT_DARK },
+                        pop_in_rate = 9999999,
+                        silent = true,
+                        random_element = true,
+                        pop_delay = 0.2011,
+                        scale = 0.32,
+                        min_cycle_time = 0
+                    })
+                }
+            },
 
         }
         return { main_start = main_start }
@@ -42,5 +61,37 @@ SMODS.Joker {
                 chips = pseudorandom('mahrlatr_noiflo', card.ability.extra.min, card.ability.extra.max)
             }
         end
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        local e = G.P_CENTERS["j_mahrlatr_noiflo"].config.extra
+
+        return {
+            text = {
+                { text = "+", colour = G.C.CHIPS },
+                {
+                    dynatext = {
+                        string = (
+                            function()
+                                local r_mult = {}
+
+                                for i = e.min, e.max do
+                                    r_mult[#r_mult + 1] = tostring(i)
+                                end
+
+                                return r_mult
+                            end
+                        )(),
+                        colours = { G.C.CHIPS },
+                        pop_in_rate = 9999999,
+                        silent = true,
+                        random_element = true,
+                        pop_delay = 0.5,
+                        scale = 0.4,
+                        min_cycle_time = 0
+                    }
+                }
+            }
+        }
     end
 }
