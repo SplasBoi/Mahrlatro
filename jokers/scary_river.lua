@@ -70,6 +70,61 @@ SMODS.Joker {
                 mult = e.mult
             }
         end
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        return {
+            text = {
+                { text = "+" },
+                {
+                    ref_table = "card.joker_display_values",
+                    ref_value = "mult",
+                    retrigger_type = "mult"
+                },
+            },
+
+            text_config = { colour = G.C.MULT },
+            
+            reminder_text = {
+                { text = "(" },
+                {
+                    ref_table = "card.joker_display_values",
+                    ref_value = "buffed_suit"
+                },
+                { text = ")" },
+            },
+
+            calc_function = function(card)
+                local e = card.ability.extra
+                card.joker_display_values.buffed_suit = e.suit
+
+                local mult = 0
+                card.joker_display_values.mult = mult
+                local text, _, scoring_hand = JokerDisplay.evaluate_hand()
+
+                if text ~= "Unknown" and e.suit ~= "Multiple" then
+                    for _, scoring_card in pairs(scoring_hand) do
+                        if scoring_card:is_suit(e.suit) then
+                            mult = mult + e.mult * JokerDisplay.calculate_card_triggers(scoring_card, scoring_hand)
+                        end
+                    end
+                end
+
+                card.joker_display_values.mult = mult
+            end,
+
+            style_function = function(card, text, reminder_text, extra)
+                local e = card.ability.extra
+
+                if reminder_text and reminder_text.children[2] then
+                    reminder_text.children[2].config.colour = G.C.GREY
+
+                    if e.suit ~= "Multiple" then
+                        reminder_text.children[2].config.colour = lighten(G.C.SUITS[e.suit], 0.35)
+                    end
+                end
+            end
+        }
     end
 }
 
