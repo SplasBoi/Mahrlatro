@@ -75,8 +75,7 @@ SMODS.Joker { --Mahrbles Trolley
     joker_display_def = function(JokerDisplay)
         -- TODO: 
         return {
-            text = {
-                -- Mult
+            text = { -- Mult
                 {
                     text = "+",
                     colour = G.C.MULT
@@ -86,27 +85,31 @@ SMODS.Joker { --Mahrbles Trolley
                     ref_value = "mult",
                     colour = G.C.MULT
                 },
+            },
 
-                -- Chips
-                {
-                    text = "+",
-                    colour = G.C.CHIPS
-                },
-                {
-                    ref_table = "card.ability.extra",
-                    ref_value = "chips",
-                    colour = G.C.CHIPS
+            extra = {
+                { -- Chips
+                    {
+                        text = "+",
+                        colour = G.C.CHIPS
+                    },
+                    {
+                        ref_table = "card.ability.extra",
+                        ref_value = "chips",
+                        colour = G.C.CHIPS
+                    },
                 },
 
-                -- Dollars
-                {
-                    text = "+" .. localize("$"),
-                    colour = G.C.MONEY
-                },
-                {
-                    ref_table = "card.ability.extra",
-                    ref_value = "dollars",
-                    colour = G.C.MONEY
+                { -- Dollars
+                    {
+                        text = "+" .. localize("$"),
+                        colour = G.C.MONEY
+                    },
+                    {
+                        ref_table = "card.ability.extra",
+                        ref_value = "dollars",
+                        colour = G.C.MONEY
+                    }
                 }
             }
         }
