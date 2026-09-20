@@ -392,6 +392,12 @@ SMODS.Sound {
     pitch = 1.0
 }
 
+SMODS.Sound {
+    key = "nutella_cahr_honk",
+    path = "sfx/nutella_cahr_honk.ogg",
+    pitch = 1.0
+}
+
 -- Music
 
 SMODS.Sound({

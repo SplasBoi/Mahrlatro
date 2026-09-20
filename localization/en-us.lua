@@ -778,9 +778,9 @@ return {
             j_mahrlatr_nutellas_cahr = {
                 name = "Nutella\'s Cahr",
                 text = {
-                    "If first played hand of round has",
-                    "only {C:attention}1{} card, increases",
-                    "its rank by {C:attention}1{}"
+                    "If {C:attention}first hand{} of",
+                    "round has only {C:attention}1{} card,",
+                    "increases its rank by {C:attention}1{}"
                 }
             },
 
