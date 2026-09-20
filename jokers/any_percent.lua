@@ -64,9 +64,9 @@ SMODS.Joker {
                 local hand_name = JokerDisplay.current_hand_info.text
 
                 if G.GAME.hands[hand_name] then
-                    local hand_level = G.GAME.hands[hand_name].level or 1
-                    local scaling = e.mult_scaling or 1
-                    local mult = hand_level > 1 and hand_level * scaling or 0
+                    local hand_level = G.GAME.hands[hand_name].level
+                    local scaling = e.mult_scaling
+                    local mult = hand_level * scaling
 
                     card.joker_display_values.mult = mult
                 else
