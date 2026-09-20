@@ -70,6 +70,28 @@ SMODS.Joker { --Scary Crimson
 
     check_for_unlock = function(self, args)
         return count_red_cards() >= 52
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        return {
+            text = {
+                {
+                    border_nodes = {
+                        { text = "X" },
+                        {
+                            ref_table = "card.joker_display_values",
+                            ref_value = "x_mult",
+                            retrigger_type = "exp"
+                        }
+                    }
+                }
+            },
+            
+            text_config = { colour = G.C.WHITE },
+            calc_function = function(card)
+                card.joker_display_values.x_mult = get_x_mult(count_black_cards())
+            end
+        }
     end
 }
 
