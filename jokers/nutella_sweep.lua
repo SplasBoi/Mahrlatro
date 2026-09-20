@@ -64,12 +64,7 @@ SMODS.Joker{ --Nutella Sweep
             text_config = { colour = G.C.WHITE },
 
             calc_function = function(card)
-                local consumables_used = get_consumables_used()
-                card.joker_display_values.x_mult = 1
-                
-                if consumables_used > 0 then
-                    card.joker_display_values.x_mult = 1 + get_consumables_used() * card.ability.extra.mult_bonus
-                end
+                card.joker_display_values.x_mult = get_mult(card)
             end
         }
     end
