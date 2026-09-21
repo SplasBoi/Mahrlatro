@@ -41,12 +41,15 @@ SMODS.Joker {
     end,
     
     calculate = function(self, card, context)
-        card.joker_display_values.x_mult = 1
-
-        local _, poker_hands, _ = JokerDisplay.evaluate_hand()
-
-        if poker_hands[card.ability.extra.hand1] and next(poker_hands[card.ability.extra.hand1]) then
-            card.joker_display_values.x_mult = card.ability.x_mult
+        if context.joker_main then
+            local contains_flush = next(context.poker_hands[card.ability.extra.hand1])
+            local contains_3oak = next(context.poker_hands[card.ability.extra.hand2])
+            
+            if contains_flush and contains_3oak then
+                return {
+                    x_mult = card.ability.extra.x_mult
+                }
+            end 
         end
     end,
 
