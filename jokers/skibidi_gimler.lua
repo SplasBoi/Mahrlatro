@@ -73,8 +73,8 @@ SMODS.Joker{
                     border_nodes = {
                         { text = "X" },
                         {
-                            ref_table = "card.joker_display_values",
-                            ref_value = "x_chips",
+                            ref_table = "card.ability.extra",
+                            ref_value = "gained_x_chips",
                             retrigger_type = "exp"
                         }
                     },
@@ -83,11 +83,7 @@ SMODS.Joker{
                 }
             },
             
-            text_config = { colour = G.C.WHITE },
-
-            calc_function = function(card)
-                card.joker_display_values.x_chips = card.ability.extra.gained_x_chips
-            end
+            text_config = { colour = G.C.WHITE }
         }
     end
 }
