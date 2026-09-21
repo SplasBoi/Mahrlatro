@@ -16,6 +16,10 @@ return {
                 }
             },
 
+            b_abandoned = {
+                name = "Abandahrned Deck"
+            },
+
             j_mahrlatr_mahrbot = {
                 name = 'MahrBot',
                 text = {
@@ -1626,6 +1630,60 @@ return {
                     "a {C:gold}Mahr Seal{},",
                     "halves {C:blue}Chips{}",
                     "when scoring"
+                }
+            },
+
+            b_anaglyph = {
+                name = "Anahrglyph Deck"
+            },
+
+            b_erratic = {
+                name = "Errahrtic Deck"
+            },
+
+            b_ghost = {
+                text = {
+                    "{C:spectral}Spectrahrl{} cards may",
+                    "appear in the Mahrket,",
+                    "start with a {C:spectral,T:c_hex}Hahrx{} card",
+                }
+            },
+
+            b_magic = {
+                name = "Mahrgic Deck",
+                text = {
+                    "Start run with the",
+                    "{C:tarot,T:v_crystal_ball}#1#{} voucher",
+                    "and {C:attention}2{} copies",
+                    "of {C:tarot,T:c_fool}#2#",
+                }
+            },
+
+            b_nebula = {
+                name = "Nebulahr Deck"
+            },
+
+            b_painted = {
+                text = {
+                    "{C:attention}+#1#{} hand size,",
+                    "{C:red}#2#{} Jokahr slot",
+                }
+            },
+
+            b_plasma = {
+                name = "Plasmahr Deck"
+            },
+
+            b_zodiac = {
+                name = "Zodiahrc Deck"
+            },
+
+            b_black = {
+                text = {
+                    "{C:attention}+#1#{} Jokahr slot",
+                    "",
+                    "{C:blue}#2#{} hand",
+                    "every round",
                 }
             }
         },
