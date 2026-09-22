@@ -1,14 +1,20 @@
-local function tally_wilds()
-    local wild_tally = 0
-    
-    for _, playing_card in ipairs(G.playing_cards) do
-        if SMODS.has_enhancement(playing_card, 'm_wild') then wild_tally = wild_tally + 1 end
+local function tally_wilds(cards)
+    if type(cards) ~= "table" then
+        return 0
     end
 
-    return wild_tally
+    local count = 0
+    
+    for _, playing_card in ipairs(cards) do
+        if JokerUtility.is_wild_card(playing_card) then
+            count = count + 1
+        end
+    end
+
+    return count
 end
 
-SMODS.Joker { --Wild Cat
+SMODS.Joker {
     key = "wild_cat",
 
     config = {
@@ -38,42 +44,31 @@ SMODS.Joker { --Wild Cat
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
     
     loc_vars = function(self, info_queue, card)
+        local e = card.ability.extra or self.config.extra
         info_queue[#info_queue + 1] = G.P_CENTERS.m_wild
 
-        local wild_tally = 0
-        if G.playing_cards then
-            for _, playing_card in ipairs(G.playing_cards) do
-                if SMODS.has_enhancement(playing_card, 'm_wild') then wild_tally = wild_tally + 1 end
-            end
-        end
-        return { vars = { card.ability.extra.xmult, 1 + card.ability.extra.xmult * wild_tally } }
+        return {
+            vars = {
+                e.xmult,
+                1 + e.xmult * tally_wilds(G.playing_cards)
+            }
+        }
     end,
+
     calculate = function(self, card, context)
         if context.joker_main then
             return {
-                Xmult = 1 + card.ability.extra.xmult * tally_wilds(),
+                Xmult = 1 + card.ability.extra.xmult * tally_wilds(G.playing_cards),
             }
         end
     end,
+
     in_pool = function(self, args)
-        for _, playing_card in ipairs(G.playing_cards or {}) do
-            if SMODS.has_enhancement(playing_card, 'm_wild') then
-                return true
-            end
-        end
-        return false
+        return tally_wilds(G.playing_cards) > 0
     end,
 
     check_for_unlock = function(self, args)
-        local wilds_in_deck = 0
-
-        for _, playing_card in ipairs(G.playing_cards or {}) do
-            if SMODS.has_enhancement(playing_card, 'm_wild') then
-                wilds_in_deck = wilds_in_deck + 1
-            end
-        end
-
-        return wilds_in_deck >= 9
+        return tally_wilds(G.playing_cards) >= 8
     end,
 
     joker_display_def = function(JokerDisplay)
@@ -93,7 +88,8 @@ SMODS.Joker { --Wild Cat
             text_config = { colour = G.C.WHITE },
 
             calc_function = function(card)
-                card.joker_display_values.x_mult = 1 + card.ability.extra.xmult * tally_wilds()
+                local gained_mult = card.ability.extra.xmult * tally_wilds(G.playing_cards)
+                card.joker_display_values.x_mult = 1 + gained_mult
             end
         }
     end
