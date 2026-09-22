@@ -91,14 +91,14 @@ SMODS.Joker {
                 local e = card.ability.extra
                 local mult = 0
 
+                card.joker_display_values.mult = mult
+                card.joker_display_values.rank = localize(e.random_rank, 'ranks')
+
                 local in_blind = JokerUtility.is_in_blind()
                 local hand = in_blind and G.hand.highlighted or {}
                 local text, _, scoring_hand = JokerDisplay.evaluate_hand()
 
-                if text == "Unknown" then
-                    card.joker_display_values.mult = 0
-                    return
-                end
+                if text ~= "Unknown" then return end
 
                 for _, scoring_card in pairs(scoring_hand) do
                     if scoring_card.facing and not (scoring_card.facing == 'back') and not scoring_card.debuff and scoring_card:get_id() and scoring_card.base.value == e.random_rank then
@@ -107,7 +107,6 @@ SMODS.Joker {
                 end
 
                 card.joker_display_values.mult = mult
-                card.joker_display_values.rank = localize(e.random_rank, 'ranks')
             end
         }
     end
