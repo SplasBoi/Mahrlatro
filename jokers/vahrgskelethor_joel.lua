@@ -98,7 +98,21 @@ SMODS.Joker {
                 mult = card.ability.extra.mult
             }
         end
-    end
+    end,
 
     -- Unlock logic done externally in lovely/wheel_of_fortune.toml
+
+    joker_display_def = function(JokerDisplay)
+        return {
+            text = {
+                { text = "+" },
+                {
+                    ref_table = "card.ability.extra",
+                    ref_value = "mult"
+                }
+            },
+
+            text_config = { colour = G.C.MULT }
+        }
+    end
 }

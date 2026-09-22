@@ -1,5 +1,12 @@
+local function tally_wilds()
+    local wild_tally = 0
+    
+    for _, playing_card in ipairs(G.playing_cards) do
+        if SMODS.has_enhancement(playing_card, 'm_wild') then wild_tally = wild_tally + 1 end
+    end
 
-local get_wildcard_bonus
+    return wild_tally
+end
 
 SMODS.Joker { --Wild Cat
     key = "wild_cat",
@@ -43,12 +50,8 @@ SMODS.Joker { --Wild Cat
     end,
     calculate = function(self, card, context)
         if context.joker_main then
-            local wild_tally = 0
-            for _, playing_card in ipairs(G.playing_cards) do
-                if SMODS.has_enhancement(playing_card, 'm_wild') then wild_tally = wild_tally + 1 end
-            end
             return {
-                Xmult = 1 + card.ability.extra.xmult * wild_tally,
+                Xmult = 1 + card.ability.extra.xmult * tally_wilds(),
             }
         end
     end,
@@ -71,5 +74,27 @@ SMODS.Joker { --Wild Cat
         end
 
         return wilds_in_deck >= 9
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        return {
+            text = {
+                {
+                    border_nodes = {
+                        { text = "X" },
+                        {
+                            ref_table = "card.joker_display_values",
+                            ref_value = "x_mult"
+                        }
+                    }
+                }
+            },
+
+            text_config = { colour = G.C.WHITE },
+
+            calc_function = function(card)
+                card.joker_display_values.x_mult = 1 + card.ability.extra.xmult * tally_wilds()
+            end
+        }
     end
 }
