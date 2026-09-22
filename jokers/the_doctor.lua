@@ -47,15 +47,15 @@ SMODS.Joker { --The Doctor
     
     calculate = function(self, card, context)
         -- If joker/booster pack is bought.
-        if context.buying_card or context.open_booster then
+        if (context.buying_card or context.open_booster) then
             -- Ignore money spent on itself.
-            if context.card and context.card ~= card then
+            if context.card and context.card ~= card and not context.blueprint then
                 register_money_spent(card, context.card.cost)
             end
         end
 
         -- If shop is rerolled, add cost to the count.
-        if context.reroll_shop then
+        if context.reroll_shop and not context.blueprint then
             register_money_spent(card, G.GAME.current_round.reroll_cost - 1)
         end
 
@@ -77,6 +77,25 @@ SMODS.Joker { --The Doctor
                 x_mult = card.ability.extra.current_x_mult,
             }
         end
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        return {
+            text = {
+                {
+                    border_nodes = {
+                        { text = "X" },
+                        {
+                            ref_table = "card.ability.extra",
+                            ref_value = "current_x_mult",
+                            retrigger_type = "exp"
+                        }
+                    }
+                }
+            },
+
+            text_config = { colour = G.C.WHITE },
+        }
     end
 }
 
