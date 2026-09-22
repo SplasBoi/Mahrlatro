@@ -76,11 +76,17 @@ SMODS.Joker {
             reminder_text = {
                 { text = "(" },
                 {
-                    ref_table = "card.ability.extra",
+                    ref_table = "card.joker_display_values",
                     ref_value = "debuffed_suit"
                 },
                 { text = ")" },
             },
+
+            calc_function = function(card)
+                local e = card.ability.extra
+
+                card.joker_display_values.debuffed_suit = localize(e.debuffed_suit, "suits_plural")
+            end,
 
             style_function = function(card, text, reminder_text, extra)
                 local e = card.ability.extra

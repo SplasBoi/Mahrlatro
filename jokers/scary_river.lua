@@ -96,7 +96,7 @@ SMODS.Joker {
 
             calc_function = function(card)
                 local e = card.ability.extra
-                card.joker_display_values.buffed_suit = e.suit
+                card.joker_display_values.buffed_suit = localize(e.suit, "suits_plural")
 
                 local mult = 0
                 card.joker_display_values.mult = mult
