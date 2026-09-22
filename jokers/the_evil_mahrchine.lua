@@ -69,6 +69,27 @@ SMODS.Joker {
         if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
             card.ability.extra.debuffed_suit = reset_suit(card.ability.extra.debuffed_suit)
         end
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        return {
+            reminder_text = {
+                { text = "(" },
+                {
+                    ref_table = "card.ability.extra",
+                    ref_value = "debuffed_suit"
+                },
+                { text = ")" },
+            },
+
+            style_function = function(card, text, reminder_text, extra)
+                local e = card.ability.extra
+
+                if reminder_text and reminder_text.children[2] then
+                    reminder_text.children[2].config.colour = lighten(G.C.SUITS[e.debuffed_suit], 0.35)
+                end
+            end
+        }
     end
 }
 
