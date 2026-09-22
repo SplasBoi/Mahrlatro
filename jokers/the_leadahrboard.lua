@@ -34,10 +34,12 @@ SMODS.Joker {
     -- Gives 10 Mult if card with rank () is scored (idol at home)
     
     loc_vars = function(self, info_queue, card)
+        local e = card.ability.extra
+
         return {
             vars = {
-                card.ability.extra.mult,
-                card.ability.extra.random_rank
+                e.mult,
+                localize(e.random_rank, 'ranks')
             }
         }
     end,
@@ -58,6 +60,56 @@ SMODS.Joker {
         if context.end_of_round and context.main_eval then
             card.ability.extra.random_rank = get_random_card()
         end
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        return {
+            text = {
+                { text = "+" },
+                {
+                    ref_table = "card.joker_display_values",
+                    ref_value = "mult",
+                    retrigger_type = "mult"
+                },
+            },
+
+            text_config = { colour = G.C.MULT },
+
+            reminder_text = {
+                { text = "(" },
+                {
+                    ref_table = "card.joker_display_values",
+                    ref_value = "rank",
+                    colour = G.C.ORANGE
+                },
+                { text = ")" }
+            },
+
+            reminder_text_config = { scale = 0.35 },
+
+            calc_function = function(card)
+                local e = card.ability.extra
+                local mult = 0
+
+                local in_blind = JokerUtility.is_in_blind()
+                local hand = in_blind and G.hand.highlighted or {}
+                local text, _, scoring_hand = JokerDisplay.evaluate_hand()
+
+                if text == "Unknown" then
+                    card.joker_display_values.mult = 0
+                    return
+                end
+
+                for _, scoring_card in pairs(scoring_hand) do
+                    if scoring_card.facing and not (scoring_card.facing == 'back') and not scoring_card.debuff and scoring_card:get_id() and scoring_card.base.value == e.random_rank then
+                        mult = mult + e.mult * JokerDisplay.calculate_card_triggers(scoring_card, hand)
+                    end
+                end
+
+                card.joker_display_values.mult = mult
+                card.joker_display_values.rank = localize(e.random_rank, 'ranks')
+            end
+        }
     end
 }
 
