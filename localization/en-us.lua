@@ -410,7 +410,7 @@ return {
                 name = 'The Doctor',
                 text = {
                     'Gains {X:mult,C:white}X#1#{} Mult for each {C:money}#2##3#{} spent',
-                    'Halves for every round',
+                    'Halves at the end of the round',
                     '{C:inactive}(Currently{} {X:mult,C:white}X#4#{} {C:inactive}Mult){}'
                 }
             },
@@ -582,7 +582,7 @@ return {
                         'scoring {C:red,E:2}red{} suit cards'
                     },
                     {
-                        '{C:inactive}Merges into Mahrbles Trolley{}',
+                        '{C:inactive}Merges into Mahrble\'s Trolley{}',
                         '{C:inactive}if you own Mahrffin and Fish{}',
                         '{C:inactive}at the start of a round{}'
                     }
@@ -597,7 +597,7 @@ return {
                         'played {C:blue}hand'
                     },
                     {
-                        '{C:inactive}Merges into Mahrbles Trolley{}',
+                        '{C:inactive}Merges into Mahrble\'s Trolley{}',
                         '{C:inactive}if you own Meat and Fish{}',
                         '{C:inactive}at the start of a round{}'
                     }
@@ -612,7 +612,7 @@ return {
                         'scoring {C:black,E:2}black{} suit cards'
                     },
                     {
-                        '{C:inactive}Merges into Mahrbles Trolley{}',
+                        '{C:inactive}Merges into Mahrble\'s Trolley{}',
                         '{C:inactive}if you own Meat and Marffin{}',
                         '{C:inactive}at the start of a round{}'
                     }
@@ -639,7 +639,7 @@ return {
             },
 
             j_mahrlatr_mahrbles_trolley = {
-                name = 'Mahrbles Trolley',
+                name = 'Mahrble\'s Trolley',
                 text = {
                     '{C:red}+#1#{} Mult, {C:blue}+#2#{} Chips',
                     'and {C:money}#3##4#{} for each',
@@ -895,7 +895,7 @@ return {
             },
 
             j_mahrlatr_mabels_house = {
-                name = "Mabels House",
+                name = "Mabel's House",
                 text = {
                     "{C:green}#2# in #3#{} chance of upgrading hand level",
                     "if hand contains #1#"
