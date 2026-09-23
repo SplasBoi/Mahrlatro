@@ -43,7 +43,7 @@ SMODS.Joker {
     calculate = function(self, card, context)
         local e = card.ability.extra or self.config.extra
 
-        if context.end_of_round and context.main_eval and not context.game_over then
+        if context.end_of_round and context.main_eval and not context.game_over and not context.blueprint then
             SMODS.scale_card(card, {
                 ref_table = e,
                 ref_value = 'current_mult',

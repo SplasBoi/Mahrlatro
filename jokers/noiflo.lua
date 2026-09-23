@@ -56,7 +56,8 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.joker_main then
-            SoundUtility.play_sound_if_exists('mahrlatr_noiflo')
+            if not context.blueprint then SoundUtility.play_sound_if_exists('mahrlatr_noiflo') end
+            
             return {
                 chips = pseudorandom('mahrlatr_noiflo', card.ability.extra.min, card.ability.extra.max)
             }

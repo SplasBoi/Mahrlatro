@@ -1,6 +1,6 @@
 SMODS.Joker {
     key = "wanye",
-    blueprint_compat = true,
+    blueprint_compat = false,
     eternal_compat = false,
     unlocked = true,
     discovered = false,

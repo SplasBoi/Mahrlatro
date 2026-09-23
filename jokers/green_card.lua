@@ -66,7 +66,7 @@ SMODS.Joker {
     calculate = function(self, card, context)
         local e = card.ability.extra
 
-        if context.open_booster then
+        if context.open_booster and not context.blueprint then
             scale_card(card)
         end
 

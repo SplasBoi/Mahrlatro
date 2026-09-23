@@ -69,10 +69,14 @@ SMODS.Joker{
             else
                 local base_chips = e.chips
                 local total_chips = base_chips + (stahr_count * base_chips)
+                local blueprint = context.blueprint
+                
                 return {
                     chips = total_chips,
                     message = localize('supahr_nutellio_easy'),
-                    SoundUtility.play_sound_if_exists("mahrlatr_nutella_easy")
+                    func = function ()
+                        if not blueprint then SoundUtility.play_sound_if_exists("mahrlatr_nutella_easy") end
+                    end
                 }
             end
         end

@@ -44,6 +44,7 @@ SMODS.Joker {
         
         if context.before and G.GAME.current_round.hands_played == 0 and #context.full_hand == 1 then
             local card = context.scoring_hand[1]
+            local blueprint = context.blueprint
 
             if SMODS.has_no_rank(card) then return end
             
@@ -53,7 +54,7 @@ SMODS.Joker {
                 func = function()
                     G.E_MANAGER:add_event(Event({
                         func = function()
-                            SoundUtility.play_sound_if_exists("mahrlatr_nutella_cahr_honk", 1.0, 0.5)
+                            if not blueprint then SoundUtility.play_sound_if_exists("mahrlatr_nutella_cahr_honk", 1.0, 0.5) end
                             assert(SMODS.modify_rank(card, 1))
                             return true
                         end

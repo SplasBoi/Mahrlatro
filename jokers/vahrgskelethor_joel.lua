@@ -65,7 +65,7 @@ SMODS.Joker {
         local e = card.ability.extra or self.config.extra
 
         if context.pseudorandom_result then
-            if context.identifier == e.target_tarot and not context.result then
+            if context.identifier == e.target_tarot and not context.result and not context.blueprint then
                 G.E_MANAGER:add_event(Event({
                     trigger = "immediate",
                     func = function()

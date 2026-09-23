@@ -45,7 +45,7 @@ SMODS.Joker { --Scary Crimson
     end,
 
     calculate = function(self, card, context)
-        if context.after then
+        if context.after and not context.blueprint then
             for _, v in ipairs(context.scoring_hand) do
                 if (SuitHelpers.is_black_card(v)) then
                     local red_suits = {"Hearts", "Diamonds"}

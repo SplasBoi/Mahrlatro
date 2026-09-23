@@ -15,7 +15,7 @@ local function play_sound_from_event(sound_id)
     G.E_MANAGER:add_event(Event({
         trigger = "immediate",
         func = function()
-            SoundUtility.play_sound_if_exists(sound_id)
+            SoundUtility.play_sound_if_exists(sound_id, 1.0, 0.5)
             return true
         end
     }))
@@ -64,11 +64,11 @@ SMODS.Joker {
         local e = card.ability.extra or self.config.extra
 
         if context.joker_main and context.scoring_name == e.poker_hand then
+            if not context.blueprint then play_sound_from_event("mahrlatr_bobby_good_job") end
 
             return {
                 x_mult = e.x_mult,
                 message = localize("bobby_good_job"),
-                play_sound_from_event("mahrlatr_bobby_good_job")
             }
         end
 

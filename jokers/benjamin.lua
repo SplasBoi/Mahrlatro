@@ -75,7 +75,7 @@ SMODS.Joker:take_ownership('j_cavendish',
             end
         end
 
-        if context.setting_blind and context.blind.boss then
+        if context.setting_blind and context.blind.boss and not context.blueprint then
             return {
                 SoundUtility.play_sound_if_exists(get_sound_from_pool(boss_blind_sound_pool))
             }

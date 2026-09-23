@@ -7,13 +7,17 @@ SMODS.Joker:take_ownership('j_ticket',
         if context.individual and context.cardarea == G.play and
             SMODS.has_enhancement(context.other_card, 'm_gold') then
             G.GAME.dollar_buffer = (G.GAME.dollar_buffer or 0) + 4
+            local blueprint = context.blueprint
+            
             return {
                 dollars = 4,
                 func = function() -- This is for timing purposes, it runs after the dollar manipulation
                     G.E_MANAGER:add_event(Event({
                         func = function()
                             G.GAME.dollar_buffer = 0
-                            SoundUtility.play_sound_if_exists('mahrlatr_gold')
+                            
+                            if not blueprint then SoundUtility.play_sound_if_exists('mahrlatr_gold') end
+
                             return true
                         end
                     }))

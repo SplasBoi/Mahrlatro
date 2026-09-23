@@ -44,7 +44,7 @@ SMODS.Joker{
         end
         
         if context.individual and context.cardarea == G.play then
-            if SMODS.get_enhancements(context.other_card)["m_stone"] then
+            if SMODS.get_enhancements(context.other_card)["m_stone"] and not context.blueprint then
                 context.other_card.should_destroy = true
 
                 if not context.other_card._gimler_triggered then

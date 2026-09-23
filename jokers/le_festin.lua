@@ -54,7 +54,7 @@ SMODS.Joker {
             }
         end
 
-        if context.buying_card then
+        if context.buying_card and not context.blueprint then
             local card_key = context.card.config.center.key
             if (context.card.config.center.pools or {}).mahrlatr_food then
                 if not is_unique(card_key, e.already_owned) then
