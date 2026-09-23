@@ -27,30 +27,40 @@ SMODS.Joker {
     config = {
         extra = {
             mult = 10,
-            random_rank = 'Ace'
+            random_value,
+            random_rank
         }
     },
-
-    -- Gives 10 Mult if card with rank () is scored (idol at home)
     
     loc_vars = function(self, info_queue, card)
         local e = card.ability.extra
+        local loc_rank
+
+        if e.random_value == nil then
+            loc_rank = localize("Ace", 'ranks')
+        else
+            loc_rank = localize(e.random_value, 'ranks')
+        end
 
         return {
             vars = {
                 e.mult,
-                localize(e.random_rank, 'ranks')
+                loc_rank
             }
         }
     end,
 
     add_to_deck = function(self, card, from_debuff)
-        card.ability.extra.random_rank = get_random_card()
+        local e = card.ability.extra
+        local selected_card = get_random_card()
+         
+        e.random_value = selected_card.base.value
+        e.random_rank = selected_card:get_id()
     end,
 
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play then
-            if context.other_card.base.value == card.ability.extra.random_rank then
+            if context.other_card:get_id() == card.ability.extra.random_rank then
                 return {
                     mult = card.ability.extra.mult
                 }
@@ -58,7 +68,11 @@ SMODS.Joker {
         end
 
         if context.end_of_round and context.main_eval then
-            card.ability.extra.random_rank = get_random_card()
+            local e = card.ability.extra
+            local selected_card = get_random_card()
+            
+            e.random_value = selected_card.base.value
+            e.random_rank = selected_card:get_id()
         end
     end,
 
@@ -92,16 +106,16 @@ SMODS.Joker {
                 local mult = 0
 
                 card.joker_display_values.mult = mult
-                card.joker_display_values.rank = localize(e.random_rank, 'ranks')
+                card.joker_display_values.rank = localize(e.random_value, 'ranks')
 
                 local in_blind = JokerUtility.is_in_blind()
                 local hand = in_blind and G.hand.highlighted or {}
                 local text, _, scoring_hand = JokerDisplay.evaluate_hand()
 
-                if text ~= "Unknown" then return end
+                if text == "Unknown" then return end
 
                 for _, scoring_card in pairs(scoring_hand) do
-                    if scoring_card.facing and not (scoring_card.facing == 'back') and not scoring_card.debuff and scoring_card:get_id() and scoring_card.base.value == e.random_rank then
+                    if not scoring_card.debuff and not SMODS.has_no_rank(scoring_card) and scoring_card:get_id() == e.random_rank then
                         mult = mult + e.mult * JokerDisplay.calculate_card_triggers(scoring_card, hand)
                     end
                 end
@@ -123,6 +137,6 @@ get_random_card = function()
 
     local selected_card = pseudorandom_element(valid_cards, 'j_mahrlatr_the_leadahrboard' .. G.GAME.round_resets.ante)
     if selected_card then
-        return selected_card.base.value
+        return selected_card
     end
 end
