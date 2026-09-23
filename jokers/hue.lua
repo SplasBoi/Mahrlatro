@@ -45,7 +45,7 @@ SMODS.Joker {
         end
 
         if context.individual and context.cardarea == G.play then
-            if context.other_card.debuff or JokerUtility.is_stone_card(context.other_card) then return end
+            if JokerUtility.is_stone_card(context.other_card) then return end
 
             local suit = context.other_card.base.suit
             local is_wild = JokerUtility.is_wild_card(context.other_card)

@@ -96,15 +96,21 @@ SMODS.Joker {
 
             calc_function = function(card)
                 local e = card.ability.extra
-                card.joker_display_values.buffed_suit = localize(e.suit, "suits_plural")
-
                 local mult = 0
-                card.joker_display_values.mult = mult
+                
+                if e.suit == "Multiple" then
+                    card.joker_display_values.buffed_suit = "Multiple"
+                    card.joker_display_values.mult = mult
+                    return
+                else
+                    card.joker_display_values.buffed_suit = localize(e.suit, "suits_plural")
+                end
+
                 local text, _, scoring_hand = JokerDisplay.evaluate_hand()
 
-                if text ~= "Unknown" and e.suit ~= "Multiple" then
+                if text ~= "Unknown" then
                     for _, scoring_card in pairs(scoring_hand) do
-                        if scoring_card:is_suit(e.suit) then
+                        if scoring_card:is_suit(e.suit) and not scoring_card.debuff and not JokerUtility.is_stone_card(scoring_card) then
                             mult = mult + e.mult * JokerDisplay.calculate_card_triggers(scoring_card, scoring_hand)
                         end
                     end
