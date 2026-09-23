@@ -477,12 +477,8 @@ return {
                 }
             },
 
-            j_mahrlatr_epic_weed = {
-                name = 'Epic Weed',
-                text = {
-                    'Played cards with {V:1}Club{} suit',
-                    'give {C:mult}+3{} Mult when scored'
-                }
+            j_gluttenous_joker = {
+                name = "Epic Weed"
             },
 
             j_mahrlatr_normal_guy = {
