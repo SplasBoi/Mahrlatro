@@ -45,6 +45,8 @@ SMODS.Joker {
         end
 
         if context.individual and context.cardarea == G.play then
+            if context.other_card.debuff or JokerUtility.is_stone_card(context.other_card) then return end
+
             local suit = context.other_card.base.suit
             local is_wild = JokerUtility.is_wild_card(context.other_card)
             local scored_suit = (is_wild and "Wild") or suit
@@ -78,13 +80,10 @@ SMODS.Joker {
 
             calc_function = function(card)
                 local e = card.ability.extra
-
-                local scored_suits = {}
                 
                 local in_blind = JokerUtility.is_in_blind()
                 local hand = in_blind and G.hand.highlighted or {}
                 local text, _, scoring_hand = JokerDisplay.evaluate_hand()
-
 
                 if text == "Unknown" then
                     card.joker_display_values.mult = 0
@@ -94,9 +93,11 @@ SMODS.Joker {
                 local scored_suits = {}
 
                 for _, playing_card in pairs(scoring_hand) do
-                    local is_wild = JokerUtility.is_wild_card(playing_card)
-                    local card_suit = (is_wild and "Wild") or playing_card.base.suit
-                    scored_suits[card_suit] = (scored_suits[card_suit] or 0) + JokerDisplay.calculate_card_triggers(playing_card, hand)
+                    if not playing_card.debuff and not JokerUtility.is_stone_card(playing_card) then
+                        local is_wild = JokerUtility.is_wild_card(playing_card)
+                        local card_suit = (is_wild and "Wild") or playing_card.base.suit
+                        scored_suits[card_suit] = (scored_suits[card_suit] or 0) + JokerDisplay.calculate_card_triggers(playing_card, hand)
+                    end
                 end
 
                 local mult_scaling = TableUtility.dict_size(scored_suits)

@@ -139,3 +139,7 @@ end
 function JokerUtility.is_wild_card(card)
     return card and SMODS.has_enhancement(card, "m_wild")
 end
+
+function JokerUtility.is_stone_card(card)
+    return card and (SMODS.has_enhancement(card, "m_stone") or SMODS.has_enhancement(card, "m_mahrlatr_pink_stone"))
+end
