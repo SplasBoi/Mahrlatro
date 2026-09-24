@@ -534,3 +534,5 @@ SMODS.DeckSkin {
         },
     },
 }
+
+SpeedrunUtil.init()
