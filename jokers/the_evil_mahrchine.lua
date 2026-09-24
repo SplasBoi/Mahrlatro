@@ -1,4 +1,17 @@
-local reset_suit = nil
+local function reset_suit(card)
+    local suits = {}
+    
+    for _, suit_key in ipairs({ "Spades", "Hearts", "Clubs", "Diamonds" }) do
+        if suit_key ~= card.ability.extra.debuffed_suit then
+            suits[#suits + 1] = suit_key
+        end
+    end
+
+    local suit = pseudorandom_element(suits, card.config.center.key .. card.unique_val)
+    
+    return suit
+end
+
 local rounded_decimals = 0
 
 SMODS.Joker {
@@ -6,7 +19,7 @@ SMODS.Joker {
 
     discovered = false,
     unlocked = true,
-    atlas = 'CustomJokers',
+    atlas = "CustomJokers",
 
     pos = {
         x = 0,
@@ -20,8 +33,8 @@ SMODS.Joker {
 
     config = {
         extra = {
-            payout_increase = 75,
-            debuffed_suit = 'Spades'
+            payout_percent = 75,
+            debuffed_suit = ""
         }
     },
 
@@ -32,42 +45,50 @@ SMODS.Joker {
             vars = {
                 colours = { G.C.SUITS[e.debuffed_suit] },
 
-                e.payout_increase,
-                localize(e.debuffed_suit, 'suits_plural'),
+                e.payout_percent,
+                localize(e.debuffed_suit, "suits_plural"),
             }
         }
     end,
 
     update = function(self, card, dt)
-		if G.deck and card.added_to_deck then
-			for i, v in pairs(G.deck.cards) do
-				if v:is_suit(card.ability.extra.debuffed_suit) then
-					v:set_debuff(true)
-				end
-			end
-		end
-		if G.hand and card.added_to_deck then
-			for i, v in pairs(G.hand.cards) do
-				if v:is_suit(card.ability.extra.debuffed_suit) then
-					v:set_debuff(true)
-				end
-			end
-		end
+        local e = card.ability.extra
+
+        if card.added_to_deck then 
+            for _, card_area in ipairs({ G.deck, G.hand }) do
+                if card_area then
+                    for _, v in ipairs(card_area.cards) do
+                        if v:is_suit(e.debuffed_suit) then
+                            v:set_debuff(true)
+                        end
+                    end
+                end
+            end
+        end
 	end,
 
-    calc_dollar_bonus = function(self,card)
-        local payout = round_number(G.GAME.blind.dollars * 0.75, rounded_decimals)
+    set_ability = function(self, card, initial, delay_sprites)
+        local e = card.ability.extra
+
+        if initial then
+            e.debuffed_suit = reset_suit(card)
+        end
+    end,
+
+    calc_dollar_bonus = function(self, card)
+        local e = card.ability.extra
+
+        local payout_mod = e.payout_percent / 100.0
+        local payout = round_number(G.GAME.blind.dollars * payout_mod, rounded_decimals)
 
         return payout
     end,
 
-    add_to_deck = function(self, card, from_debuff)
-        card.ability.extra.debuffed_suit = reset_suit(card.ability.extra.debuffed_suit)
-    end,
-
     calculate = function(self, card, context)
-        if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
-            card.ability.extra.debuffed_suit = reset_suit(card.ability.extra.debuffed_suit)
+        local e = card.ability.extra
+
+        if context.end_of_round and not context.game_over and context.main_eval and not context.blueprint then
+            e.debuffed_suit = reset_suit(card)
         end
     end,
 
@@ -98,15 +119,3 @@ SMODS.Joker {
         }
     end
 }
-
-reset_suit = function(debuffed_suit)
-    local suits = {}
-    
-    for _, suit_key in ipairs({ 'Spades', 'Hearts', 'Clubs', 'Diamonds' }) do
-        if suit_key ~= debuffed_suit then suits[#suits + 1] = suit_key end
-    end
-
-    local suit = pseudorandom_element(suits, 'j_mahrlatr_the_evil_mahrchine' .. G.GAME.round_resets.ante)
-    
-    return suit
-end

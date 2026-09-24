@@ -1,4 +1,14 @@
-local get_random_card = nil
+local function get_random_card(card)
+    local valid_cards = {}
+
+    for _, playing_card in ipairs(G.playing_cards) do
+        if not SMODS.has_no_rank(playing_card) then
+            valid_cards[#valid_cards + 1] = playing_card
+        end
+    end
+
+    return pseudorandom_element(valid_cards, card.config.center_key .. card.unique_val)
+end
 
 SMODS.Joker {
     key = 'the_leadahrboard',
@@ -37,9 +47,9 @@ SMODS.Joker {
         local loc_rank
 
         if e.random_value == nil then
-            loc_rank = localize("Ace", 'ranks')
+            loc_rank = localize("Ace", "ranks")
         else
-            loc_rank = localize(e.random_value, 'ranks')
+            loc_rank = localize(e.random_value, "ranks")
         end
 
         return {
@@ -50,26 +60,29 @@ SMODS.Joker {
         }
     end,
 
-    add_to_deck = function(self, card, from_debuff)
+    set_ability = function(self, card, initial, delay_sprites)
         local e = card.ability.extra
-        local selected_card = get_random_card()
-         
-        e.random_value = selected_card.base.value
-        e.random_rank = selected_card:get_id()
+
+        if initial then
+            local selected_card = get_random_card(card)
+            e.random_value = selected_card.base.value
+            e.random_rank = selected_card:get_id()
+        end
     end,
 
     calculate = function(self, card, context)
+        local e = card.ability.extra
+
         if context.individual and context.cardarea == G.play then
-            if context.other_card:get_id() == card.ability.extra.random_rank then
+            if context.other_card:get_id() == e.random_rank then
                 return {
-                    mult = card.ability.extra.mult
+                    mult = e.mult
                 }
             end
         end
 
         if context.end_of_round and context.main_eval then
-            local e = card.ability.extra
-            local selected_card = get_random_card()
+            local selected_card = get_random_card(card)
             
             e.random_value = selected_card.base.value
             e.random_rank = selected_card:get_id()
@@ -125,18 +138,3 @@ SMODS.Joker {
         }
     end
 }
-
-get_random_card = function()
-    local valid_cards = {}
-
-    for _, playing_card in ipairs(G.playing_cards) do
-        if not SMODS.has_no_rank(playing_card) then
-            valid_cards[#valid_cards + 1] = playing_card
-        end
-    end
-
-    local selected_card = pseudorandom_element(valid_cards, 'j_mahrlatr_the_leadahrboard' .. G.GAME.round_resets.ante)
-    if selected_card then
-        return selected_card
-    end
-end

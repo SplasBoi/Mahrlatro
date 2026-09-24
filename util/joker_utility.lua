@@ -143,3 +143,16 @@ end
 function JokerUtility.is_stone_card(card)
     return card and (SMODS.has_enhancement(card, "m_stone") or SMODS.has_enhancement(card, "m_mahrlatr_pink_stone"))
 end
+
+function JokerUtility.get_random_poker_hand(card)
+    local current_hand = card.ability.extra.poker_hand or ""
+    local poker_hands = {}
+
+    for handname, _ in pairs(G.GAME.hands) do
+        if SMODS.is_poker_hand_visible(handname) and handname ~= current_hand then
+            table.insert(poker_hands, handname)
+        end
+    end
+    
+    return pseudorandom_element(poker_hands, card.config.center_key .. card.unique_val)
+end

@@ -1,16 +1,3 @@
-local function get_random_poker_hand(card)
-    local current_hand = card.ability.extra.poker_hand or ""
-    local poker_hands = {}
-
-    for handname, _ in pairs(G.GAME.hands) do
-        if SMODS.is_poker_hand_visible(handname) and handname ~= current_hand then
-            table.insert(poker_hands, handname)
-        end
-    end
-
-    return pseudorandom_element(poker_hands, card.config.center_key)
-end
-
 SMODS.Joker {
     key = "colettahr",
 
@@ -30,7 +17,7 @@ SMODS.Joker {
 
     config = {
         extra = {
-            poker_hand = "High Card"
+            poker_hand = ""
         }
     },
 
@@ -42,13 +29,20 @@ SMODS.Joker {
         }
     end,
 
+    set_ability = function(self, card, initial, delay_sprites)
+        local e = card.ability.extra
+
+        if initial then
+            e.poker_hand = JokerUtility.get_random_poker_hand(card)
+        end
+    end,
+
     add_to_deck = function(self, card, from_debuff)
-        card.ability.extra.poker_hand = get_random_poker_hand(card)
         SoundUtility.play_sound_if_exists("mahrlatr_mahr_no_no_dont")
     end,
     
     calculate = function(self, card, context)
-        local e = card.ability.extra or self.config.extra
+        local e = card.ability.extra
 
         if context.before and context.scoring_name == e.poker_hand then
             return {
@@ -59,7 +53,7 @@ SMODS.Joker {
         end
 
         if context.end_of_round and not context.game_over and context.main_eval and not context.blueprint then
-            e.poker_hand = get_random_poker_hand(card)
+            e.poker_hand = JokerUtility.get_random_poker_hand(card)
 
             return {
                 message = localize('colettahr_do_as_i_say'),

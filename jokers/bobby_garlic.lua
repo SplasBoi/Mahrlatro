@@ -1,16 +1,3 @@
-local function get_random_poker_hand(card)
-    local current_hand = card.ability.extra.poker_hand or ""
-    local poker_hands = {}
-
-    for handname, _ in pairs(G.GAME.hands) do
-        if SMODS.is_poker_hand_visible(handname) and handname ~= current_hand then
-            table.insert(poker_hands, handname)
-        end
-    end
-
-    return pseudorandom_element(poker_hands, card.config.center_key)
-end
-
 local function play_sound_from_event(sound_id)
     G.E_MANAGER:add_event(Event({
         trigger = "immediate",
@@ -26,7 +13,7 @@ SMODS.Joker {
 
     discovered = false,
     unlocked = true,
-    atlas = 'CustomJokers',
+    atlas = "CustomJokers",
 
     pos = {
         x = 1,
@@ -41,12 +28,13 @@ SMODS.Joker {
     config = {
         extra = {
             x_mult = 2,
-            poker_hand = "High Card"
+            poker_hand = ""
         }
     },
 
     loc_vars = function(self, info_queue, card)
         local e = card.ability.extra or self.config.extra
+
         return {
             vars = {
                 e.x_mult,
@@ -55,8 +43,15 @@ SMODS.Joker {
         }
     end,
 
+    set_ability = function(self, card, initial, delay_sprites)
+        local e = card.ability.extra
+
+        if initial then
+            e.poker_hand = JokerUtility.get_random_poker_hand(card)
+        end
+    end,
+
     add_to_deck = function(self, card, from_debuff)
-        card.ability.extra.poker_hand = get_random_poker_hand(card)
         SoundUtility.play_sound_if_exists("mahrlatr_bobby_try_this_hand")
     end,
     
@@ -64,7 +59,9 @@ SMODS.Joker {
         local e = card.ability.extra or self.config.extra
 
         if context.joker_main and context.scoring_name == e.poker_hand then
-            if not context.blueprint then play_sound_from_event("mahrlatr_bobby_good_job") end
+            if not context.blueprint then
+                play_sound_from_event("mahrlatr_bobby_good_job")
+            end
 
             return {
                 x_mult = e.x_mult,
@@ -73,7 +70,7 @@ SMODS.Joker {
         end
 
         if context.end_of_round and not context.game_over and context.main_eval and not context.blueprint then
-            e.poker_hand = get_random_poker_hand(card)
+            e.poker_hand = JokerUtility.get_random_poker_hand(card)
 
             return {
                 message = localize("bobby_try_this_hand"),
