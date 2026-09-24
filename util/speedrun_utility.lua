@@ -114,6 +114,8 @@ function SpeedrunUtil.init()
             get_records(category)
         end
     end
+
+    initialized = true
 end
 
 function SpeedrunUtil.time_to_decimal(duration)
