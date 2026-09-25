@@ -1,6 +1,10 @@
 local function get_random_card(card)
     local valid_cards = {}
 
+    if not G.playing_cards then
+        return nil
+    end
+
     for _, playing_card in ipairs(G.playing_cards) do
         if not SMODS.has_no_rank(playing_card) then
             valid_cards[#valid_cards + 1] = playing_card
@@ -46,10 +50,10 @@ SMODS.Joker {
         local e = card.ability.extra
         local loc_rank
 
-        if e.random_value == nil then
-            loc_rank = localize("Ace", "ranks")
-        else
+        if e.random_value then
             loc_rank = localize(e.random_value, "ranks")
+        else
+            loc_rank = localize("Ace", "ranks")
         end
 
         return {
@@ -65,8 +69,11 @@ SMODS.Joker {
 
         if initial then
             local selected_card = get_random_card(card)
-            e.random_value = selected_card.base.value
-            e.random_rank = selected_card:get_id()
+
+            if selected_card then
+                e.random_value = selected_card.base.value
+                e.random_rank = selected_card:get_id()
+            end
         end
     end,
 
@@ -84,8 +91,10 @@ SMODS.Joker {
         if context.end_of_round and context.main_eval then
             local selected_card = get_random_card(card)
             
-            e.random_value = selected_card.base.value
-            e.random_rank = selected_card:get_id()
+            if selected_card then
+                e.random_value = selected_card.base.value
+                e.random_rank = selected_card:get_id()
+            end
         end
     end,
 
