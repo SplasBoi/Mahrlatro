@@ -43,6 +43,14 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+    key = "CustomVouchers", 
+    path = "CustomVouchers.png", 
+    px = 71,
+    py = 95, 
+    atlas_table = "ASSET_ATLAS"
+}
+
+SMODS.Atlas {
     key = "CustomEnhancements", 
     path = "CustomEnhancements.png", 
     px = 71,
@@ -145,6 +153,7 @@ load_folder('util/')
 load_folder('achievements/')
 load_folder('decks/')
 load_folder('blinds/')
+load_folder('vouchers/')
 
 SMODS.ObjectType({
     key = "mahrlatr_mahrlatr_jokers",

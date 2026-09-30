@@ -1615,7 +1615,7 @@ return {
                 name = "The Mahrket",
                 text = {
                     "Adds an extra",
-                    "Voucher slot"
+                    "Vouchahr slot"
                 }
             },
 
@@ -1649,14 +1649,20 @@ return {
                 name = "Mahrgic Deck",
                 text = {
                     "Start run with the",
-                    "{C:tarot,T:v_crystal_ball}#1#{} voucher",
+                    "{C:tarot,T:v_crystal_ball}#1#{} vouchahr",
                     "and {C:attention}2{} copies",
                     "of {C:tarot,T:c_fool}#2#",
                 }
             },
 
             b_nebula = {
-                name = "Nebulahr Deck"
+                name = "Nebulahr Deck",
+                text = {
+                    "Start run with the",
+                    "{C:planet,T:v_telescope}#1#{} vouchahr",
+                    "",
+                    "{C:red}#2#{} consumahrble slot",
+                }
             },
 
             b_painted = {
@@ -2039,6 +2045,13 @@ return {
                     "{C:inactive}(Must have room)",
                 },
             },
+            tag_voucher = {
+                name = "Vouchahr Tag",
+                text = {
+                    "Adds one {C:voucher}Vouchahr",
+                    "to the next Mahrket",
+                },
+            },
             tag_uncommon = {
                 name = "Uncommahrn Tag",
                 text = {
@@ -2241,7 +2254,8 @@ return {
             common = 'Commahrn',
             uncommon = 'Uncommahrn',
             rare = 'Rahr',
-            legendary = 'Legendahry'
+            legendary = 'Legendahry',
+            voucher = 'Vouchahr'
         },
 
         dictionary = {
