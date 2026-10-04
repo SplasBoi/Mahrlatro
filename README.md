@@ -3,7 +3,7 @@
 <img src="media/thumbnail.jpg">
 
 >[!NOTE]
-> This mod is only made to run on PC and Mac. IOS/Andriod is not supported.
+> This mod is only made to run on PC and Mac. IOS/Android is not supported.
 
 ## Dependencies
 - [Lovely](https://github.com/ethangreen-dev/lovely-injector) (0.6.7 minimum)

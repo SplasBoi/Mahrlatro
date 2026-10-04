@@ -1392,7 +1392,12 @@ return {
                 text = {
                     "All cards and packs in",
                     "the Mahrket are {C:attention}#1#%{} off",
-                }
+                },
+                unlock = {
+                    "Redeem at least",
+                    "{C:attention}#1#{C:voucher} Vouchahr{} cards",
+                    "in one run",
+                },
             },
             v_magic_trick = {
                 name = "Mahrgic Trick",
