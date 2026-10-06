@@ -1190,7 +1190,7 @@ return {
             j_mahrlatr_switches = {
                 name = "Switches",
                 text = {
-                    "Gives {X:chips,C:white} X#2# {} Chips",
+                    "This Jokahr gains {X:chips,C:white}X#2#{} Chips",
                     "every time a card {C:attention}changes suit{]",
                     "{C:inactive}(Currently {X:chips,C:white} X#1# {C:inactive} Chips)"
                 }
