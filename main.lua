@@ -43,6 +43,14 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+    key = "CustomVouchers", 
+    path = "CustomVouchers.png", 
+    px = 71,
+    py = 95, 
+    atlas_table = "ASSET_ATLAS"
+}
+
+SMODS.Atlas {
     key = "CustomEnhancements", 
     path = "CustomEnhancements.png", 
     px = 71,
@@ -145,22 +153,7 @@ load_folder('util/')
 load_folder('achievements/')
 load_folder('decks/')
 load_folder('blinds/')
-
-
-SMODS.ObjectType({
-    key = "mahrlatr_food",
-    cards = {
-        ["j_gros_michel"] = true,
-        ["j_egg"] = true,
-        ["j_ice_cream"] = true,
-        ["j_cavendish"] = true,
-        ["j_turtle_bean"] = true,
-        ["j_diet_cola"] = true,
-        ["j_popcorn"] = true,
-        ["j_ramen"] = true,
-        ["j_selzer"] = true
-    },
-})
+load_folder('vouchers/')
 
 SMODS.ObjectType({
     key = "mahrlatr_mahrlatr_jokers",
@@ -174,17 +167,20 @@ SMODS.ObjectType({
 })
 
 SMODS.ObjectType {
-    key = "mahrlatr_food_jokahr",
+    key = "mahrlatr_food",
     cards = {
         ["j_mahrlatr_cheese"] = true,
-        ["j_mahrlatr_coca_colahr"] = true,
-        ["j_mahrlatr_feijoada"] = true,
+        ["j_diet_cola"] = true,
+        ["j_turtle_bean"] = true,
         ["j_mahrlatr_fish"] = true,
-        ["j_mahrlatr_laugen_geback"] = true,
+        ["j_ramen"] = true,
         ["j_mahrlatr_mahrffin"] = true,
         ["j_mahrlatr_mahrtini"] = true,
         ["j_mahrlatr_meat"] = true,
-        ["j_mahrlatr_agg"] = true,
+        ["j_egg"] = true,
+        ["j_gros_michel"] = true,
+        ["j_cavendish"] = true,
+        ["j_seltzer"] = true,
     }
 }
 
@@ -405,6 +401,13 @@ SMODS.Sound {
     pitch = 1.0
 }
 
+SMODS.Sound {
+    key = "nutella_cahr_honk",
+    path = "sfx/nutella_cahr_honk.ogg",
+    pitch = 1.0,
+    volume = 0.8
+}
+
 -- Music
 
 SMODS.Sound({
@@ -540,3 +543,5 @@ SMODS.DeckSkin {
         },
     },
 }
+
+SpeedrunUtil.init()

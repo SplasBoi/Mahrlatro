@@ -1,3 +1,22 @@
+local function scale_card(card)
+    G.E_MANAGER:add_event(Event({
+        trigger = 'after',
+        delay = 1.5,
+        func = function()
+            SMODS.scale_card(card, {
+                ref_table = card.ability.extra,
+                ref_value = 'mult',
+                scalar_value = 'scaling',
+                no_message = true
+            })
+            
+            card:juice_up()
+
+            return true
+        end
+    }))
+end
+
 SMODS.Joker {
     key = "green_card",
 
@@ -47,19 +66,8 @@ SMODS.Joker {
     calculate = function(self, card, context)
         local e = card.ability.extra
 
-        if context.open_booster then
-             G.E_MANAGER:add_event(Event({trigger = 'after', delay = 1.5, func = function()
-                SMODS.scale_card(card, {
-                    ref_table = card.ability.extra,
-                    ref_value = 'mult',
-                    scalar_value = 'scaling',
-                    no_message = true
-                })
-                
-                card:juice_up()
-
-                return true
-            end }))
+        if context.open_booster and not context.blueprint then
+            scale_card(card)
         end
 
         if context.joker_main then
@@ -67,5 +75,22 @@ SMODS.Joker {
                 mult = e.mult
             }
         end
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        return {
+            text = {
+                { text = "+" },
+                {
+                    ref_table = "card.joker_display_values",
+                    ref_value = "mult"
+                }
+            },
+            text_config = { colour = G.C.MULT },
+            
+            calc_function = function(card)
+                card.joker_display_values.mult = card.ability.extra.mult
+            end
+        }
     end
 }

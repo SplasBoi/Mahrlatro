@@ -3,7 +3,11 @@ SMODS.Joker {
 
     config = {
         extra = {
-            chips = 75
+            chips = 75,
+            valid_suits = {
+                "Spades",
+                "Clubs"
+            }
         }
     },
 
@@ -34,10 +38,37 @@ SMODS.Joker {
     end,
 
     calculate = function(self, card, context)
-        if SuitHelpers.has_suit_in_hand(context, {'Spades', 'Clubs'}) then
+        local e = card.ability.extra or self.ability.extra
+
+        if context.final_scoring_step and SuitHelpers.has_suit_in_hand(context.scoring_hand, e.valid_suits) then
             return {
-                chips = card.ability.extra.chips
+                chips = e.chips
             }
         end
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        return {
+            text = {
+                { text = "+" },
+                {
+                    ref_table = "card.joker_display_values",
+                    ref_value = "chips"
+                }
+            },
+            text_config = { colour = G.C.CHIPS },
+
+            calc_function = function(card)
+                local e = card.ability.extra
+
+                local _, _, scoring_hand = JokerDisplay.evaluate_hand()
+
+                if SuitHelpers.has_suit_in_hand(scoring_hand, e.valid_suits) then
+                    card.joker_display_values.chips = e.chips
+                else
+                    card.joker_display_values.chips = 0
+                end
+            end
+        }
     end
 }

@@ -16,7 +16,7 @@ SMODS.Joker {
         h = 95 * 1
     },
     
-    blueprint_compat = true,
+    blueprint_compat = false,
     eternal_compat = true,
     perishable_compat = true,
     unlocked = false,
@@ -56,7 +56,7 @@ SMODS.Joker {
                     G.E_MANAGER:add_event(Event({
                         trigger = "immediate",
                         func = function()
-                            play_sound(sound)
+                            SoundUtility.play_sound_if_exists(sound)
                             return true
                         end
                     }))

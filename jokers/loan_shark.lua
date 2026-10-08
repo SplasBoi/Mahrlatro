@@ -1,3 +1,14 @@
+local loan_shark_key = "j_mahrlatr_loan_shark"
+local og_set_sell_value = Card.set_sell_value
+
+Card.set_sell_value = function(self)
+    if self.config.center.key == loan_shark_key then
+        return 0
+    end
+
+    og_set_sell_value(self)
+end
+
 SMODS.Joker {
     key = "loan_shark",
 
@@ -81,16 +92,25 @@ SMODS.Joker {
                 SMODS.destroy_cards(card, nil, nil, true)
             end
         end
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        return {
+            text = {
+                {
+                    text = "Debt: ",
+                    colour = G.C.RED
+                },
+                {
+                    text = localize("$"),
+                    colour = G.C.MONEY
+                },
+                {
+                    ref_table = "card.ability.extra",
+                    ref_value = "current_debt",
+                    colour = G.C.MONEY
+                }
+            },
+        }
     end
 }
-
-local loan_shark_key = "j_mahrlatr_loan_shark"
-
-local og_set_sell_value = Card.set_sell_value
-Card.set_sell_value = function(self)
-    if self.config.center.key == loan_shark_key then
-        return 0
-    end
-
-    og_set_sell_value(self)
-end

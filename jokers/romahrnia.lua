@@ -66,5 +66,50 @@ SMODS.Joker{
                 }
             }
         end
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        return {
+            text = {
+                { -- XMult
+                    border_nodes = {
+                        { text = "X" },
+                        {
+                            ref_table = "card.ability.extra",
+                            ref_value = "xmult",
+                            retrigger_type = "exp"
+                        }
+                    }
+                }
+            },
+
+            text_config = { colour = G.C.WHITE },
+
+            extra = {
+                { -- Chips
+                    {
+                        text = "+",
+                        colour = G.C.CHIPS
+                    },
+                    {
+                        ref_table = "card.ability.extra",
+                        ref_value = "chips",
+                        colour = G.C.CHIPS
+                    }
+                },
+
+                {-- Dollars
+                    {
+                        text = "+" .. localize("$"),
+                        colour = G.C.MONEY
+                    },
+                    {
+                        ref_table = "card.ability.extra",
+                        ref_value = "dollars",
+                        colour = G.C.MONEY
+                    }
+                }
+            }
+        }
     end
 }

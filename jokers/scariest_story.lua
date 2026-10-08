@@ -18,7 +18,7 @@ SMODS.Joker{ --New Joker
     },
     cost = 4,
     rarity = 2,
-    blueprint_compat = true,
+    blueprint_compat = false,
     eternal_compat = true,
     perishable_compat = true,
     unlocked = false,
@@ -42,7 +42,7 @@ SMODS.Joker{ --New Joker
                 extra = {
                     
                     func = function()
-                        play_sound('mahrlatr_try_not_to_get_scared')
+                        SoundUtility.play_sound_if_exists('mahrlatr_try_not_to_get_scared')
                         G.GAME.current_round.hands_left = card.ability.extra.hands
                         return true
                     end,

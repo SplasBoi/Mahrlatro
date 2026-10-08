@@ -41,7 +41,7 @@ SMODS.Joker {
     end,
     
     calculate = function(self, card, context)
-        if context.change_suit then
+        if context.change_suit and not context.blueprint then
             SMODS.scale_card(card, {
                 ref_table = card.ability.extra,
                 ref_value = 'current_x_chips',
@@ -54,5 +54,26 @@ SMODS.Joker {
                 x_chips = card.ability.extra.current_x_chips
             }
         end
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        return {
+            text = {
+                {
+                    border_nodes = {
+                        { text = "X" },
+                        {
+                            ref_table = "card.ability.extra",
+                            ref_value = "current_x_chips",
+                            retrigger_type = "exp"
+                        }
+                    },
+                    
+                    border_colour = G.C.CHIPS
+                }
+            },
+            
+            text_config = { colour = G.C.WHITE }
+        }
     end
 }

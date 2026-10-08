@@ -28,12 +28,6 @@ SMODS.Joker {
         }
     },
 
-    loc_vars = function(self, info_queue, card)
-        return {
-
-        }
-    end,
-
     remove_from_deck = function(self, card, from_debuff)
         local free_joker_slots = G.jokers.config.card_limit - #G.jokers.cards
         local stahrs_to_be_created
@@ -44,7 +38,7 @@ SMODS.Joker {
             stahrs_to_be_created = free_joker_slots
         end
 
-        play_sound('mahrlatr_star',1.0,0.5)
+        SoundUtility.play_sound_if_exists('mahrlatr_star',1.0,0.5)
         
         for i = 1, stahrs_to_be_created do
             G.E_MANAGER:add_event(Event({trigger = 'immediate', func = function()

@@ -1,12 +1,10 @@
 SuitHelpers = {}
 
-function SuitHelpers.has_suit_in_hand(context, suits)
-    if context.final_scoring_step then
-        for i = 1, #context.scoring_hand do
-            for _, suit in ipairs(suits) do
-                if context.scoring_hand[i]:is_suit(suit) then
-                    return true
-                end
+function SuitHelpers.has_suit_in_hand(scoring_hand, suits)
+    for i = 1, #scoring_hand do
+        for _, suit in ipairs(suits) do
+            if scoring_hand[i]:is_suit(suit) then
+                return true
             end
         end
     end

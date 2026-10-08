@@ -44,7 +44,7 @@ SMODS.Joker{
         end
         
         if context.individual and context.cardarea == G.play then
-            if SMODS.get_enhancements(context.other_card)["m_stone"] then
+            if SMODS.get_enhancements(context.other_card)["m_stone"] and not context.blueprint then
                 context.other_card.should_destroy = true
 
                 if not context.other_card._gimler_triggered then
@@ -64,5 +64,26 @@ SMODS.Joker{
                 x_chips = card.ability.extra.gained_x_chips
             }
         end
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        return {
+            text = {
+                {
+                    border_nodes = {
+                        { text = "X" },
+                        {
+                            ref_table = "card.ability.extra",
+                            ref_value = "gained_x_chips",
+                            retrigger_type = "exp"
+                        }
+                    },
+                    
+                    border_colour = G.C.CHIPS
+                }
+            },
+            
+            text_config = { colour = G.C.WHITE }
+        }
     end
 }

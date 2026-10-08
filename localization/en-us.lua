@@ -16,12 +16,58 @@ return {
                 }
             },
 
+            b_abandoned = {
+                name = "Abandahrned Deck"
+            },
+
             j_mahrlatr_mahrbot = {
                 name = 'MahrBot',
                 text = {
-                    'Applies {C:tarot}Mahr Seal{} to',
-                    'every {C:attention}scored card{}.'
+                    'Applies {C:tarot}#1#{} to',
+                    'every {C:attention}scored card{}'
                 }
+            },
+
+            j_hallucination = {
+                name = "Hallucinahrtion",
+                text = {
+                    "{C:green}#1# in #2#{} chance to create",
+                    "a {C:tarot}Tahrot{} card when any",
+                    "{C:attention}Boostahr Pack{} is opened",
+                    "{C:inactive}(Must have room)",
+                },
+            },
+
+            j_bloodstone = {
+                name = "Chaos Emerahrld"
+            },
+
+            j_even_steven = {
+                name = "Even Stevahrn"
+            },
+
+            j_odd_todd = {
+                name = "Odd Stevahrn"
+            },
+
+            j_burglar = {
+                name = "Burglahr"
+            },
+
+            j_chaos = {
+                name = "Chaos the Clahrwn",
+                text = {
+                    "{C:attention}#1#{} free {C:green}Reroll",
+                    "per Mahrket",
+                },
+            },
+
+            j_pareidolia = {
+                name = "Pareidoliahr"
+            },
+
+            j_midas_mask = {
+                name = "Midas Mahrsk"
             },
 
             j_wee = {
@@ -220,16 +266,16 @@ return {
                 }
             },
 
-            j_flower_pot = {
+            j_mahrlatr_pirannahr_plant = {
                 name = "Pirannahr Plant",
                 text = {
-                    "{X:mult,C:white} X#1# {} Mult if pokahr",
-                    "hand contains {C:attention}3 unique suits{}"
+                    "{X:mult,C:white} X#1# {} Mult if scoring",
+                    "hand contains {C:attention}#2# unique suits{}"
                 }
             },
 
             j_bootstraps = {
-                name = "Mahrllionaire"
+                name = "Billionahr"
             },
 
             j_dna = {
@@ -246,7 +292,7 @@ return {
                 text = {
                     "Retrigger",
                     "each played",
-                    "{C:attention}6{}, {C:attention}7{}, {C:attention}8{}, or {C:attention}9{}",
+                    "{C:attention}#1#{}"
                 },
             },
 
@@ -338,8 +384,8 @@ return {
             j_stuntman = {
                 name = "Vaalserberg",
                 text = {
-                    "{C:chips}+322{} Chips,",
-                    "{C:attention}-2{} hand size",
+                    "{C:chips}#1#{} Chips,",
+                    "{C:attention}-#2#{} hand size",
                 }
             },
             
@@ -364,7 +410,7 @@ return {
                 name = 'The Doctor',
                 text = {
                     'Gains {X:mult,C:white}X#1#{} Mult for each {C:money}#2##3#{} spent',
-                    'Halves for every round',
+                    'Halves at the end of the round',
                     '{C:inactive}(Currently{} {X:mult,C:white}X#4#{} {C:inactive}Mult){}'
                 }
             },
@@ -431,12 +477,8 @@ return {
                 }
             },
 
-            j_mahrlatr_epic_weed = {
-                name = 'Epic Weed',
-                text = {
-                    'Played cards with {V:1}Club{} suit',
-                    'give {C:mult}+3{} Mult when scored'
-                }
+            j_gluttenous_joker = {
+                name = "Epic Weed"
             },
 
             j_mahrlatr_normal_guy = {
@@ -513,7 +555,7 @@ return {
             j_mahrlatr_mimahr = {
                 name = 'Mimahr',
                 text = {
-                    'Retrigger all cards with',
+                    'Retrigger all scored cards with',
                     '{C:tarot}TheMahr{} seal once'
                 }
             },
@@ -536,7 +578,7 @@ return {
                         'scoring {C:red,E:2}red{} suit cards'
                     },
                     {
-                        '{C:inactive}Merges into Mahrbles Trolley{}',
+                        '{C:inactive}Merges into Mahrble\'s Trolley{}',
                         '{C:inactive}if you own Mahrffin and Fish{}',
                         '{C:inactive}at the start of a round{}'
                     }
@@ -551,7 +593,7 @@ return {
                         'played {C:blue}hand'
                     },
                     {
-                        '{C:inactive}Merges into Mahrbles Trolley{}',
+                        '{C:inactive}Merges into Mahrble\'s Trolley{}',
                         '{C:inactive}if you own Meat and Fish{}',
                         '{C:inactive}at the start of a round{}'
                     }
@@ -566,7 +608,7 @@ return {
                         'scoring {C:black,E:2}black{} suit cards'
                     },
                     {
-                        '{C:inactive}Merges into Mahrbles Trolley{}',
+                        '{C:inactive}Merges into Mahrble\'s Trolley{}',
                         '{C:inactive}if you own Meat and Marffin{}',
                         '{C:inactive}at the start of a round{}'
                     }
@@ -593,7 +635,7 @@ return {
             },
 
             j_mahrlatr_mahrbles_trolley = {
-                name = 'Mahrbles Trolley',
+                name = 'Mahrble\'s Trolley',
                 text = {
                     '{C:red}+#1#{} Mult, {C:blue}+#2#{} Chips',
                     'and {C:money}#3##4#{} for each',
@@ -736,9 +778,9 @@ return {
             j_mahrlatr_nutellas_cahr = {
                 name = "Nutella\'s Cahr",
                 text = {
-                    "If first played hand has only",
-                    "{C:attention}1{} card, increases",
-                    "its rank by {C:attention}1{}"
+                    "If {C:attention}first hand{} of",
+                    "round has only {C:attention}1{} card,",
+                    "increases its rank by {C:attention}1{}"
                 }
             },
 
@@ -803,9 +845,8 @@ return {
                 name = 'The Choir',
                 text = {
                     '{X:mult,C:white}X#1#{} Mult if hand',
-                    'contains {C:attention}#2# and any{}',
-                    '{C:attention}other pokahr hand{}',
-                    '{C:inactive}(except High Card){}'
+                    'contains {C:attention}#2# and',
+                    '{C:attention}#3#'
                 },
                 unlock = {
                     "Play a {C:attention}Flush Five{}",
@@ -850,7 +891,7 @@ return {
             },
 
             j_mahrlatr_mabels_house = {
-                name = "Mabels House",
+                name = "Mabel's House",
                 text = {
                     "{C:green}#2# in #3#{} chance of upgrading hand level",
                     "if hand contains #1#"
@@ -923,8 +964,8 @@ return {
             j_mahrlatr_door_mahrfia = {
                 name = "Door Mahrfia",
                 text = {
-                    "If hand contains {C:attention}Pair{},",
-                    "Gives {C:money}#1##2#{} for each scored card,",
+                    "If played hand contains {C:attention}#3#{}",
+                    "gives {C:money}#1##2#{} for each card scored",
                     "and then destroys them"
                 }
             },
@@ -945,7 +986,7 @@ return {
                     "{C:chips}+#1#{} Chips",
                     "Gains {C:chips}+#2#{} Chips",
                     "every hand played",
-                    "{C:inactive}(Goes bad at 100 chips){}"
+                    "{C:inactive}(Goes bad at #3# chips){}"
                 },
             },
 
@@ -1010,7 +1051,7 @@ return {
                 text = {
                     {
                         "Gains {C:red}+#2#{} Mult for each",
-                        "{C:red}failed{} {C:tarot,E:1}Wheel of Fahrtune{}",
+                        "{C:red}failed{} {C:tarot,E:1}#3#{}",
                         "{C:inactive}(Currently: {C:red}+#1#{}{C:inactive} Mult){}"
                     }
                 },
@@ -1045,7 +1086,7 @@ return {
                 text = {
                     {
                         "Gains {C:red}+#2#{} Mult for each",
-                        "{C:attention,s:1.4}unique{} Food Jokahr owned",
+                        "{C:attention,s:1.4}unique{} Food Jokahr bought",
                         "while owning this Jokahr",
                         "{C:inactive}(Currently{} {C:red}+#1#{} {C:inactive}Mult){}"
                     }
@@ -1127,9 +1168,8 @@ return {
             j_mahrlatr_considerable_girth = {
                 name = "Considerable Girth",
                 text = {
-                    "Adds the rank of all",
-                    "cards held in hand",
-                    "to Chips"
+                    "Scores all cards held",
+                    "in hand for {C:chips}Chips{}"
                 }
             },
 
@@ -1150,7 +1190,7 @@ return {
             j_mahrlatr_switches = {
                 name = "Switches",
                 text = {
-                    "Gives {X:chips,C:white} X#2# {} Chips",
+                    "This Jokahr gains {X:chips,C:white}X#2#{} Chips",
                     "every time a card {C:attention}changes suit{]",
                     "{C:inactive}(Currently {X:chips,C:white} X#1# {C:inactive} Chips)"
                 }
@@ -1212,7 +1252,7 @@ return {
             c_mahrlatr_mahr_mentioned = {
                 name = 'Mahr Mentioned',
                 text = {
-                    'Applies {C:tarot,E:1}TheMahr{} seal to selected card'
+                    'Applies {C:tarot,E:1}#1#{} seal to selected card'
                 }
             },
             c_mahrlatr_weakness = {
@@ -1352,7 +1392,12 @@ return {
                 text = {
                     "All cards and packs in",
                     "the Mahrket are {C:attention}#1#%{} off",
-                }
+                },
+                unlock = {
+                    "Redeem at least",
+                    "{C:attention}#1#{C:voucher} Vouchahr{} cards",
+                    "in one run",
+                },
             },
             v_magic_trick = {
                 name = "Mahrgic Trick",
@@ -1575,7 +1620,7 @@ return {
                 name = "The Mahrket",
                 text = {
                     "Adds an extra",
-                    "Voucher slot"
+                    "Vouchahr slot"
                 }
             },
 
@@ -1586,6 +1631,66 @@ return {
                     "a {C:gold}Mahr Seal{},",
                     "halves {C:blue}Chips{}",
                     "when scoring"
+                }
+            },
+
+            b_anaglyph = {
+                name = "Anahrglyph Deck"
+            },
+
+            b_erratic = {
+                name = "Errahrtic Deck"
+            },
+
+            b_ghost = {
+                text = {
+                    "{C:spectral}Spectrahrl{} cards may",
+                    "appear in the Mahrket,",
+                    "start with a {C:spectral,T:c_hex}Hahrx{} card",
+                }
+            },
+
+            b_magic = {
+                name = "Mahrgic Deck",
+                text = {
+                    "Start run with the",
+                    "{C:tarot,T:v_crystal_ball}#1#{} vouchahr",
+                    "and {C:attention}2{} copies",
+                    "of {C:tarot,T:c_fool}#2#",
+                }
+            },
+
+            b_nebula = {
+                name = "Nebulahr Deck",
+                text = {
+                    "Start run with the",
+                    "{C:planet,T:v_telescope}#1#{} vouchahr",
+                    "",
+                    "{C:red}#2#{} consumahrble slot",
+                }
+            },
+
+            b_painted = {
+                text = {
+                    "{C:attention}+#1#{} hand size,",
+                    "{C:red}#2#{} Jokahr slot",
+                }
+            },
+
+            b_plasma = {
+                name = "Plasmahr Deck"
+            },
+
+            b_zodiac = {
+                name = "Zodiahrc Deck"
+            },
+
+            b_black = {
+                text = {
+                    "{C:attention}+#1#{} Jokahr slot",
+                    "",
+                    "{C:blue}#2#{} hand",
+                    "every round",
                 }
             }
         },
@@ -1945,6 +2050,13 @@ return {
                     "{C:inactive}(Must have room)",
                 },
             },
+            tag_voucher = {
+                name = "Vouchahr Tag",
+                text = {
+                    "Adds one {C:voucher}Vouchahr",
+                    "to the next Mahrket",
+                },
+            },
             tag_uncommon = {
                 name = "Uncommahrn Tag",
                 text = {
@@ -2147,7 +2259,8 @@ return {
             common = 'Commahrn',
             uncommon = 'Uncommahrn',
             rare = 'Rahr',
-            legendary = 'Legendahry'
+            legendary = 'Legendahry',
+            voucher = 'Vouchahr'
         },
 
         dictionary = {
@@ -2199,6 +2312,10 @@ return {
             joker_merged = "Merged!",
 
             joel_nope_hahaha = "Nope! Hahahahahahah",
+
+            fifahr_reverted = "Reverted!",
+
+            mahrbles_trolley_awoken = "Mahrble has awoken!"
         },
 
         achievement_names = {

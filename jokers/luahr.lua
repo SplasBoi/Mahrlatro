@@ -30,7 +30,7 @@ SMODS.Joker {
     config = {
         extra = {
             chips = 0,
-            scaling = 5
+            scaling = 3
         }
     },
 
@@ -55,7 +55,7 @@ SMODS.Joker {
     end,
     
     calculate = function(self, card, context)
-        if context.change_suit or context.change_rank or (context.setting_ability and not context.unchanged and G.P_CENTERS[context.new].set == 'Enhanced') then
+        if context.change_suit or context.change_rank or (context.setting_ability and not context.unchanged and G.P_CENTERS[context.new].set == 'Enhanced') and not context.blueprint then
             SMODS.scale_card(card, {
                 ref_table = card.ability.extra,
                 ref_value = 'chips',
@@ -68,5 +68,18 @@ SMODS.Joker {
                 chips = card.ability.extra.chips
             }
         end
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        return {
+            text = {
+                { text = "+" },
+                {
+                    ref_table = "card.ability.extra",
+                    ref_value = "chips",
+                }
+            },
+            text_config = { colour = G.C.CHIPS }
+        }
     end
 }

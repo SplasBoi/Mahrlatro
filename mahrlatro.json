@@ -6,7 +6,7 @@
     "SplasBoi",
     "Wanyay"
   ],
-  "description": "This mod brings TheMahr, one of our universe's most beloved characters, to live in Balatro.",
+  "description": "This is a mod developed as an homage to our friend TheMahr. This mod adds content themed around him and some of our inside jokes.",
   "prefix": "mahrlatr",
   "main_file": "main.lua",
   "version": "1.0.2",
@@ -14,7 +14,7 @@
   "badge_colour": "666665",
   "badge_text_colour": "FFFFFF",
   "dependencies": [
-    "Steamodded (>=1.0.0~BETA-1814a)",
+    "Steamodded (>=26.829.0)",
     "Lovely (>=0.6.7)"
   ]
 }

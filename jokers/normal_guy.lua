@@ -1,3 +1,7 @@
+local function get_random_sound_pitch()
+    return 0.96 + math.random() * 0.08
+end
+
 SMODS.Joker {
     key = "normal_guy",
 
@@ -77,7 +81,7 @@ SMODS.Joker {
                         G.GAME.joker_buffer = 0
 
                         G.jokers.cards[i]:start_dissolve({HEX("57ecab")}, nil, 1.6)
-                        play_sound('slice1', 0.96 + math.random() * 0.08)
+                        SoundUtility.play_sound_if_exists('slice1', get_random_sound_pitch())
 
                         return true
                     end }))
@@ -93,7 +97,7 @@ SMODS.Joker {
                 
                 G.E_MANAGER:add_event(Event({func = function()
                     G.consumeables.cards[i]:start_dissolve({HEX("57ecab")}, nil, 1.6)
-                    play_sound('slice1', 0.96+math.random()*0.08)
+                    SoundUtility.play_sound_if_exists('slice1', get_random_sound_pitch())
                     
                     return true
                     end

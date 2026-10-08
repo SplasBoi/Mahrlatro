@@ -44,5 +44,36 @@ SMODS.Joker {
                 }
             end
         end
+    end,
+    
+    joker_display_def = function(JokerDisplay)
+        return {
+            text = {
+                {
+                    border_nodes = {
+                        { text = "X" },
+                        {
+                            ref_table = "card.joker_display_values",
+                            ref_value = "x_mult",
+                            retrigger_type = "exp"
+                        }
+                    }
+                }
+            },
+
+            text_config = { colour = G.C.WHITE },
+
+            calc_function = function(card)
+                local e = card.ability.extra
+
+                local text, _, _ = JokerDisplay.evaluate_hand()
+
+                card.joker_display_values.x_mult = 1
+                
+                if text ~= "Unknown" and G.GAME.hands[text] and G.GAME.hands[text].level == 1 then
+                    card.joker_display_values.x_mult = e.x_mult
+                end
+            end
+        }
     end
 }

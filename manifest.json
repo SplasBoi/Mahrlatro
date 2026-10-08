@@ -1,0 +1,10 @@
+{
+    "name": "Mahrlatro",
+    "description": "This is a mod developed as an homage to our friend TheMahr. This mod adds content themed around him and some of our inside jokes.",
+    "version_number": "1.0.3",
+    "dependencies": [
+        "Steamodded-Steamodded-26.829.0",
+        "Thunderstore-lovely-0.7.1"
+    ],
+    "website_url": "https://github.com/SplasBoi/Mahrlatro"
+}

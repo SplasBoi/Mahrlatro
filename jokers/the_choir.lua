@@ -24,8 +24,9 @@ SMODS.Joker {
 
     config = {
         extra = {
-            x_mult = 2.5,
-            base_type = 'Flush'
+            x_mult = 4.5,
+            hand1 = 'Flush',
+            hand2 = 'Three of a Kind'
         }
     },
     
@@ -33,25 +34,18 @@ SMODS.Joker {
         return {
             vars = {
                 card.ability.extra.x_mult,
-                card.ability.extra.base_type
+                localize(card.ability.extra.hand1, 'poker_hands'),
+                localize(card.ability.extra.hand2, 'poker_hands')
             }
         }
     end,
     
     calculate = function(self, card, context)
         if context.joker_main then
-            local contains_flush = next(context.poker_hands[card.ability.extra.base_type])
-
-            -- Very cheap solution, but works.
-            -- Almost all hands in the game contain a Pair.
-            -- Tried for over an hour to use the context.poker_hands table somehow but to no avail.
-            -- I welcome any of you to find a better solution.
-            local contains_pair = next(context.poker_hands['Pair']) 
-            local contains_straight = next(context.poker_hands['Straight'])
-
-            local contains_other_hand = contains_pair or contains_straight
+            local contains_flush = next(context.poker_hands[card.ability.extra.hand1])
+            local contains_3oak = next(context.poker_hands[card.ability.extra.hand2])
             
-            if contains_flush and contains_other_hand then
+            if contains_flush and contains_3oak then
                 return {
                     x_mult = card.ability.extra.x_mult
                 }
@@ -62,4 +56,33 @@ SMODS.Joker {
     check_for_unlock = function(self, args)
         return args.type == "hand" and (args.handname == "Flush House" or args.handname == "Flush Five")
     end,
+
+    joker_display_def = function(JokerDisplay)
+        return {
+            text = {
+                {
+                    border_nodes = {
+                        { text = "X" },
+                        { ref_table = "card.joker_display_values", ref_value = "x_mult", retrigger_type = "exp" }
+                    }
+                }
+            },
+
+            text_config = { colour = G.C.WHITE },
+
+            calc_function = function(card)
+                local e = card.ability.extra
+                local _, poker_hands, _ = JokerDisplay.evaluate_hand()
+
+                local contains_flush = poker_hands[e.hand1] and next(poker_hands[e.hand1])
+                local contains_3oak = poker_hands[e.hand2] and next(poker_hands[e.hand2])
+                
+                card.joker_display_values.x_mult = 1
+                
+                if contains_flush and contains_3oak then
+                    card.joker_display_values.x_mult = e.x_mult
+                end 
+            end
+        }
+    end
 }
