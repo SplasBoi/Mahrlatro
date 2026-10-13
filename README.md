@@ -10,7 +10,7 @@
 - [Steamodded](https://github.com/Steamodded/smods) (26.829.0 minimum)
 
 ## Installation
-- Download the [latest release](https://github.com/SplasBoi/Mahrlatro/archive/refs/heads/main.zip).
+- Download the [latest release](https://github.com/SplasBoi/Mahrlatro/releases).
 - Extract the contents to your Balatro mod folder:
     - **Windows:** `%appdata%/Balatro/Mods`
 
