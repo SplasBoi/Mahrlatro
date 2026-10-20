@@ -33,6 +33,14 @@ SMODS.Joker {
     cost = 0,
     rarity = 3,
 
+    in_pool = function(self, args)
+        if args.source == 'sho' then
+            return true
+        end
+
+        return false
+    end,
+
     config = {
         extra = {
             current_debt = 0,
