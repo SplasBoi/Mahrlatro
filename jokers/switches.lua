@@ -41,7 +41,7 @@ SMODS.Joker {
     end,
     
     calculate = function(self, card, context)
-        if context.change_suit and not context.blueprint then
+        if context.change_suit and context.old_suit ~= nil and not context.blueprint then
             SMODS.scale_card(card, {
                 ref_table = card.ability.extra,
                 ref_value = 'current_x_chips',
