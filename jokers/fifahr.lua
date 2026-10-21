@@ -31,7 +31,7 @@ SMODS.Joker {
     pools = { ["mahrlatr_mahrlatr_jokers"] = true },
 
     calculate = function(self, card, context)
-        if context.ending_shop and JokerUtility.player_has_joker(G.jokers.cards, "j_red_card") then
+        if context.ending_shop and JokerUtility.jokers_owned("j_red_card") > 0 then
             G.E_MANAGER:add_event(Event({
                 func = instantiate_green_card(card, context)
             }))

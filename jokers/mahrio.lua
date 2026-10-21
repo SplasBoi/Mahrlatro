@@ -66,7 +66,7 @@ SMODS.Joker {
         end]]--
 
         if context.end_of_round and context.main_eval and not context.game_over then
-            local stahr_count = JokerUtility.owns_joker_count("j_mahrlatr_the_stahr")
+            local stahr_count = JokerUtility.jokers_owned("j_mahrlatr_the_stahr")
             
             if stahr_count > 0 then
                 for _, joker in ipairs(G.jokers.cards) do

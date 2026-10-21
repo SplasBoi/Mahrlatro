@@ -1,18 +1,7 @@
 JokerUtility = {}
 
 -- Argument 1 is the key we are looking for. -> string
-function JokerUtility.owns_joker(key) --> bool
-    for _, v in pairs(G.jokers.cards) do
-        if key == v.config.center.key then
-            return true
-        end
-    end
-
-    return false
-end
-
--- Argument 1 is the key we are looking for. -> string
-function JokerUtility.owns_joker_count(key) --> number
+function JokerUtility.jokers_owned(key) --> number
     if not G.jokers then return 0 end
 
     local count = 0
@@ -25,8 +14,9 @@ function JokerUtility.owns_joker_count(key) --> number
     
     return count
 end
+-- Returns how many copies of a joker player has
 
---Argument 1 is an array of the joker keys to be merged -> table
+-- Argument 1 is an array of the joker keys to be merged -> table
 function JokerUtility.can_merge_jokers(joker_keys) --> bool
     local jokers = {}
 
@@ -38,7 +28,7 @@ function JokerUtility.can_merge_jokers(joker_keys) --> bool
     end
 
     for i, v in ipairs(joker_keys) do
-        if (JokerUtility.owns_joker(v)) then jokers[i].found = true end
+        if (JokerUtility.jokers_owned(v) > 0) then jokers[i].found = true end
     end
 
     for _, v in pairs(jokers) do
@@ -114,32 +104,6 @@ function JokerUtility.slice_and_merge_jokers(context, card, new_joker, custom_co
     })
         
     return true
-end
-
--- Argument 1 is the list of jokers owned (G.jokers.cards) -> table
--- Argument 2 is the key of the joker we are checking for -> string
-function JokerUtility.has_dupe(jokers_owned, key) --> bool
-    local jokers = {}
-
-    for _, joker in ipairs(jokers_owned) do
-        if TableUtility.contains_individual(key, jokers) then return true end
-        
-        table.insert(jokers, joker.config.center.key)
-    end
-
-    return false
-end
-
--- Argument 1 is the key is the list of jokers owned (G.jokers.cards) -> table
--- Argument 2 is the key of the joker we are looking for -> string
-function JokerUtility.player_has_joker(jokers_owned, key) --> bool
-    for _, joker in ipairs(jokers_owned) do
-        if joker.config.center.key == key then
-            return true
-        end
-    end
-
-    return false
 end
 
 function JokerUtility.is_in_blind()
