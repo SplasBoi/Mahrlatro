@@ -410,7 +410,7 @@ return {
                 name = 'The Doctor',
                 text = {
                     'Gains {X:mult,C:white}X#1#{} Mult for each {C:money}#2##3#{} spent',
-                    'Halves at the end of the round',
+                    'Resets at the end of the round',
                     '{C:inactive}(Currently{} {X:mult,C:white}X#4#{} {C:inactive}Mult){}'
                 }
             },
@@ -2288,9 +2288,6 @@ return {
             fifahr_suit_change = 'Red Card Reverted',
 
             gone_bad = 'Gone Bad!',
-
-            the_doctor_halved = 'Halved!',
-            the_doctor_back_to_1x = 'Back where it began!',
 
             supahr_nutellio_easy = 'EZ!',
 

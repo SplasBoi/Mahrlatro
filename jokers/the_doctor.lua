@@ -1,5 +1,4 @@
 local register_money_spent = nil
-local rounded_decimals = 1
 
 SMODS.Joker { --The Doctor
     key = "the_doctor",
@@ -27,7 +26,7 @@ SMODS.Joker { --The Doctor
 
     config = {
         extra = {
-            x_mult_gained = 0.1,
+            x_mult_gained = 0.05,
             current_x_mult = 1.0,
             upgrade_threshold = 1,
             money_spent = 0
@@ -60,16 +59,11 @@ SMODS.Joker { --The Doctor
         end
 
         if context.end_of_round and not context.repetition and not context.individual and not context.blueprint then
-            local prev_mult = card.ability.extra.current_x_mult
-            local new_mult = math.max( 1, round_number(prev_mult / 2, rounded_decimals) )
-
-            if prev_mult > new_mult then
-                card.ability.extra.current_x_mult = new_mult
-                
-                return {
-                    message = (new_mult == 1) and localize('the_doctor_back_to_1x') or localize('the_doctor_halved')
-                }
-            end
+            card.ability.extra.current_x_mult = 1
+            
+            return {
+                message = localize("k_reset")
+            }
         end
 
         if context.joker_main then
@@ -103,7 +97,7 @@ register_money_spent = function(card, amount)
     local e = card.ability.extra
 
     e.money_spent = e.money_spent + amount
-    e.current_x_mult = round_number(e.current_x_mult + (amount * e.x_mult_gained), rounded_decimals)
+    e.current_x_mult = e.current_x_mult + (amount * e.x_mult_gained)
 
     card_eval_status_text(card, 'extra', nil, nil, nil, {
         message = localize('k_upgrade_ex'),
