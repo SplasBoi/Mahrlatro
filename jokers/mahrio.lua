@@ -24,26 +24,33 @@ SMODS.Joker {
 
     config = {
         extra = {
-            numerator = 1,
-            denominator = 3
+            --numerator = 1,
+            --denominator = 3
+            dollars = 0,
+            scaling = 2,
         }
     },
 
     loc_vars = function(self, info_queue, card)
-        local num, denom = SMODS.get_probability_vars(card, card.ability.extra.numerator, card.ability.extra.denominator)
+        local e = card.ability.extra
+        --local num, denom = SMODS.get_probability_vars(card, card.ability.extra.numerator, card.ability.extra.denominator)
 
         return {
             vars = {
-                colours = { HEX('000000') },
+                --colours = { HEX('000000') },
 
-                num,
-                denom
+                --num,
+                --denom
+
+                e.dollars,
+                e.scaling,
+                localize('$')
             }
         }
     end,
 
     calculate = function(self, card, context)
-        if context.end_of_round and context.main_eval  then
+        --[[if context.end_of_round and context.main_eval  then
             local free_joker_slots = G.jokers.config.card_limit - #G.jokers.cards
 
             if (free_joker_slots < 1) then return end
@@ -55,7 +62,34 @@ SMODS.Joker {
                 
                     return true
                 end }))
+            end  
+        end]]--
+
+        if context.end_of_round and context.main_eval and not context.game_over then
+            local stahr_count = JokerUtility.owns_joker_count("j_mahrlatr_the_stahr")
+            
+            if stahr_count > 0 then
+                for _, joker in ipairs(G.jokers.cards) do
+                    if joker.config.center.key == "j_mahrlatr_the_stahr" then
+                        JokerUtility.slice_joker(joker) -- Collected! Dissolve. Leave like this for now.
+
+                        SMODS.scale_card(card, {
+                            ref_table = card.ability.extra,
+                            ref_value = 'dollars',
+                            scalar_value = 'scaling',
+                            no_message = true --false: Collected! Mahr with Mahrio voice!!
+                        })
+                    end
+                end
             end
         end
-    end
+    end,
+
+    calc_dollar_bonus = function(self, card)
+        local dollars = card.ability.extra.dollars
+
+        if dollars > 0 then
+            return dollars
+        end
+    end,
 }

@@ -1,18 +1,3 @@
-local function get_stahr_count()
-    if not G.jokers then
-        return 0
-    end
-
-    local count = 0
-    for _, joker in ipairs(G.jokers.cards) do
-        if joker.config.center.key == 'j_mahrlatr_the_stahr' then
-            count = count + 1
-        end
-    end
-    return count
-end
-        
-
 SMODS.Joker{
     key = "supahr_nutellio",
 
@@ -51,7 +36,7 @@ SMODS.Joker{
         return {
             vars = {
                 card.ability.extra.chips,
-                card.ability.extra.chips + (get_stahr_count() * card.ability.extra.chips)
+                card.ability.extra.chips + (JokerUtility.owns_joker_count("j_mahrlatr_the_stahr") * card.ability.extra.chips)
             }
         }
     end,
@@ -60,7 +45,7 @@ SMODS.Joker{
         local e = card.ability.extra or self.config.extra
 
         if context.joker_main then
-            local stahr_count = get_stahr_count()
+            local stahr_count = JokerUtility.owns_joker_count("j_mahrlatr_the_stahr")
 
             if stahr_count < 1 then
                 return {

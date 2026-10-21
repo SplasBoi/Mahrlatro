@@ -749,10 +749,11 @@ return {
             j_mahrlatr_mahrio = {
                 name = 'Mahrio',
                 text = {
-                    '{C:green,E:2}#1# in #2#{} chance of dropping',
-                    'a {C:attention}Stahr Jokahr{} at the',
-                    'end of the round',
-                    '{C:inactive}(must have room){}'
+                    'Earn {C:gold}#3##2#{} at end of round',
+                    'for each {C:attention}The Stahr{} jokahr',
+                    'owned at end of round',
+                    '{C:inactive,s:0.7}(Collects (destroys) each The Stahr at the end of the round)',
+                    "{C:inactive}(Currently {C:money}#3##1#{C:inactive}){}"
                 }
             },
 
@@ -1699,7 +1700,7 @@ return {
             bl_mahrlatr_themahr = {
                 name = "The Mahr",
                 text = {
-                    "Debuffs all",
+                    "Debuffs {C:attention}all but{}",
                     "{C:blue}Commahrn{} Jokahrs"
                 }
             },

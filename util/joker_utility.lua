@@ -11,6 +11,20 @@ function JokerUtility.owns_joker(key) --> bool
     return false
 end
 
+-- Argument 1 is the key we are looking for. -> string
+function JokerUtility.owns_joker_count(key) --> number
+    if not G.jokers then return 0 end
+
+    local count = 0
+
+    for _, joker in ipairs(G.jokers.cards) do
+        if joker.config.center.key == key then
+            count = count + 1
+        end
+    end
+    
+    return count
+end
 
 --Argument 1 is an array of the joker keys to be merged -> table
 function JokerUtility.can_merge_jokers(joker_keys) --> bool
