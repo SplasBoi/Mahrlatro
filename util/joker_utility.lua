@@ -1,6 +1,7 @@
 JokerUtility = {}
 
 -- Argument 1 is the key we are looking for. -> string
+-- Returns how many copies of a joker player has
 function JokerUtility.jokers_owned(key) --> number
     if not G.jokers then return 0 end
 
@@ -14,10 +15,11 @@ function JokerUtility.jokers_owned(key) --> number
     
     return count
 end
--- Returns how many copies of a joker player has
 
 -- Argument 1 is an array of the joker keys to be merged -> table
 function JokerUtility.can_merge_jokers(joker_keys) --> bool
+    if not G.jokers then return false end
+    
     local jokers = {}
 
     for i, v in ipairs(joker_keys) do
@@ -55,19 +57,18 @@ function JokerUtility.slice_joker(card) --> void
     }))
 end
 
---[[
-context = Current context -> context
-card = Card object -> Card
-new_joker = Key of the joker to be instanced -> string
-custom_color = Color of the message effect, pass nil for standard color -> HEX color or nil
-slice_message = Message show when a joker is sliced, pass nil for no message -> string or nil
-instantiation_message = Message shown when new joker is instanced, pass nil for no message -> string or nil
-]]
-function JokerUtility.slice_and_merge_jokers(context, card, new_joker, custom_color, slice_message, instantiation_message) --> void
+
+--card = Card object -> Card
+--new_joker = Key of the joker to be instanced -> string
+--sliced_jokers = Table containing jokers to be sliced -> table
+--custom_color = Color of the message effect, pass nil for standard color -> HEX color or nil
+--slice_message = Message shown when a joker is sliced, pass nil for default message -> string or nil
+--instantiation_message = Message shown when new joker is instanced, pass nil for default message -> string or nil
+function JokerUtility.slice_and_merge_jokers(card, new_joker, sliced_jokers, custom_color, slice_message, instantiation_message) --> void
     local e = card.ability.extra
     local sliced_joker
 
-    for _, v in ipairs(e.required_jokers_to_merge) do
+    for _, v in ipairs(sliced_jokers) do
         for _, joker in ipairs(G.jokers.cards) do
             -- If it detects a joker already being sliced. Doesn't mark it to be sliced again (nil).
             if joker.config.center.key == v and not joker.getting_sliced then
@@ -80,25 +81,19 @@ function JokerUtility.slice_and_merge_jokers(context, card, new_joker, custom_co
 
         sliced_joker.getting_sliced = true
         JokerUtility.slice_joker(sliced_joker)
-        card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {
+        card_eval_status_text(card, 'extra', nil, nil, nil, {
             message = slice_message or "Merged!",
             colour = custom_color or G.C.ATTENTION
         })
     end
     
-    -- Ends it there if sliced_joker is nil, which means it is already being sliced, so  shouldn't be again.
+    -- Ends it execution if sliced_joker is nil, which means current joker has already been sliced.
     if sliced_joker == nil then return end
-
-    JokerUtility.slice_joker(card)
-    card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {
-        message = slice_message or "Merged!",
-        colour = custom_color or G.C.ATTENTION
-    })
     
     -- New Joker Instantiation
-    JokerUtility.instantiate_joker(new_joker)
+    local new_card = JokerUtility.instantiate_joker(new_joker)
 
-    card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {
+    card_eval_status_text(new_card, 'extra', nil, nil, nil, {
         message = instantiation_message or "Merged!",
         colour = custom_color or G.C.ATTENTION
     })

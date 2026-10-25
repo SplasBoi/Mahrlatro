@@ -4,7 +4,7 @@ SMODS.Joker { --Mahrffin
     config = {
         extra = {
             dollars = 1,
-            required_jokers_to_merge = {"j_mahrlatr_fish", "j_mahrlatr_meat"}
+            required_jokers_to_merge = { "j_mahrlatr_fish", "j_mahrlatr_meat", "j_mahrlatr_mahrffin" }
         }
     },
     
@@ -56,22 +56,20 @@ SMODS.Joker { --Mahrffin
                 end
             }
         end
+    end,
 
-        if context.ending_shop then
-            if JokerUtility.can_merge_jokers(e.required_jokers_to_merge) then
-                return {
-                    func = function ()
-                        return JokerUtility.slice_and_merge_jokers(
-                            context,
-                            card,
-                            "j_mahrlatr_mahrbles_trolley",
-                            G.C.RED,
-                            "Collected!",
-                            localize("mahrbles_trolley_awoken")
-                        )
-                    end
-                }
-            end
+    update = function(self, card, dt)
+        local e = card.ability.extra
+
+        if JokerUtility.can_merge_jokers(e.required_jokers_to_merge) then
+            JokerUtility.slice_and_merge_jokers(
+                card,
+                "j_mahrlatr_mahrbles_trolley",
+                e.required_jokers_to_merge,
+                G.C.RED,
+                "Collected!",
+                localize("mahrbles_trolley_awoken")
+            )
         end
     end,
 

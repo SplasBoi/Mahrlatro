@@ -6,7 +6,8 @@ SMODS.Joker{
             chips = 67,
             required_jokers_to_merge = {
                 "j_mahrlatr_nutella_sweep",
-                "j_mahrlatr_nutellas_cahr"
+                "j_mahrlatr_nutellas_cahr",
+                "j_mahrlatr_supahr_nutellio"
             }
         }
     },
@@ -65,20 +66,20 @@ SMODS.Joker{
                 }
             end
         end
+    end,
 
-        if context.ending_shop and JokerUtility.can_merge_jokers(e.required_jokers_to_merge) then
-            return {
-                func = function ()
-                    return JokerUtility.slice_and_merge_jokers(
-                        context,
-                        card,
-                        "j_mahrlatr_romahrnia",
-                        HEX('002B7F'),
-                        "EZ!",
-                        "Bine ai venit în Româhrnia!"
-                    )
-                end
-            }
+    update = function(self, card, dt)
+        local e = card.ability.extra
+        
+        if JokerUtility.can_merge_jokers(e.required_jokers_to_merge) then
+            JokerUtility.slice_and_merge_jokers(
+                card,
+                "j_mahrlatr_romahrnia",
+                e.required_jokers_to_merge,
+                HEX('002B7F'),
+                "EZ!",
+                "Bine ai venit în Româhrnia!"
+            )
         end
     end,
 
