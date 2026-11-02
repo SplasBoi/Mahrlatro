@@ -26,7 +26,7 @@ SMODS.Joker {
         extra = {
             --numerator = 1,
             --denominator = 3
-            dollars = 0,
+            dollars = 2,
             scaling = 2,
         }
     },
@@ -50,38 +50,29 @@ SMODS.Joker {
     end,
 
     calculate = function(self, card, context)
-        --[[if context.end_of_round and context.main_eval  then
-            local free_joker_slots = G.jokers.config.card_limit - #G.jokers.cards
-
-            if (free_joker_slots < 1) then return end
-
-            if SMODS.pseudorandom_probability(card, 'j_mahrlatr_mahrio', card.ability.extra.numerator, card.ability.extra.denominator) then
-                G.E_MANAGER:add_event(Event({trigger = 'immediate', func = function()
-                    SoundUtility.play_sound_if_exists('mahrlatr_mahrio_win',1.0,0.6)
-                    SMODS.add_card({key = 'j_mahrlatr_the_stahr'})
-                
-                    return true
-                end }))
-            end  
-        end]]--
-
         if context.end_of_round and context.main_eval and not context.game_over then
             local stahr_count = JokerUtility.jokers_owned("j_mahrlatr_the_stahr")
             
             if stahr_count > 0 then
+                SoundUtility.play_sound_if_exists("mahrlatr_mahrio_haha")
+                
                 for _, joker in ipairs(G.jokers.cards) do
                     if joker.config.center.key == "j_mahrlatr_the_stahr" then
-                        JokerUtility.slice_joker(joker) -- Collected! Dissolve. Leave like this for now.
+                        JokerUtility.slice_joker(joker)
 
                         SMODS.scale_card(card, {
                             ref_table = card.ability.extra,
                             ref_value = 'dollars',
                             scalar_value = 'scaling',
-                            no_message = true --false: Collected! Mahr with Mahrio voice!!
+                            no_message = true
                         })
                     end
                 end
             end
+
+            return {
+                message = localize("mahrio_collected"),
+            }
         end
     end,
 

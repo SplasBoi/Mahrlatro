@@ -297,6 +297,12 @@ SMODS.Sound {
     pitch = 1.0
 }
 
+SMODS.Sound {
+    key = "mahrio_haha",
+    path = "sfx/mahrio_haha.ogg",
+    pitch = 1.0
+}
+
 -- Benjamin
 
 SMODS.Sound {

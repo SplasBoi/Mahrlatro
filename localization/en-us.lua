@@ -749,11 +749,11 @@ return {
             j_mahrlatr_mahrio = {
                 name = 'Mahrio',
                 text = {
-                    'Earn {C:gold}#3##2#{} at end of round',
-                    'for each {C:attention}The Stahr{} jokahr',
-                    'owned at end of round',
-                    '{C:inactive,s:0.7}(Collects (destroys) each The Stahr at the end of the round)',
-                    "{C:inactive}(Currently {C:money}#3##1#{C:inactive}){}"
+                    'Earn {C:gold}#3##1#{} at end of round',
+                    'This Jokahr gains {C:gold}#3##2#{} for each',
+                    '{C:attention}The Stahr{} Jokahr collected',
+                    '{C:inactive,s:0.8}Mahrio collects (destroys) The Stahr',
+                    '{C:inactive,s:0.8}at the end of each round if owned',
                 }
             },
 
@@ -2313,7 +2313,9 @@ return {
 
             fifahr_reverted = "Reverted!",
 
-            mahrbles_trolley_awoken = "Mahrble has awoken!"
+            mahrbles_trolley_awoken = "Mahrble has awoken!",
+
+            mahrio_collected = "Collected! Haha!"
         },
 
         achievement_names = {
